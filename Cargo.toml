@@ -1,0 +1,82 @@
+[workspace]
+members = [
+    "crates/musande-core",
+    "crates/musande-alignment", 
+    "crates/musande-navigation",
+    "crates/musande-ridiculous",
+    "crates/musande-service",
+    "crates/musande-applications",
+    "crates/musande-cli",
+    "bindings/python",
+    "bindings/javascript", 
+    "bindings/c",
+    "services/entropy-solver-service",
+    "services/timekeeping-integration",
+    "examples/basic_alignment",
+    "examples/ridiculous_solutions",
+    "examples/quantum_enhancement",
+    "examples/business_optimization",
+    "examples/scientific_discovery",
+    "tools/s_entropy_analyzer",
+    "tools/impossibility_visualizer",
+    "tools/alignment_debugger",
+    "research/experimental_validation",
+    "research/mathematical_proofs",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Kundai Farai Sachikonye <research@s-entropy.org>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/musande/s-entropy-framework"
+description = "Implementation of the S-Entropy Framework for universal problem solving through tri-dimensional entropy navigation"
+keywords = ["s-entropy", "entropy", "navigation", "quantum", "optimization"]
+categories = ["science", "mathematics", "algorithms"]
+
+[workspace.dependencies]
+# Core musande crates
+musande-core = { path = "crates/musande-core", version = "0.1.0" }
+musande-alignment = { path = "crates/musande-alignment", version = "0.1.0" }
+musande-navigation = { path = "crates/musande-navigation", version = "0.1.0" }
+musande-ridiculous = { path = "crates/musande-ridiculous", version = "0.1.0" }
+musande-service = { path = "crates/musande-service", version = "0.1.0" }
+musande-applications = { path = "crates/musande-applications", version = "0.1.0" }
+
+# Mathematical computation dependencies
+nalgebra = "0.32"
+ndarray = "0.15"
+num-complex = "0.4"
+rand = "0.8"
+
+# Async runtime and networking
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Service framework
+axum = "0.7"
+tower = "0.4"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Performance optimization
+rayon = "1.8"
+crossbeam = "0.8"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Configuration
+config = "0.14"
+clap = { version = "4.0", features = ["derive"] }
+
+# Language bindings
+pyo3 = { version = "0.20", features = ["extension-module"] }
+wasm-bindgen = "0.2"
+
+# Testing
+criterion = "0.5"
+proptest = "1.0" 

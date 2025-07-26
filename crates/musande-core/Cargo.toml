@@ -1,0 +1,36 @@
+[package]
+name = "musande-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core S-entropy mathematics and fundamental types for the Musande framework"
+keywords = ["s-entropy", "mathematics", "oscillation", "entropy", "physics"]
+categories = ["mathematics", "science", "algorithms"]
+
+[dependencies]
+# Mathematical computation
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+num-complex = { workspace = true }
+rand = { workspace = true }
+
+# Serialization
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Performance
+rayon = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+proptest = { workspace = true }
+
+[[bench]]
+name = "s_entropy_benchmarks"
+harness = false 
