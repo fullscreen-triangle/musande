@@ -1,0 +1,231 @@
+{
+    "folders": [
+        {
+            "name": "🧠 Musande Root",
+            "path": "."
+        },
+        {
+            "name": "📚 Documentation",
+            "path": "./docs"
+        },
+        {
+            "name": "🦀 Core Crates",
+            "path": "./crates"
+        },
+        {
+            "name": "🔬 Research Papers",
+            "path": "./research"
+        },
+        {
+            "name": "⚙️ Configuration", 
+            "path": "./config"
+        },
+        {
+            "name": "🐳 Deployment",
+            "path": "./deploy"
+        }
+    ],
+    "settings": {
+        // Rust-specific settings
+        "rust-analyzer.cargo.allFeatures": true,
+        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+        "rust-analyzer.procMacro.enable": true,
+        "rust-analyzer.check.command": "clippy",
+        "rust-analyzer.check.allTargets": true,
+        "rust-analyzer.diagnostics.enable": true,
+        "rust-analyzer.diagnostics.enableExperimental": true,
+        "rust-analyzer.completion.addCallParentheses": true,
+        "rust-analyzer.completion.addCallArgumentSnippets": true,
+        "rust-analyzer.inlayHints.enable": true,
+        "rust-analyzer.inlayHints.parameterHints": true,
+        "rust-analyzer.inlayHints.typeHints": true,
+        "rust-analyzer.inlayHints.chainingHints": true,
+        
+        // Code formatting
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+        },
+        
+        // File associations for S-Entropy research
+        "files.associations": {
+            "*.entropy": "toml",
+            "*.s_config": "json",
+            "*.bmd": "rust",
+            "Cargo.toml": "toml",
+            "clippy.toml": "toml"
+        },
+        
+        // Search and file exclusions
+        "search.exclude": {
+            "**/target": true,
+            "**/node_modules": true,
+            "**/*.lock": true,
+            "**/build": true,
+            "**/dist": true
+        },
+        
+        // Python configuration for bindings
+        "python.defaultInterpreterPath": "./venv/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.formatting.provider": "black",
+        "python.testing.pytestEnabled": true,
+        
+        // JavaScript/TypeScript for bindings
+        "typescript.preferences.quoteStyle": "double",
+        "javascript.preferences.quoteStyle": "double",
+        "prettier.singleQuote": false,
+        "prettier.tabWidth": 2,
+        
+        // Scientific notation and mathematical symbols
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.acceptSuggestionOnEnter": "smart",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        
+        // Documentation and markdown
+        "markdown.preview.fontSize": 14,
+        "markdown.preview.lineHeight": 1.6,
+        "markdown.math.enabled": true,
+        "markdown.extension.math.enabled": true,
+        
+        // Terminal configuration for multi-language development
+        "terminal.integrated.defaultProfile.windows": "PowerShell",
+        "terminal.integrated.profiles.windows": {
+            "PowerShell": {
+                "source": "PowerShell",
+                "args": ["-NoLogo"]
+            }
+        },
+        
+        // Git configuration
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false,
+        "git.autofetch": true,
+        
+        // Performance settings for large codebase
+        "editor.maxTokenizationLineLength": 20000,
+        "editor.wordBasedSuggestions": false,
+        "typescript.disableAutomaticTypeAcquisition": true,
+        
+        // Theme and appearance for consciousness research
+        "workbench.colorTheme": "Tomorrow Night Blue",
+        "workbench.iconTheme": "material-icon-theme",
+        "editor.fontFamily": "'Fira Code', 'Consolas', monospace",
+        "editor.fontLigatures": true,
+        "editor.fontSize": 14,
+        "editor.lineHeight": 1.5,
+        
+        // Custom file patterns for BMD research
+        "files.watcherExclude": {
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/target/**": true,
+            "**/node_modules/**": true,
+            "**/build/**": true,
+            "**/research/data/**": true,
+            "**/.musande_cache/**": true
+        },
+        
+        // Spell checking for scientific terminology
+        "cSpell.words": [
+            "Musande", "BMD", "BMDs", "Kwasa", "Stella", "Lorraine",
+            "S-entropy", "entropy", "oscillatory", "predetermined",
+            "nalgebra", "ndarray", "tokio", "serde", "clippy",
+            "deterministic", "thermodynamic", "consciousness",
+            "neuroscientific", "phenomenological", "categorical"
+        ],
+        
+        // Testing configuration
+        "rust-analyzer.runnables.overrideCargo": null,
+        "rust-analyzer.runnables.cargoExtraArgs": ["--all-features"],
+        
+        // Debugging configuration
+        "debug.allowBreakpointsEverywhere": true,
+        "debug.terminal.clearBeforeReusing": true
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "🔍 Check All Crates",
+                "type": "shell",
+                "command": "cargo",
+                "args": ["check", "--workspace", "--all-features"],
+                "group": "build",
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "new"
+                }
+            },
+            {
+                "label": "🧪 Test S-Entropy Framework",
+                "type": "shell", 
+                "command": "cargo",
+                "args": ["test", "--workspace", "--all-features"],
+                "group": "test",
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "new"
+                }
+            },
+            {
+                "label": "📈 Benchmark BMD Performance",
+                "type": "shell",
+                "command": "cargo",
+                "args": ["bench", "--workspace"],
+                "group": "build",
+                "presentation": {
+                    "reveal": "always",
+                    "panel": "new"
+                }
+            },
+            {
+                "label": "📖 Generate Documentation",
+                "type": "shell",
+                "command": "cargo",
+                "args": ["doc", "--workspace", "--all-features", "--open"],
+                "group": "build"
+            }
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "🧠 Debug S-Entropy Core",
+                "type": "lldb",
+                "request": "launch",
+                "program": "${workspaceFolder}/target/debug/musande-cli",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "sourceLanguages": ["rust"]
+            },
+            {
+                "name": "🔬 Debug BMD Navigation",
+                "type": "lldb", 
+                "request": "launch",
+                "program": "${workspaceFolder}/target/debug/examples/basic_alignment",
+                "cwd": "${workspaceFolder}",
+                "sourceLanguages": ["rust"]
+            }
+        ]
+    },
+    "extensions": {
+        "recommendations": [
+            "rust-lang.rust-analyzer",
+            "tamasfe.even-better-toml",
+            "vadimcn.vscode-lldb",
+            "ms-python.python",
+            "ms-toolsai.jupyter",
+            "yzhang.markdown-all-in-one"
+        ]
+    }
+} 

@@ -1,0 +1,84 @@
+# Clippy configuration for Musande S-Entropy Framework
+# Enforces high code quality standards for consciousness-critical algorithms
+
+# Arithmetic and mathematical operations
+arithmetic-side-effects-allowed = false
+allow-mixed-uninlined-format-args = false
+
+# Cognitive complexity limits for BMD and S-entropy algorithms
+cognitive-complexity-threshold = 25
+type-complexity-threshold = 100
+
+# Documentation requirements for scientific code
+missing-docs-in-crate-items = true
+doc-valid-idents = [
+    "BMD", "S-entropy", "Kwasa", "STELLA", "Lorraine", 
+    "Musande", "S_knowledge", "S_time", "S_entropy",
+    "oscillatory", "predetermined", "manifolds"
+]
+
+# Memory safety for high-performance entropy calculations  
+disallowed-methods = [
+    { path = "std::ptr::read", reason = "Use safe alternatives for S-entropy calculations" },
+    { path = "std::ptr::write", reason = "Use safe alternatives for consciousness algorithms" },
+    { path = "std::mem::transmute", reason = "Unsafe for BMD operations" }
+]
+
+# Naming conventions for scientific constants and algorithms
+enum-variant-name-threshold = 4
+struct-excessive-bools = 4
+vec-box-size-threshold = 4096
+
+# Performance optimizations for S-entropy navigation
+trivial-copy-size-limit = 128
+pass-by-value-size-limit = 256
+too-many-arguments-threshold = 8
+too-many-lines-threshold = 120
+
+# Error handling for critical consciousness operations
+error-on-unimplemented = true
+panic-in-result-fn = true
+
+# String optimizations for S-entropy serialization
+string-lit-as-bytes = true
+string-add-assign = true
+
+# Allowed lints for scientific computing
+allowed-lints = [
+    "clippy::float_cmp",              # Scientific constants require exact comparisons
+    "clippy::suboptimal_flops",       # Mathematical precision over performance
+    "clippy::excessive_precision",    # S-entropy requires high precision
+    "clippy::many_single_char_names", # Mathematical variables (S, t, τ, etc.)
+    "clippy::similar_names",          # S_knowledge, S_time, S_entropy are similar but distinct
+]
+
+# Denied lints that could compromise consciousness algorithms
+denied-lints = [
+    "clippy::unwrap_used",
+    "clippy::expect_used", 
+    "clippy::panic",
+    "clippy::unreachable",
+    "clippy::todo",
+    "clippy::unimplemented",
+    "clippy::indexing_slicing",
+    "clippy::integer_arithmetic",
+    "clippy::float_arithmetic",
+    "clippy::lossy_float_literal",
+    "clippy::mem_forget",
+    "clippy::missing_errors_doc",
+    "clippy::missing_panics_doc",
+    "clippy::missing_safety_doc",
+]
+
+# Enforce module organization for complex S-entropy systems
+avoid-breaking-exported-api = true
+msrv = "1.75"
+
+# Performance requirements for real-time consciousness processing
+single-char-binding-names-threshold = 5
+literal-representation-threshold = 50
+
+# Safety requirements for consciousness-critical operations
+future-not-send = true
+redundant-pub-crate = true
+fallible-impl-from = true 

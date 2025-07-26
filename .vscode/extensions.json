@@ -1,0 +1,81 @@
+{
+    "recommendations": [
+        // Rust development
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates",
+        "vadimcn.vscode-lldb",
+        
+        // Multi-language support
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-python.flake8",
+        "ms-toolsai.jupyter",
+        "ms-vscode.vscode-json",
+        
+        // JavaScript/TypeScript for bindings
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        
+        // Scientific computing and mathematics
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "mathematic.vscode-latex",
+        "james-yu.latex-workshop",
+        
+        // Documentation and markdown
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "bierner.markdown-mermaid",
+        "davidanson.vscode-markdownlint",
+        
+        // Git and version control
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "github.vscode-github-actions",
+        
+        // Code quality and testing
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer",
+        "ryanluker.vscode-coverage-gutters",
+        
+        // Performance and profiling
+        "ms-vscode.vscode-perf",
+        "vadimcn.vscode-lldb",
+        
+        // Docker and containers (for deployment)
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        
+        // YAML and configuration
+        "redhat.vscode-yaml",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        
+        // Theme and UI (optional but recommended for long research sessions)
+        "zhuangtongfa.material-theme",
+        "pkief.material-icon-theme",
+        "oderwat.indent-rainbow",
+        "ms-vscode.theme-tomorrow-night-blue",
+        
+        // File management
+        "alefragnani.project-manager",
+        "ms-vscode.vscode-file-watcher",
+        
+        // Research and note-taking
+        "foam.foam-vscode",
+        "tchayen.markdown-links",
+        
+        // Specialized for consciousness research
+        "humao.rest-client",
+        "rangav.vscode-thunder-client"
+    ],
+    "unwantedRecommendations": [
+        // Avoid conflicting extensions
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake"
+    ]
+} 

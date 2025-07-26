@@ -1,0 +1,175 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# Build artifacts
+/build/
+/dist/
+/out/
+
+# IDE and Editor files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python bindings
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+
+# JavaScript/Node.js bindings  
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+*.tgz
+*.tar.gz
+
+# C bindings
+*.o
+*.a
+*.dll
+*.dylib
+*.so
+
+# Documentation
+/docs/book/
+/docs/target/
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+.pytest_cache/
+.cargo-ok
+
+# Benchmarking
+criterion/
+benchmarks/target/
+
+# Profiling
+perf.data*
+flamegraph.svg
+*.profraw
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration overrides
+config/local.toml
+config/development.toml
+config/production.toml
+
+# Secrets
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Docker
+.dockerignore
+
+# Kubernetes
+*.kubeconfig
+
+# Cloud provider configs
+.aws/
+.gcp/
+.azure/
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# Visual Studio
+.vs/
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Backup files
+*~
+*.bak
+*.backup
+*.orig
+*.rej
+
+# Musande specific
+/research/data/
+/experimental/
+/scratch/
+.musande_cache/
+s_entropy_logs/ 
