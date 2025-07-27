@@ -12,9 +12,12 @@ type-complexity-threshold = 100
 # Documentation requirements for scientific code
 missing-docs-in-crate-items = true
 doc-valid-idents = [
-    "BMD", "S-entropy", "Kwasa", "STELLA", "Lorraine", 
-    "Musande", "S_knowledge", "S_time", "S_entropy",
-    "oscillatory", "predetermined", "manifolds"
+    "BMD", "S-entropy", "Kwasa", "STELLA", "Lorraine", "Saint-Stella-Lorraine",
+    "Musande", "S_knowledge", "S_time", "S_entropy", "St-Stella",
+    "oscillatory", "predetermined", "manifolds", "tri-dimensional",
+    "entropy-oscillation", "ridiculous-solutions", "zero-computation", 
+    "infinite-computation", "Kambuzuma", "Buhera", "VPOS", "Mzekezeke",
+    "FTL", "MDTEC", "consciousness-inheritance", "thematic-contamination"
 ]
 
 # Memory safety for high-performance entropy calculations  

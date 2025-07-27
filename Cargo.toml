@@ -1,135 +1,152 @@
 [workspace]
+resolver = "2"
 members = [
     "crates/musande-core",
     "crates/musande-alignment", 
     "crates/musande-navigation",
     "crates/musande-ridiculous",
     "crates/musande-service",
-    "crates/musande-applications/quantum",
-    "crates/musande-applications/business", 
-    "crates/musande-applications/research",
+    "crates/musande-applications",
     "crates/musande-cli",
-    "crates/musande-bindings/python",
-    "crates/musande-bindings/javascript",
-    "crates/musande-bindings/c"
+    "bindings/python",
+    "bindings/javascript", 
+    "bindings/c",
+    "services/entropy-solver-service",
+    "services/timekeeping-integration",
+    "examples/basic_alignment",
+    "examples/ridiculous_solutions",
+    "examples/quantum_enhancement",
+    "examples/business_optimization",
+    "examples/scientific_discovery",
+    "tools/s_entropy_analyzer",
+    "tools/impossibility_visualizer",
+    "tools/alignment_debugger",
+    "research/experimental_validation",
+    "research/mathematical_proofs",
 ]
-
-resolver = "2"
 
 [workspace.package]
 version = "0.1.0"
-authors = ["Kundai Farai Sachikonye <kundai@fullscreentriangle.com>"]
-license = "Apache-2.0"
-repository = "https://github.com/fullscreentriangle/musande"
-homepage = "https://musande.fullscreentriangle.com"
-documentation = "https://docs.rs/musande"
-description = "The S-Entropy Framework: Mathematical substrate of consciousness and universal problem solving through Biological Maxwell Demon integration"
-keywords = ["s-entropy", "consciousness", "biological-maxwell-demon", "entropy-navigation", "problem-solving"]
-categories = ["science", "algorithms", "mathematics", "simulation"]
 edition = "2021"
-rust-version = "1.75"
+authors = ["Kundai Farai Sachikonye <kundai.sachikonye@wzw.tum.de>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/fullscreen-triangle/musande"
+description = "Implementation of the S-Entropy Framework for universal problem solving through tri-dimensional entropy navigation"
+keywords = ["s-entropy", "entropy", "navigation", "quantum", "optimization", "saint-stella-lorraine"]
+categories = ["science", "mathematics", "algorithms"]
+homepage = "https://s-entropy.org"
+documentation = "https://docs.rs/musande"
 
 [workspace.dependencies]
-# Core mathematical dependencies
-nalgebra = { version = "0.33", features = ["serde", "arbitrary", "rand"] }
-ndarray = { version = "0.15", features = ["serde", "rayon"] }
+# Core crates
+musande-core = { path = "crates/musande-core", version = "0.1.0" }
+musande-alignment = { path = "crates/musande-alignment", version = "0.1.0" }
+musande-navigation = { path = "crates/musande-navigation", version = "0.1.0" }
+musande-ridiculous = { path = "crates/musande-ridiculous", version = "0.1.0" }
+musande-service = { path = "crates/musande-service", version = "0.1.0" }
+musande-applications = { path = "crates/musande-applications", version = "0.1.0" }
+
+# Mathematical computation
+nalgebra = "0.32"
+ndarray = "0.15"
 num-complex = "0.4"
-statrs = "0.17"
-approx = "0.5"
+num-traits = "0.2"
+rand = "0.8"
+statrs = "0.16"
 
-# Async and concurrency
+# Async runtime and networking
 tokio = { version = "1.0", features = ["full"] }
-async-trait = "0.1"
-rayon = "1.8"
-crossbeam = "0.8"
-
-# Serialization and configuration
-serde = { version = "1.0", features = ["derive", "rc"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-toml = "0.8"
-bincode = "1.3"
 
-# Logging and observability
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
-tracing-opentelemetry = "0.22"
-opentelemetry = "0.21"
-opentelemetry-jaeger = "0.20"
-metrics = "0.22"
-metrics-exporter-prometheus = "0.13"
-
-# Error handling and utilities
-anyhow = "1.0"
-thiserror = "1.0"
-uuid = { version = "1.6", features = ["v4", "serde"] }
-chrono = { version = "0.4", features = ["serde"] }
-derive_more = "0.99"
-
-# Quantum computing dependencies (optional)
-quantum = { version = "0.2", optional = true }
-qiskit = { version = "0.1", optional = true }
-
-# Neural network dependencies
-candle-core = "0.3"
-candle-nn = "0.3"
-candle-transformers = "0.3"
-tch = { version = "0.14", optional = true }
-
-# Database and persistence
-sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
-redis = { version = "0.24", features = ["tokio-comp", "connection-manager"] }
-
-# Web and API
+# Service framework
 axum = "0.7"
 tower = "0.4"
-tower-http = { version = "0.5", features = ["cors", "trace"] }
-hyper = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+opentelemetry = "0.21"
 
-# CLI dependencies
-clap = { version = "4.4", features = ["derive", "env"] }
+# CLI framework
+clap = { version = "4.4", features = ["derive"] }
 indicatif = "0.17"
 console = "0.15"
 dialoguer = "0.11"
 
-# Development and testing
-criterion = { version = "0.5", features = ["html_reports"] }
-proptest = "1.4"
-quickcheck = "1.0"
-mockall = "0.12"
+# Performance optimization
+rayon = "1.8"
+crossbeam = "0.8"
+parking_lot = "0.12"
 
-# FFI bindings
-pyo3 = { version = "0.20", features = ["extension-module"], optional = true }
-napi = { version = "2.14", features = ["napi4"], optional = true }
+# Language bindings
+pyo3 = { version = "0.20", features = ["extension-module"] }
+napi = { version = "2.14", default-features = false, features = ["napi4"] }
+napi-derive = "2.14"
+wasm-bindgen = "0.2"
 cbindgen = "0.26"
 
-[workspace.features]
-default = ["std"]
-std = []
-python-bindings = ["pyo3"]
-javascript-bindings = ["napi"] 
-quantum-computing = ["quantum", "qiskit"]
-neural-networks = ["tch"]
-full = ["python-bindings", "javascript-bindings", "quantum-computing", "neural-networks"]
+# Database and storage
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
+redis = { version = "0.24", features = ["tokio-comp"] }
+
+# AI and ML integration
+candle-core = "0.3"
+candle-nn = "0.3"
+candle-transformers = "0.3"
+tch = "0.14"
+
+# Quantum computing
+quantum = "0.2"
+qiskit = "0.1"
+
+# Error handling and utilities
+anyhow = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.6", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+url = "2.4"
+
+# Testing
+proptest = "1.4"
+criterion = { version = "0.5", features = ["html_reports"] }
 
 [profile.release]
 opt-level = 3
 lto = true
 codegen-units = 1
 panic = "abort"
-strip = true
-
-[profile.dev]
-opt-level = 0
-debug = true
-overflow-checks = true
 
 [profile.bench]
 opt-level = 3
-debug = false
-lto = true
-codegen-units = 1
-
-[profile.test]
-opt-level = 1
 debug = true
-overflow-checks = true 
+
+[package]
+name = "musande"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+keywords.workspace = true
+categories.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+
+[dependencies]
+musande-core.workspace = true
+musande-alignment.workspace = true
+musande-navigation.workspace = true
+musande-ridiculous.workspace = true
+musande-service.workspace = true
+musande-applications.workspace = true
+tokio.workspace = true
+anyhow.workspace = true
+
+[[bin]]
+name = "musande"
+path = "src/main.rs"
+
+[lib]
+name = "musande"
+path = "src/lib.rs" 

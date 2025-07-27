@@ -172,4 +172,38 @@ _ReSharper*/
 /experimental/
 /scratch/
 .musande_cache/
-s_entropy_logs/ 
+s_entropy_logs/
+
+# S-Entropy Framework specific artifacts
+alignment_cache/
+navigation_cache/
+ridiculous_solutions_cache/
+saint_stella_cache/
+entropy_solver_cache/
+
+# Service-specific artifacts
+services/*/target/
+services/*/logs/
+services/*/data/
+
+# Examples and tools artifacts
+examples/*/target/
+tools/*/target/
+research/*/target/
+
+# LaTeX build artifacts (for documentation)
+docs/**/*.aux
+docs/**/*.log
+docs/**/*.out
+docs/**/*.pdf
+docs/**/*.fls
+docs/**/*.fdb_latexmk
+docs/**/*.synctex.gz
+docs/**/*.toc
+docs/**/*.nav
+docs/**/*.snm
+
+# Language binding specific
+bindings/python/target/
+bindings/javascript/pkg/
+bindings/c/include/musande.h 
