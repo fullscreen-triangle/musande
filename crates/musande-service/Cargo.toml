@@ -1,0 +1,11 @@
+[package]
+name = "musande-service"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "S-entropy service layer"
+
+[dependencies]
+musande-core = { workspace = true } 

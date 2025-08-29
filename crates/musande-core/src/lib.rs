@@ -26,7 +26,7 @@ pub mod error;
 
 // Re-export core types for convenience
 pub use constants::saint_stella::*;
-pub use types::{SEntropy, TriDimensionalS, ObserverSeparation, OscillationEndpoint};
+pub use types::SEntropy;
 pub use error::{MusandeError, Result};
 
 /// The fundamental S-Entropy type representing the tri-dimensional entropy navigation system

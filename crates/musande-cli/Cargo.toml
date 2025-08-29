@@ -1,0 +1,12 @@
+[package]
+name = "musande-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "S-entropy command line interface"
+
+[dependencies]
+musande-core = { workspace = true }
+clap = { workspace = true } 

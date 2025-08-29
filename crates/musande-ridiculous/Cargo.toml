@@ -1,0 +1,12 @@
+[package]
+name = "musande-ridiculous"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Ridiculous solutions for locally impossible problems"
+
+[dependencies]
+musande-core = { workspace = true }
+musande-alignment = { workspace = true } 

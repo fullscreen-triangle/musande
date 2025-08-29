@@ -1,0 +1,14 @@
+[package]
+name = "musande-navigation"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "S-entropy navigation algorithms and pathfinding"
+
+[dependencies]
+musande-core = { workspace = true }
+nalgebra = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true } 

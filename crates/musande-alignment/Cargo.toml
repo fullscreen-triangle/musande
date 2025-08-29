@@ -1,0 +1,39 @@
+[package]
+name = "musande-alignment"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zero-computation alignment engine for S-entropy navigation"
+keywords = ["s-entropy", "alignment", "zero-computation", "entropy", "navigation"]
+categories = ["mathematics", "science", "algorithms"]
+
+[dependencies]
+# Core musande
+musande-core = { workspace = true }
+
+# Mathematical computation
+nalgebra = { workspace = true }
+ndarray = { workspace = true }
+num-complex = { workspace = true }
+rand = { workspace = true }
+
+# Serialization
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+
+# Error handling
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# Performance
+rayon = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+proptest = { workspace = true }
+
+[[bench]]
+name = "alignment_benchmarks"
+harness = false 
