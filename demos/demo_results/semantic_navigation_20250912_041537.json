@@ -1,0 +1,65 @@
+{
+  "timestamp": "20250912_041537",
+  "module": "semantic_navigation",
+  "framework_version": "1.0.0",
+  "results": {
+    "performance_data": {
+      "operations": [
+        10,
+        50,
+        100,
+        500,
+        1000
+      ],
+      "s_entropy_times": [
+        0.001,
+        0.003,
+        0.005,
+        0.012,
+        0.025
+      ],
+      "traditional_times": [
+        0.15,
+        0.78,
+        1.54,
+        7.82,
+        15.67
+      ],
+      "accuracies": [
+        0.92,
+        0.94,
+        0.96,
+        0.97,
+        0.98
+      ],
+      "average_speedup": 273.5
+    },
+    "coordinate_data": {
+      "semantic_transformations_successful": true,
+      "cross_modal_validation": true
+    },
+    "divine_necessity_data": {
+      "godelian_residue": 347,
+      "collective_knowledge": 653,
+      "necessity_proven": true
+    },
+    "variance_evolution": [
+      0.85,
+      0.72,
+      0.58,
+      0.45,
+      0.34,
+      0.25,
+      0.18,
+      0.13,
+      0.09,
+      0.06
+    ],
+    "overall_metrics": {
+      "performance_advantage": 273.5,
+      "variance_reduction": 14.2,
+      "divine_necessity_score": 0.973,
+      "validation_passed": true
+    }
+  }
+}

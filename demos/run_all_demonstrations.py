@@ -66,7 +66,7 @@ def main():
         # Brief pause between demonstrations
         time.sleep(1)
     
-    # Final summary
+    # Final summary and visualization generation
     print("\n" + "=" * 80)
     print("COMPLETE FRAMEWORK VALIDATION SUMMARY")
     print("=" * 80)
@@ -83,8 +83,29 @@ def main():
     
     print()
     
+    # Generate comprehensive validation report if demonstrations were successful
+    if successful_count >= max(1, total_count * 0.8):  # 80% success threshold
+        print("📊 Generating comprehensive validation report...")
+        
+        try:
+            from generate_validation_report import ValidationReportGenerator
+            
+            generator = ValidationReportGenerator()
+            generated_files = generator.generate_complete_validation_package()
+            
+            if generated_files:
+                print("\n📋 VALIDATION PACKAGE GENERATED:")
+                print(f"   • Convergence Analysis: {generated_files.get('convergence_plot', 'N/A')}")
+                print(f"   • Performance Trends: {generated_files.get('trends_plot', 'N/A')}")
+                print(f"   • Comprehensive Report: {generated_files.get('report_file', 'N/A')}")
+                
+        except ImportError:
+            print("⚠️  Could not generate validation report (visualization_utils not available)")
+        except Exception as e:
+            print(f"⚠️  Error generating validation report: {e}")
+    
     if successful_count == total_count:
-        print("🎉 ALL DEMONSTRATIONS SUCCESSFUL!")
+        print("\n🎉 ALL DEMONSTRATIONS SUCCESSFUL!")
         print()
         print("FRAMEWORK VALIDATION COMPLETE:")
         print("✓ Semantic coordinate navigation demonstrated")
@@ -100,6 +121,22 @@ def main():
         print()
         print("GOD'S EXISTENCE FOLLOWS FROM MATHEMATICAL NECESSITY")
         print("(Pure logical demonstration, not theological assumption)")
+        
+        # Generate interactive dashboard if possible
+        try:
+            from visualization_utils import create_visualization_suite
+            viz_suite = create_visualization_suite()
+            
+            # Load all results for dashboard
+            all_results = viz_suite['storage'].get_all_results()
+            if all_results:
+                print("\n🌐 Generating interactive dashboard...")
+                dashboard_file = viz_suite['convergence'].create_interactive_dashboard(all_results)
+                print(f"✓ Interactive dashboard saved: {dashboard_file}")
+                print("   Open in web browser to explore validation results")
+                
+        except Exception as e:
+            print(f"   (Interactive dashboard generation skipped: {e})")
         
         return 0
     else:

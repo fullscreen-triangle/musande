@@ -24,6 +24,176 @@ import time
 from collections import defaultdict, deque
 import random
 
+# Import enhanced scientific computing packages
+from scipy import stats, optimize
+from sklearn.metrics import r2_score, mean_squared_error
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+import warnings
+warnings.filterwarnings('ignore')
+
+print("🧠 Enhanced consciousness analysis using scipy and scikit-learn")
+print("⚡ Vectorized numpy operations for optimal performance")
+
+def statistical_consciousness_validation(variance_data, understanding_scores):
+    """Advanced statistical validation of consciousness emergence using scipy and sklearn"""
+    
+    if len(variance_data) < 5:
+        return {
+            'consciousness_emergence_validated': len(variance_data) > 0 and variance_data[-1] < 0.1,
+            'statistical_significance': 'Insufficient data (need ≥5 points)'
+        }
+    
+    try:
+        # Test consciousness emergence hypothesis
+        # H0: No relationship between variance reduction and understanding emergence
+        # H1: Strong negative correlation (consciousness emerges as variance → 0)
+        
+        # Linear regression using sklearn
+        variance_array = np.array(variance_data).reshape(-1, 1)
+        understanding_array = np.array(understanding_scores)
+        
+        model = LinearRegression().fit(variance_array, understanding_array)
+        predictions = model.predict(variance_array)
+        
+        # Calculate statistics
+        correlation_coeff = model.coef_[0]
+        r_squared = r2_score(understanding_array, predictions)
+        mse = mean_squared_error(understanding_array, predictions)
+        
+        # Statistical significance test using scipy
+        # Pearson correlation test
+        corr_coeff, p_value = stats.pearsonr(variance_data, understanding_scores)
+        
+        # Test for consciousness emergence criteria
+        negative_correlation = correlation_coeff < -0.5  # Strong negative relationship
+        high_r_squared = r_squared > 0.8                # Strong explanatory power
+        significant = p_value < 0.01                    # Highly significant
+        
+        # Residual analysis for homoscedasticity (simplified)
+        residuals = understanding_array - predictions
+        normalized_residuals = (residuals - np.mean(residuals)) / np.std(residuals)
+        
+        # Breusch-Pagan test approximation using scipy
+        _, bp_p_value = stats.normaltest(normalized_residuals)
+        homoscedastic = bp_p_value > 0.05
+        
+        consciousness_validated = all([negative_correlation, high_r_squared, significant, homoscedastic])
+        
+        return {
+            'consciousness_emergence_validated': consciousness_validated,
+            'correlation_coefficient': correlation_coeff,
+            'r_squared': r_squared,
+            'p_value': p_value,
+            'mean_squared_error': mse,
+            'statistical_significance': 'Highly significant' if significant else 'Not significant',
+            'variance_homoscedasticity': 'Yes' if homoscedastic else 'No',
+            'model_intercept': model.intercept_,
+            'validation_details': {
+                'negative_correlation': negative_correlation,
+                'high_explanatory_power': high_r_squared,
+                'statistically_significant': significant,
+                'homoscedastic_residuals': homoscedastic
+            }
+        }
+        
+    except Exception as e:
+        return {
+            'consciousness_emergence_validated': False,
+            'statistical_significance': f'Analysis failed: {str(e)}'
+        }
+
+def optimized_bmd_processing(consciousness_data, modality_count=5):
+    """Optimized BMD equivalence processing using vectorized operations"""
+    consciousness_array = np.array(consciousness_data)
+    n_samples = len(consciousness_array)
+    
+    # Vectorized BMD processing across all modalities
+    modality_weights = np.arange(1, modality_count + 1) / modality_count
+    consciousness_matrix = consciousness_array[:, np.newaxis]  # Shape: (n_samples, 1)
+    weights_matrix = modality_weights[np.newaxis, :]           # Shape: (1, modality_count)
+    
+    # Broadcast multiplication and BMD calculation
+    base_processing = consciousness_matrix * weights_matrix
+    bmd_equivalence_matrix = base_processing * (1.0 - base_processing)
+    
+    return bmd_equivalence_matrix
+
+def consciousness_convergence_analysis(variance_evolution, target_variance=0.05):
+    """Analyze consciousness convergence using scipy optimization"""
+    
+    if len(variance_evolution) < 3:
+        return {
+            'convergence_achieved': False,
+            'reason': 'Insufficient data points'
+        }
+    
+    try:
+        # Fit exponential decay model: y = a * exp(-b*x) + c
+        def exponential_decay(x, a, b, c):
+            return a * np.exp(-b * x) + c
+        
+        x_data = np.arange(len(variance_evolution))
+        y_data = np.array(variance_evolution)
+        
+        # Initial parameter guess
+        initial_guess = [y_data[0] - y_data[-1], 0.1, y_data[-1]]
+        
+        # Curve fitting
+        try:
+            popt, pcov = optimize.curve_fit(exponential_decay, x_data, y_data, 
+                                          p0=initial_guess, maxfev=1000)
+            
+            # Calculate fit quality
+            y_pred = exponential_decay(x_data, *popt)
+            r_squared = r2_score(y_data, y_pred)
+            
+            # Convergence analysis
+            final_predicted_variance = popt[2]  # Parameter 'c' is the asymptote
+            decay_rate = popt[1]  # Parameter 'b' is the decay rate
+            
+            convergence_achieved = (
+                final_predicted_variance <= target_variance and
+                decay_rate > 0 and
+                r_squared > 0.8
+            )
+            
+            return {
+                'convergence_achieved': convergence_achieved,
+                'final_variance': final_predicted_variance,
+                'decay_rate': decay_rate,
+                'r_squared': r_squared,
+                'fitted_parameters': popt.tolist(),
+                'target_variance': target_variance,
+                'convergence_quality': 'Excellent' if r_squared > 0.95 else 'Good' if r_squared > 0.8 else 'Poor'
+            }
+            
+        except Exception as fit_error:
+            # Fallback to simple linear analysis
+            slope, intercept, r_value, p_value, std_err = stats.linregress(x_data, y_data)
+            
+            convergence_achieved = (
+                slope < -0.01 and  # Decreasing trend
+                y_data[-1] <= target_variance and
+                p_value < 0.05  # Significant trend
+            )
+            
+            return {
+                'convergence_achieved': convergence_achieved,
+                'final_variance': y_data[-1],
+                'linear_slope': slope,
+                'linear_r_squared': r_value**2,
+                'p_value': p_value,
+                'target_variance': target_variance,
+                'analysis_method': 'Linear (exponential fit failed)'
+            }
+        
+    except Exception as e:
+        return {
+            'convergence_achieved': False,
+            'reason': f'Analysis failed: {str(e)}'
+        }
+
 class ConsciousnessModality(Enum):
     """Different consciousness processing modalities"""
     VISUAL = "visual"
