@@ -1,0 +1,186 @@
+{
+  "theorem": "Theorem 13.1 (Multiplicative Catalytic Power)",
+  "claim": "kappa(g1 \u25c7 g2) = 1 - (1-kappa1)(1-kappa2).",
+  "n_tests": 81,
+  "n_pass": 81,
+  "max_error": 1.1102230246251565e-16,
+  "all_match": true,
+  "data_summary": {
+    "kappa_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      0.9,
+      0.95,
+      0.99
+    ],
+    "max_absolute_error": 1.1102230246251565e-16,
+    "all_within_machine_precision": true
+  },
+  "data": [
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.0,
+      "measured_composite": 0.0,
+      "predicted_composite": 0.0,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.1,
+      "measured_composite": 0.09999999999999998,
+      "predicted_composite": 0.09999999999999998,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.2,
+      "measured_composite": 0.19999999999999996,
+      "predicted_composite": 0.19999999999999996,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.3,
+      "measured_composite": 0.30000000000000004,
+      "predicted_composite": 0.30000000000000004,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.5,
+      "measured_composite": 0.5,
+      "predicted_composite": 0.5,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.7,
+      "measured_composite": 0.7,
+      "predicted_composite": 0.7,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.9,
+      "measured_composite": 0.9,
+      "predicted_composite": 0.9,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.95,
+      "measured_composite": 0.95,
+      "predicted_composite": 0.95,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.0,
+      "kappa2": 0.99,
+      "measured_composite": 0.99,
+      "predicted_composite": 0.99,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.0,
+      "measured_composite": 0.09999999999999998,
+      "predicted_composite": 0.09999999999999998,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.1,
+      "measured_composite": 0.18999999999999995,
+      "predicted_composite": 0.18999999999999995,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.2,
+      "measured_composite": 0.2799999999999999,
+      "predicted_composite": 0.2799999999999999,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.3,
+      "measured_composite": 0.3700000000000001,
+      "predicted_composite": 0.37,
+      "error": 1.1102230246251565e-16,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.5,
+      "measured_composite": 0.55,
+      "predicted_composite": 0.55,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.7,
+      "measured_composite": 0.73,
+      "predicted_composite": 0.73,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.9,
+      "measured_composite": 0.91,
+      "predicted_composite": 0.91,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.95,
+      "measured_composite": 0.955,
+      "predicted_composite": 0.955,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.1,
+      "kappa2": 0.99,
+      "measured_composite": 0.991,
+      "predicted_composite": 0.991,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.2,
+      "kappa2": 0.0,
+      "measured_composite": 0.19999999999999996,
+      "predicted_composite": 0.19999999999999996,
+      "error": 0.0,
+      "match": true
+    },
+    {
+      "kappa1": 0.2,
+      "kappa2": 0.1,
+      "measured_composite": 0.2799999999999999,
+      "predicted_composite": 0.2799999999999999,
+      "error": 0.0,
+      "match": true
+    }
+  ],
+  "status": "PASS"
+}

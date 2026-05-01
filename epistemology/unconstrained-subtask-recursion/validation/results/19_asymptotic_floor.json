@@ -1,0 +1,45 @@
+{
+  "theorem": "Theorem 35.1 (Asymptotic floor approach)",
+  "claim": "Catalysts converge to floor iff sum of kappas diverges.",
+  "n_tests": 4,
+  "all_match": true,
+  "data": [
+    {
+      "name": "convergent_kappas",
+      "n_catalysts": 30,
+      "sum_kappas": 0.9999999990686774,
+      "final_residual": 28.590021440200168,
+      "empirically_converged": false,
+      "expected_converged": false,
+      "match": true
+    },
+    {
+      "name": "divergent_kappas",
+      "n_catalysts": 100,
+      "sum_kappas": 5.187377517639621,
+      "final_residual": 0.0,
+      "empirically_converged": true,
+      "expected_converged": true,
+      "match": true
+    },
+    {
+      "name": "constant_kappas",
+      "n_catalysts": 100,
+      "sum_kappas": 10.0,
+      "final_residual": 0.0026295784898713315,
+      "empirically_converged": true,
+      "expected_converged": true,
+      "match": true
+    },
+    {
+      "name": "zero_kappas",
+      "n_catalysts": 100,
+      "sum_kappas": 0.0,
+      "final_residual": 99.0,
+      "empirically_converged": false,
+      "expected_converged": false,
+      "match": true
+    }
+  ],
+  "status": "PASS"
+}

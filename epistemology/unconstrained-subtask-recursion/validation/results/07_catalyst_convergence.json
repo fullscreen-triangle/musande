@@ -1,0 +1,142 @@
+{
+  "theorem": "Theorem 27.1 (Catalyst-driven convergence)",
+  "claim": "S-residual decays geometrically with rate (1-kappa)^n.",
+  "n_tests": 6,
+  "n_pass": 6,
+  "all_match": true,
+  "data": {
+    "kappa_0.1": {
+      "kappa": 0.1,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        89.10000000000001,
+        80.19000000000001,
+        72.171,
+        64.9539
+      ],
+      "first_5_predicted": [
+        99.0,
+        89.10000000000001,
+        80.19000000000001,
+        72.171,
+        64.9539
+      ],
+      "final_residual": 0.5102237455246923,
+      "predicted_final_residual": 0.5102237455246919,
+      "max_error_across_steps": 3.552713678800501e-15,
+      "match": true
+    },
+    "kappa_0.2": {
+      "kappa": 0.2,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        79.2,
+        63.360000000000014,
+        50.68800000000002,
+        40.55040000000002
+      ],
+      "first_5_predicted": [
+        99.0,
+        79.2,
+        63.360000000000014,
+        50.68800000000001,
+        40.55040000000001
+      ],
+      "final_residual": 0.0014129752157789888,
+      "predicted_final_residual": 0.0014129752157789042,
+      "max_error_across_steps": 7.105427357601002e-15,
+      "match": true
+    },
+    "kappa_0.3": {
+      "kappa": 0.3,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        69.3,
+        48.51,
+        33.956999999999994,
+        23.769899999999993
+      ],
+      "first_5_predicted": [
+        99.0,
+        69.3,
+        48.50999999999999,
+        33.956999999999994,
+        23.769899999999996
+      ],
+      "final_residual": 1.780480392232775e-06,
+      "predicted_final_residual": 1.7804803922209324e-06,
+      "max_error_across_steps": 7.105427357601002e-15,
+      "match": true
+    },
+    "kappa_0.5": {
+      "kappa": 0.5,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        49.5,
+        24.75,
+        12.375,
+        6.1875
+      ],
+      "first_5_predicted": [
+        99.0,
+        49.5,
+        24.75,
+        12.375,
+        6.1875
+      ],
+      "final_residual": 8.79296635503124e-14,
+      "predicted_final_residual": 8.79296635503124e-14,
+      "max_error_across_steps": 0.0,
+      "match": true
+    },
+    "kappa_0.7": {
+      "kappa": 0.7,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        29.700000000000003,
+        8.910000000000002,
+        2.673000000000001,
+        0.8019000000000003
+      ],
+      "first_5_predicted": [
+        99.0,
+        29.700000000000003,
+        8.910000000000002,
+        2.6730000000000014,
+        0.8019000000000005
+      ],
+      "final_residual": 0.0,
+      "predicted_final_residual": 7.107190078149394e-25,
+      "max_error_across_steps": 4.440892098500626e-16,
+      "match": true
+    },
+    "kappa_0.9": {
+      "kappa": 0.9,
+      "n_steps": 50,
+      "first_5_residuals": [
+        99.0,
+        9.899999999999999,
+        0.9899999999999998,
+        0.09899999999999998,
+        0.00990000000000002
+      ],
+      "first_5_predicted": [
+        99.0,
+        9.899999999999999,
+        0.9899999999999995,
+        0.09899999999999994,
+        0.00989999999999999
+      ],
+      "final_residual": 0.0,
+      "predicted_final_residual": 9.899999999999889e-49,
+      "max_error_across_steps": 2.220446049250313e-16,
+      "match": true
+    }
+  },
+  "status": "PASS"
+}

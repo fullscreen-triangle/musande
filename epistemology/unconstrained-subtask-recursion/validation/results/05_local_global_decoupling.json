@@ -1,0 +1,74 @@
+{
+  "theorem": "Theorem 10.3 (Local-Global Decoupling)",
+  "claim": "Local subtask S-values can be arbitrary while global S-value is preserved.",
+  "n_tests": 8,
+  "n_pass": 8,
+  "all_preserved": true,
+  "data": [
+    {
+      "extreme_intermediate": -1000,
+      "expression": "(3.0 + (-1000 - -1000))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 1003.0,
+      "intermediate_local_S_normalised": 100.0
+    },
+    {
+      "extreme_intermediate": -100,
+      "expression": "(3.0 + (-100 - -100))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 103.0,
+      "intermediate_local_S_normalised": 100.0
+    },
+    {
+      "extreme_intermediate": -50,
+      "expression": "(3.0 + (-50 - -50))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 53.0,
+      "intermediate_local_S_normalised": 53.0
+    },
+    {
+      "extreme_intermediate": -10,
+      "expression": "(3.0 + (-10 - -10))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 13.0,
+      "intermediate_local_S_normalised": 13.0
+    },
+    {
+      "extreme_intermediate": 0,
+      "expression": "(3.0 + (0 - 0))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 3.0,
+      "intermediate_local_S_normalised": 3.0
+    },
+    {
+      "extreme_intermediate": 100,
+      "expression": "(3.0 + (100 - 100))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 97.0,
+      "intermediate_local_S_normalised": 97.0
+    },
+    {
+      "extreme_intermediate": 1000,
+      "expression": "(3.0 + (1000 - 1000))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 997.0,
+      "intermediate_local_S_normalised": 100.0
+    },
+    {
+      "extreme_intermediate": 10000,
+      "expression": "(3.0 + (10000 - 10000))",
+      "global_value": 3.0,
+      "global_preserved": true,
+      "intermediate_local_distance": 9997.0,
+      "intermediate_local_S_normalised": 100.0
+    }
+  ],
+  "status": "PASS"
+}

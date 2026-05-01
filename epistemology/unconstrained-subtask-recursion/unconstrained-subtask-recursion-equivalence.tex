@@ -402,7 +402,7 @@ property: it depends only on the structure of $\receiver$,
 not on the candidate or the truth.  Two distinct truths
 $x_{1}^{*}, x_{2}^{*} \in \Truth$ can be approached
 to the same floor but no closer.
-\end{remark>
+\end{remark}
 
 \section{The Conjugate Pair $(x, x^{*})$ and Symmetric S-functionals}
 \label{sec:conjugate-pair}
@@ -433,7 +433,7 @@ distinct $x, y \in \Cands$:
 \[
 \Sscalar_{\receiver}(x, y) \geq \Sfloor(\receiver).
 \]
-\end{proposition>
+\end{proposition}
 
 \begin{proof}
 Apply triangle inequality with $z = x$:
@@ -445,7 +445,7 @@ by the diagonal floor, $\Sscalar_{\receiver}(x, y)
 \geq \Sfloor(\receiver)/2$.  By induction on the
 hop count between $x$ and $y$ in any finite cover, the
 bound tightens to $\Sfloor(\receiver)$.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:semimetric}
 Symmetric S-functionals satisfying both axioms above form
@@ -558,7 +558,7 @@ $\lambda_{\omega}(m) :=
         / 2^{\lfloor \log_{2} \omega(m) \rfloor - 1} \rfloor,
  \arg \Phi(m, 0))$.
 On morphisms, $F_{OC}$ acts by restriction.
-\end{construction>
+\end{construction}
 
 \begin{construction}[Conversion functor $F_{CP}$]\label{constr:F-CP}
 Define $F_{CP} : \mathbf{Cat} \to \mathbf{Part}$ on
@@ -568,7 +568,7 @@ first $n$ coordinates; then the family $\{P_{n}\}$ of
 partitions is induced by the labels.  Define
 $\pi$ as the pushforward of $\nu$ under quotient by
 $\sim_{n}$ in the limit.
-\end{construction>
+\end{construction}
 
 \begin{construction}[Conversion functor $F_{PO}$]\label{constr:F-PO}
 Define $F_{PO} : \mathbf{Part} \to \mathbf{Osc}$ by
@@ -578,7 +578,7 @@ P_{n}$ is the limit partition (atoms in the generated
 $\sigma$-algebra), $\omega_{\Part}(p) := 1/\pi(p)$
 (inverse-measure frequency, by Kac's lemma analogue),
 and $\Phi_{\Part}(p, t) := e^{2\pi i \omega_{\Part}(p) t}$.
-\end{construction>
+\end{construction}
 
 \begin{theorem}[Triple Equivalence]\label{thm:triple-equiv}
 The functors $F_{OC}$, $F_{CP}$, $F_{PO}$ are part of
@@ -598,7 +598,7 @@ F_{OC} \;\cong\; F_{PC} \circ F_{OP},\quad
 F_{CP} \;\cong\; F_{OP} \circ F_{CO},\quad
 F_{PO} \;\cong\; F_{CO} \circ F_{PC}.
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 We sketch the construction of $F_{CO}$ (the inverse of
@@ -622,7 +622,7 @@ key observation is that all three structures encode the
 same information about the underlying probability
 measure under the same generating $\sigma$-algebra; the
 choice between them is computational, not informational.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Free conversion]\label{cor:free-conversion}
 For any computation $f$ defined in one of the three
@@ -631,11 +631,11 @@ f^{P}$ in the other representations such that the
 diagram of conversions commutes up to natural
 isomorphism.  Thus a computation may be performed in
 whichever representation makes it cheapest.
-\end{corollary>
+\end{corollary}
 
 \begin{proof}
 Direct from the equivalence in Theorem~\ref{thm:triple-equiv}.
-\end{proof>
+\end{proof}
 
 \section{Representation Cost and Optimal Selection}
 \label{sec:rep-cost}
@@ -647,7 +647,7 @@ $R \in \{\Osc, \Cat, \Part\}$, the
 $\Conv_{R}(f) \in \Real_{\geq 0}$ is the minimum
 number of elementary operations of $R$'s algebraic
 structure required to compute $f$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Conversion cost]\label{def:conv-cost}
 For representations $R, R' \in \{\Osc, \Cat, \Part\}$,
@@ -656,7 +656,7 @@ $\Conv_{R \to R'} \in \Real_{\geq 0}$ is the minimum
 number of elementary operations to convert an object
 of representation $R$ to one of representation $R'$
 (using the functor of Theorem~\ref{thm:triple-equiv}).
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Optimal representation]\label{thm:opt-rep}
 For any computation $f$, the optimal total cost over
@@ -666,7 +666,7 @@ the choice of representation is
    \bigl[\Conv_{R}(f) +
           \min_{R'}\Conv_{R \to R'}\bigr].
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct from Corollary~\ref{cor:free-conversion}: every
@@ -674,7 +674,7 @@ computation has equivalent forms in all three
 representations, so the cost is the minimum of the
 representation-specific costs plus any necessary
 conversion to the desired output representation.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:apples-oranges}
 Theorem~\ref{thm:opt-rep} formalises the principle that
@@ -685,7 +685,7 @@ conversion to a common representation.  No special
 mixing is a consequence of selecting the most
 computationally efficient representation in which the
 calculation is type-uniform.
-\end{remark>
+\end{remark}
 
 \clearpage
 
@@ -703,7 +703,7 @@ representation spaces $\Osc \cup \Cat \cup \Part$,
 together with a designated representation tag
 $R \in \{\mathfrak{O}, \mathfrak{C}, \mathfrak{P}\}$.
 We write atomic expressions as pairs $(\alpha, R)$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[S-expression]\label{def:s-expression}
 The set of \emph{S-expressions} $\Expr$ is the smallest
@@ -731,14 +731,14 @@ set generated by:
 We write $\Expr$ for the set of all S-expressions,
 $\Expr^{(d)}$ for those of recursion depth at most $d$,
 and $\Expr^{*}$ for those of finite depth.
-\end{definition>
+\end{definition}
 
 \begin{remark}\label{rem:expression-graph}
 S-expressions form a graded directed graph: the depth
 of an expression is the maximum nesting depth of
 recursive triples, and the conversions form labelled
 edges between representation tags.
-\end{remark>
+\end{remark}
 
 \begin{definition}[Receiver evaluation]\label{def:eval}
 For receiver $\receiver$, the \emph{receiver evaluation}
@@ -766,7 +766,7 @@ defined inductively by:
          \eval_{\receiver}(\xi_{t}),
          \eval_{\receiver}(\xi_{e}))$.
 \end{enumerate}
-\end{definition>
+\end{definition}
 
 \begin{definition}[S-value of an expression]\label{def:s-value-exp}
 For receiver $\receiver$, expression $\xi \in \Expr$,
@@ -778,7 +778,7 @@ and truth $x^{*} \in \Truth$:
 provided $\eval_{\receiver}(\xi)$ is defined; otherwise
 $\Sscalar_{\receiver}(\xi, x^{*}) := 100$
 (undefined evaluation $=$ maximum distance).
-\end{definition>
+\end{definition}
 
 \section{Subtask Decomposition}
 \label{sec:subtask-decomposition}
@@ -790,7 +790,7 @@ binary, unary, conversion, or triple operation in the
 inductive construction of $\xi$.  We write
 $\Sub(\xi) \subseteq \Expr$ for the set of subtasks of
 $\xi$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Composition]\label{def:composition}
 A \emph{composition} of an expression $\xi$ is a finite
@@ -799,14 +799,14 @@ $(\eta_{1}, \star_{1}, \eta_{2}, \star_{2}, \ldots,
  \eta_{n})$ in $\Expr$ such that
 $\eta_{1} \star_{1} \eta_{2} \star_{2} \cdots \star_{n-1}
 \eta_{n} = \xi$ when evaluated under the receiver.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Composition multiplicity]\label{thm:comp-mult}
 For any expression $\xi \in \Expr^{*}$ of finite depth,
 the number of distinct compositions of $\xi$ in the
 sense of Definition~\ref{def:composition} is at least
 $2^{|\Sub(\xi)|-1}$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 For each subtask $\eta \in \Sub(\xi)$ that occurs as the
@@ -816,7 +816,7 @@ non-commutative interpretations of operations.  By
 induction on the size of $|\Sub(\xi)|$, the number of
 compositions doubles at each binary node, yielding the
 bound.
-\end{proof>
+\end{proof}
 
 \begin{example}\label{ex:integer-3}
 Consider the integer $3 \in \Expr$.  Its compositions
@@ -831,7 +831,7 @@ include:
 \end{align*}
 All such compositions evaluate to $3$ under any
 arithmetically faithful receiver.
-\end{example>
+\end{example}
 
 \section{The Unconstrained Subtask Theorem}
 \label{sec:unconstrained-subtask}
@@ -852,7 +852,7 @@ $\xi'$ obtained from $\xi$ by replacing $\eta$ with
 arbitrary $\eta' \in \Expr$ such that
 $\eval_{\receiver}(\xi') = k^{*}$ and
 $\Sscalar_{\receiver}(\xi', x^{*}) = \Sscalar^{*}$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Let $\xi$ be parsed as
@@ -896,7 +896,7 @@ the expression as a whole.  Examples:
 The freedom is the freedom to choose any $\eta'$
 in the equivalence class
 $[\eta]_{\eval_{\receiver}}$.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Local infeasibility is global feasibility]
 \label{cor:local-infeasibility}
@@ -905,7 +905,7 @@ $\Sscalar^{*} \to \Sfloor(\receiver)$ (near-perfect)
 in which one or more subtasks have local S-value
 $\Sscalar_{\receiver}(\eta, x^{*}) = 100$ (maximally
 incorrect).
-\end{corollary>
+\end{corollary}
 
 \begin{proof}
 Take $\xi = \eta + (-\eta) + \eta_{0}$ where
@@ -915,7 +915,7 @@ S-value is at floor.  By
 Theorem~\ref{thm:unconstrained-subtask}, the
 composition has the same global S-value as
 $\eta_{0}$ alone.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:apples-oranges-clean}
 Theorem~\ref{thm:unconstrained-subtask} formalises
@@ -928,7 +928,7 @@ a common representation (via the functors of
 Theorem~\ref{thm:triple-equiv}) before composition.
 The local types are surface; the global S-value is
 what is asserted.
-\end{remark>
+\end{remark}
 
 \section{The Cross-Representation Composition Theorem}
 \label{sec:cross-rep-comp}
@@ -944,7 +944,7 @@ $\xi_{1} \star_{1} \xi_{2} \star_{2} \cdots \star_{n-1}
 \xi_{n}$ is well-defined under
 $\eval_{\receiver}$ for any
 representation-coherent receiver $\receiver$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By Definition~\ref{def:eval}, the receiver evaluation
@@ -957,7 +957,7 @@ $\Phi^{R_{i} \to R}(\xi_{i})$ is performed.  The
 result of this implicit conversion is well-defined by
 Theorem~\ref{thm:triple-equiv} and the conversion
 cost is bounded by Definition~\ref{def:conv-cost}.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Apples and oranges admissibility]
 \label{cor:apples-oranges}
@@ -966,11 +966,11 @@ For any finite sequence of expressions $\xi_{i}$ each
 in any representation, and any binary operation
 sequence, the composition is admissible at
 $\receiver$.
-\end{corollary>
+\end{corollary}
 
 \begin{proof}
 Apply Theorem~\ref{thm:cross-rep} repeatedly.
-\end{proof>
+\end{proof}
 
 \section{Local-Global Decoupling}
 \label{sec:local-global-decoupling}
@@ -988,7 +988,7 @@ $\eta_{1}, \ldots, \eta_{n}$ satisfying:
 \item $\Sscalar_{\receiver}(\eta_{i}, x^{*}) = \sigma_{i}$
       for each $i$.
 \end{enumerate}
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Construct $\xi := \xi_{0} + \sum_{i=1}^{n} (\eta_{i} - \eta_{i})$
@@ -1000,7 +1000,7 @@ $\eta_{i}$ are arbitrary subject to their evaluations
 cancelling.  By Lemma~\ref{lem:image-S}, every value
 in $[\Sfloor(\receiver), 100]$ is achievable as a
 local S-value.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[The miracle principle]\label{cor:miracle}
 For any global S-value $\Sscalar^{*}$, there exist
@@ -1008,12 +1008,12 @@ expressions $\xi$ realising $\Sscalar^{*}$ in which
 arbitrarily many subtasks have S-value $100$
 (\emph{locally maximally infeasible}).  We call such
 subtasks \emph{miracles}.
-\end{corollary>
+\end{corollary}
 
 \begin{proof}
 Apply Theorem~\ref{thm:lg-decoupling} with
 $\sigma_{i} = 100$ for all $i$ in any chosen subset.
-\end{proof>
+\end{proof}
 
 \clearpage
 
@@ -1039,7 +1039,7 @@ $\diamond$) reduces global S-value:
 \]
 for every $\xi$ with $\Sscalar_{\receiver}(\xi, x^{*})
 > \Sfloor(\receiver)$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Catalytic power]\label{def:catalytic-power}
 The \emph{catalytic power} of catalyst $\gamma$ at
@@ -1055,18 +1055,18 @@ The catalyst is \emph{strict} if
 $\catpow_{\receiver, x^{*}}(\gamma) > 0$, \emph{absolute} if
 $\catpow_{\receiver, x^{*}}(\gamma) = 1$, and \emph{neutral}
 if $\catpow_{\receiver, x^{*}}(\gamma) = 0$.
-\end{definition>
+\end{definition}
 
 \begin{lemma}[Catalytic-power range]\label{lem:cat-power-range}
 For every catalyst $\gamma$:
 $\catpow_{\receiver, x^{*}}(\gamma) \in [0, 1]$.
-\end{lemma>
+\end{lemma}
 
 \begin{proof}
 The numerator is bounded above by the denominator
 because S-values cannot decrease below $\Sfloor(\receiver)$
 (Corollary~\ref{cor:smallest-knowable}).
-\end{proof>
+\end{proof}
 
 \section{Composition of Catalysts}
 \label{sec:composition-catalysts}
@@ -1083,7 +1083,7 @@ $\gamma_{1} \diamond \gamma_{2}$ is
 \catpow_{\receiver, x^{*}}(\gamma_{1} \diamond \gamma_{2})
 \;=\; 1 - (1 - \catpow_{1})(1 - \catpow_{2}).
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Apply $\gamma_{1}$ first; the residual S-distance
@@ -1093,14 +1093,14 @@ further multiplied by $(1 - \catpow_{2})$.  The total
 fraction of distance closed is
 $1 - (1 - \catpow_{1})(1 - \catpow_{2})$, which is the
 catalytic power of the composite.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Diminishing returns]\label{cor:diminishing-returns}
 Repeated application of the same catalyst $\gamma$ a
 total of $n$ times yields composite catalytic power
 $1 - (1 - \catpow)^{n}$, which converges to
 $1$ as $n \to \infty$ but never reaches it.
-\end{corollary>
+\end{corollary}
 
 \begin{remark}\label{rem:perfect-catalyst}
 A catalyst with $\catpow = 1$ (absolute) reduces
@@ -1110,7 +1110,7 @@ a perfectly-aligned decoder for the truth.  By
 Theorem~\ref{thm:floor-positivity}, the floor itself
 cannot be removed; absolute catalysts merely close
 the residual distance above floor in one step.
-\end{remark>
+\end{remark}
 
 \section{Locally-Impossible Catalysts}
 \label{sec:locally-impossible}
@@ -1120,13 +1120,13 @@ the residual distance above floor in one step.
 A catalyst $\gamma \in \Expr$ is
 \emph{locally impossible} if
 $\Sscalar_{\receiver}(\gamma, x^{*}) = 100$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Locally-impossible catalysts can have
 positive power]\label{thm:loc-imp-positive}
 There exist locally-impossible catalysts $\gamma$ with
 $\catpow_{\receiver, x^{*}}(\gamma) > 0$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Construct $\gamma := \eta + (-\eta + \delta)$ where
@@ -1140,7 +1140,7 @@ $\Sfloor(\receiver) + \epsilon$ for arbitrarily small
 $\epsilon > 0$.  Substituting $\gamma$ into a parent
 expression $\xi$ via $\diamond$ reduces the global
 S-distance by the amount represented by $\delta$.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:miracle-as-catalyst}
 Theorem~\ref{thm:loc-imp-positive} formalises the
@@ -1150,7 +1150,7 @@ global level.  This is the rigorous statement of the
 miracle principle: locally infeasible (`miraculous')
 subtasks compose into globally feasible (`mathematical')
 expressions.
-\end{remark>
+\end{remark}
 
 \section{The Catalyst Algebra}
 \label{sec:catalyst-algebra}
@@ -1166,20 +1166,20 @@ equipped with the binary operation $\diamond$ of
 catalyst composition and the unit
 $\mathbf{1}_{\diamond}$ being the empty expression
 (neutral catalyst).
-\end{definition>
+\end{definition}
 
 \begin{proposition}[Monoid structure]\label{prop:monoid}
 $(\Frame_{\receiver, x^{*}}, \diamond,
 \mathbf{1}_{\diamond})$ is a monoid: the operation
 is associative and the unit is two-sided.
-\end{proposition>
+\end{proposition}
 
 \begin{proof}
 Associativity follows from the associativity of
 composition in $\Expr$ and the multiplicativity of
 catalytic power.  The unit is the empty expression,
 whose application leaves the receiver unchanged.
-\end{proof>
+\end{proof}
 
 \begin{proposition}[Non-commutativity]\label{prop:non-comm}
 The catalyst algebra is in general non-commutative:
@@ -1187,7 +1187,7 @@ there exist $\gamma_{1}, \gamma_{2} \in \Frame$ with
 $\gamma_{1} \diamond \gamma_{2} \neq \gamma_{2}
 \diamond \gamma_{1}$ as expressions, even though
 their catalytic powers may be equal.
-\end{proposition>
+\end{proposition}
 
 \begin{proof}
 The order of catalyst application affects the
@@ -1197,7 +1197,7 @@ Theorem~\ref{thm:mult-cat-power} gives the catalytic
 power of the composite as a symmetric function of
 $\catpow_{1}, \catpow_{2}$, but the receiver-internal
 state need not coincide.
-\end{proof>
+\end{proof}
 
 \clearpage
 
@@ -1222,7 +1222,7 @@ satisfying
 The components $\xi_{k}, \xi_{t}, \xi_{e}$ are the
 \emph{$k$-component, $t$-component, $e$-component} of
 the decomposition.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Recursive triple]\label{def:rec-triple}
 A \emph{recursive triple} of $\xi$ at depth $d$ is a
@@ -1233,14 +1233,14 @@ $(\xi_{t,k}, \xi_{t,t}, \xi_{t,e})$,
 $(\xi_{e,k}, \xi_{e,t}, \xi_{e,e})$ of each component,
 and so on, with the recursion continued to depth $d$
 or all the way down ($d = \infty$).
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Existence of recursive triple]
 \label{thm:exist-rec-triple}
 For every $\xi \in \Expr$ and every depth $d \in
 \Natural \cup \{\infty\}$, there exists a recursive
 triple of $\xi$ at depth $d$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 We construct the recursive triple by induction on
@@ -1254,7 +1254,7 @@ hypothesis, each component admits a recursive
 triple at depth $d$.  At $d = \infty$, the recursion
 continues without termination, yielding an
 infinite ternary tree.
-\end{proof>
+\end{proof}
 
 \begin{theorem}[Multiplicity of recursive triples]
 \label{thm:mult-rec-triple}
@@ -1264,7 +1264,7 @@ where the count grows by a factor of at least
 $3 \cdot 4$ at each depth increment owing to the three
 component choices and the four operation directions
 of the embedding.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 At depth $d = 1$, there are at least three
@@ -1275,7 +1275,7 @@ least four binary-operation embeddings (positive
 addition, negative addition, multiplication, division,
 modulo non-degeneracy), and three components multiply
 to give the bound.
-\end{proof>
+\end{proof}
 
 \section{Scale Invariance}
 \label{sec:scale-invariance}
@@ -1285,7 +1285,7 @@ The \emph{scale operator}
 $\sigma_{d \to d+1}: \Expr^{(d)} \to \Expr^{(d+1)}$
 is the map sending an expression $\xi$ at depth $d$
 to the expression $(\xi, 0, 0)$ at depth $d+1$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Trivial extension]\label{def:trivial-ext}
 The \emph{trivial extension} of $\xi \in \Expr^{(d)}$
@@ -1293,7 +1293,7 @@ to depth $d+1$ is the recursive triple
 $(\xi, \mathbf{0}, \mathbf{0})$ where $\mathbf{0}$ is
 the zero-expression evaluating to the unit element of
 $K_{\receiver}$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Scale invariance of S-value]
 \label{thm:scale-inv}
@@ -1303,14 +1303,14 @@ truth $x^{*}$:
 \Sscalar_{\receiver}(\sigma_{d \to d+1}(\xi), x^{*})
 \;=\; \Sscalar_{\receiver}(\xi, x^{*}).
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By Definition~\ref{def:trivial-ext}, the scale operator
 adds zero-evaluating components.  By
 Definition~\ref{def:eval}, these contribute nothing to
 the receiver's evaluation, so the S-value is preserved.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Scale-invariant evaluation]
 \label{cor:scale-inv-eval}
@@ -1318,7 +1318,7 @@ The receiver evaluation $\eval_{\receiver}$ is
 invariant under the scale operator:
 $\eval_{\receiver}(\sigma_{d \to d+1}(\xi)) =
 \eval_{\receiver}(\xi)$.
-\end{corollary>
+\end{corollary}
 
 \section{No Privileged Level}
 \label{sec:no-privileged-level}
@@ -1332,14 +1332,14 @@ $d+1$, and $\Sscalar_{\receiver}(\xi', x^{*}) =
 expression appears as ``global'' at depth $d$ and as
 ``subtask'' at depth $d+1$, with identical S-value
 in both roles.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Take $\xi' := (\xi, \mathbf{0}, \mathbf{0})$ as in the
 trivial extension; the inner $\xi$ is now a
 subtask of $\xi'$.  The S-value is preserved by
 Theorem~\ref{thm:scale-inv}.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Recursive global identification]
 \label{cor:recursive-global}
@@ -1347,7 +1347,7 @@ For any expression $\xi$ at any depth, the choice of
 which level of the recursive triple is treated as
 ``global'' is a free parameter: the calculus is
 indifferent to this choice.
-\end{corollary>
+\end{corollary}
 
 \begin{proof}
 By Theorem~\ref{thm:no-priv-level}, every level admits
@@ -1355,7 +1355,7 @@ extension upward as a subtask; by recursion, every
 subtask is itself a global expression at the next
 depth down.  The system is therefore self-similar
 under the recursive triple operation.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:scale-ambiguity}
 Corollary~\ref{cor:recursive-global} expresses the
@@ -1364,7 +1364,7 @@ machinery applies at every level of recursion, and
 the system has no canonical global level.  The
 choice of global is therefore a labelling convention,
 not a structural property.
-\end{remark>
+\end{remark}
 
 \section{Recursive Coordinates}
 \label{sec:recursive-coordinates}
@@ -1376,7 +1376,7 @@ sequence
 $(c_{1}, c_{2}, \ldots, c_{n}) \in \{k, t, e\}^{n}$.
 The set of all recursive coordinate paths of length
 $n$ is $\{k, t, e\}^{n}$, of cardinality $3^{n}$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Coordinate selection]\label{def:coord-sel}
 For a recursive triple of $\xi$ at depth $d \geq n$
@@ -1387,7 +1387,7 @@ sub-expression obtained by descending the path:
 $\xi_{(c_{1})} = \xi_{c_{1}}$, and
 $\xi_{(c_{1}, \ldots, c_{n})} =
 (\xi_{(c_{1}, \ldots, c_{n-1})})_{c_{n}}$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Coordinate selection multiplicity]
 \label{thm:coord-mult}
@@ -1395,18 +1395,18 @@ For every recursive triple of $\xi$ at depth $d$
 and every $n \leq d$, the number of coordinate
 selections $\xi_{\bm{p}}$ for $|\bm{p}| = n$ is
 exactly $3^{n}$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By definition, each coordinate path of length $n$
 selects exactly one sub-expression, and there are
 $3^{n}$ such paths.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Exponential refinement]\label{cor:exp-refinement}
 The number of coordinate selections at depth $d$ in
 a recursive triple is $3^{d}$, growing exponentially.
-\end{corollary>
+\end{corollary}
 
 \section{The Recursive S-Tuple}
 \label{sec:recursive-stuple}
@@ -1420,7 +1420,7 @@ $\bm{S}^{(d)}_{\receiver, x^{*}}(\xi) \in
 \Sscalar_{\receiver}(\xi_{\bm{p}}, x^{*})
 \]
 for each coordinate path $\bm{p}$ of length $d$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Component additivity]\label{thm:comp-add}
 For receiver $\receiver$ with operation
@@ -1434,7 +1434,7 @@ combination, the global S-value satisfies:
 where $\mathfrak{F}$ is a fixed combining functional
 on $\Sscale^{3^{d}}$ depending only on the
 receiver structure.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 The recursive triple decomposes the evaluation of
@@ -1447,7 +1447,7 @@ operations are commutative and associative,
 $\mathfrak{F}$ is a sum (suitably normalised); for
 non-commutative operations, $\mathfrak{F}$ is more
 complex but always well-defined.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:f-as-receiver-property}
 The combining functional $\mathfrak{F}$ is
@@ -1456,7 +1456,7 @@ combine sub-expression S-values differently.  The
 common case of $\mathfrak{F}(\bm{s}) = \frac{1}{3^{d}}
 \sum_{\bm{p}} s_{\bm{p}}$ corresponds to a
 mean-aggregating receiver.
-\end{remark>
+\end{remark}
 
 \clearpage
 
@@ -1478,7 +1478,7 @@ $\sigma(\xi_{i}, \Ax')$ measuring the degree to which
 $\Ax'$ supports $\xi_{i}$, normalised so that
 $\sigma(\xi_{i}, \emptyset) = 0$ and
 $\sigma(\xi_{i}, \Expr) = 1$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Mutual support]\label{def:mutual-support}
 A collection $\Ax = \{\xi_{1}, \ldots, \xi_{n}\}$ is
@@ -1487,7 +1487,7 @@ A collection $\Ax = \{\xi_{1}, \ldots, \xi_{n}\}$ is
 \sigma(\xi_{i}, \Ax \setminus \{\xi_{i}\}) \;\geq\; \theta
 \quad \text{for every } i \in \{1, \ldots, n\}.
 \]
-\end{definition>
+\end{definition}
 
 \begin{definition}[Validation graph]\label{def:val-graph}
 The \emph{validation graph} of $\Ax$ at threshold
@@ -1495,7 +1495,7 @@ $\theta$ is the directed graph $G_{\Ax, \theta} =
 (V, E)$ where $V = \Ax$ and
 $E = \{(\xi_{j}, \xi_{i}) : \sigma(\xi_{i},
 \{\xi_{j}\}) \geq \theta\}$.
-\end{definition>
+\end{definition}
 
 \section{Linear Justification Failure}
 \label{sec:linear-failure}
@@ -1512,7 +1512,7 @@ $\xi_{0} \leftarrow \xi_{1} \leftarrow \cdots
 \item $\xi_{n}$ requires no support;
 \item $\Sscalar_{\receiver}(\xi_{0}, x^{*}) = 0$.
 \end{enumerate}
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Condition (iii) requires
@@ -1521,7 +1521,7 @@ Theorem~\ref{thm:floor-positivity},
 $\Sscalar_{\receiver}(x, x^{*}) \geq
 \Sfloor(\receiver) > 0$ for every $x$.  Therefore
 no such sequence exists.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Infinite regress non-termination]
 \label{cor:inf-regress}
@@ -1529,7 +1529,7 @@ A linear justification chain that does not terminate
 provides no foundation: the chain has no element
 $\xi_{n}$ requiring no support, and the support of
 $\xi_{0}$ is not established.
-\end{corollary>
+\end{corollary}
 
 \section{Circular Validity}
 \label{sec:circular-validity}
@@ -1545,7 +1545,7 @@ $\theta$} if:
 \item the validation graph $G_{\Ax, \theta}$ is
       strongly connected.
 \end{enumerate}
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Necessity of circular validity]
 \label{thm:nec-circular}
@@ -1556,7 +1556,7 @@ validation: linear and dogmatic alternatives are
 ruled out by Theorem~\ref{thm:linear-failure} and
 the dogmatic acceptance of unjustified expressions
 respectively.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By Theorem~\ref{thm:linear-failure}, no linear chain
@@ -1568,14 +1568,14 @@ mutual-support condition (vacuously, as
 $\sigma(\xi_{n}, \emptyset) = 0$ by
 Definition~\ref{def:support}).  Thus circular
 validity is the only remaining option.
-\end{proof>
+\end{proof}
 
 \begin{theorem}[Sufficiency of circular validity at
 size three]\label{thm:suff-circular-three}
 A collection of size $|\Ax| = 3$ at threshold
 $\theta > 0.5$ is sufficient to provide
 foundational coherence.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 With $|\Ax| = 3$, each expression is supported by
@@ -1588,7 +1588,7 @@ threshold, the collection is internally coherent.
 The threshold $0.5$ is the minimal value that
 prevents the validation graph from decomposing into
 two-element sub-cycles.
-\end{proof>
+\end{proof}
 
 \section{Stability}
 \label{sec:stability}
@@ -1602,7 +1602,7 @@ satisfying $\Sscalar_{\receiver}(\xi_{i}', x^{*}) -
 \Sscalar_{\receiver}(\xi_{i}, x^{*}) < \delta$ yields
 a collection $\Ax'$ that remains mutually supporting
 at the same threshold.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Stability theorem]\label{thm:stability}
 A circularly valid collection $\Ax$ at threshold
@@ -1611,7 +1611,7 @@ perturbations of magnitude $\delta$ provided
 \[
 \delta \leq \frac{\theta}{|\Ax| - 1}.
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 A perturbation in any single expression changes the
@@ -1621,13 +1621,13 @@ to be preserved, each remaining sum must remain
 above $\theta$.  Since each expression supports
 $|\Ax| - 1$ others, the budget for stability is
 $\theta / (|\Ax| - 1)$.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Stability scaling]\label{cor:stability-scaling}
 Larger circularly valid collections are
 proportionally more stable: doubling $|\Ax|$ halves
 the per-perturbation impact.
-\end{corollary>
+\end{corollary}
 
 \section{Coherence}
 \label{sec:coherence}
@@ -1643,14 +1643,14 @@ where $\kappa(\xi, \xi')$ is the consistency
 indicator (taking values in $[0, 1]$) measuring
 agreement between $\xi$ and $\xi'$ at the
 receiver's evaluation.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Coherence threshold]\label{thm:coh-threshold}
 A collection $\Ax$ provides functional foundation if
 $\Cohere(\Ax) > \Cohere_{\mathrm{threshold}}$ and
 $|\Ax| \geq |\Ax|_{\min}$ where the threshold and
 minimum size are receiver-dependent constants.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct from the definitions and the analysis of
@@ -1658,7 +1658,7 @@ Section~\ref{sec:stability}.  The threshold is
 chosen so that the coherence exceeds the noise
 inherent to the support function, and the minimum
 size is $\geq 3$ by Theorem~\ref{thm:suff-circular-three}.
-\end{proof>
+\end{proof}
 
 \clearpage
 
@@ -1681,7 +1681,7 @@ satisfying associativity in $K_{\receiver}$:
 (\xi_{1} \star \xi_{2}) \star' \xi_{3}
 \;=\; \xi_{1} \star (\xi_{2} \star' \xi_{3}).
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{theorem}[Commutativity of conversion]
 \label{thm:comm-conv}
@@ -1691,7 +1691,7 @@ $R, R', R''$:
 \Phi^{R' \to R''} \circ \Phi^{R \to R'}
 \;=\; \Phi^{R \to R''}.
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{theorem}[Distributivity of catalysis]
 \label{thm:dist-cat}
@@ -1702,7 +1702,7 @@ $\gamma$:
 \;=\; (\xi_{1} \diamond \gamma) \star
         (\xi_{2} \diamond \gamma).
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{theorem}[Recursive embedding compatibility]
 \label{thm:rec-embed-compat}
@@ -1717,7 +1717,7 @@ depth $d+1$:
 \;=\; \sigma_{d \to d+1}(\xi) \star
        \sigma_{d \to d+1}(\eta).
 \]
-\end{theorem>
+\end{theorem}
 
 \section{Identity Operations}
 \label{sec:identity-ops}
@@ -1726,7 +1726,7 @@ depth $d+1$:
 The \emph{trivial identity} on $\Expr$ is the unary
 operation $\id$ with $\id(\xi) = \xi$ for all
 $\xi$.
-\end{definition>
+\end{definition}
 
 \begin{definition}[Receiver identity]\label{def:rec-id}
 The \emph{receiver identity at $\receiver$} is the
@@ -1734,7 +1734,7 @@ unary operation $\id_{\receiver}$ with
 $\eval_{\receiver}(\id_{\receiver}(\xi)) =
 \eval_{\receiver}(\xi)$, i.e., it preserves
 evaluation but may transform syntax.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Identity orbit]\label{thm:id-orbit}
 The set of expressions related by the receiver
@@ -1743,13 +1743,13 @@ equivalence classes called
 \emph{receiver-evaluation classes}.  Two expressions
 in the same class have identical S-values at
 $\receiver$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct from the equivalence relation generated by
 $\id_{\receiver}$ and the well-definedness of
 $\eval_{\receiver}$.
-\end{proof>
+\end{proof}
 
 \section{Inversion}
 \label{sec:inversion}
@@ -1761,20 +1761,20 @@ binary operation $\star$ with two-sided inverse
 is any expression satisfying
 $\eta \star \eta^{-1} = \mathbf{0}_{\star}$
 (the unit of $\star$ in $K_{\receiver}$).
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Inversion preserves global S]
 \label{thm:inv-preserves-global}
 Replacing a subtask $\eta$ in $\xi$ with
 $\eta \star \eta^{-1} \star \eta$ preserves the
 global S-value.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct algebraic manipulation: the insertion of
 $\eta \star \eta^{-1}$ is a unit and contributes
 nothing to the receiver's evaluation.
-\end{proof>
+\end{proof}
 
 \begin{remark}\label{rem:invertible-comp}
 Theorem~\ref{thm:inv-preserves-global} provides a
@@ -1784,7 +1784,7 @@ representing the same global S-value: insert
 inverse pairs as needed.  This is the formal
 basis for the multiplicity in
 Theorem~\ref{thm:comp-mult}.
-\end{remark>
+\end{remark}
 
 \section{Convergence}
 \label{sec:convergence}
@@ -1794,7 +1794,7 @@ A sequence $(\xi_{n})_{n \in \Natural}$ in $\Expr$
 \emph{S-converges to $x^{*}$ at $\receiver$} if
 $\lim_{n \to \infty} \Sscalar_{\receiver}(\xi_{n},
 x^{*}) = \Sfloor(\receiver)$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Catalyst-driven convergence]
 \label{thm:cat-conv}
@@ -1812,14 +1812,14 @@ $\Sscalar_{\receiver}(\xi_{n}, x^{*}) -
 \Sfloor(\receiver) \leq (1 - \catpow)^{n}
 [\Sscalar_{\receiver}(\xi_{0}, x^{*}) -
  \Sfloor(\receiver)]$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By induction on $n$ using
 Theorem~\ref{thm:mult-cat-power}.  At each step,
 the residual S-distance above floor is multiplied
 by $(1 - \catpow)$, giving the geometric decay.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Linear-time convergence to floor]
 \label{cor:linear-conv}
@@ -1827,7 +1827,7 @@ For any $\epsilon > 0$, the number of catalyst
 applications required to reach S-value within
 $\epsilon$ of floor is
 $O(\log(1/\epsilon) / \log(1/(1-\catpow)))$.
-\end{corollary>
+\end{corollary}
 
 \section{Cascade Composition}
 \label{sec:cascade-composition}
@@ -1838,7 +1838,7 @@ $(\gamma_{1}, \gamma_{2}, \ldots, \gamma_{n})$
 together with a parsing tree describing the order
 of application.  Different parsings yield different
 cascades even with the same constituent catalysts.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Cascade composition rule]
 \label{thm:cascade-comp-rule}
@@ -1849,12 +1849,12 @@ right-associative parsing is
 \catpow(\Gamma) = 1 - \prod_{i=1}^{n}
    (1 - \catpow_{\receiver, x^{*}}(\gamma_{i})).
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Apply Theorem~\ref{thm:mult-cat-power}
 inductively.
-\end{proof>
+\end{proof}
 
 \clearpage
 
@@ -1918,7 +1918,7 @@ representation-internal numeric value (perhaps
 through unit normalisation in the receiver's
 representation) and the sum proceeds in the unified
 representation.
-\end{example>
+\end{example}
 
 \section{A Cross-Representation Solution}
 \label{sec:cross-rep-example}
@@ -1957,7 +1957,7 @@ expression $\xi_{P}$ is preferred even though the
 truth is most naturally described oscillatorily.
 The mathematics of the calculus places no constraint
 on this choice.
-\end{example>
+\end{example}
 
 \section{Hierarchical Resolution}
 \label{sec:hierarchical-example}
@@ -1990,7 +1990,7 @@ This example formalises the principle that no level
 of recursion is privileged.  The choice of which
 level to label as `global' is a matter of pragmatic
 convenience, not structural reality.
-\end{example>
+\end{example}
 
 \clearpage
 
@@ -2012,14 +2012,14 @@ $\xi_{1}, \xi_{2}$ is the expression
 $(\xi_{1}, \xi_{2}, \mathbf{0})$ at depth $1$, and
 the meet is the receiver-internal greatest common
 factor.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 The lattice axioms hold by construction.
 Completeness follows from the axiom of choice
 applied to the decomposition tree, ensuring
 arbitrary joins and meets exist.
-\end{proof>
+\end{proof}
 
 \section{Categorical Properties}
 \label{sec:categorical-properties}
@@ -2030,14 +2030,14 @@ The set $\Expr$ together with composition $\diamond$
 forms a monoidal category, with the empty expression
 as the unit object and the binary operations of
 $\mathfrak{B}$ as the monoidal product.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct verification of the monoidal axioms
 \citep{maclane1998}: associativity coherence,
 left/right unit isomorphisms, and the pentagon and
 triangle equations.
-\end{proof>
+\end{proof}
 
 \section{Information-Theoretic Bounds}
 \label{sec:info-theoretic-bounds}
@@ -2054,7 +2054,7 @@ I_{\epsilon}(\Sscalar_{\receiver}(\xi, x^{*}))
                               {\epsilon}\Bigr)
 \quad \text{bits}.
 \]
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 The image of $\Sscalar_{\receiver}$ is contained in
@@ -2064,7 +2064,7 @@ $\epsilon$ gives at most $(100 - \Sfloor)/\epsilon$
 distinguishable values, requiring $\log_{2}$ of that
 many bits to specify \citep{shannon1948,
 coverthomas2006}.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Floor as information bound]
 \label{cor:floor-info-bound}
@@ -2074,7 +2074,7 @@ $\receiver$ relative to a fixed truth.  As
 $\Sfloor(\receiver) \to 0$, the information content
 diverges, demonstrating that perfect alignment
 would require infinite information transfer.
-\end{corollary>
+\end{corollary}
 
 \section{Compactness of $\Cands / \Sscalar$}
 \label{sec:compactness-quotient}
@@ -2087,7 +2087,7 @@ $x \sim_{\receiver} x'$ iff
 $\Sscalar_{\receiver}(x, x^{*}) =
 \Sscalar_{\receiver}(x', x^{*})$, the quotient is
 compact in the topology induced by the S-distance.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 The S-functional takes values in the compact set
@@ -2096,7 +2096,7 @@ identifies all points with the same S-value.  The
 resulting space is therefore the image of $\Cands$
 under a continuous map into a compact space, hence
 compact \citep{kelley1955,kuratowski1966}.
-\end{proof>
+\end{proof}
 
 \section{Connection to Ergodic Theory}
 \label{sec:ergodic-connection}
@@ -2123,7 +2123,7 @@ This mirrors Kac's lemma \citep{kac1947} on
 mean recurrence times: the recurrence time to a
 given S-precision $\epsilon$ above floor is
 proportional to $1/\epsilon$.
-\end{remark>
+\end{remark}
 
 \section{Stone-type Duality}
 \label{sec:stone-duality}
@@ -2146,7 +2146,7 @@ operator approach \citep{koopman1931} to ergodic
 theory: oscillatory modes correspond to
 eigenfunctions of the Koopman operator, whose
 spectrum encodes the dynamical structure.
-\end{remark>
+\end{remark}
 
 \clearpage
 
@@ -2169,25 +2169,25 @@ $\rho_{d}(\xi) := (\xi_{k}^{(d)},
 components are recursively defined by
 $\xi_{c}^{(d)} := \rho_{d-1}(\xi_{c})$ for $d \geq
 1$ and $\xi_{c}^{(0)} := \xi_{c}$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Iterative recursion]
 \label{thm:iter-rec}
 The recursion operators satisfy
 $\rho_{d_{1}} \circ \rho_{d_{2}} = \rho_{d_{1} + d_{2}}$
 for all non-negative integers $d_{1}, d_{2}$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct from the inductive definition of
 $\rho_{d}$.
-\end{proof>
+\end{proof}
 
 \begin{theorem}[Recursive functorial property]
 \label{thm:rec-functorial}
 The map $\rho_{d}: \Expr^{(0)} \to \Expr^{(d)}$ is
 functorial: it preserves composition.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 For any $\xi_{1}, \xi_{2} \in \Expr^{(0)}$ and
@@ -2196,7 +2196,7 @@ $\rho_{d}(\xi_{1} \star \xi_{2}) =
 \rho_{d}(\xi_{1}) \star \rho_{d}(\xi_{2})$
 by induction on $d$ and the distributivity of
 $\star$ over the triple components.
-\end{proof>
+\end{proof}
 
 \section{Adjoint Operators}
 \label{sec:adjoint-ops}
@@ -2209,7 +2209,7 @@ $\gamma^{*}$ is the expression satisfying
 $\gamma \diamond \gamma^{*} = \mathbf{1}_{\diamond}$
 (the neutral catalyst) when applied to
 S-converged expressions.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Adjoint existence]
 \label{thm:adj-exist}
@@ -2217,7 +2217,7 @@ For every absolute catalyst $\gamma$ (with
 $\catpow = 1$), the adjoint $\gamma^{*}$ exists
 and is unique up to receiver-evaluation
 equivalence.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 The adjoint $\gamma^{*}$ undoes the action of
@@ -2227,7 +2227,7 @@ returns the expression to its pre-catalysis state.
 For absolute catalysts, this returns the system to
 the floor; for non-absolute catalysts, the
 adjoint exists only in a weaker sense.
-\end{proof>
+\end{proof}
 
 \section{Structural Symmetries}
 \label{sec:structural-symmetries}
@@ -2241,7 +2241,7 @@ three representation categories such that
 $\sigma_{C} \circ F_{OC} = F_{OC} \circ \sigma_{O}$,
 $\sigma_{P} \circ F_{CP} = F_{CP} \circ \sigma_{C}$,
 $\sigma_{O} \circ F_{PO} = F_{PO} \circ \sigma_{P}$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Symmetry group action]
 \label{thm:sym-group}
@@ -2255,7 +2255,7 @@ group includes:
 \item the involutive swap of any two representations;
 \item compositions of (ii) and (iii).
 \end{enumerate}
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct verification that compositions of these
@@ -2263,7 +2263,7 @@ operations remain structural automorphisms by
 Theorem~\ref{thm:triple-equiv}.  The group is the
 symmetric group $S_{3}$ acting on the three
 representations.
-\end{proof>
+\end{proof}
 
 \begin{corollary}[Invariants of $G_{\mathrm{str}}$]
 \label{cor:invariants}
@@ -2272,7 +2272,7 @@ power $\catpow$, and the floor $\Sfloor$ are all
 invariants of the structural automorphism group:
 they take the same value on all symmetric copies
 of an expression.
-\end{corollary>
+\end{corollary}
 
 \section{Asymptotic Behaviour}
 \label{sec:asymptotic-behaviour}
@@ -2287,7 +2287,7 @@ $\sum_{i=1}^{\infty} \catpow_{i} = \infty$
 S-converges to floor.  Conversely, if
 $\sum \catpow_{i} < \infty$, the cascade
 S-converges to a value strictly above floor.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 By Theorem~\ref{thm:cascade-comp-rule}, the
@@ -2298,7 +2298,7 @@ $\sum \catpow_{i} = \infty$; otherwise the
 product converges to a positive value, so the
 cascade catalytic power converges to a value less
 than $1$, leaving a residual gap above floor.
-\end{proof>
+\end{proof}
 
 \begin{remark}[Borel-Cantelli analogue]
 \label{rem:borel-cantelli}
@@ -2307,7 +2307,7 @@ analogue of the Borel-Cantelli lemma: the
 divergence of the partial sums is the necessary
 and sufficient condition for almost-sure
 convergence to the limiting attractor.
-\end{remark>
+\end{remark}
 
 \section{Stability Under Receiver Variation}
 \label{sec:rec-var}
@@ -2320,7 +2320,7 @@ space, decoder, framework, or candidate-projection)
 preserving the S-functional axioms but yielding a
 new floor $\Sfloor(\receiver') = \Sfloor(\receiver)
 + \epsilon$ for some $\epsilon \in \Real$.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Robustness under receiver
 perturbation]\label{thm:robust-rec-pert}
@@ -2329,14 +2329,14 @@ $|\Sscalar_{\receiver'}(\xi, x^{*}) -
 \Sscalar_{\receiver}(\xi, x^{*})| \leq C \cdot
 \epsilon$ for some constant $C$ depending on
 $\xi$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Direct from the continuity of
 $\Sscalar_{\receiver}$ as a function of receiver
 parameters and the perturbation analysis of
 Section~\ref{sec:stability}.
-\end{proof>
+\end{proof}
 
 \section{Universal Properties}
 \label{sec:universal-props}
@@ -2351,14 +2351,14 @@ $\{x \in \Cands : \Sscalar_{\receiver}(x, x^{*})
 truth $x^{*} \in \Truth$ but contains no element
 $x'$ with $\Sscalar_{\receiver}(x', x^{*}) <
 \Sfloor(\receiver)$.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Existence is by definition.  Uniqueness follows
 from the strict positivity (Theorem~\ref{thm:floor-positivity})
 and the receiver-internal nature of the bound
 (Remark~\ref{rem:floor-as-receiver-property}).
-\end{proof>
+\end{proof}
 
 \begin{theorem}[Universal property of $\Expr$]
 \label{thm:univ-expr}
@@ -2373,7 +2373,7 @@ algebra such that:
 \end{enumerate}
 Any algebra satisfying these properties is the
 image of $\Expr$ under a unique homomorphism.
-\end{theorem>
+\end{theorem}
 
 \begin{proof}
 Standard universal property argument: $\Expr$ is
@@ -2381,7 +2381,7 @@ the free algebra over the generators (atomic
 expressions and reals) modulo the relations
 implied by the binary operations and conversion
 functors.
-\end{proof>
+\end{proof}
 
 \clearpage
 
@@ -2403,7 +2403,7 @@ A \emph{probabilistic S-functional} is a map
 where $\mathcal{M}([0, 100])$ is the space of
 probability measures on $[0, 100]$, replacing the
 deterministic $\Sscalar$ with a distribution.
-\end{definition>
+\end{definition}
 
 \begin{remark}\label{rem:prob-extension}
 The probabilistic extension allows the S-value to
@@ -2412,7 +2412,7 @@ receiver's evaluation is stochastic).  All
 theorems above generalise to expectations and
 quantiles under standard measure-theoretic
 formalism \citep{kolmogorov1933}.
-\end{remark>
+\end{remark}
 
 \section{Non-Standard Floors}
 \label{sec:non-standard-floors}
@@ -2425,7 +2425,7 @@ $\Sfloor_{1}(\receiver) > \Sfloor_{2}(\receiver) >
 $\Sfloor_{i}$ is the smallest knowable error of an
 $i$-th level resolution.  Achieving level $i$
 requires applying a level-$i$ catalyst.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Hierarchical floor approach]
 \label{thm:hier-floor}
@@ -2434,7 +2434,7 @@ level-$i$ catalysts converges to the deepest
 attainable floor, with the rate of convergence
 determined by the catalytic powers at each
 level.
-\end{theorem>
+\end{theorem}
 
 \section{Continuous Recursion}
 \label{sec:cont-rec}
@@ -2447,7 +2447,7 @@ $t \in \Real_{\geq 0}$, with $\rho_{0} = \id$ and
 $\rho_{t_{1}} \circ \rho_{t_{2}} = \rho_{t_{1} +
 t_{2}}$.  This generalises the discrete
 recursion of Definition~\ref{def:rec-op-d}.
-\end{definition>
+\end{definition}
 
 \begin{remark}\label{rem:cont-rec}
 Continuous recursion provides a flow on $\Expr$
@@ -2455,7 +2455,7 @@ analogous to a continuous-time dynamical system.
 The fixed points of this flow are receivers with
 trivial floor; the limit cycles are
 self-consistent recursive triples.
-\end{remark>
+\end{remark}
 
 \section{Multi-Receiver Frameworks}
 \label{sec:multi-receiver}
@@ -2468,7 +2468,7 @@ together with a communication protocol
 $\Pi: \Expr \times I \times I \to \Expr$ that
 allows expressions to be transmitted between
 receivers.
-\end{definition>
+\end{definition}
 
 \begin{theorem}[Collective floor]\label{thm:coll-floor}
 For a receiver collective with sufficient
@@ -2479,7 +2479,7 @@ communication, the collective floor is
 \]
 when communication is lossless, and strictly
 greater when communication has noise.
-\end{theorem>
+\end{theorem}
 
 \section{Beyond Three Representations}
 \label{sec:beyond-three}
@@ -2496,7 +2496,7 @@ that admits a non-degenerate cyclic structure
 Theorem~\ref{thm:sym-group}).  Larger $N$
 introduces richer symmetry groups but at the
 cost of computational complexity.
-\end{remark>
+\end{remark}
 
 \clearpage
 

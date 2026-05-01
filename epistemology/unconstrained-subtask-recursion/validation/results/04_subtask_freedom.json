@@ -1,0 +1,125 @@
+{
+  "theorem": "Theorem 10.1 (Unconstrained Subtask)",
+  "claim": "Multiple syntactically distinct expressions yield identical global value.",
+  "target": 3.0,
+  "n_tests": 19,
+  "n_pass": 19,
+  "all_preserved": true,
+  "data": [
+    {
+      "expression": "1 + 1 + 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "2 + 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "1 + 2",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "3",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "4 - 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "(11 - 10) + (-1 - (-1)) + 3 - 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "(11 - 10) + (-1 - (-1)) + 2",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "6 / 2",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "3 * 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "9 / 3",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "(0.5 + 0.5) + (1.0 + 1.0)",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "100 - 99 + 2",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "1000000 - 999997",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "math.sqrt(9)",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "(7 + 5) / 4",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "-(-3)",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "abs(-3)",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "2 ** 1 + 1",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    },
+    {
+      "expression": "(2 + 4) - (2 + 1)",
+      "value": 3.0,
+      "target": 3.0,
+      "preserved": true
+    }
+  ],
+  "status": "PASS"
+}

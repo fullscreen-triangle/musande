@@ -1,0 +1,82 @@
+{
+  "theorem": "Theorem 9.1 (Composition multiplicity)",
+  "claim": "Number of ordered compositions of n is 2^(n-1).",
+  "n_tests": 12,
+  "n_pass": 12,
+  "all_match": true,
+  "data": [
+    {
+      "n": 1,
+      "predicted": 1,
+      "actual": 1,
+      "match": true
+    },
+    {
+      "n": 2,
+      "predicted": 2,
+      "actual": 2,
+      "match": true
+    },
+    {
+      "n": 3,
+      "predicted": 4,
+      "actual": 4,
+      "match": true
+    },
+    {
+      "n": 4,
+      "predicted": 8,
+      "actual": 8,
+      "match": true
+    },
+    {
+      "n": 5,
+      "predicted": 16,
+      "actual": 16,
+      "match": true
+    },
+    {
+      "n": 6,
+      "predicted": 32,
+      "actual": 32,
+      "match": true
+    },
+    {
+      "n": 7,
+      "predicted": 64,
+      "actual": 64,
+      "match": true
+    },
+    {
+      "n": 8,
+      "predicted": 128,
+      "actual": 128,
+      "match": true
+    },
+    {
+      "n": 9,
+      "predicted": 256,
+      "actual": 256,
+      "match": true
+    },
+    {
+      "n": 10,
+      "predicted": 512,
+      "actual": 512,
+      "match": true
+    },
+    {
+      "n": 11,
+      "predicted": 1024,
+      "actual": 1024,
+      "match": true
+    },
+    {
+      "n": 12,
+      "predicted": 2048,
+      "actual": 2048,
+      "match": true
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python s_entropy_validation.py)",
+      "Bash(tasklist)",
+      "Bash(taskkill //F //IM python.exe)"
+    ]
+  }
+}

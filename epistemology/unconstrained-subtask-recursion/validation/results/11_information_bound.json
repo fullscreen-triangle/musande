@@ -1,0 +1,226 @@
+{
+  "theorem": "Theorem 30.1 (Information content)",
+  "claim": "I_eps(S) <= log_2((100 - floor) / eps).",
+  "n_tests": 24,
+  "n_pass": 24,
+  "all_within_bound": true,
+  "data": [
+    {
+      "floor": 0.001,
+      "epsilon": 0.001,
+      "range": 99.999,
+      "n_distinguishable_states": 99999.0,
+      "information_bits": 16.609626047414267,
+      "shannon_bound": 16.609626047414267,
+      "within_bound": true
+    },
+    {
+      "floor": 0.001,
+      "epsilon": 0.01,
+      "range": 99.999,
+      "n_distinguishable_states": 9999.9,
+      "information_bits": 13.287697952526905,
+      "shannon_bound": 13.287697952526905,
+      "within_bound": true
+    },
+    {
+      "floor": 0.001,
+      "epsilon": 0.1,
+      "range": 99.999,
+      "n_distinguishable_states": 999.9899999999999,
+      "information_bits": 9.965769857639543,
+      "shannon_bound": 9.965769857639543,
+      "within_bound": true
+    },
+    {
+      "floor": 0.001,
+      "epsilon": 1.0,
+      "range": 99.999,
+      "n_distinguishable_states": 99.999,
+      "information_bits": 6.643841762752181,
+      "shannon_bound": 6.643841762752181,
+      "within_bound": true
+    },
+    {
+      "floor": 0.01,
+      "epsilon": 0.001,
+      "range": 99.99,
+      "n_distinguishable_states": 99990.0,
+      "information_bits": 16.609496197718766,
+      "shannon_bound": 16.609496197718766,
+      "within_bound": true
+    },
+    {
+      "floor": 0.01,
+      "epsilon": 0.01,
+      "range": 99.99,
+      "n_distinguishable_states": 9999.0,
+      "information_bits": 13.287568102831404,
+      "shannon_bound": 13.287568102831404,
+      "within_bound": true
+    },
+    {
+      "floor": 0.01,
+      "epsilon": 0.1,
+      "range": 99.99,
+      "n_distinguishable_states": 999.8999999999999,
+      "information_bits": 9.965640007944042,
+      "shannon_bound": 9.965640007944042,
+      "within_bound": true
+    },
+    {
+      "floor": 0.01,
+      "epsilon": 1.0,
+      "range": 99.99,
+      "n_distinguishable_states": 99.99,
+      "information_bits": 6.64371191305668,
+      "shannon_bound": 6.64371191305668,
+      "within_bound": true
+    },
+    {
+      "floor": 0.1,
+      "epsilon": 0.001,
+      "range": 99.9,
+      "n_distinguishable_states": 99900.0,
+      "information_bits": 16.608197057567143,
+      "shannon_bound": 16.608197057567143,
+      "within_bound": true
+    },
+    {
+      "floor": 0.1,
+      "epsilon": 0.01,
+      "range": 99.9,
+      "n_distinguishable_states": 9990.0,
+      "information_bits": 13.286268962679781,
+      "shannon_bound": 13.286268962679781,
+      "within_bound": true
+    },
+    {
+      "floor": 0.1,
+      "epsilon": 0.1,
+      "range": 99.9,
+      "n_distinguishable_states": 999.0,
+      "information_bits": 9.964340867792417,
+      "shannon_bound": 9.964340867792417,
+      "within_bound": true
+    },
+    {
+      "floor": 0.1,
+      "epsilon": 1.0,
+      "range": 99.9,
+      "n_distinguishable_states": 99.9,
+      "information_bits": 6.642412772905056,
+      "shannon_bound": 6.642412772905056,
+      "within_bound": true
+    },
+    {
+      "floor": 1.0,
+      "epsilon": 0.001,
+      "range": 99.0,
+      "n_distinguishable_states": 99000.0,
+      "information_bits": 16.595140904741697,
+      "shannon_bound": 16.595140904741697,
+      "within_bound": true
+    },
+    {
+      "floor": 1.0,
+      "epsilon": 0.01,
+      "range": 99.0,
+      "n_distinguishable_states": 9900.0,
+      "information_bits": 13.273212809854334,
+      "shannon_bound": 13.273212809854334,
+      "within_bound": true
+    },
+    {
+      "floor": 1.0,
+      "epsilon": 0.1,
+      "range": 99.0,
+      "n_distinguishable_states": 990.0,
+      "information_bits": 9.951284714966972,
+      "shannon_bound": 9.951284714966972,
+      "within_bound": true
+    },
+    {
+      "floor": 1.0,
+      "epsilon": 1.0,
+      "range": 99.0,
+      "n_distinguishable_states": 99.0,
+      "information_bits": 6.6293566200796095,
+      "shannon_bound": 6.6293566200796095,
+      "within_bound": true
+    },
+    {
+      "floor": 5.0,
+      "epsilon": 0.001,
+      "range": 95.0,
+      "n_distinguishable_states": 95000.0,
+      "information_bits": 16.535639892993036,
+      "shannon_bound": 16.535639892993036,
+      "within_bound": true
+    },
+    {
+      "floor": 5.0,
+      "epsilon": 0.01,
+      "range": 95.0,
+      "n_distinguishable_states": 9500.0,
+      "information_bits": 13.213711798105672,
+      "shannon_bound": 13.213711798105672,
+      "within_bound": true
+    },
+    {
+      "floor": 5.0,
+      "epsilon": 0.1,
+      "range": 95.0,
+      "n_distinguishable_states": 950.0,
+      "information_bits": 9.89178370321831,
+      "shannon_bound": 9.89178370321831,
+      "within_bound": true
+    },
+    {
+      "floor": 5.0,
+      "epsilon": 1.0,
+      "range": 95.0,
+      "n_distinguishable_states": 95.0,
+      "information_bits": 6.569855608330948,
+      "shannon_bound": 6.569855608330948,
+      "within_bound": true
+    },
+    {
+      "floor": 10.0,
+      "epsilon": 0.001,
+      "range": 90.0,
+      "n_distinguishable_states": 90000.0,
+      "information_bits": 16.457637380991763,
+      "shannon_bound": 16.457637380991763,
+      "within_bound": true
+    },
+    {
+      "floor": 10.0,
+      "epsilon": 0.01,
+      "range": 90.0,
+      "n_distinguishable_states": 9000.0,
+      "information_bits": 13.1357092861044,
+      "shannon_bound": 13.1357092861044,
+      "within_bound": true
+    },
+    {
+      "floor": 10.0,
+      "epsilon": 0.1,
+      "range": 90.0,
+      "n_distinguishable_states": 900.0,
+      "information_bits": 9.813781191217037,
+      "shannon_bound": 9.813781191217037,
+      "within_bound": true
+    },
+    {
+      "floor": 10.0,
+      "epsilon": 1.0,
+      "range": 90.0,
+      "n_distinguishable_states": 90.0,
+      "information_bits": 6.491853096329675,
+      "shannon_bound": 6.491853096329675,
+      "within_bound": true
+    }
+  ],
+  "status": "PASS"
+}

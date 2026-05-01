@@ -1,0 +1,120 @@
+{
+  "theorem": "Theorem 28.2 (Cascade composition rule)",
+  "claim": "kappa(cascade) = 1 - prod_i (1 - kappa_i).",
+  "n_tests": 8,
+  "n_pass": 8,
+  "max_error": 1.1102230246251565e-16,
+  "all_match": true,
+  "data": [
+    {
+      "cascade": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "n_catalysts": 3,
+      "measured_composite_kappa": 0.271,
+      "predicted_composite_kappa": 0.2709999999999999,
+      "error": 1.1102230246251565e-16,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.2,
+        0.3,
+        0.4
+      ],
+      "n_catalysts": 3,
+      "measured_composite_kappa": 0.6639999999999999,
+      "predicted_composite_kappa": 0.664,
+      "error": 1.1102230246251565e-16,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "n_catalysts": 4,
+      "measured_composite_kappa": 0.9375,
+      "predicted_composite_kappa": 0.9375,
+      "error": 0.0,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.9,
+        0.5,
+        0.1
+      ],
+      "n_catalysts": 3,
+      "measured_composite_kappa": 0.955,
+      "predicted_composite_kappa": 0.955,
+      "error": 0.0,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.99,
+        0.99,
+        0.99
+      ],
+      "n_catalysts": 3,
+      "measured_composite_kappa": 0.999999,
+      "predicted_composite_kappa": 0.999999,
+      "error": 0.0,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "n_catalysts": 10,
+      "measured_composite_kappa": 0.6513215599,
+      "predicted_composite_kappa": 0.6513215598999998,
+      "error": 1.1102230246251565e-16,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "n_catalysts": 5,
+      "measured_composite_kappa": 0.96875,
+      "predicted_composite_kappa": 0.96875,
+      "error": 0.0,
+      "match": "True"
+    },
+    {
+      "cascade": [
+        0.3,
+        0.6,
+        0.7,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "n_catalysts": 6,
+      "measured_composite_kappa": 0.98992,
+      "predicted_composite_kappa": 0.98992,
+      "error": 0.0,
+      "match": "True"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,54 @@
+{
+  "theorem": "Corollary 30.2 (Floor as information bound)",
+  "claim": "I -> infinity as floor -> 0.",
+  "n_tests": 9,
+  "monotone_increase": true,
+  "data": [
+    {
+      "floor": 10.0,
+      "epsilon": 0.01,
+      "information_bits": 13.1357092861044
+    },
+    {
+      "floor": 1.0,
+      "epsilon": 0.01,
+      "information_bits": 13.273212809854334
+    },
+    {
+      "floor": 0.1,
+      "epsilon": 0.01,
+      "information_bits": 13.286268962679781
+    },
+    {
+      "floor": 0.01,
+      "epsilon": 0.01,
+      "information_bits": 13.287568102831404
+    },
+    {
+      "floor": 0.001,
+      "epsilon": 0.01,
+      "information_bits": 13.287697952526905
+    },
+    {
+      "floor": 0.0001,
+      "epsilon": 0.01,
+      "information_bits": 13.287710936853687
+    },
+    {
+      "floor": 1e-05,
+      "epsilon": 0.01,
+      "information_bits": 13.287712235279939
+    },
+    {
+      "floor": 1e-06,
+      "epsilon": 0.01,
+      "information_bits": 13.287712365122498
+    },
+    {
+      "floor": 1e-09,
+      "epsilon": 0.01,
+      "information_bits": 13.287712379535023
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,202 @@
+{
+  "theorem": "Theorem 21.2 (Linear justification failure)",
+  "claim": "No linear chain reaches S=0; floor is irreducible.",
+  "n_tests": 24,
+  "no_chain_reaches_zero": true,
+  "all_respect_floor": true,
+  "data": [
+    {
+      "floor": 0.001,
+      "chain_length": 10,
+      "final_S": 0.0986552734375,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.001,
+      "chain_length": 100,
+      "final_S": 0.001,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.001,
+      "chain_length": 1000,
+      "final_S": 0.001,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.001,
+      "chain_length": 10000,
+      "final_S": 0.001,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.01,
+      "chain_length": 10,
+      "final_S": 0.10764648437499999,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.01,
+      "chain_length": 100,
+      "final_S": 0.010000000000000002,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.01,
+      "chain_length": 1000,
+      "final_S": 0.010000000000000002,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.01,
+      "chain_length": 10000,
+      "final_S": 0.010000000000000002,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.1,
+      "chain_length": 10,
+      "final_S": 0.19755859375,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.1,
+      "chain_length": 100,
+      "final_S": 0.1,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.1,
+      "chain_length": 1000,
+      "final_S": 0.1,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.1,
+      "chain_length": 10000,
+      "final_S": 0.1,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.5,
+      "chain_length": 10,
+      "final_S": 0.59716796875,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.5,
+      "chain_length": 100,
+      "final_S": 0.5,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.5,
+      "chain_length": 1000,
+      "final_S": 0.5,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 0.5,
+      "chain_length": 10000,
+      "final_S": 0.5,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 1.0,
+      "chain_length": 10,
+      "final_S": 1.0966796875,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 1.0,
+      "chain_length": 100,
+      "final_S": 1.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 1.0,
+      "chain_length": 1000,
+      "final_S": 1.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 1.0,
+      "chain_length": 10000,
+      "final_S": 1.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 5.0,
+      "chain_length": 10,
+      "final_S": 5.0927734375,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 5.0,
+      "chain_length": 100,
+      "final_S": 5.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 5.0,
+      "chain_length": 1000,
+      "final_S": 5.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    },
+    {
+      "floor": 5.0,
+      "chain_length": 10000,
+      "final_S": 5.0,
+      "reaches_zero": false,
+      "reaches_below_floor": false,
+      "respects_floor": true
+    }
+  ],
+  "status": "PASS"
+}

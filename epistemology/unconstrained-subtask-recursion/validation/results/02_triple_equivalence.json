@@ -1,0 +1,92 @@
+{
+  "theorem": "Theorem 6.1 (Triple Equivalence)",
+  "claim": "Round-trip through O -> C -> P -> C -> O is identity up to discretisation.",
+  "n_tests": 40,
+  "n_pass": 40,
+  "mean_omega_relative_error": 0.16594790825676242,
+  "max_omega_relative_error": 0.4525937706557648,
+  "mean_phi_relative_error": 0.0015364944487518415,
+  "data": [
+    {
+      "omega_in": 1.1051709180756477,
+      "phi_in": 0.0,
+      "omega_out": 1.0,
+      "phi_out": 0.0,
+      "omega_relative_error": 0.0951625819640405,
+      "phi_relative_error": 0.0
+    },
+    {
+      "omega_in": 1.2531257445171577,
+      "phi_in": 0.16110731556870733,
+      "omega_out": 1.0,
+      "phi_out": 0.16,
+      "omega_relative_error": 0.20199548658597682,
+      "phi_relative_error": 0.006873155106573002
+    },
+    {
+      "omega_in": 1.4208880326908802,
+      "phi_in": 0.32221463113741466,
+      "omega_out": 1.0,
+      "phi_out": 0.32,
+      "omega_relative_error": 0.29621477766534615,
+      "phi_relative_error": 0.006873155106573002
+    },
+    {
+      "omega_in": 1.6111095077869233,
+      "phi_in": 0.483321946706122,
+      "omega_out": 1.0,
+      "phi_out": 0.48,
+      "omega_relative_error": 0.3793097271372725,
+      "phi_relative_error": 0.006873155106573059
+    },
+    {
+      "omega_in": 1.8267968948726598,
+      "phi_in": 0.6444292622748293,
+      "omega_out": 1.0,
+      "phi_out": 0.64,
+      "omega_relative_error": 0.4525937706557648,
+      "phi_relative_error": 0.006873155106573002
+    },
+    {
+      "omega_in": 2.0713594445237113,
+      "phi_in": 0.8055365778435366,
+      "omega_out": 2.0,
+      "phi_out": 0.81,
+      "omega_relative_error": 0.03445053668129519,
+      "phi_relative_error": 0.0055409304545949506
+    },
+    {
+      "omega_in": 2.348662820951783,
+      "phi_in": 0.966643893412244,
+      "omega_out": 2.0,
+      "phi_out": 0.97,
+      "omega_relative_error": 0.14845162866353429,
+      "phi_relative_error": 0.0034719161944001477
+    },
+    {
+      "omega_in": 2.663090204409011,
+      "phi_in": 1.1277512089809514,
+      "omega_out": 2.0,
+      "phi_out": 1.13,
+      "omega_relative_error": 0.24899276911882262,
+      "phi_relative_error": 0.0019940488656895747
+    },
+    {
+      "omega_in": 3.019611573680557,
+      "phi_in": 1.2888585245496587,
+      "omega_out": 3.0,
+      "phi_out": 1.29,
+      "omega_relative_error": 0.006494733909319623,
+      "phi_relative_error": 0.0008856483691569036
+    },
+    {
+      "omega_in": 3.4238622637752645,
+      "phi_in": 1.449965840118366,
+      "omega_out": 3.0,
+      "phi_out": 1.45,
+      "omega_relative_error": 0.12379652892575761,
+      "phi_relative_error": 2.35590940757839e-05
+    }
+  ],
+  "status": "PASS"
+}

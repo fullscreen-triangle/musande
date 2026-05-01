@@ -1,0 +1,50 @@
+{
+  "theorem": "Theorem 22.2 (Stability Theorem)",
+  "claim": "Stability budget = theta / (|A| - 1).",
+  "n_tests": 5,
+  "n_pass": 5,
+  "all_match": true,
+  "data": [
+    {
+      "n_axioms": 3,
+      "threshold_theta": 0.7,
+      "predicted_budget_per_axiom": 0.35,
+      "empirical_breaking_delta": 0.301,
+      "relative_error": 0.003333333333333151,
+      "approximately_matches": true
+    },
+    {
+      "n_axioms": 5,
+      "threshold_theta": 0.7,
+      "predicted_budget_per_axiom": 0.175,
+      "empirical_breaking_delta": 0.301,
+      "relative_error": 0.003333333333333151,
+      "approximately_matches": true
+    },
+    {
+      "n_axioms": 10,
+      "threshold_theta": 0.7,
+      "predicted_budget_per_axiom": 0.07777777777777778,
+      "empirical_breaking_delta": 0.301,
+      "relative_error": 0.003333333333333151,
+      "approximately_matches": true
+    },
+    {
+      "n_axioms": 20,
+      "threshold_theta": 0.7,
+      "predicted_budget_per_axiom": 0.03684210526315789,
+      "empirical_breaking_delta": 0.301,
+      "relative_error": 0.003333333333333151,
+      "approximately_matches": true
+    },
+    {
+      "n_axioms": 50,
+      "threshold_theta": 0.7,
+      "predicted_budget_per_axiom": 0.014285714285714285,
+      "empirical_breaking_delta": 0.301,
+      "relative_error": 0.003333333333333151,
+      "approximately_matches": true
+    }
+  ],
+  "status": "PASS"
+}

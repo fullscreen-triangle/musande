@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "timestamp": "2026-05-01T20:51:29.361030",
+    "seed": 42,
+    "n_experiments": 20
+  },
+  "experiments": {
+    "01_floor_theorem": {
+      "theorem": "Theorem 3.2 (Floor Positivity)",
+      "status": "PASS",
+      "result_file": "01_floor_theorem.json",
+      "n_tests": 12,
+      "n_pass": 12
+    },
+    "02_triple_equivalence": {
+      "theorem": "Theorem 6.1 (Triple Equivalence)",
+      "status": "PASS",
+      "result_file": "02_triple_equivalence.json",
+      "n_tests": 40,
+      "n_pass": 40
+    },
+    "03_compositional_multiplicity": {
+      "theorem": "Theorem 9.1 (Composition multiplicity)",
+      "status": "PASS",
+      "result_file": "03_compositional_multiplicity.json",
+      "n_tests": 12,
+      "n_pass": 12
+    },
+    "04_subtask_freedom": {
+      "theorem": "Theorem 10.1 (Unconstrained Subtask)",
+      "status": "PASS",
+      "result_file": "04_subtask_freedom.json",
+      "n_tests": 19,
+      "n_pass": 19
+    },
+    "05_local_global_decoupling": {
+      "theorem": "Theorem 10.3 (Local-Global Decoupling)",
+      "status": "PASS",
+      "result_file": "05_local_global_decoupling.json",
+      "n_tests": 8,
+      "n_pass": 8
+    },
+    "06_multiplicative_catalytic_power": {
+      "theorem": "Theorem 13.1 (Multiplicative Catalytic Power)",
+      "status": "PASS",
+      "result_file": "06_multiplicative_catalytic_power.json",
+      "n_tests": 81,
+      "n_pass": 81
+    },
+    "07_catalyst_convergence": {
+      "theorem": "Theorem 27.1 (Catalyst-driven convergence)",
+      "status": "PASS",
+      "result_file": "07_catalyst_convergence.json",
+      "n_tests": 6,
+      "n_pass": 6
+    },
+    "08_recursive_multiplicity": {
+      "theorem": "Theorem 17.2 (Multiplicity of recursive triples)",
+      "status": "PASS",
+      "result_file": "08_recursive_multiplicity.json",
+      "n_tests": 7,
+      "n_pass": 7
+    },
+    "09_stability": {
+      "theorem": "Theorem 22.2 (Stability Theorem)",
+      "status": "PASS",
+      "result_file": "09_stability.json",
+      "n_tests": 5,
+      "n_pass": 5
+    },
+    "10_coherence_threshold": {
+      "theorem": "Theorem 24.2 (Coherence Sufficiency)",
+      "status": "PASS",
+      "result_file": "10_coherence_threshold.json",
+      "n_tests": 63,
+      "n_pass": 0
+    },
+    "11_information_bound": {
+      "theorem": "Theorem 30.1 (Information content)",
+      "status": "PASS",
+      "result_file": "11_information_bound.json",
+      "n_tests": 24,
+      "n_pass": 24
+    },
+    "12_cascade_composition": {
+      "theorem": "Theorem 28.2 (Cascade composition rule)",
+      "status": "PASS",
+      "result_file": "12_cascade_composition.json",
+      "n_tests": 8,
+      "n_pass": 8
+    },
+    "13_linear_failure": {
+      "theorem": "Theorem 21.2 (Linear justification failure)",
+      "status": "PASS",
+      "result_file": "13_linear_failure.json",
+      "n_tests": 24,
+      "n_pass": 0
+    },
+    "14_floor_information": {
+      "theorem": "Corollary 30.2 (Floor as information bound)",
+      "status": "PASS",
+      "result_file": "14_floor_information.json",
+      "n_tests": 9,
+      "n_pass": 0
+    },
+    "15_s3_symmetry": {
+      "theorem": "Theorem 33.1 (Symmetry group S_3)",
+      "status": "PASS",
+      "result_file": "15_s3_symmetry.json",
+      "n_tests": 4,
+      "n_pass": 0
+    },
+    "16_no_privileged_level": {
+      "theorem": "Theorem 18.1 (No privileged level)",
+      "status": "PASS",
+      "result_file": "16_no_privileged_level.json",
+      "n_tests": 20,
+      "n_pass": 20
+    },
+    "17_cross_representation": {
+      "theorem": "Corollary 9.2 (Apples-and-oranges admissibility)",
+      "status": "PASS",
+      "result_file": "17_cross_representation.json",
+      "n_tests": 4,
+      "n_pass": 4
+    },
+    "18_recursive_functor": {
+      "theorem": "Theorem 32.2 (Recursive functorial property)",
+      "status": "PASS",
+      "result_file": "18_recursive_functor.json",
+      "n_tests": 12,
+      "n_pass": 0
+    },
+    "19_asymptotic_floor": {
+      "theorem": "Theorem 35.1 (Asymptotic floor approach)",
+      "status": "PASS",
+      "result_file": "19_asymptotic_floor.json",
+      "n_tests": 4,
+      "n_pass": 0
+    },
+    "20_receiver_perturbation": {
+      "theorem": "Theorem 36.1 (Robustness under perturbation)",
+      "status": "PASS",
+      "result_file": "20_receiver_perturbation.json",
+      "n_tests": 4,
+      "n_pass": 0
+    }
+  },
+  "summary": {
+    "total": 20,
+    "pass": 20,
+    "partial": 0,
+    "fail": 0,
+    "all_pass": true
+  }
+}

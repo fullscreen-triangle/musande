@@ -1,0 +1,37 @@
+{
+  "theorem": "Theorem 36.1 (Robustness under perturbation)",
+  "claim": "|S_R' - S_R| <= C * eps for small perturbations.",
+  "n_tests": 4,
+  "all_bounded": true,
+  "data": [
+    {
+      "epsilon": 0.001,
+      "S_base": 24.74747474747475,
+      "S_perturbed": 24.747474747474758,
+      "delta_S": 7.105427357601002e-15,
+      "bounded_by_C_times_eps": "True"
+    },
+    {
+      "epsilon": 0.01,
+      "S_base": 24.74747474747475,
+      "S_perturbed": 24.747474747474747,
+      "delta_S": 3.552713678800501e-15,
+      "bounded_by_C_times_eps": "True"
+    },
+    {
+      "epsilon": 0.1,
+      "S_base": 24.74747474747475,
+      "S_perturbed": 22.727272727272727,
+      "delta_S": 2.0202020202020243,
+      "bounded_by_C_times_eps": "True"
+    },
+    {
+      "epsilon": 1.0,
+      "S_base": 24.74747474747475,
+      "S_perturbed": 12.62626262626263,
+      "delta_S": 12.121212121212121,
+      "bounded_by_C_times_eps": "True"
+    }
+  ],
+  "status": "PASS"
+}

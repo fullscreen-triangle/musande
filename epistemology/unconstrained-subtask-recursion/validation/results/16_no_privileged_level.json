@@ -1,0 +1,130 @@
+{
+  "theorem": "Theorem 18.1 (No privileged level)",
+  "claim": "Trivial extension to higher depth preserves S-value.",
+  "n_tests": 20,
+  "n_pass": 20,
+  "all_preserved": true,
+  "data": [
+    {
+      "initial_S": 10.0,
+      "extension_depth": 1,
+      "S_at_extended_depth": 10.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 10.0,
+      "extension_depth": 2,
+      "S_at_extended_depth": 10.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 10.0,
+      "extension_depth": 5,
+      "S_at_extended_depth": 10.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 10.0,
+      "extension_depth": 10,
+      "S_at_extended_depth": 10.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 25.0,
+      "extension_depth": 1,
+      "S_at_extended_depth": 25.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 25.0,
+      "extension_depth": 2,
+      "S_at_extended_depth": 25.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 25.0,
+      "extension_depth": 5,
+      "S_at_extended_depth": 25.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 25.0,
+      "extension_depth": 10,
+      "S_at_extended_depth": 25.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 50.0,
+      "extension_depth": 1,
+      "S_at_extended_depth": 50.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 50.0,
+      "extension_depth": 2,
+      "S_at_extended_depth": 50.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 50.0,
+      "extension_depth": 5,
+      "S_at_extended_depth": 50.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 50.0,
+      "extension_depth": 10,
+      "S_at_extended_depth": 50.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 75.0,
+      "extension_depth": 1,
+      "S_at_extended_depth": 75.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 75.0,
+      "extension_depth": 2,
+      "S_at_extended_depth": 75.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 75.0,
+      "extension_depth": 5,
+      "S_at_extended_depth": 75.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 75.0,
+      "extension_depth": 10,
+      "S_at_extended_depth": 75.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 99.0,
+      "extension_depth": 1,
+      "S_at_extended_depth": 99.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 99.0,
+      "extension_depth": 2,
+      "S_at_extended_depth": 99.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 99.0,
+      "extension_depth": 5,
+      "S_at_extended_depth": 99.0,
+      "preserved": true
+    },
+    {
+      "initial_S": 99.0,
+      "extension_depth": 10,
+      "S_at_extended_depth": 99.0,
+      "preserved": true
+    }
+  ],
+  "status": "PASS"
+}

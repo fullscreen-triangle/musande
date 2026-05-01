@@ -1,0 +1,59 @@
+{
+  "theorem": "Theorem 17.2 (Multiplicity of recursive triples)",
+  "claim": "At depth d, recursive-triple count >= 3 * 4^(d-1).",
+  "n_tests": 7,
+  "n_pass": 7,
+  "all_pass": true,
+  "data": [
+    {
+      "depth": 1,
+      "leaf_count": 3,
+      "labelled_count": 3,
+      "lower_bound": 3,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 2,
+      "leaf_count": 9,
+      "labelled_count": 12,
+      "lower_bound": 12,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 3,
+      "leaf_count": 27,
+      "labelled_count": 48,
+      "lower_bound": 48,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 4,
+      "leaf_count": 81,
+      "labelled_count": 192,
+      "lower_bound": 192,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 5,
+      "leaf_count": 243,
+      "labelled_count": 768,
+      "lower_bound": 768,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 6,
+      "leaf_count": 729,
+      "labelled_count": 3072,
+      "lower_bound": 3072,
+      "satisfies_lower_bound": true
+    },
+    {
+      "depth": 7,
+      "leaf_count": 2187,
+      "labelled_count": 12288,
+      "lower_bound": 12288,
+      "satisfies_lower_bound": true
+    }
+  ],
+  "status": "PASS"
+}

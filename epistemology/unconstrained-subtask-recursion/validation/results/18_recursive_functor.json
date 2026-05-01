@@ -1,0 +1,105 @@
+{
+  "theorem": "Theorem 32.2 (Recursive functorial property)",
+  "claim": "rho_d(xi1 + xi2) = rho_d(xi1) + rho_d(xi2).",
+  "n_tests": 12,
+  "all_functorial": true,
+  "data": [
+    {
+      "x1": 3.0,
+      "x2": 5.0,
+      "depth": 1,
+      "lhs": 8.0,
+      "rhs": 8.0,
+      "functorial": true
+    },
+    {
+      "x1": 3.0,
+      "x2": 5.0,
+      "depth": 2,
+      "lhs": 8.0,
+      "rhs": 8.0,
+      "functorial": true
+    },
+    {
+      "x1": 3.0,
+      "x2": 5.0,
+      "depth": 3,
+      "lhs": 8.0,
+      "rhs": 8.0,
+      "functorial": true
+    },
+    {
+      "x1": 1.5,
+      "x2": 2.5,
+      "depth": 1,
+      "lhs": 4.0,
+      "rhs": 4.0,
+      "functorial": true
+    },
+    {
+      "x1": 1.5,
+      "x2": 2.5,
+      "depth": 2,
+      "lhs": 4.0,
+      "rhs": 4.0,
+      "functorial": true
+    },
+    {
+      "x1": 1.5,
+      "x2": 2.5,
+      "depth": 3,
+      "lhs": 4.0,
+      "rhs": 4.0,
+      "functorial": true
+    },
+    {
+      "x1": 10.0,
+      "x2": 0.1,
+      "depth": 1,
+      "lhs": 10.1,
+      "rhs": 10.1,
+      "functorial": true
+    },
+    {
+      "x1": 10.0,
+      "x2": 0.1,
+      "depth": 2,
+      "lhs": 10.1,
+      "rhs": 10.1,
+      "functorial": true
+    },
+    {
+      "x1": 10.0,
+      "x2": 0.1,
+      "depth": 3,
+      "lhs": 10.1,
+      "rhs": 10.1,
+      "functorial": true
+    },
+    {
+      "x1": -2.0,
+      "x2": 4.0,
+      "depth": 1,
+      "lhs": 2.0,
+      "rhs": 2.0,
+      "functorial": true
+    },
+    {
+      "x1": -2.0,
+      "x2": 4.0,
+      "depth": 2,
+      "lhs": 2.0,
+      "rhs": 2.0,
+      "functorial": true
+    },
+    {
+      "x1": -2.0,
+      "x2": 4.0,
+      "depth": 3,
+      "lhs": 2.0,
+      "rhs": 2.0,
+      "functorial": true
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,71 @@
+{
+  "theorem": "Theorem 3.2 (Floor Positivity)",
+  "claim": "For every bounded receiver, S_floor > 0.",
+  "n_tests": 12,
+  "n_pass": 12,
+  "all_floors_positive": true,
+  "monotone_decreasing": true,
+  "data": [
+    {
+      "capacity": 2,
+      "floor": 25.0,
+      "floor_positive": true
+    },
+    {
+      "capacity": 4,
+      "floor": 12.5,
+      "floor_positive": true
+    },
+    {
+      "capacity": 8,
+      "floor": 6.25,
+      "floor_positive": true
+    },
+    {
+      "capacity": 16,
+      "floor": 3.125,
+      "floor_positive": true
+    },
+    {
+      "capacity": 32,
+      "floor": 1.5625,
+      "floor_positive": true
+    },
+    {
+      "capacity": 64,
+      "floor": 0.78125,
+      "floor_positive": true
+    },
+    {
+      "capacity": 128,
+      "floor": 0.390625,
+      "floor_positive": true
+    },
+    {
+      "capacity": 256,
+      "floor": 0.1953125,
+      "floor_positive": true
+    },
+    {
+      "capacity": 512,
+      "floor": 0.09765625,
+      "floor_positive": true
+    },
+    {
+      "capacity": 1024,
+      "floor": 0.048828125,
+      "floor_positive": true
+    },
+    {
+      "capacity": 2048,
+      "floor": 0.0244140625,
+      "floor_positive": true
+    },
+    {
+      "capacity": 4096,
+      "floor": 0.01220703125,
+      "floor_positive": true
+    }
+  ],
+  "status": "PASS"
+}
