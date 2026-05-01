@@ -3,7 +3,9 @@
     "allow": [
       "Bash(python s_entropy_validation.py)",
       "Bash(tasklist)",
-      "Bash(taskkill //F //IM python.exe)"
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(grep -n \"^\\\\\\\\\\\\\\\\part\\\\*\\\\|^\\\\\\\\\\\\\\\\section{Closing}\\\\|^\\\\\\\\\\\\\\\\bibliography\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\semantics\\\\musande\\\\epistemology\\\\unconstrained-subtask-recursion\\\\unconstrained-subtask-recursion-equivalence.tex\")",
+      "Bash(grep -n \"begin{figure\\\\|end{figure\\\\|caption{\\\\\\\\\\\\\\\\textbf\\\\|label{fig:\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\semantics\\\\musande\\\\epistemology\\\\unconstrained-subtask-recursion\\\\figures\\\\unconstrained-captions.tex\")"
     ]
   }
 }

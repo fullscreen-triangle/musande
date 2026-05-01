@@ -1,0 +1,69 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Birkhoff(1931)]{birkhoff1931}
+George~D. Birkhoff.
+\newblock Proof of the ergodic theorem.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (12):\penalty0 656--660, 1931.
+
+\bibitem[Cover and Thomas(2006)]{coverthomas2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, Hoboken, NJ, 2nd edition, 2006.
+
+\bibitem[Kac(1947)]{kac1947}
+Mark Kac.
+\newblock On the notion of recurrence in discrete stochastic processes.
+\newblock \emph{Bulletin of the American Mathematical Society}, 53\penalty0
+  (10):\penalty0 1002--1010, 1947.
+
+\bibitem[Kelley(1955)]{kelley1955}
+John~L. Kelley.
+\newblock \emph{General Topology}.
+\newblock D. Van Nostrand Company, New York, 1955.
+
+\bibitem[Kolmogorov(1933)]{kolmogorov1933}
+Andrey~N. Kolmogorov.
+\newblock \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, Berlin, 1933.
+
+\bibitem[Koopman(1931)]{koopman1931}
+Bernard~O. Koopman.
+\newblock \emph{Hamiltonian Systems and Transformations in Hilbert Space},
+  volume~17.
+\newblock Proceedings of the National Academy of Sciences, 1931.
+
+\bibitem[Kuratowski(1966)]{kuratowski1966}
+Kazimierz Kuratowski.
+\newblock \emph{Topology, Volume I}.
+\newblock Academic Press, New York, 1966.
+
+\bibitem[Mac~Lane(1998)]{maclane1998}
+Saunders Mac~Lane.
+\newblock \emph{Categories for the Working Mathematician}, volume~5 of
+  \emph{Graduate Texts in Mathematics}.
+\newblock Springer, New York, 2nd edition, 1998.
+
+\bibitem[Poincar\'e(1890)]{poincare1890}
+Henri Poincar\'e.
+\newblock Sur le probl\`eme des trois corps et les \'equations de la dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+
+\bibitem[Stone(1936)]{stone1936}
+Marshall~H. Stone.
+\newblock The theory of representations for boolean algebras.
+\newblock \emph{Transactions of the American Mathematical Society},
+  40:\penalty0 37--111, 1936.
+
+\end{thebibliography}
