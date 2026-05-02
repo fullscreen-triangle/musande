@@ -40,10 +40,10 @@ RNG = np.random.default_rng(20260501)
 # ----------------------------------------------------------------------------
 
 def panel_1():
-    fig = plt.figure(figsize=(14, 11))
+    fig = plt.figure(figsize=(22, 5.5))
 
     # (a) S distribution across random states
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(1, 4, 1)
     rcv = Receiver("p1", beta=2.5, decoder_noise=0.0, projection_radius=0.0)
     cell = Cell(centre=np.zeros(2), tolerance=1.0)
     states = RNG.uniform(-10, 10, size=(2000, 2))
@@ -57,7 +57,7 @@ def panel_1():
     ax1.legend()
 
     # (b) S inside vs. outside cell
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(1, 4, 2)
     cell_b = Cell(centre=np.zeros(2), tolerance=2.0)
     rcv_b = Receiver("p1b", beta=1.5, decoder_noise=0.0, projection_radius=0.0)
     n_in = 200
@@ -81,7 +81,7 @@ def panel_1():
     ax2.legend()
 
     # (c) Floor scales linearly with beta
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(1, 4, 3)
     betas = np.linspace(0.1, 5.0, 30)
     measured = []
     cell_c = Cell(centre=np.zeros(2), tolerance=1.0)
@@ -99,7 +99,7 @@ def panel_1():
     ax3.legend()
 
     # (d) 3D: S over (x,y) and beta
-    ax4 = fig.add_subplot(2, 2, 4, projection="3d")
+    ax4 = fig.add_subplot(1, 4, 4, projection="3d")
     xs = np.linspace(-3, 3, 25)
     ys = np.linspace(-3, 3, 25)
     X, Y = np.meshgrid(xs, ys)
@@ -131,7 +131,7 @@ def panel_1():
 # ----------------------------------------------------------------------------
 
 def panel_2():
-    fig = plt.figure(figsize=(14, 11))
+    fig = plt.figure(figsize=(22, 5.5))
 
     rcv = Receiver("p2", beta=1.0, decoder_noise=0.0, projection_radius=0.0)
     n = 100
@@ -139,7 +139,7 @@ def panel_2():
     cell_orig = Cell(centre=np.array([1.0, 0.5]), tolerance=0.7)
 
     # (a) Oscillatory
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(1, 4, 1)
     cell_osc = Cell(centre=oscillatory_encoding(cell_orig.centre),
                     tolerance=cell_orig.tolerance)
     s_orig = np.array([S_functional(rcv, x, cell_orig) for x in states])
@@ -155,7 +155,7 @@ def panel_2():
     ax1.legend()
 
     # (b) Categorical
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(1, 4, 2)
     cell_cat = Cell(centre=categorical_encoding(cell_orig.centre),
                     tolerance=cell_orig.tolerance)
     s_cat = np.array([S_functional(rcv, categorical_encoding(x), cell_cat)
@@ -170,7 +170,7 @@ def panel_2():
     ax2.legend()
 
     # (c) Partition
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(1, 4, 3)
     cell_par = Cell(centre=partition_encoding(cell_orig.centre),
                     tolerance=cell_orig.tolerance)
     s_par = np.array([S_functional(rcv, partition_encoding(x), cell_par)
@@ -184,7 +184,7 @@ def panel_2():
     ax3.legend()
 
     # (d) 3D triple-equivalence manifold
-    ax4 = fig.add_subplot(2, 2, 4, projection="3d")
+    ax4 = fig.add_subplot(1, 4, 4, projection="3d")
     ax4.scatter(s_orig, s_osc, s_cat, color="steelblue", alpha=0.7, s=30,
                 label="(orig, osc, cat)")
     # diagonal
@@ -209,12 +209,12 @@ def panel_2():
 # ----------------------------------------------------------------------------
 
 def panel_3():
-    fig = plt.figure(figsize=(14, 11))
+    fig = plt.figure(figsize=(22, 5.5))
 
     cell = Cell(centre=np.zeros(2), tolerance=1.0)
 
     # (a) Per-layer floors and aggregate
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(1, 4, 1)
     layer_betas = [0.3, 0.8, 1.5, 3.0, 6.0]
     aggregate = min(layer_betas)
     bars = ax1.bar(range(len(layer_betas)), layer_betas, color="steelblue",
@@ -229,7 +229,7 @@ def panel_3():
     ax1.legend()
 
     # (b) Pre-decoder firing region
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(1, 4, 2)
     pre_decoder = Receiver("reflex", beta=0.4, decoder_noise=0.0, projection_radius=0.0)
     decoder = Receiver("dec", beta=2.5, decoder_noise=0.0, projection_radius=0.0)
     grid = 60
@@ -251,7 +251,7 @@ def panel_3():
     ax2.set_title("(b) S map: pre-decoder dominates")
 
     # (c) Reachability: reflex-only vs decoder-only
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(1, 4, 3)
     n = 500
     states = RNG.uniform(-3, 3, size=(n, 2))
     reflex_floors = [0.2, 0.5, 1.0, 2.0]
@@ -277,7 +277,7 @@ def panel_3():
     ax3.legend()
 
     # (d) 3D heatmap of S over layer floor combinations
-    ax4 = fig.add_subplot(2, 2, 4, projection="3d")
+    ax4 = fig.add_subplot(1, 4, 4, projection="3d")
     reflex_betas = np.linspace(0.1, 3.0, 20)
     decoder_betas = np.linspace(0.1, 5.0, 20)
     R, D = np.meshgrid(reflex_betas, decoder_betas)
@@ -302,10 +302,10 @@ def panel_3():
 # ----------------------------------------------------------------------------
 
 def panel_4():
-    fig = plt.figure(figsize=(14, 11))
+    fig = plt.figure(figsize=(22, 5.5))
 
     # (a) S trajectory across iterations
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(1, 4, 1)
     methods = [
         Methodology("M_a", kappa=0.3, sigma=0.5),
         Methodology("M_b", kappa=0.5, sigma=0.5),
@@ -328,7 +328,7 @@ def panel_4():
     ax1.legend()
 
     # (b) Floor vs kappa
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(1, 4, 2)
     kappas = np.linspace(0.05, 0.95, 30)
     sigma_fixed = 0.5
     floors = sigma_fixed * kappas / (1 - kappas)
@@ -340,7 +340,7 @@ def panel_4():
     ax2.legend()
 
     # (c) Floor vs sigma
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(1, 4, 3)
     sigmas = np.linspace(0.0, 2.0, 30)
     for k in [0.3, 0.5, 0.7]:
         floors_s = sigmas * k / (1 - k)
@@ -352,7 +352,7 @@ def panel_4():
     ax3.legend()
 
     # (d) 3D surface of floor over (kappa, sigma)
-    ax4 = fig.add_subplot(2, 2, 4, projection="3d")
+    ax4 = fig.add_subplot(1, 4, 4, projection="3d")
     K = np.linspace(0.05, 0.9, 30)
     S = np.linspace(0.05, 1.5, 30)
     KK, SS = np.meshgrid(K, S)
@@ -377,10 +377,10 @@ def panel_4():
 # ----------------------------------------------------------------------------
 
 def panel_5():
-    fig = plt.figure(figsize=(14, 11))
+    fig = plt.figure(figsize=(22, 5.5))
 
     # (a) Composite floor: measured vs predicted
-    ax1 = fig.add_subplot(2, 2, 1)
+    ax1 = fig.add_subplot(1, 4, 1)
     measured = []
     predicted = []
     for _ in range(40):
@@ -400,7 +400,7 @@ def panel_5():
     ax1.legend()
 
     # (b) Multiplicative composition with n stacked methodologies
-    ax2 = fig.add_subplot(2, 2, 2)
+    ax2 = fig.add_subplot(1, 4, 2)
     base_floors = [0.5, 1.0, 1.5, 2.0]
     for bf in base_floors:
         ns = list(range(1, 11))
@@ -413,7 +413,7 @@ def panel_5():
     ax2.legend()
 
     # (c) Anti-monopoly: max knowledge vs receiver floor
-    ax3 = fig.add_subplot(2, 2, 3)
+    ax3 = fig.add_subplot(1, 4, 3)
     rcv_floors = np.linspace(0.1, 10.0, 30)
     max_knowledge = SIGMA - rcv_floors
     ax3.plot(rcv_floors, max_knowledge, "-", color="steelblue", linewidth=2,
@@ -436,7 +436,7 @@ def panel_5():
     ax3.legend()
 
     # (d) 3D: composite floor over (receiver floor, methodology floor)
-    ax4 = fig.add_subplot(2, 2, 4, projection="3d")
+    ax4 = fig.add_subplot(1, 4, 4, projection="3d")
     rcv_F = np.linspace(0.1, 10.0, 25)
     method_F = np.linspace(0.1, 10.0, 25)
     Rg, Mg = np.meshgrid(rcv_F, method_F)

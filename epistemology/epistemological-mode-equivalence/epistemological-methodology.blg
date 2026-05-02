@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: epistemological-methodology.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 26 entries,
+            2118 wiz_defined-function locations,
+            644 strings with 6765 characters,
+and the built_in function-call counts, 6812 in all, are:
+= -- 684
+> -- 200
+< -- 2
++ -- 89
+- -- 58
+* -- 407
+:= -- 1167
+add.period$ -- 78
+call.type$ -- 26
+change.case$ -- 99
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 301
+empty$ -- 628
+format.name$ -- 58
+if$ -- 1417
+int.to.chr$ -- 0
+int.to.str$ -- 26
+missing$ -- 39
+newline$ -- 133
+num.names$ -- 52
+pop$ -- 121
+preamble$ -- 1
+purify$ -- 81
+quote$ -- 0
+skip$ -- 171
+stack$ -- 0
+substring$ -- 445
+swap$ -- 30
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 78
+warning$ -- 0
+while$ -- 78
+width$ -- 28
+write$ -- 287
