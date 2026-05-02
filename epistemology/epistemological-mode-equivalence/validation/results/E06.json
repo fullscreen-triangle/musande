@@ -1,0 +1,32 @@
+{
+  "experiment_id": "E06",
+  "cluster": "cell_truth",
+  "claim": "S = d(x, cell) + beta outside cell",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "distances": [
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0
+    ],
+    "measured": [
+      1.5,
+      3.5,
+      5.5,
+      7.5,
+      9.5
+    ],
+    "expected": [
+      1.5,
+      3.5,
+      5.5,
+      7.5,
+      9.5
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "experiment_id": "E03",
+  "cluster": "receiver_floor",
+  "claim": "Floor scales linearly with beta",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "betas": [
+      0.1,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ],
+    "measured": [
+      0.1,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ]
+  }
+}

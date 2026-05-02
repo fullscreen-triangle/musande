@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E01",
+  "cluster": "receiver_floor",
+  "claim": "S >= beta for all states",
+  "measured": 2.5,
+  "predicted": 2.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "n_states": 1000,
+    "beta": 2.5,
+    "S_mean": 9.101499831044755,
+    "S_max": 15.433399858256927
+  }
+}

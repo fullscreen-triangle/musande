@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E10",
+  "cluster": "layered_receivers",
+  "claim": "Layered floor = min of layer floors",
+  "measured": 0.5,
+  "predicted": 0.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "layer_floors": [
+      0.5,
+      1.5,
+      3.0
+    ]
+  }
+}

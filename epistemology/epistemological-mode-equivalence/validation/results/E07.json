@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E07",
+  "cluster": "rep_invariance",
+  "claim": "Oscillatory encoding preserves S",
+  "measured": 2.302775637731995,
+  "predicted": 2.302775637731995,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

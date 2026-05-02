@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E12",
+  "cluster": "layered_receivers",
+  "claim": "Cell-closure under decoder substitution",
+  "measured": 0.3,
+  "predicted": 0.3,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

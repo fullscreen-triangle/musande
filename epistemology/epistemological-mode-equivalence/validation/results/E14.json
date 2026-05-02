@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E14",
+  "cluster": "mode_nonpriv",
+  "claim": "All three receivers reach action-cell despite different decoder floors",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "A_naive": 0.4,
+    "B_expert": 0.3,
+    "C_child": 0.1
+  }
+}

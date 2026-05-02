@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E20",
+  "cluster": "mode_methodology",
+  "claim": "Receiver-methodology composition law",
+  "measured": 1.8940000000000068,
+  "predicted": 1.894,
+  "relative_error": 3.634309795499457e-15,
+  "verdict": "PASS",
+  "extra": {}
+}

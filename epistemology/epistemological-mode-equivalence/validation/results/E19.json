@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E19",
+  "cluster": "catalytic_composition",
+  "claim": "Five-methodology composition law",
+  "measured": 1.5145930721386813,
+  "predicted": 1.5145930721386813,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "floors": [
+      0.08571428571428572,
+      0.16153846153846155,
+      0.2666666666666667,
+      0.40909090909090906,
+      0.6000000000000001
+    ]
+  }
+}

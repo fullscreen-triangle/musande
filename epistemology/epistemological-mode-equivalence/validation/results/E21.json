@@ -1,0 +1,20 @@
+{
+  "experiment_id": "E21",
+  "cluster": "mode_methodology",
+  "claim": "Stack of receivers and methodologies",
+  "measured": 4.919900718624993,
+  "predicted": 4.919900718624993,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "receiver_floors": [
+      0.5,
+      1.5,
+      2.5
+    ],
+    "method_floors": [
+      0.2,
+      0.3
+    ]
+  }
+}

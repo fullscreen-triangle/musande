@@ -1,0 +1,19 @@
+{
+  "experiment_id": "E25",
+  "cluster": "distribution",
+  "claim": "Total coverage exceeds any single receiver's coverage",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "per_receiver": [
+      198.0,
+      197.0,
+      196.0,
+      195.0
+    ],
+    "max_single": 198.0,
+    "total": 786.0
+  }
+}

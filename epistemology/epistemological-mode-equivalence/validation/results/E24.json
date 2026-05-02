@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E24",
+  "cluster": "distribution",
+  "claim": "max knowledge <= Sigma - floor",
+  "measured": 98.0,
+  "predicted": 98.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "n": 500,
+    "rcv_floor": 2.0
+  }
+}

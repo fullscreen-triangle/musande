@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E18",
+  "cluster": "catalytic_composition",
+  "claim": "Two-methodology composition law",
+  "measured": 0.781833333333326,
+  "predicted": 0.7818333333333334,
+  "relative_error": 9.372166227916478e-15,
+  "verdict": "PASS",
+  "extra": {
+    "f1": 0.33333333333333337,
+    "f2": 0.44999999999999996
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "max_relative_error": 9.372166227916478e-15,
+    "by_cluster": {
+      "receiver_floor": {
+        "count": 3,
+        "max_err": 0.0,
+        "passed": 3
+      },
+      "cell_truth": {
+        "count": 3,
+        "max_err": 0.0,
+        "passed": 3
+      },
+      "rep_invariance": {
+        "count": 3,
+        "max_err": 0.0,
+        "passed": 3
+      },
+      "layered_receivers": {
+        "count": 3,
+        "max_err": 0.0,
+        "passed": 3
+      },
+      "mode_nonpriv": {
+        "count": 2,
+        "max_err": 0.0,
+        "passed": 2
+      },
+      "methodological_floor": {
+        "count": 3,
+        "max_err": 1.8503717077085943e-16,
+        "passed": 3
+      },
+      "catalytic_composition": {
+        "count": 2,
+        "max_err": 9.372166227916478e-15,
+        "passed": 2
+      },
+      "mode_methodology": {
+        "count": 3,
+        "max_err": 3.634309795499457e-15,
+        "passed": 3
+      },
+      "incompatibility": {
+        "count": 1,
+        "max_err": 0.0,
+        "passed": 1
+      },
+      "distribution": {
+        "count": 2,
+        "max_err": 0.0,
+        "passed": 2
+      }
+    }
+  },
+  "experiments": [
+    {
+      "experiment_id": "E01",
+      "cluster": "receiver_floor",
+      "claim": "S >= beta for all states",
+      "measured": 2.5,
+      "predicted": 2.5,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "n_states": 1000,
+        "beta": 2.5,
+        "S_mean": 9.101499831044755,
+        "S_max": 15.433399858256927
+      }
+    },
+    {
+      "experiment_id": "E02",
+      "cluster": "receiver_floor",
+      "claim": "S = beta when x in cell with zero noise",
+      "measured": 1.7,
+      "predicted": 1.7,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "x_distance_to_cell": 0.0
+      }
+    },
+    {
+      "experiment_id": "E03",
+      "cluster": "receiver_floor",
+      "claim": "Floor scales linearly with beta",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "betas": [
+          0.1,
+          0.5,
+          1.0,
+          2.0,
+          5.0
+        ],
+        "measured": [
+          0.1,
+          0.5,
+          1.0,
+          2.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "experiment_id": "E04",
+      "cluster": "cell_truth",
+      "claim": "S(x1)=S(x2) for x1,x2 in cell",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "x1": [
+          5.5,
+          5.5
+        ],
+        "x2": [
+          4.0,
+          5.5
+        ]
+      }
+    },
+    {
+      "experiment_id": "E05",
+      "cluster": "cell_truth",
+      "claim": "Variance of S inside cell is zero",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "n": 500,
+        "S_mean": 2.0
+      }
+    },
+    {
+      "experiment_id": "E06",
+      "cluster": "cell_truth",
+      "claim": "S = d(x, cell) + beta outside cell",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "distances": [
+          2.0,
+          4.0,
+          6.0,
+          8.0,
+          10.0
+        ],
+        "measured": [
+          1.5,
+          3.5,
+          5.5,
+          7.5,
+          9.5
+        ],
+        "expected": [
+          1.5,
+          3.5,
+          5.5,
+          7.5,
+          9.5
+        ]
+      }
+    },
+    {
+      "experiment_id": "E07",
+      "cluster": "rep_invariance",
+      "claim": "Oscillatory encoding preserves S",
+      "measured": 2.302775637731995,
+      "predicted": 2.302775637731995,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E08",
+      "cluster": "rep_invariance",
+      "claim": "Categorical encoding preserves S",
+      "measured": 2.1708286933869707,
+      "predicted": 2.1708286933869707,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E09",
+      "cluster": "rep_invariance",
+      "claim": "Partition encoding preserves S",
+      "measured": 1.614213562373095,
+      "predicted": 1.614213562373095,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E10",
+      "cluster": "layered_receivers",
+      "claim": "Layered floor = min of layer floors",
+      "measured": 0.5,
+      "predicted": 0.5,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "layer_floors": [
+          0.5,
+          1.5,
+          3.0
+        ]
+      }
+    },
+    {
+      "experiment_id": "E11",
+      "cluster": "layered_receivers",
+      "claim": "S monotonic in layer floor",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "betas": [
+          0.2,
+          0.5,
+          1.0,
+          2.0,
+          5.0
+        ],
+        "S_values": [
+          0.2,
+          0.5,
+          1.0,
+          2.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "experiment_id": "E12",
+      "cluster": "layered_receivers",
+      "claim": "Cell-closure under decoder substitution",
+      "measured": 0.3,
+      "predicted": 0.3,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E13",
+      "cluster": "mode_nonpriv",
+      "claim": "Pre-decoder reaches cell when decoder above tolerance",
+      "measured": 0.2,
+      "predicted": 0.2,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "decoder_only_S": 2.5,
+        "tolerance": 1.0,
+        "decoder_floor": 2.5
+      }
+    },
+    {
+      "experiment_id": "E14",
+      "cluster": "mode_nonpriv",
+      "claim": "All three receivers reach action-cell despite different decoder floors",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "A_naive": 0.4,
+        "B_expert": 0.3,
+        "C_child": 0.1
+      }
+    },
+    {
+      "experiment_id": "E15",
+      "cluster": "methodological_floor",
+      "claim": "Floor closed form",
+      "measured": 0.3,
+      "predicted": 0.3,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E16",
+      "cluster": "methodological_floor",
+      "claim": "Iteration converges to floor",
+      "measured": 0.33333333333333337,
+      "predicted": 0.33333333333333337,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "start": 50.0,
+        "n_iter": 1000
+      }
+    },
+    {
+      "experiment_id": "E17",
+      "cluster": "methodological_floor",
+      "claim": "Floor independent of starting S",
+      "measured": 1.8503717077085943e-16,
+      "predicted": 0.0,
+      "relative_error": 1.8503717077085943e-16,
+      "verdict": "PASS",
+      "extra": {
+        "starts": [
+          0.0,
+          5.0,
+          25.0,
+          75.0,
+          99.0
+        ],
+        "finals": [
+          0.29999999999999993,
+          0.30000000000000004,
+          0.30000000000000004,
+          0.30000000000000004,
+          0.30000000000000004
+        ],
+        "expected": 0.3
+      }
+    },
+    {
+      "experiment_id": "E18",
+      "cluster": "catalytic_composition",
+      "claim": "Two-methodology composition law",
+      "measured": 0.781833333333326,
+      "predicted": 0.7818333333333334,
+      "relative_error": 9.372166227916478e-15,
+      "verdict": "PASS",
+      "extra": {
+        "f1": 0.33333333333333337,
+        "f2": 0.44999999999999996
+      }
+    },
+    {
+      "experiment_id": "E19",
+      "cluster": "catalytic_composition",
+      "claim": "Five-methodology composition law",
+      "measured": 1.5145930721386813,
+      "predicted": 1.5145930721386813,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "floors": [
+          0.08571428571428572,
+          0.16153846153846155,
+          0.2666666666666667,
+          0.40909090909090906,
+          0.6000000000000001
+        ]
+      }
+    },
+    {
+      "experiment_id": "E20",
+      "cluster": "mode_methodology",
+      "claim": "Receiver-methodology composition law",
+      "measured": 1.8940000000000068,
+      "predicted": 1.894,
+      "relative_error": 3.634309795499457e-15,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E21",
+      "cluster": "mode_methodology",
+      "claim": "Stack of receivers and methodologies",
+      "measured": 4.919900718624993,
+      "predicted": 4.919900718624993,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "receiver_floors": [
+          0.5,
+          1.5,
+          2.5
+        ],
+        "method_floors": [
+          0.2,
+          0.3
+        ]
+      }
+    },
+    {
+      "experiment_id": "E22",
+      "cluster": "mode_methodology",
+      "claim": "Composition is symmetric in floors",
+      "measured": 2.288000000000001,
+      "predicted": 2.288000000000001,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E23",
+      "cluster": "incompatibility",
+      "claim": "Production and completion mutually exclusive",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "prod_sigma": 0.4,
+        "comp_sigma": 0.0
+      }
+    },
+    {
+      "experiment_id": "E24",
+      "cluster": "distribution",
+      "claim": "max knowledge <= Sigma - floor",
+      "measured": 98.0,
+      "predicted": 98.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "n": 500,
+        "rcv_floor": 2.0
+      }
+    },
+    {
+      "experiment_id": "E25",
+      "cluster": "distribution",
+      "claim": "Total coverage exceeds any single receiver's coverage",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "per_receiver": [
+          198.0,
+          197.0,
+          196.0,
+          195.0
+        ],
+        "max_single": 198.0,
+        "total": 786.0
+      }
+    }
+  ]
+}

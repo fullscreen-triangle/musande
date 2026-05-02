@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E15",
+  "cluster": "methodological_floor",
+  "claim": "Floor closed form",
+  "measured": 0.3,
+  "predicted": 0.3,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E13",
+  "cluster": "mode_nonpriv",
+  "claim": "Pre-decoder reaches cell when decoder above tolerance",
+  "measured": 0.2,
+  "predicted": 0.2,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "decoder_only_S": 2.5,
+    "tolerance": 1.0,
+    "decoder_floor": 2.5
+  }
+}

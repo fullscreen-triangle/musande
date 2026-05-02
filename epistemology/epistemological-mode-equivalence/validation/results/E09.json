@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E09",
+  "cluster": "rep_invariance",
+  "claim": "Partition encoding preserves S",
+  "measured": 1.614213562373095,
+  "predicted": 1.614213562373095,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

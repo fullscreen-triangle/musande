@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E08",
+  "cluster": "rep_invariance",
+  "claim": "Categorical encoding preserves S",
+  "measured": 2.1708286933869707,
+  "predicted": 2.1708286933869707,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

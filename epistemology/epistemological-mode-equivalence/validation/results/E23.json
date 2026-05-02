@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E23",
+  "cluster": "incompatibility",
+  "claim": "Production and completion mutually exclusive",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "prod_sigma": 0.4,
+    "comp_sigma": 0.0
+  }
+}

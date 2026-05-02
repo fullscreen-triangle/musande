@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E22",
+  "cluster": "mode_methodology",
+  "claim": "Composition is symmetric in floors",
+  "measured": 2.288000000000001,
+  "predicted": 2.288000000000001,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

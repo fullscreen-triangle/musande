@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E16",
+  "cluster": "methodological_floor",
+  "claim": "Iteration converges to floor",
+  "measured": 0.33333333333333337,
+  "predicted": 0.33333333333333337,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "start": 50.0,
+    "n_iter": 1000
+  }
+}

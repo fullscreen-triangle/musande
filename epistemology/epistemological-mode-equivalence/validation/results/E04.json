@@ -1,0 +1,19 @@
+{
+  "experiment_id": "E04",
+  "cluster": "cell_truth",
+  "claim": "S(x1)=S(x2) for x1,x2 in cell",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "x1": [
+      5.5,
+      5.5
+    ],
+    "x2": [
+      4.0,
+      5.5
+    ]
+  }
+}

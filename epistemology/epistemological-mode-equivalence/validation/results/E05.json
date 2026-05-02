@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E05",
+  "cluster": "cell_truth",
+  "claim": "Variance of S inside cell is zero",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "n": 500,
+    "S_mean": 2.0
+  }
+}
