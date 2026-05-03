@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E26",
+  "cluster": "C6_ensemble",
+  "claim": "Ensemble R in [0,1]",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "R_ens": 0.43620746329130045
+  }
+}

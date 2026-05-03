@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E19",
+  "cluster": "C4_bridge",
+  "claim": "3 agents reach same cell despite disjoint apertures",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

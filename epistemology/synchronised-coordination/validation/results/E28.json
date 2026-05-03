@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E28",
+  "cluster": "C6_ensemble",
+  "claim": "Ensemble Kc = 2sigma/pi",
+  "measured": 0.8242699150077214,
+  "predicted": 0.8242699150077214,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

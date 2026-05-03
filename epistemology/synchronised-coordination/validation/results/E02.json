@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E02",
+  "cluster": "C1_state",
+  "claim": "Kc = 2sigma/pi",
+  "measured": 0.954929658551372,
+  "predicted": 0.954929658551372,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

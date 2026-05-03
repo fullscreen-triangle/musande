@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E48",
+  "cluster": "C10_aperture_memory",
+  "claim": "|M_i - M_j| bounded (phase-locked)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "max_diff": 0.0030000000000000027
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E09",
+  "cluster": "C2_potential",
+  "claim": "Higher R lowers V_SF",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "phi_R03": 1.0823576721798334,
+    "phi_R07": 0.703360107310256
+  }
+}

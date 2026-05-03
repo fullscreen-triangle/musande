@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E24",
+  "cluster": "C5_trajectory",
+  "claim": "Joint conditions for trajectory coordination",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

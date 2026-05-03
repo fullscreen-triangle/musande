@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E33",
+  "cluster": "C7_coord_regimes",
+  "claim": "R_ens=0.7 -> cascade",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

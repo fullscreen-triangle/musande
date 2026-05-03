@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E40",
+  "cluster": "C8_joint_lag",
+  "claim": "Joint Lagrangian = sum + coup",
+  "measured": 0.4,
+  "predicted": 0.4,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

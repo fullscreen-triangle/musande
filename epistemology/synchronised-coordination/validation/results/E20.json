@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E20",
+  "cluster": "C4_bridge",
+  "claim": "Catalytic composition (parallel)",
+  "measured": 1.05e-05,
+  "predicted": 1.05e-05,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

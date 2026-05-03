@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E38",
+  "cluster": "C8_joint_lag",
+  "claim": "Weak coupling: parallel composition",
+  "measured": 1.2500000000000002e-05,
+  "predicted": 1.25e-05,
+  "relative_error": 1.3552527156068805e-16,
+  "verdict": "PASS",
+  "extra": {}
+}

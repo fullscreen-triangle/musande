@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E01",
+  "cluster": "C1_state",
+  "claim": "State lies in 5D manifold",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

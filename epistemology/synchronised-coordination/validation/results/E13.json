@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E13",
+  "cluster": "C3_regimes",
+  "claim": "R=0.65 -> cascade",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

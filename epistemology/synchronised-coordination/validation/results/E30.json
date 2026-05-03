@@ -1,0 +1,20 @@
+{
+  "experiment_id": "E30",
+  "cluster": "C6_ensemble",
+  "claim": "High individual R compatible with low ensemble R",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "R_ens": 5.551115123125783e-17,
+    "indiv_Rs": [
+      0.95,
+      0.95,
+      0.95,
+      0.95,
+      0.95,
+      0.95
+    ]
+  }
+}

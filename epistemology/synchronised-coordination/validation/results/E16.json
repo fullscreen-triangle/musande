@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E16",
+  "cluster": "C4_bridge",
+  "claim": "beta = sigma2_min",
+  "measured": 0.5,
+  "predicted": 0.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

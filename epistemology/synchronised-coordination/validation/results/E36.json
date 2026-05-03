@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E36",
+  "cluster": "C8_joint_lag",
+  "claim": "Coupling Lagrangian formula",
+  "measured": -0.4950124847328822,
+  "predicted": -0.4950124847328822,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

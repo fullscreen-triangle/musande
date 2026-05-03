@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E32",
+  "cluster": "C7_coord_regimes",
+  "claim": "R_ens=0.4 -> aperture",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

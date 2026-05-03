@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E39",
+  "cluster": "C8_joint_lag",
+  "claim": "Sync onset at Kc",
+  "measured": 0.954929658551372,
+  "predicted": 0.954929658551372,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

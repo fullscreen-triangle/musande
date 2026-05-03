@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E43",
+  "cluster": "C9_sync",
+  "claim": "tau_p = 0 when phase-locked",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

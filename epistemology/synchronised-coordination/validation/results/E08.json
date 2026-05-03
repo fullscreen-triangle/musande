@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E08",
+  "cluster": "C2_potential",
+  "claim": "dV_var/d(sigma2) = 0 at sqrt(1/K)",
+  "measured": 2.220446049250313e-16,
+  "predicted": 0.0,
+  "relative_error": 2.220446049250313e-16,
+  "verdict": "PASS",
+  "extra": {
+    "sigma2_min": 0.7071067811865476
+  }
+}

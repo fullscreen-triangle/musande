@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E27",
+  "cluster": "C6_ensemble",
+  "claim": "Identical agents R_ens = R_indiv",
+  "measured": 0.7,
+  "predicted": 0.7,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

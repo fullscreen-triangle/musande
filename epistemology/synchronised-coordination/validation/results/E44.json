@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E44",
+  "cluster": "C9_sync",
+  "claim": "Coordination friction = 0 in phase-lock",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

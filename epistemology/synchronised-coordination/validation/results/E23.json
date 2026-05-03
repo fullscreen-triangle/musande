@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E23",
+  "cluster": "C5_trajectory",
+  "claim": "Memory compatible at delta=0.05",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

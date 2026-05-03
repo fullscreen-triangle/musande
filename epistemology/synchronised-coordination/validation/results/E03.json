@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E03",
+  "cluster": "C1_state",
+  "claim": "R* = sqrt(1-Kc/K)",
+  "measured": 0.8660254037844386,
+  "predicted": 0.8660254037844386,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

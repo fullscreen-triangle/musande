@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E29",
+  "cluster": "C6_ensemble",
+  "claim": "Anti-phase agents R_ens = 0",
+  "measured": 6.123233995736766e-17,
+  "predicted": 0.0,
+  "relative_error": 6.123233995736766e-17,
+  "verdict": "PASS",
+  "extra": {
+    "R_ens": 6.123233995736766e-17
+  }
+}

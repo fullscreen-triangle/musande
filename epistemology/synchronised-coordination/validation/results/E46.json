@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E46",
+  "cluster": "C10_aperture_memory",
+  "claim": "Phase-locked agents share apertures",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

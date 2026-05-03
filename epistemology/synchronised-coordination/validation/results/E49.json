@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E49",
+  "cluster": "C10_aperture_memory",
+  "claim": "Memory traces congruent within eps_mem",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "M1": 0.6,
+    "M2": 0.61,
+    "diff": 0.010000000000000009
+  }
+}

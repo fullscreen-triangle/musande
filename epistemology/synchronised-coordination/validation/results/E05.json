@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E05",
+  "cluster": "C1_state",
+  "claim": "log-log slope = -1",
+  "measured": -0.9999999999999999,
+  "predicted": -1.0,
+  "relative_error": 1.1102230246251565e-16,
+  "verdict": "PASS",
+  "extra": {}
+}

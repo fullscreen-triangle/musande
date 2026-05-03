@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E37",
+  "cluster": "C8_joint_lag",
+  "claim": "Gradient flow when K_ij=0",
+  "measured": 0.25,
+  "predicted": 0.25,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

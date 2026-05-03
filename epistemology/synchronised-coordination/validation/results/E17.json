@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E17",
+  "cluster": "C4_bridge",
+  "claim": "Agent floor = beta*f_method/SIGMA",
+  "measured": 0.0025,
+  "predicted": 0.0025,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

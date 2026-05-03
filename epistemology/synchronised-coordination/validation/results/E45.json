@@ -1,0 +1,23 @@
+{
+  "experiment_id": "E45",
+  "cluster": "C9_sync",
+  "claim": "No intermediate theta in operating regime",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "thetas_distinct": [
+      0.5,
+      0.7,
+      1.2,
+      0.9
+    ],
+    "thetas_locked": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

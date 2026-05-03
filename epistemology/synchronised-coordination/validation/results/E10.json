@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E10",
+  "cluster": "C2_potential",
+  "claim": "dR/dt > 0 below R*",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "R": 0.3,
+    "Rstar": 0.8660254037844386,
+    "Rdot": 0.7919999999999999
+  }
+}

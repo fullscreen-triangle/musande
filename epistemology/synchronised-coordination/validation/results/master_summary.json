@@ -1,0 +1,613 @@
+{
+  "summary": {
+    "total": 50,
+    "passed": 50,
+    "failed": 0,
+    "max_relative_error": 4.440892098500626e-16,
+    "by_cluster": {
+      "C1_state": {
+        "count": 5,
+        "max_err": 1.1102230246251565e-16,
+        "passed": 5
+      },
+      "C2_potential": {
+        "count": 5,
+        "max_err": 4.440892098500626e-16,
+        "passed": 5
+      },
+      "C3_regimes": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C4_bridge": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C5_trajectory": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C6_ensemble": {
+        "count": 5,
+        "max_err": 6.123233995736766e-17,
+        "passed": 5
+      },
+      "C7_coord_regimes": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C8_joint_lag": {
+        "count": 5,
+        "max_err": 1.3552527156068805e-16,
+        "passed": 5
+      },
+      "C9_sync": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C10_aperture_memory": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      }
+    }
+  },
+  "experiments": [
+    {
+      "experiment_id": "E01",
+      "cluster": "C1_state",
+      "claim": "State lies in 5D manifold",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E02",
+      "cluster": "C1_state",
+      "claim": "Kc = 2sigma/pi",
+      "measured": 0.954929658551372,
+      "predicted": 0.954929658551372,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E03",
+      "cluster": "C1_state",
+      "claim": "R* = sqrt(1-Kc/K)",
+      "measured": 0.8660254037844386,
+      "predicted": 0.8660254037844386,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E04",
+      "cluster": "C1_state",
+      "claim": "sigma2_min = kT/K",
+      "measured": 0.5,
+      "predicted": 0.5,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E05",
+      "cluster": "C1_state",
+      "claim": "log-log slope = -1",
+      "measured": -0.9999999999999999,
+      "predicted": -1.0,
+      "relative_error": 1.1102230246251565e-16,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E06",
+      "cluster": "C2_potential",
+      "claim": "V_sync min at R=0 (subcritical)",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E07",
+      "cluster": "C2_potential",
+      "claim": "dV_sync/dR = 0 at R*",
+      "measured": -4.440892098500626e-16,
+      "predicted": 0.0,
+      "relative_error": 4.440892098500626e-16,
+      "verdict": "PASS",
+      "extra": {
+        "R_star": 0.8660254037844386
+      }
+    },
+    {
+      "experiment_id": "E08",
+      "cluster": "C2_potential",
+      "claim": "dV_var/d(sigma2) = 0 at sqrt(1/K)",
+      "measured": 2.220446049250313e-16,
+      "predicted": 0.0,
+      "relative_error": 2.220446049250313e-16,
+      "verdict": "PASS",
+      "extra": {
+        "sigma2_min": 0.7071067811865476
+      }
+    },
+    {
+      "experiment_id": "E09",
+      "cluster": "C2_potential",
+      "claim": "Higher R lowers V_SF",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "phi_R03": 1.0823576721798334,
+        "phi_R07": 0.703360107310256
+      }
+    },
+    {
+      "experiment_id": "E10",
+      "cluster": "C2_potential",
+      "claim": "dR/dt > 0 below R*",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "R": 0.3,
+        "Rstar": 0.8660254037844386,
+        "Rdot": 0.7919999999999999
+      }
+    },
+    {
+      "experiment_id": "E11",
+      "cluster": "C3_regimes",
+      "claim": "R=0.2 -> turbulent",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E12",
+      "cluster": "C3_regimes",
+      "claim": "R=0.4 -> aperture",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E13",
+      "cluster": "C3_regimes",
+      "claim": "R=0.65 -> cascade",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E14",
+      "cluster": "C3_regimes",
+      "claim": "R=0.9 -> coherent",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E15",
+      "cluster": "C3_regimes",
+      "claim": "R=0.97 -> phase-locked",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E16",
+      "cluster": "C4_bridge",
+      "claim": "beta = sigma2_min",
+      "measured": 0.5,
+      "predicted": 0.5,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E17",
+      "cluster": "C4_bridge",
+      "claim": "Agent floor = beta*f_method/SIGMA",
+      "measured": 0.0025,
+      "predicted": 0.0025,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E18",
+      "cluster": "C4_bridge",
+      "claim": "S inside cell = beta",
+      "measured": 0.5,
+      "predicted": 0.5,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E19",
+      "cluster": "C4_bridge",
+      "claim": "3 agents reach same cell despite disjoint apertures",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E20",
+      "cluster": "C4_bridge",
+      "claim": "Catalytic composition (parallel)",
+      "measured": 1.05e-05,
+      "predicted": 1.05e-05,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E21",
+      "cluster": "C5_trajectory",
+      "claim": "Different trajectories distinct",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E22",
+      "cluster": "C5_trajectory",
+      "claim": "Trajectory-compatible at eps=0.05",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "max_dist": 0.014142135623730963
+      }
+    },
+    {
+      "experiment_id": "E23",
+      "cluster": "C5_trajectory",
+      "claim": "Memory compatible at delta=0.05",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E24",
+      "cluster": "C5_trajectory",
+      "claim": "Joint conditions for trajectory coordination",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E25",
+      "cluster": "C5_trajectory",
+      "claim": "Cell-coord without traj-coord possible",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E26",
+      "cluster": "C6_ensemble",
+      "claim": "Ensemble R in [0,1]",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "R_ens": 0.43620746329130045
+      }
+    },
+    {
+      "experiment_id": "E27",
+      "cluster": "C6_ensemble",
+      "claim": "Identical agents R_ens = R_indiv",
+      "measured": 0.7,
+      "predicted": 0.7,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E28",
+      "cluster": "C6_ensemble",
+      "claim": "Ensemble Kc = 2sigma/pi",
+      "measured": 0.8242699150077214,
+      "predicted": 0.8242699150077214,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E29",
+      "cluster": "C6_ensemble",
+      "claim": "Anti-phase agents R_ens = 0",
+      "measured": 6.123233995736766e-17,
+      "predicted": 0.0,
+      "relative_error": 6.123233995736766e-17,
+      "verdict": "PASS",
+      "extra": {
+        "R_ens": 6.123233995736766e-17
+      }
+    },
+    {
+      "experiment_id": "E30",
+      "cluster": "C6_ensemble",
+      "claim": "High individual R compatible with low ensemble R",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "R_ens": 5.551115123125783e-17,
+        "indiv_Rs": [
+          0.95,
+          0.95,
+          0.95,
+          0.95,
+          0.95,
+          0.95
+        ]
+      }
+    },
+    {
+      "experiment_id": "E31",
+      "cluster": "C7_coord_regimes",
+      "claim": "R_ens=0.2 -> turbulent",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E32",
+      "cluster": "C7_coord_regimes",
+      "claim": "R_ens=0.4 -> aperture",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E33",
+      "cluster": "C7_coord_regimes",
+      "claim": "R_ens=0.7 -> cascade",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E34",
+      "cluster": "C7_coord_regimes",
+      "claim": "R_ens=0.85 -> coherent",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E35",
+      "cluster": "C7_coord_regimes",
+      "claim": "R_ens=0.97 -> phase-locked",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E36",
+      "cluster": "C8_joint_lag",
+      "claim": "Coupling Lagrangian formula",
+      "measured": -0.4950124847328822,
+      "predicted": -0.4950124847328822,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E37",
+      "cluster": "C8_joint_lag",
+      "claim": "Gradient flow when K_ij=0",
+      "measured": 0.25,
+      "predicted": 0.25,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E38",
+      "cluster": "C8_joint_lag",
+      "claim": "Weak coupling: parallel composition",
+      "measured": 1.2500000000000002e-05,
+      "predicted": 1.25e-05,
+      "relative_error": 1.3552527156068805e-16,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E39",
+      "cluster": "C8_joint_lag",
+      "claim": "Sync onset at Kc",
+      "measured": 0.954929658551372,
+      "predicted": 0.954929658551372,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E40",
+      "cluster": "C8_joint_lag",
+      "claim": "Joint Lagrangian = sum + coup",
+      "measured": 0.4,
+      "predicted": 0.4,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E41",
+      "cluster": "C9_sync",
+      "claim": "theta=0 for identical agents",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E42",
+      "cluster": "C9_sync",
+      "claim": "Globally phase-locked when identical",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E43",
+      "cluster": "C9_sync",
+      "claim": "tau_p = 0 when phase-locked",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E44",
+      "cluster": "C9_sync",
+      "claim": "Coordination friction = 0 in phase-lock",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E45",
+      "cluster": "C9_sync",
+      "claim": "No intermediate theta in operating regime",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "thetas_distinct": [
+          0.5,
+          0.7,
+          1.2,
+          0.9
+        ],
+        "thetas_locked": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "experiment_id": "E46",
+      "cluster": "C10_aperture_memory",
+      "claim": "Phase-locked agents share apertures",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E47",
+      "cluster": "C10_aperture_memory",
+      "claim": "Cannot phase-lock with disjoint apertures",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "theta": 2.0
+      }
+    },
+    {
+      "experiment_id": "E48",
+      "cluster": "C10_aperture_memory",
+      "claim": "|M_i - M_j| bounded (phase-locked)",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "max_diff": 0.0030000000000000027
+      }
+    },
+    {
+      "experiment_id": "E49",
+      "cluster": "C10_aperture_memory",
+      "claim": "Memory traces congruent within eps_mem",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "M1": 0.6,
+        "M2": 0.61,
+        "diff": 0.010000000000000009
+      }
+    },
+    {
+      "experiment_id": "E50",
+      "cluster": "C10_aperture_memory",
+      "claim": "Synchronisation reversibility (above->below Kc)",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "R_above": 0.7071067811865476,
+        "R_below": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E07",
+  "cluster": "C2_potential",
+  "claim": "dV_sync/dR = 0 at R*",
+  "measured": -4.440892098500626e-16,
+  "predicted": 0.0,
+  "relative_error": 4.440892098500626e-16,
+  "verdict": "PASS",
+  "extra": {
+    "R_star": 0.8660254037844386
+  }
+}

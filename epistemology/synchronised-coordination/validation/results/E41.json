@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E41",
+  "cluster": "C9_sync",
+  "claim": "theta=0 for identical agents",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

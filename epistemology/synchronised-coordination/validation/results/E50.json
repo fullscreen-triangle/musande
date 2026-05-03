@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E50",
+  "cluster": "C10_aperture_memory",
+  "claim": "Synchronisation reversibility (above->below Kc)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "R_above": 0.7071067811865476,
+    "R_below": 0.0
+  }
+}
