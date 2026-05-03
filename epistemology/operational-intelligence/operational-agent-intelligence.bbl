@@ -1,0 +1,346 @@
+\begin{thebibliography}{10}
+
+\bibitem{acebron2005}
+Juan~A. Acebr\'on, L.~L. Bonilla, C.~J.~P. Vicente, F.~Ritort, and R.~Spigler.
+\newblock The kuramoto model: A simple paradigm for synchronization phenomena.
+\newblock {\em Reviews of Modern Physics}, 77(1):137--185, 2005.
+
+\bibitem{alchourron1985}
+Carlos~E. Alchourr\'on, Peter G\"ardenfors, and David Makinson.
+\newblock On the logic of theory change.
+\newblock {\em Journal of Symbolic Logic}, 50(2):510--530, 1985.
+
+\bibitem{andrews1976}
+George~E. Andrews.
+\newblock {\em The Theory of Partitions}.
+\newblock Addison-Wesley, 1976.
+
+\bibitem{arnold1989}
+V.~I. Arnold.
+\newblock {\em Mathematical Methods of Classical Mechanics}.
+\newblock Springer, 2nd edition, 1989.
+
+\bibitem{aumann1976}
+Robert~J. Aumann.
+\newblock Agreeing to disagree.
+\newblock {\em Annals of Statistics}, 4:1236--1239, 1976.
+
+\bibitem{awodey2010}
+Steve Awodey.
+\newblock {\em Category Theory}.
+\newblock Oxford University Press, 2nd edition, 2010.
+
+\bibitem{banach1922}
+Stefan Banach.
+\newblock Sur les op\'erations dans les ensembles abstraits.
+\newblock {\em Fundamenta Mathematicae}, 3:133--181, 1922.
+
+\bibitem{barrwells1990}
+Michael Barr and Charles Wells.
+\newblock {\em Category Theory for Computing Science}.
+\newblock Prentice Hall, 1990.
+
+\bibitem{bennett1973}
+Charles~H. Bennett.
+\newblock Logical reversibility of computation.
+\newblock {\em IBM Journal of Research and Development}, 17(6):525--532, 1973.
+
+\bibitem{birkhoff1967}
+Garrett Birkhoff.
+\newblock {\em Lattice Theory}.
+\newblock American Mathematical Society, 1967.
+
+\bibitem{boltzmann1877}
+Ludwig Boltzmann.
+\newblock \"uber die beziehung zwischen dem zweiten hauptsatze der mechanischen
+  w\"armetheorie und der wahrscheinlichkeitsrechnung.
+\newblock {\em Wiener Berichte}, 76:373--435, 1877.
+
+\bibitem{borel1909}
+\'Emile Borel.
+\newblock Les probabilit\'es d\'enombrables et leurs applications
+  arithm\'etiques.
+\newblock {\em Rendiconti del Circolo Matematico di Palermo}, 27:247--271,
+  1909.
+
+\bibitem{cantelli1917}
+Francesco~P. Cantelli.
+\newblock Sulla probabilit\`a come limite della frequenza.
+\newblock {\em Atti della Accademia Nazionale dei Lincei}, 26:39--45, 1917.
+
+\bibitem{chaitin1974}
+Gregory~J. Chaitin.
+\newblock Information-theoretic limitations of formal systems.
+\newblock {\em Journal of the ACM}, 21(3):403--424, 1974.
+
+\bibitem{church1936}
+Alonzo Church.
+\newblock An unsolvable problem of elementary number theory.
+\newblock {\em American Journal of Mathematics}, 58(2):345--363, 1936.
+
+\bibitem{coverthomas2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock {\em Elements of Information Theory}.
+\newblock Wiley-Interscience, 2nd edition, 2006.
+
+\bibitem{cramer1946}
+Harald Cram\'er.
+\newblock {\em Mathematical Methods of Statistics}.
+\newblock Princeton University Press, 1946.
+
+\bibitem{fagin1995}
+Ronald Fagin, Joseph~Y. Halpern, Yoram Moses, and Moshe~Y. Vardi.
+\newblock {\em Reasoning About Knowledge}.
+\newblock MIT Press, 1995.
+
+\bibitem{fischer1985}
+Michael~J. Fischer, Nancy~A. Lynch, and Michael~S. Paterson.
+\newblock Impossibility of distributed consensus with one faulty process.
+\newblock {\em Journal of the ACM}, 32(2):374--382, 1985.
+
+\bibitem{fisher1925}
+Ronald~A. Fisher.
+\newblock Theory of statistical estimation.
+\newblock {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 22(5):700--725, 1925.
+
+\bibitem{godel1931}
+Kurt G\"odel.
+\newblock \"uber formal unentscheidbare s\"atze der principia mathematica und
+  verwandter systeme.
+\newblock {\em Monatshefte f\"ur Mathematik und Physik}, 38:173--198, 1931.
+
+\bibitem{goldstein2002}
+Herbert Goldstein, Charles Poole, and John Safko.
+\newblock {\em Classical Mechanics}.
+\newblock Addison Wesley, 3rd edition, 2002.
+
+\bibitem{halmos1950}
+Paul~R. Halmos.
+\newblock {\em Measure Theory}.
+\newblock D. Van Nostrand, 1950.
+
+\bibitem{heisenberg1927}
+Werner Heisenberg.
+\newblock \"uber den anschaulichen inhalt der quantentheoretischen kinematik
+  und mechanik.
+\newblock {\em Zeitschrift f\"ur Physik}, 43(3-4):172--198, 1927.
+
+\bibitem{howie1995}
+John~M. Howie.
+\newblock {\em Fundamentals of Semigroup Theory}.
+\newblock Oxford University Press, 1995.
+
+\bibitem{hutter2005}
+Marcus Hutter.
+\newblock {\em Universal Artificial Intelligence: Sequential Decisions based on
+  Algorithmic Probability}.
+\newblock Springer, 2005.
+
+\bibitem{kelley1955}
+John~L. Kelley.
+\newblock {\em General Topology}.
+\newblock D. Van Nostrand, 1955.
+
+\bibitem{khalil2002}
+Hassan~K. Khalil.
+\newblock {\em Nonlinear Systems}.
+\newblock Prentice Hall, 3rd edition, 2002.
+
+\bibitem{kolmogorov1933}
+Andrey~N. Kolmogorov.
+\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, 1933.
+
+\bibitem{koopman1931}
+Bernard~O. Koopman.
+\newblock Hamiltonian systems and transformations in hilbert space.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  17(5):315--318, 1931.
+
+\bibitem{kramers1940}
+H.~A. Kramers.
+\newblock Brownian motion in a field of force and the diffusion model of
+  chemical reactions.
+\newblock {\em Physica}, 7(4):284--304, 1940.
+
+\bibitem{kullback1951}
+Solomon Kullback and Richard~A. Leibler.
+\newblock On information and sufficiency.
+\newblock {\em Annals of Mathematical Statistics}, 22(1):79--86, 1951.
+
+\bibitem{kuramoto1984}
+Yoshiki Kuramoto.
+\newblock {\em Chemical Oscillations, Waves, and Turbulence}.
+\newblock Springer, 1984.
+
+\bibitem{lamport1982}
+Leslie Lamport, Robert Shostak, and Marshall Pease.
+\newblock The byzantine generals problem.
+\newblock {\em ACM Transactions on Programming Languages and Systems},
+  4(3):382--401, 1982.
+
+\bibitem{landau1937}
+L.~D. Landau.
+\newblock On the theory of phase transitions.
+\newblock {\em Zhurnal Eksperimental'noi i Teoreticheskoi Fiziki}, 7:19--32,
+  1937.
+
+\bibitem{landaulifshitz1980}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock {\em Statistical Physics, Part 1}.
+\newblock Butterworth-Heinemann, 3rd edition, 1980.
+
+\bibitem{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock {\em IBM Journal of Research and Development}, 5(3):183--191, 1961.
+
+\bibitem{legghutter2007}
+Shane Legg and Marcus Hutter.
+\newblock Universal intelligence: A definition of machine intelligence.
+\newblock {\em Minds and Machines}, 17(4):391--444, 2007.
+
+\bibitem{lehmann2006}
+Erich~L. Lehmann and Joseph~P. Romano.
+\newblock {\em Testing Statistical Hypotheses}.
+\newblock Springer, 3rd edition, 2006.
+
+\bibitem{lewis1969}
+David~K. Lewis.
+\newblock {\em Convention: A Philosophical Study}.
+\newblock Harvard University Press, 1969.
+
+\bibitem{lynch1996}
+Nancy~A. Lynch.
+\newblock {\em Distributed Algorithms}.
+\newblock Morgan Kaufmann, 1996.
+
+\bibitem{maclane1998}
+Saunders Mac~Lane.
+\newblock {\em Categories for the Working Mathematician}.
+\newblock Springer, 2nd edition, 1998.
+
+\bibitem{munkres2000}
+James~R. Munkres.
+\newblock {\em Topology}.
+\newblock Prentice Hall, 2nd edition, 2000.
+
+\bibitem{nash1951}
+John Nash.
+\newblock Non-cooperative games.
+\newblock {\em Annals of Mathematics}, 54:286--295, 1951.
+
+\bibitem{noether1918}
+Emmy Noether.
+\newblock Invariante variationsprobleme.
+\newblock {\em Nachrichten der K\"oniglichen Gesellschaft der Wissenschaften zu
+  G\"ottingen}, pages 235--257, 1918.
+
+\bibitem{onsager1953}
+Lars Onsager and Stefan Machlup.
+\newblock Fluctuations and irreversible processes.
+\newblock {\em Physical Review}, 91(6):1505--1512, 1953.
+
+\bibitem{pikovsky2001}
+Arkady Pikovsky, Michael Rosenblum, and J\"urgen Kurths.
+\newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
+\newblock Cambridge University Press, 2001.
+
+\bibitem{poincare1890}
+Henri Poincar\'e.
+\newblock Sur le probl\`eme des trois corps et les \'equations de la dynamique.
+\newblock {\em Acta Mathematica}, 13:1--270, 1890.
+
+\bibitem{rao1945}
+C.~Radhakrishna Rao.
+\newblock Information and the accuracy attainable in the estimation of
+  statistical parameters.
+\newblock {\em Bulletin of the Calcutta Mathematical Society}, 37:81--91, 1945.
+
+\bibitem{robertson1929}
+Howard~P. Robertson.
+\newblock The uncertainty principle.
+\newblock {\em Physical Review}, 34:163--164, 1929.
+
+\bibitem{rudin1987}
+Walter Rudin.
+\newblock {\em Real and Complex Analysis}.
+\newblock McGraw-Hill, 3rd edition, 1987.
+
+\bibitem{russellnorvig2020}
+Stuart Russell and Peter Norvig.
+\newblock {\em Artificial Intelligence: A Modern Approach}.
+\newblock Pearson, 4th edition, 2020.
+
+\bibitem{schelling1960}
+Thomas~C. Schelling.
+\newblock {\em The Strategy of Conflict}.
+\newblock Harvard University Press, 1960.
+
+\bibitem{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em Bell System Technical Journal}, 27(3):379--423, 1948.
+
+\bibitem{shoham2008}
+Yoav Shoham and Kevin Leyton-Brown.
+\newblock {\em Multiagent Systems: Algorithmic, Game-Theoretic, and Logical
+  Foundations}.
+\newblock Cambridge University Press, 2008.
+
+\bibitem{simon1996}
+Herbert~A. Simon.
+\newblock {\em The Sciences of the Artificial}.
+\newblock MIT Press, 3rd edition, 1996.
+
+\bibitem{stanley2011}
+Richard~P. Stanley.
+\newblock {\em Enumerative Combinatorics, Volume 1}.
+\newblock Cambridge University Press, 2nd edition, 2011.
+
+\bibitem{stone1936}
+Marshall~H. Stone.
+\newblock The theory of representations for boolean algebras.
+\newblock {\em Transactions of the American Mathematical Society}, 40:37--111,
+  1936.
+
+\bibitem{strogatz2000}
+Steven~H. Strogatz.
+\newblock From kuramoto to crawford: Exploring the onset of synchronization in
+  populations of coupled oscillators.
+\newblock {\em Physica D}, 143:1--20, 2000.
+
+\bibitem{tarski1933}
+Alfred Tarski.
+\newblock The concept of truth in formalized languages.
+\newblock {\em Studia Philosophica}, 1:261--405, 1933.
+
+\bibitem{turing1936}
+Alan~M. Turing.
+\newblock On computable numbers, with an application to the
+  entscheidungsproblem.
+\newblock {\em Proceedings of the London Mathematical Society}, 42:230--265,
+  1936.
+
+\bibitem{turing1950}
+Alan~M. Turing.
+\newblock Computing machinery and intelligence.
+\newblock {\em Mind}, 59(236):433--460, 1950.
+
+\bibitem{vankampen2007}
+N.~G. van Kampen.
+\newblock {\em Stochastic Processes in Physics and Chemistry}.
+\newblock Elsevier, 3rd edition, 2007.
+
+\bibitem{vonneumannmorgenstern1944}
+John von Neumann and Oskar Morgenstern.
+\newblock {\em Theory of Games and Economic Behavior}.
+\newblock Princeton University Press, 1944.
+
+\bibitem{wasserman2004}
+Larry Wasserman.
+\newblock {\em All of Statistics: A Concise Course in Statistical Inference}.
+\newblock Springer, 2004.
+
+\end{thebibliography}

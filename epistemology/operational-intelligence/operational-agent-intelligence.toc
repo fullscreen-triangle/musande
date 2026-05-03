@@ -1,0 +1,46 @@
+\contentsline {part}{I\hspace {1em}Foundations}{3}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The substrate-neutral question}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What this definition rules out}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Independence}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Organisation}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Axiomatic foundations}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Outcome space and action-cells}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Receivers and the floor}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Action-cells, cell-truth, and methodology}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}The agent}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}State manifold}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Trajectory, terminus, memory}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Aperture}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The agent}{5}{subsection.3.4}%
+\contentsline {part}{II\hspace {1em}The Receiver Uncertainty Cycle}{6}{part.2}%
+\contentsline {section}{\numberline {4}Conjugate dispersions and the uncertainty inequality}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Knowledge and action dispersions}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The phase-space cell}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The Receiver Uncertainty Principle}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}The intelligence cycle}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Knowledge framework extension and admissibility}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Construction-phase necessity}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Cycle necessity}{8}{subsection.5.3}%
+\contentsline {part}{III\hspace {1em}The Intelligence Index}{8}{part.3}%
+\contentsline {section}{\numberline {6}Operational measurement}{8}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The four-condition definition}{8}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The intelligence index}{8}{subsection.6.2}%
+\contentsline {section}{\numberline {7}The intelligence floor}{10}{section.7}%
+\contentsline {part}{IV\hspace {1em}Collective Intelligence and Failure Modes}{10}{part.4}%
+\contentsline {section}{\numberline {8}Collective intelligence}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Federations}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Collective intelligence theorem}{13}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Failure-mode classification}{13}{section.9}%
+\contentsline {part}{V\hspace {1em}Validation, Connections, and Conclusion}{14}{part.5}%
+\contentsline {section}{\numberline {10}Numerical validation}{14}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Methodology}{14}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Summary of results}{14}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Connections}{14}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Existing intelligence frameworks}{14}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Foundational logic}{14}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Conjugate dispersions and uncertainty}{16}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Synchronisation and federation}{16}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Distributed computing}{16}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Information theory}{16}{subsection.11.6}%
+\contentsline {section}{\numberline {12}Conclusion}{16}{section.12}%
