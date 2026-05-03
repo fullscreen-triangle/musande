@@ -11,7 +11,8 @@
       "Bash(python -c \"import json; d = json.load\\(open\\('master_summary.json'\\)\\)['summary']; print\\(json.dumps\\(d, indent=2, default=float\\)\\)\")",
       "Bash(python agent_coordination_validation.py)",
       "Bash(python -c ' *)",
-      "Bash(python synchronised_coordination_validation.py)"
+      "Bash(python synchronised_coordination_validation.py)",
+      "Bash(python operational_intelligence_validation.py)"
     ]
   }
 }

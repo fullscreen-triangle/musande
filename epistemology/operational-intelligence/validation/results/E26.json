@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E26",
+  "cluster": "C6_phenotypes",
+  "claim": "P1 construction-deficient phenotype",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "healthy_index": 1.0,
+    "p1_index": 0.3
+  }
+}

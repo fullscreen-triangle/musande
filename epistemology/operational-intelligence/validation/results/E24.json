@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E24",
+  "cluster": "C5_floor",
+  "claim": "Floor remains positive across all bounded receivers",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "betas": [
+      0.43429448190325176,
+      0.21714724095162588,
+      0.14476482730108395,
+      0.10857362047581294
+    ]
+  }
+}

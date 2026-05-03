@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E27",
+  "cluster": "C6_phenotypes",
+  "claim": "P2 hyper-constructive phenotype",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E19",
+  "cluster": "C4_collective",
+  "claim": "Federation index monotone in agent count",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "c2": 0.75,
+    "c4": 0.9375,
+    "c8": 0.99609375
+  }
+}

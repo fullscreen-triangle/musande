@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E14",
+  "cluster": "C3_index",
+  "claim": "Index at biological-analogous reference",
+  "measured": 0.9746794344808963,
+  "predicted": 0.9746794344808963,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

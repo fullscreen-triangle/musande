@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E09",
+  "cluster": "C2_cycle",
+  "claim": "Healthy construction/action activity ratio = sqrt(0.95)",
+  "measured": 0.9746794344808963,
+  "predicted": 0.9746794344808963,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

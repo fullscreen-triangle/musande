@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E12",
+  "cluster": "C3_index",
+  "claim": "Index linear in A_con/A_act factor",
+  "measured": 2.0,
+  "predicted": 2.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

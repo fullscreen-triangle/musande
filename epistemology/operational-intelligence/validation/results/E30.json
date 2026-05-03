@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E30",
+  "cluster": "C6_phenotypes",
+  "claim": "P5 and P6 cycle-disrupted phenotypes distinguishable",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "p5_ratio": 5.0,
+    "p6_ratio": 0.2
+  }
+}

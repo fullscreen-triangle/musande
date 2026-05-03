@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E03",
+  "cluster": "C1_foundations",
+  "claim": "Uncertainty product respects RUP across 200 pairs",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "min_product": 1.4999999999999998,
+    "hbar": 1.5
+  }
+}

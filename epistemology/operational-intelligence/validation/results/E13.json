@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E13",
+  "cluster": "C3_index",
+  "claim": "Index monotone increasing in kappa",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "indices": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ]
+  }
+}

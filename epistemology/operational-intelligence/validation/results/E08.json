@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E08",
+  "cluster": "C2_cycle",
+  "claim": "Index positive iff all factors positive",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

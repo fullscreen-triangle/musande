@@ -1,0 +1,12 @@
+{
+  "experiment_id": "E21",
+  "cluster": "C5_floor",
+  "claim": "All bounded agents have positive floor",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "min_floor": 9.5367431640625e-07
+  }
+}

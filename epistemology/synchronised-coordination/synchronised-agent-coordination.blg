@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: synchronised-agent-coordination.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 69 entries,
+            2118 wiz_defined-function locations,
+            870 strings with 11060 characters,
+and the built_in function-call counts, 19096 in all, are:
+= -- 1905
+> -- 676
+< -- 2
++ -- 286
+- -- 208
+* -- 1185
+:= -- 3258
+add.period$ -- 207
+call.type$ -- 69
+change.case$ -- 292
+chr.to.int$ -- 0
+cite$ -- 69
+duplicate$ -- 800
+empty$ -- 1680
+format.name$ -- 208
+if$ -- 3957
+int.to.chr$ -- 0
+int.to.str$ -- 69
+missing$ -- 101
+newline$ -- 348
+num.names$ -- 138
+pop$ -- 353
+preamble$ -- 1
+purify$ -- 242
+quote$ -- 0
+skip$ -- 471
+stack$ -- 0
+substring$ -- 1252
+swap$ -- 80
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 212
+warning$ -- 0
+while$ -- 211
+width$ -- 71
+write$ -- 743

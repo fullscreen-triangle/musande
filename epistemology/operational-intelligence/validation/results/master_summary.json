@@ -1,0 +1,398 @@
+{
+  "summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0,
+    "max_relative_error": 1.9350292368194453e-16,
+    "by_cluster": {
+      "C1_foundations": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C2_cycle": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C3_index": {
+        "count": 5,
+        "max_err": 1.9350292368194453e-16,
+        "passed": 5
+      },
+      "C4_collective": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C5_floor": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      },
+      "C6_phenotypes": {
+        "count": 5,
+        "max_err": 0.0,
+        "passed": 5
+      }
+    }
+  },
+  "experiments": [
+    {
+      "experiment_id": "E01",
+      "cluster": "C1_foundations",
+      "claim": "Floor positivity for bounded agents",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E02",
+      "cluster": "C1_foundations",
+      "claim": "Cell-disjointness criterion correctly identifies admissibility",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E03",
+      "cluster": "C1_foundations",
+      "claim": "Uncertainty product respects RUP across 200 pairs",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "min_product": 1.4999999999999998,
+        "hbar": 1.5
+      }
+    },
+    {
+      "experiment_id": "E04",
+      "cluster": "C1_foundations",
+      "claim": "Construction phase: sigma_K diverges as sigma_Y -> 0",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "sigma_K_required": [
+          20.0,
+          200.0,
+          2000.0,
+          20000.0,
+          199999.99999999997
+        ]
+      }
+    },
+    {
+      "experiment_id": "E05",
+      "cluster": "C1_foundations",
+      "claim": "Action phase: sigma_Y diverges as sigma_K -> 0",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E06",
+      "cluster": "C2_cycle",
+      "claim": "Construction-only agent cannot verify cells",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E07",
+      "cluster": "C2_cycle",
+      "claim": "Action-only agent cannot extend K",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E08",
+      "cluster": "C2_cycle",
+      "claim": "Index positive iff all factors positive",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E09",
+      "cluster": "C2_cycle",
+      "claim": "Healthy construction/action activity ratio = sqrt(0.95)",
+      "measured": 0.9746794344808963,
+      "predicted": 0.9746794344808963,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E10",
+      "cluster": "C2_cycle",
+      "claim": "Healthy reference agent has index = 1.0",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E11",
+      "cluster": "C3_index",
+      "claim": "Index closed-form computation",
+      "measured": 0.57375,
+      "predicted": 0.5737499999999999,
+      "relative_error": 1.9350292368194453e-16,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E12",
+      "cluster": "C3_index",
+      "claim": "Index linear in A_con/A_act factor",
+      "measured": 2.0,
+      "predicted": 2.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E13",
+      "cluster": "C3_index",
+      "claim": "Index monotone increasing in kappa",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "indices": [
+          0.1,
+          0.3,
+          0.5,
+          0.7,
+          0.9
+        ]
+      }
+    },
+    {
+      "experiment_id": "E14",
+      "cluster": "C3_index",
+      "claim": "Index at biological-analogous reference",
+      "measured": 0.9746794344808963,
+      "predicted": 0.9746794344808963,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E15",
+      "cluster": "C3_index",
+      "claim": "Index = 0 for fully degraded agent",
+      "measured": 0.0,
+      "predicted": 0.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E16",
+      "cluster": "C4_collective",
+      "claim": "Identical apertures admit isomorphism",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E17",
+      "cluster": "C4_collective",
+      "claim": "Disjoint apertures cannot share cells (cannot phase-lock)",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E18",
+      "cluster": "C4_collective",
+      "claim": "Federation index = parallel composition",
+      "measured": 0.94,
+      "predicted": 0.94,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E19",
+      "cluster": "C4_collective",
+      "claim": "Federation index monotone in agent count",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "c2": 0.75,
+        "c4": 0.9375,
+        "c8": 0.99609375
+      }
+    },
+    {
+      "experiment_id": "E20",
+      "cluster": "C4_collective",
+      "claim": "Phase-locked federation reaches upper bound",
+      "measured": 0.9999940951,
+      "predicted": 0.9999940951,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E21",
+      "cluster": "C5_floor",
+      "claim": "All bounded agents have positive floor",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "min_floor": 9.5367431640625e-07
+      }
+    },
+    {
+      "experiment_id": "E22",
+      "cluster": "C5_floor",
+      "claim": "Index bounded above for any realised agent",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "index": 10000.0
+      }
+    },
+    {
+      "experiment_id": "E23",
+      "cluster": "C5_floor",
+      "claim": "Index decreases as floor increases",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "indices": [
+          0.9,
+          0.7,
+          0.5,
+          0.30000000000000004,
+          0.09999999999999998
+        ]
+      }
+    },
+    {
+      "experiment_id": "E24",
+      "cluster": "C5_floor",
+      "claim": "Floor remains positive across all bounded receivers",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "betas": [
+          0.43429448190325176,
+          0.21714724095162588,
+          0.14476482730108395,
+          0.10857362047581294
+        ]
+      }
+    },
+    {
+      "experiment_id": "E25",
+      "cluster": "C5_floor",
+      "claim": "All realised intelligences are finite",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "indices": [
+          2.302585092994046,
+          4.605170185988092,
+          6.907755278982137,
+          9.210340371976184,
+          11.512925464970229
+        ]
+      }
+    },
+    {
+      "experiment_id": "E26",
+      "cluster": "C6_phenotypes",
+      "claim": "P1 construction-deficient phenotype",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "healthy_index": 1.0,
+        "p1_index": 0.3
+      }
+    },
+    {
+      "experiment_id": "E27",
+      "cluster": "C6_phenotypes",
+      "claim": "P2 hyper-constructive phenotype",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E28",
+      "cluster": "C6_phenotypes",
+      "claim": "P3 construction-deprived phenotype",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E29",
+      "cluster": "C6_phenotypes",
+      "claim": "P4 perceptually decoupled phenotype",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {}
+    },
+    {
+      "experiment_id": "E30",
+      "cluster": "C6_phenotypes",
+      "claim": "P5 and P6 cycle-disrupted phenotypes distinguishable",
+      "measured": 1.0,
+      "predicted": 1.0,
+      "relative_error": 0.0,
+      "verdict": "PASS",
+      "extra": {
+        "p5_ratio": 5.0,
+        "p6_ratio": 0.2
+      }
+    }
+  ]
+}

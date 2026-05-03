@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E10",
+  "cluster": "C2_cycle",
+  "claim": "Healthy reference agent has index = 1.0",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

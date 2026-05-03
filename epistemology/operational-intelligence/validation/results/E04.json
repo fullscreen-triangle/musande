@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E04",
+  "cluster": "C1_foundations",
+  "claim": "Construction phase: sigma_K diverges as sigma_Y -> 0",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "sigma_K_required": [
+      20.0,
+      200.0,
+      2000.0,
+      20000.0,
+      199999.99999999997
+    ]
+  }
+}

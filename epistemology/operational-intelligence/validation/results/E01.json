@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E01",
+  "cluster": "C1_foundations",
+  "claim": "Floor positivity for bounded agents",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

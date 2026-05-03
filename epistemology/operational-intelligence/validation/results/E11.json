@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E11",
+  "cluster": "C3_index",
+  "claim": "Index closed-form computation",
+  "measured": 0.57375,
+  "predicted": 0.5737499999999999,
+  "relative_error": 1.9350292368194453e-16,
+  "verdict": "PASS",
+  "extra": {}
+}

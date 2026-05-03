@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E18",
+  "cluster": "C4_collective",
+  "claim": "Federation index = parallel composition",
+  "measured": 0.94,
+  "predicted": 0.94,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

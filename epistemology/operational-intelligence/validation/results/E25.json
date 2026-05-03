@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E25",
+  "cluster": "C5_floor",
+  "claim": "All realised intelligences are finite",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "indices": [
+      2.302585092994046,
+      4.605170185988092,
+      6.907755278982137,
+      9.210340371976184,
+      11.512925464970229
+    ]
+  }
+}

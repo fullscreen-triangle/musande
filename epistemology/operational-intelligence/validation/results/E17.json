@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E17",
+  "cluster": "C4_collective",
+  "claim": "Disjoint apertures cannot share cells (cannot phase-lock)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

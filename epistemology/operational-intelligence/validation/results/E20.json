@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E20",
+  "cluster": "C4_collective",
+  "claim": "Phase-locked federation reaches upper bound",
+  "measured": 0.9999940951,
+  "predicted": 0.9999940951,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

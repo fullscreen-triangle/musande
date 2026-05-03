@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E28",
+  "cluster": "C6_phenotypes",
+  "claim": "P3 construction-deprived phenotype",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}
