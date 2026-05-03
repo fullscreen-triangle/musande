@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E43",
+  "cluster": "C9_exteriority",
+  "claim": "Asymptotic floor -> 0 with many agents",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "n": 20,
+    "composite": 1.0000000000000005e-38
+  }
+}

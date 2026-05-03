@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E09",
+  "cluster": "C2_cell_truth",
+  "claim": "Categorical encoding preserves S",
+  "measured": 2.1027756377319946,
+  "predicted": 2.1027756377319946,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

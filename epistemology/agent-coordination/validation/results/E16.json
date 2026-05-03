@@ -1,0 +1,26 @@
+{
+  "experiment_id": "E16",
+  "cluster": "C4_common_cell",
+  "claim": "Disjoint ensemble attains common cell",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "S_per_agent": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625
+    ],
+    "tau": 1.0,
+    "agent_betas": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625
+    ]
+  }
+}

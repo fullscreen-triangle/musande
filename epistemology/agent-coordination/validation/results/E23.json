@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E23",
+  "cluster": "C5_purpose",
+  "claim": "Purpose stable under small perturbation",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "f_orig": 0.5,
+    "f_pert": 0.55,
+    "tau": 1.5
+  }
+}

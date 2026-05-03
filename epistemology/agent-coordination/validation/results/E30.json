@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E30",
+  "cluster": "C6_motivation",
+  "claim": "boxtimes is commutative",
+  "measured": 0.0375,
+  "predicted": 0.0375,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

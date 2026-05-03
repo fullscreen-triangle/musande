@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E19",
+  "cluster": "C4_common_cell",
+  "claim": "Reachability lower bound holds",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "measured": 0.442,
+    "pred_lb": 0.43008403427644276
+  }
+}

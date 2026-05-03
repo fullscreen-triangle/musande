@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E22",
+  "cluster": "C5_purpose",
+  "claim": "Reachability equivalent for identical cells",
+  "measured": 272,
+  "predicted": 272,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

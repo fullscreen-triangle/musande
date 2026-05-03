@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E39",
+  "cluster": "C8_godel_bias",
+  "claim": "Bias-zero iff beta-zero",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

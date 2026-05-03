@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E27",
+  "cluster": "C6_motivation",
+  "claim": "Goal-quotient invariance",
+  "measured": 3.36e-05,
+  "predicted": 3.36e-05,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

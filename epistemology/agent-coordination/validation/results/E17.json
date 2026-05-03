@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E17",
+  "cluster": "C4_common_cell",
+  "claim": "Reachability monotonicity (composite non-increasing)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "composite_per_n": [
+      0.5,
+      0.005,
+      7.500000000000001e-05,
+      1.5000000000000002e-06,
+      3.7500000000000005e-08
+    ]
+  }
+}

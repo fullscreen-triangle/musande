@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E20",
+  "cluster": "C4_common_cell",
+  "claim": "Pareto-reachability: full coalition reaches, single cannot",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "composite_n": [
+      3.0,
+      0.09,
+      0.0026999999999999997
+    ],
+    "tau": 1.5
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E34",
+  "cluster": "C7_meaning",
+  "claim": "Conjunction collapse to beta=0",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

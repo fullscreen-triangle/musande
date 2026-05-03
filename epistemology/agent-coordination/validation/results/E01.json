@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E01",
+  "cluster": "C1_foundations",
+  "claim": "S >= beta for all states",
+  "measured": 2.5,
+  "predicted": 2.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

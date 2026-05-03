@@ -8,7 +8,9 @@
       "Bash(grep -n \"begin{figure\\\\|end{figure\\\\|caption{\\\\\\\\\\\\\\\\textbf\\\\|label{fig:\" \"c:\\\\Users\\\\kunda\\\\Documents\\\\semantics\\\\musande\\\\epistemology\\\\unconstrained-subtask-recursion\\\\figures\\\\unconstrained-captions.tex\")",
       "Bash(python epistemological_validation.py)",
       "Bash(python generate_panels.py)",
-      "Bash(python -c \"import json; d = json.load\\(open\\('master_summary.json'\\)\\)['summary']; print\\(json.dumps\\(d, indent=2, default=float\\)\\)\")"
+      "Bash(python -c \"import json; d = json.load\\(open\\('master_summary.json'\\)\\)['summary']; print\\(json.dumps\\(d, indent=2, default=float\\)\\)\")",
+      "Bash(python agent_coordination_validation.py)",
+      "Bash(python -c ' *)"
     ]
   }
 }

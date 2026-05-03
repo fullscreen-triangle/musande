@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E04",
+  "cluster": "C1_foundations",
+  "claim": "Layered floor = min",
+  "measured": 0.5,
+  "predicted": 0.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

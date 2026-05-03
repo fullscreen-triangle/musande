@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E12",
+  "cluster": "C3_multi_agent",
+  "claim": "2-agent catalytic composition",
+  "measured": 0.012,
+  "predicted": 0.012000000000000002,
+  "relative_error": 1.445602896647339e-16,
+  "verdict": "PASS",
+  "extra": {}
+}

@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E10",
+  "cluster": "C2_cell_truth",
+  "claim": "Cell-closure under decoder substitution",
+  "measured": 0.3,
+  "predicted": 0.3,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

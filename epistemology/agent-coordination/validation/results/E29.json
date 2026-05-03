@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E29",
+  "cluster": "C6_motivation",
+  "claim": "boxtimes is associative",
+  "measured": 0.0006000000000000001,
+  "predicted": 0.0006,
+  "relative_error": 1.8070036208091741e-16,
+  "verdict": "PASS",
+  "extra": {}
+}

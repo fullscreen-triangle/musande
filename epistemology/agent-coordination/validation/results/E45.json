@@ -1,0 +1,17 @@
+{
+  "experiment_id": "E45",
+  "cluster": "C9_exteriority",
+  "claim": "Three disjoint agents converge on cell",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "S_each": {
+      "naive": 0.4,
+      "biologist": 0.3,
+      "child": 0.5
+    },
+    "tau": 1.0
+  }
+}

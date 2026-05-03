@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E24",
+  "cluster": "C5_purpose",
+  "claim": "Purpose robust to dropout (both below tight tau)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "full": 1.512e-09,
+    "dropout": 1.6799999999999997e-07,
+    "tau": 0.001
+  }
+}

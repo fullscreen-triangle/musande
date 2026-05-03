@@ -1,0 +1,23 @@
+{
+  "experiment_id": "E40",
+  "cluster": "C8_godel_bias",
+  "claim": "Residue = beta exactly",
+  "measured": 0.0,
+  "predicted": 0.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "betas": [
+      0.1,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "residues": [
+      0.1,
+      0.5,
+      1.0,
+      2.0
+    ]
+  }
+}

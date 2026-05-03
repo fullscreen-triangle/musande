@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E44",
+  "cluster": "C9_exteriority",
+  "claim": "Composite floor strictly below min individual",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "composite": 5.000000000000001e-06,
+    "min_individual": 0.5
+  }
+}

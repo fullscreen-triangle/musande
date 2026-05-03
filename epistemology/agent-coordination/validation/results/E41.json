@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E41",
+  "cluster": "C9_exteriority",
+  "claim": "Cell membership invariant of receiver",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

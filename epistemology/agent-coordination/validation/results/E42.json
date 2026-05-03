@@ -1,0 +1,18 @@
+{
+  "experiment_id": "E42",
+  "cluster": "C9_exteriority",
+  "claim": "Each agent reaches independently",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "S_each": [
+      0.4,
+      0.35000000000000003,
+      0.30000000000000004,
+      0.25
+    ],
+    "tau": 1.5
+  }
+}

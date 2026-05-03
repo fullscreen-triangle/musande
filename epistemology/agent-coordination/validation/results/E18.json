@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E18",
+  "cluster": "C4_common_cell",
+  "claim": "Reachability volume monotone in tau",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "reach_tau1": 206,
+    "reach_tau2": 931
+  }
+}

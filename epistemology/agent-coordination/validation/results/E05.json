@@ -1,0 +1,14 @@
+{
+  "experiment_id": "E05",
+  "cluster": "C1_foundations",
+  "claim": "Mode non-privilege: pre-decoder dominates",
+  "measured": 0.2,
+  "predicted": 0.2,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "pre_beta": 0.2,
+    "dec_beta": 2.5,
+    "tau": 1.0
+  }
+}

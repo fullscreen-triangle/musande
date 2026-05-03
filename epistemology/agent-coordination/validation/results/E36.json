@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E36",
+  "cluster": "C8_godel_bias",
+  "claim": "Residue ~ beta (probabilistic)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "max_dist": 2.6143935130717533,
+    "beta": 0.7
+  }
+}

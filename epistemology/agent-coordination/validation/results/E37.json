@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E37",
+  "cluster": "C8_godel_bias",
+  "claim": "Composite residue < single residue",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "single": 1.0,
+    "composite": 0.01
+  }
+}

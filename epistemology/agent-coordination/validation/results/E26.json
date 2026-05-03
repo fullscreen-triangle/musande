@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E26",
+  "cluster": "C6_motivation",
+  "claim": "Goal-content does not affect composite floor",
+  "measured": 7.500000000000001e-05,
+  "predicted": 7.500000000000001e-05,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

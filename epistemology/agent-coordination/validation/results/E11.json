@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E11",
+  "cluster": "C3_multi_agent",
+  "claim": "Aggregate floor = min agent floor",
+  "measured": 0.5,
+  "predicted": 0.5,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {}
+}

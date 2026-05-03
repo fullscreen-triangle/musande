@@ -1,0 +1,13 @@
+{
+  "experiment_id": "E21",
+  "cluster": "C5_purpose",
+  "claim": "Purpose exists when composite floor < tau",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "composite": 1.2500000000000002e-05,
+    "tau": 2.0
+  }
+}

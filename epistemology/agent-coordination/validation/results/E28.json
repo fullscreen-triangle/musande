@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E28",
+  "cluster": "C6_motivation",
+  "claim": "Replication: composite < min component (both cases)",
+  "measured": 1.0,
+  "predicted": 1.0,
+  "relative_error": 0.0,
+  "verdict": "PASS",
+  "extra": {
+    "identical": 1.2500000000000002e-05,
+    "heterogeneous": 1.2000000000000002e-05,
+    "min_iden": 0.5,
+    "min_het": 0.3
+  }
+}
