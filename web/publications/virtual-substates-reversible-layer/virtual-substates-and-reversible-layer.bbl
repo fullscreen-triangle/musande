@@ -1,0 +1,246 @@
+\begin{thebibliography}{42}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amari(2016)]{amari2016}
+Shun-ichi Amari.
+\newblock \emph{Information Geometry and Its Applications}.
+\newblock Springer, Tokyo, 2016.
+
+\bibitem[Arnol'd(1989)]{arnold1989}
+Vladimir~I. Arnol'd.
+\newblock \emph{Mathematical Methods of Classical Mechanics}.
+\newblock Springer, New York, 2 edition, 1989.
+
+\bibitem[Bennett(1982)]{bennett1982}
+Charles~H. Bennett.
+\newblock The thermodynamics of computation---a review.
+\newblock \emph{International Journal of Theoretical Physics}, 21\penalty0
+  (12):\penalty0 905--940, 1982.
+
+\bibitem[Bloembergen et~al.(1948)Bloembergen, Purcell, and Pound]{bpp1948}
+Nicolaas Bloembergen, Edward~M. Purcell, and Robert~V. Pound.
+\newblock Relaxation effects in nuclear magnetic resonance absorption.
+\newblock \emph{Physical Review}, 73\penalty0 (7):\penalty0 679--712, 1948.
+
+\bibitem[Boltzmann(1877)]{boltzmann1877}
+Ludwig Boltzmann.
+\newblock {\"U}ber die beziehung zwischen dem zweiten hauptsatze der
+  mechanischen w{\"a}rmetheorie und der wahrscheinlichkeitsrechnung respektive
+  den s{\"a}tzen {\"u}ber das w{\"a}rmegleichgewicht.
+\newblock \emph{Sitzungsberichte der Akademie der Wissenschaften, Wien},
+  76:\penalty0 373--435, 1877.
+
+\bibitem[Carr and Purcell(1954)]{carr1954}
+Herman~Y. Carr and Edward~M. Purcell.
+\newblock Effects of diffusion on free precession in nuclear magnetic resonance
+  experiments.
+\newblock \emph{Physical Review}, 94\penalty0 (3):\penalty0 630--638, 1954.
+
+\bibitem[{\v C}encov(1982)]{cencov1982}
+Nikolai~N. {\v C}encov.
+\newblock Statistical decision rules and optimal inference.
+\newblock \emph{Translations of Mathematical Monographs}, 53, 1982.
+
+\bibitem[Comisarow and Marshall(1974)]{comisarow1974}
+Melvin~B. Comisarow and Alan~G. Marshall.
+\newblock Fourier transform ion cyclotron resonance spectroscopy.
+\newblock \emph{Chemical Physics Letters}, 25\penalty0 (2):\penalty0 282--283,
+  1974.
+
+\bibitem[Cover and Thomas(2006)]{cover2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley-Interscience, Hoboken, NJ, 2 edition, 2006.
+
+\bibitem[Cutkosky(1960)]{cutkosky1960}
+Richard~E. Cutkosky.
+\newblock Singularities and discontinuities of feynman amplitudes.
+\newblock \emph{Journal of Mathematical Physics}, 1\penalty0 (5):\penalty0
+  429--433, 1960.
+
+\bibitem[Dyson(1949)]{dyson1949}
+Freeman~J. Dyson.
+\newblock The s matrix in quantum electrodynamics.
+\newblock \emph{Physical Review}, 75\penalty0 (11):\penalty0 1736--1755, 1949.
+
+\bibitem[Ehrenfest and Ehrenfest(1959)]{ehrenfest1959}
+Paul Ehrenfest and Tatiana Ehrenfest.
+\newblock \emph{The Conceptual Foundations of the Statistical Approach in
+  Mechanics}.
+\newblock Cornell University Press, Ithaca, NY, 1959.
+
+\bibitem[Feynman(1949)]{feynman1949}
+Richard~P. Feynman.
+\newblock Space-time approach to quantum electrodynamics.
+\newblock \emph{Physical Review}, 76\penalty0 (6):\penalty0 769--789, 1949.
+
+\bibitem[Gibbs(1902)]{gibbs1902}
+J.~Willard Gibbs.
+\newblock \emph{Elementary Principles in Statistical Mechanics}.
+\newblock Charles Scribner's Sons, New York, 1902.
+
+\bibitem[Gorin et~al.(2006)Gorin, Prosen, Seligman, and {\v Z}nidari{\v
+  c}]{gorin2006}
+Thomas Gorin, Toma{\v z} Prosen, Thomas~H. Seligman, and Marko {\v Z}nidari{\v
+  c}.
+\newblock Dynamics of loschmidt echoes and fidelity decay.
+\newblock \emph{Physics Reports}, 435\penalty0 (2--5):\penalty0 33--156, 2006.
+
+\bibitem[Hahn(1950)]{hahn1950}
+Erwin~L. Hahn.
+\newblock Spin echoes.
+\newblock \emph{Physical Review}, 80\penalty0 (4):\penalty0 580--594, 1950.
+
+\bibitem[Itzykson and Zuber(1980)]{itzykson1980}
+Claude Itzykson and Jean-Bernard Zuber.
+\newblock \emph{Quantum Field Theory}.
+\newblock McGraw-Hill, New York, 1980.
+
+\bibitem[Jalabert and Pastawski(2001)]{jalabert2001}
+Rodolfo~A. Jalabert and Horacio~M. Pastawski.
+\newblock Environment-independent decoherence rate in classically chaotic
+  systems.
+\newblock \emph{Physical Review Letters}, 86\penalty0 (12):\penalty0
+  2490--2493, 2001.
+
+\bibitem[Jaynes(1957)]{jaynes1957}
+Edwin~T. Jaynes.
+\newblock Information theory and statistical mechanics.
+\newblock \emph{Physical Review}, 106\penalty0 (4):\penalty0 620--630, 1957.
+
+\bibitem[Landauer(1961)]{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Lebowitz(1993)]{lebowitz1993}
+Joel~L. Lebowitz.
+\newblock Boltzmann's entropy and time's arrow.
+\newblock \emph{Physics Today}, 46\penalty0 (9):\penalty0 32--38, 1993.
+
+\bibitem[Levstein et~al.(1998)Levstein, Usaj, and Pastawski]{levstein1998}
+Patricia~R. Levstein, Gonzalo Usaj, and Horacio~M. Pastawski.
+\newblock Attenuation of polarization echoes in nuclear magnetic resonance: A
+  study of the emergence of dynamical irreversibility in many-body quantum
+  systems.
+\newblock \emph{Journal of Chemical Physics}, 108\penalty0 (7):\penalty0
+  2718--2724, 1998.
+
+\bibitem[Liouville(1838)]{liouville1838}
+Joseph Liouville.
+\newblock Note sur la th{\'e}orie de la variation des constantes arbitraires.
+\newblock \emph{Journal de Math{\'e}matiques Pures et Appliqu{\'e}es},
+  3:\penalty0 342--349, 1838.
+
+\bibitem[Loschmidt(1876)]{loschmidt1876}
+Josef Loschmidt.
+\newblock {\"U}ber den zustand des w{\"a}rmegleichgewichtes eines systems von
+  k{\"o}rpern mit r{\"u}cksicht auf die schwerkraft.
+\newblock \emph{Sitzungsberichte der Akademie der Wissenschaften, Wien},
+  73:\penalty0 128--142, 1876.
+
+\bibitem[Makarov(2000)]{makarov2000}
+Alexander Makarov.
+\newblock Electrostatic axially harmonic orbital trapping: A high-performance
+  technique of mass analysis.
+\newblock \emph{Analytical Chemistry}, 72\penalty0 (6):\penalty0 1156--1162,
+  2000.
+
+\bibitem[Marshall et~al.(1985)Marshall, Wang, and Ricca]{marshall1985}
+Alan~G. Marshall, Tao-Chin~L. Wang, and Tom~L. Ricca.
+\newblock Tailored excitation for fourier transform ion cyclotron resonance
+  mass spectrometry.
+\newblock \emph{Journal of the American Chemical Society}, 107\penalty0
+  (26):\penalty0 7893--7897, 1985.
+
+\bibitem[Meiboom and Gill(1958)]{meiboom1958}
+Saul Meiboom and David Gill.
+\newblock Modified spin-echo method for measuring nuclear relaxation times.
+\newblock \emph{Review of Scientific Instruments}, 29\penalty0 (8):\penalty0
+  688--691, 1958.
+
+\bibitem[Penrose(1989)]{penrose1989}
+Roger Penrose.
+\newblock \emph{The Emperor's New Mind}.
+\newblock Oxford University Press, Oxford, 1989.
+
+\bibitem[Peres(1984)]{peres1984}
+Asher Peres.
+\newblock Stability of quantum motion in chaotic and regular systems.
+\newblock \emph{Physical Review A}, 30\penalty0 (4):\penalty0 1610--1615, 1984.
+
+\bibitem[Peskin and Schroeder(1995)]{peskin1995}
+Michael~E. Peskin and Daniel~V. Schroeder.
+\newblock \emph{An Introduction to Quantum Field Theory}.
+\newblock Addison-Wesley, Reading, MA, 1995.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Price(1996)]{price1996}
+Huw Price.
+\newblock \emph{Time's Arrow and Archimedes' Point}.
+\newblock Oxford University Press, New York, 1996.
+
+\bibitem[Reichenbach(1956)]{reichenbach1956}
+Hans Reichenbach.
+\newblock \emph{The Direction of Time}.
+\newblock University of California Press, Berkeley, 1956.
+
+\bibitem[Rhim et~al.(1971)Rhim, Pines, and Waugh]{rhim1971}
+Won-Kyu Rhim, Alexander Pines, and John~S. Waugh.
+\newblock Time-reversal experiments in dipolar-coupled spin systems.
+\newblock \emph{Physical Review B}, 3\penalty0 (3):\penalty0 684--696, 1971.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+
+\bibitem[Stanley(2011)]{stanley2011}
+Richard~P. Stanley.
+\newblock \emph{Enumerative Combinatorics, Volume 1}.
+\newblock Cambridge University Press, Cambridge, 2 edition, 2011.
+
+\bibitem[Szil{\'a}rd(1929)]{szilard1929}
+Leo Szil{\'a}rd.
+\newblock {\"U}ber die entropieverminderung in einem thermodynamischen system
+  bei eingriffen intelligenter wesen.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 53:\penalty0 840--856, 1929.
+
+\bibitem[Walters(1982)]{walters1982}
+Peter Walters.
+\newblock \emph{An Introduction to Ergodic Theory}.
+\newblock Springer, New York, 1982.
+
+\bibitem[Weinberg(1995)]{weinberg1995}
+Steven Weinberg.
+\newblock \emph{The Quantum Theory of Fields, Volume I: Foundations}.
+\newblock Cambridge University Press, Cambridge, 1995.
+
+\bibitem[Zeh(2007)]{zeh2007}
+H.~Dieter Zeh.
+\newblock \emph{The Physical Basis of the Direction of Time}.
+\newblock Springer, Berlin, 5 edition, 2007.
+
+\bibitem[Zermelo(1896)]{zermelo1896}
+Ernst Zermelo.
+\newblock {\"U}ber einen satz der dynamik und die mechanische w{\"a}rmetheorie.
+\newblock \emph{Annalen der Physik}, 293\penalty0 (3):\penalty0 485--494, 1896.
+
+\bibitem[Zurek(2003)]{zurek2003}
+Wojciech~H. Zurek.
+\newblock Decoherence, einselection, and the quantum origins of the classical.
+\newblock \emph{Reviews of Modern Physics}, 75\penalty0 (3):\penalty0 715--775,
+  2003.
+
+\end{thebibliography}
