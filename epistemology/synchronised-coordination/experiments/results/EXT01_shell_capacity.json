@@ -1,0 +1,82 @@
+{
+  "experiment_id": "EXT01",
+  "title": "Shell capacity C(n)=2n^2 vs atomic data",
+  "tests": [
+    {
+      "name": "C(n)=2n^2 equals sum 2(2l+1) equals tabulated shell capacity",
+      "n_range": "1..7",
+      "predicted": [
+        2,
+        8,
+        18,
+        32,
+        50,
+        72,
+        98
+      ],
+      "tabulated": [
+        2,
+        8,
+        18,
+        32,
+        50,
+        72,
+        98
+      ],
+      "match": true
+    },
+    {
+      "name": "Pure 2n^2 nesting vs measured noble-gas closures",
+      "cumulative_2n2": [
+        2,
+        10,
+        28,
+        60,
+        110,
+        182,
+        280
+      ],
+      "noble_gas_Z": [
+        2,
+        10,
+        18,
+        36,
+        54,
+        86,
+        118
+      ],
+      "agreements": [
+        2,
+        10
+      ],
+      "note": "Pure 2n^2 nesting matches He(2) and Ne(10) but diverges at Ar(18): measured closures follow the Aufbau/Madelung (n+l) order, not 2n^2. The degeneracy formula is exact; cumulative closure requires the filling rule. Reported as a limitation, not a fit."
+    },
+    {
+      "name": "Madelung (n+l) order reproduces periodic-table row lengths",
+      "predicted_period_lengths": [
+        2,
+        8,
+        8,
+        18,
+        18,
+        32,
+        32
+      ],
+      "actual_period_lengths": [
+        2,
+        8,
+        8,
+        18,
+        18,
+        32,
+        32
+      ],
+      "match": true
+    }
+  ],
+  "summary": {
+    "degeneracy_formula_exact": true,
+    "aufbau_reproduces_periods": true,
+    "honest_caveat": "C(n)=2n^2 is the exact level degeneracy and is confirmed by subshell sums and tabulated shell capacities; it does NOT by itself give noble-gas closures, which require the n+l filling rule."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "experiment_id": "EXT03",
+  "title": "Wiedemann-Franz universality: predicted L0 vs measured metals",
+  "L0_sommerfeld_W_Ohm_K2": 2.443004509073667e-08,
+  "L0_in_1e-8_units": 2.443004509073667,
+  "n_metals": 11,
+  "metals": [
+    "Ag",
+    "Au",
+    "Cd",
+    "Cu",
+    "Ir",
+    "Mo",
+    "Pb",
+    "Pt",
+    "Sn",
+    "W",
+    "Zn"
+  ],
+  "measured_0C_1e-8": [
+    2.31,
+    2.35,
+    2.42,
+    2.23,
+    2.49,
+    2.61,
+    2.47,
+    2.51,
+    2.52,
+    3.04,
+    2.31
+  ],
+  "measured_100C_1e-8": [
+    2.37,
+    2.4,
+    2.43,
+    2.33,
+    2.49,
+    2.79,
+    2.56,
+    2.6,
+    2.49,
+    3.2,
+    2.33
+  ],
+  "stats_0C": {
+    "mean": 2.478181818181818,
+    "std": 0.2075755363856375,
+    "min": 2.23,
+    "max": 3.04
+  },
+  "stats_100C": {
+    "mean": 2.544545454545455,
+    "std": 0.24414465296264004,
+    "min": 2.33,
+    "max": 3.2
+  },
+  "stats_all": {
+    "mean": 2.5113636363636367,
+    "std": 0.22901559007165379,
+    "min": 2.23,
+    "max": 3.2
+  },
+  "mean_frac_dev_0C": 0.05868316080276439,
+  "mean_frac_dev_100C": 0.0679861615311136,
+  "max_frac_dev": 0.30986250255156883,
+  "within_15pct_of_L0": 20,
+  "n_measurements": 22,
+  "interpretation": "Predicted universal Lorenz number L0 = 2.443e-8 W.Ohm.K^-2. Across 11 chemically diverse metals, measured L at 0C/100C has mean 2.511e-8 (std 0.229e-8). 20/22 measurements lie within 15% of L0. The clustering supports the universality claim (electrical and thermal transport share one partition structure, so their ratio is material-independent). The positive outliers (W, Mo) are the known transition-metal deviation from elastic-scattering WF and mark the regime where the universal ratio is only approximate -- reported, not hidden. Note: WF universality is standard physics; the framework REPRODUCES it, it does not predict a new value. Claim defensible only as 'the partition picture is consistent with WF', NOT as novel."
+}
