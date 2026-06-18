@@ -1,0 +1,245 @@
+% =====================================================================
+%  The Irreducible Boundary of Bounded Phase Space
+%  A self-contained topological theory of division, boundary thickness,
+%  and the resolution floor, with physical realisation.
+%
+%  Self-contained. No reliance on any unpublished manuscript.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[round,sort&compress]{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,fit}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,
+            citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{cleveref}
+
+% ---- Theorem environments ----
+\newtheoremstyle{thmstyle}{\topsep}{\topsep}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{thmstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+
+\crefname{axiom}{Axiom}{Axioms}
+\Crefname{axiom}{Axiom}{Axioms}
+\crefname{principle}{Principle}{Principles}
+\Crefname{principle}{Principle}{Principles}
+
+% ---- Shorthand ----
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Phase}{\Omega}
+\newcommand{\Bdy}{\partial}
+\newcommand{\interior}{\mathrm{int}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\Leb}{\mathcal{L}}
+\newcommand{\Haus}{\mathcal{H}}
+\newcommand{\thick}{\beta}          % boundary thickness / floor
+\newcommand{\reso}{\delta}          % resolution
+\newcommand{\floor}{\thick}
+\newcommand{\Part}{\mathscr{P}}
+\newcommand{\cell}{\mathsf{c}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\Sval}{S}
+\newcommand{\receiver}{\mathcal{R}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\XX}{\mathcal{X}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\restr}{\!\restriction\!}
+
+\title{\textbf{The Irreducible Boundary of Bounded Phase Space:\\[2pt]
+Division, Boundary Thickness, and the Resolution Floor}}
+
+\author{%
+Kundai Farai Sachikonye\\
+\small Technical University of Munich\\
+\small Chair of Proteomics and Bioanalytics\\
+\small \texttt{kundai.sachikonye@wzw.tum.de}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% =====================================================================
+\begin{abstract}
+\noindent
+We prove that to know a thing is to divide it from everything else, that
+every such division requires a boundary of strictly positive thickness, and
+that the contents of that thickness form an irreducible residue which no
+bounded knower can eliminate. The development is topological and
+measure-theoretic and rests on a single hypothesis---that the relevant state
+space is bounded and finitely resolvable (the \emph{bounded phase space}
+hypothesis). From it we derive a \emph{Boundary--Thickness Theorem}: in a
+bounded space carrying a finite resolution, no two complementary regions can
+be separated by a set of zero content; every separator carries positive
+content $\thick>0$, the \emph{resolution floor}. We give three independent
+derivations of the floor---a representational one (faithful images of a
+consistent invariant cannot be the invariant), a thermodynamic one (the cost
+of compressing a separator to zero content diverges, and a single binary
+distinction costs at least $\kB T\ln 2$), and a cardinality one---and prove
+they bound the \emph{same} constant. We prove a \emph{Detectability Theorem}:
+a bounded object registers (``is distinguishable'') if and only if its scale
+exceeds its own boundary thickness; sub-floor objects are engulfed by their
+separator and cannot be individuated. The classical sorites paradox is then a
+corollary, not a puzzle: there is no sharp grain at which a heap appears
+because the heap--non-heap separator has positive thickness, and detection is
+emergence from that thickness. We prove an \emph{Inquiry--Cessation Theorem}:
+thinning a separator toward zero content has diverging cost and bounded
+return, so a finite knower rationally halts at the floor, whence knowledge
+attaches to bounded wholes and never to sub-floor constituents---a structure
+we show is visible in ordinary attribution. Finally we exhibit the physical
+realisation: the same hypothesis forces oscillatory dynamics, a discrete
+partition spectrum, the coordinate quadruple $(n,\ell,m,s)$ with shell
+capacity $2n^2$, an exclusion principle, the compression law, and a Fisher
+embedding---so that the floor of the epistemic theory and the floor of the
+physical theory are one constant. Every claim is proved from stated
+definitions; uncertain material has been omitted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} bounded phase space; topological boundary;
+boundary thickness; resolution floor; sorites paradox; vagueness; partition;
+compression cost; Landauer bound; information geometry; irreducible residue.
+
+\tableofcontents
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+\subsection{Thesis}
+
+This paper defends, and proves under a single explicit hypothesis, the
+following chain.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{To know a thing is to divide it from everything else.} Knowledge
+of an object $A$ is the capacity to tell $A$ from not-$A$; this is a partition
+of the state space into $A$ and its complement.
+\item \emph{Every division requires a boundary, and the boundary has positive
+thickness.} In a bounded, finitely resolvable space there is no zero-content
+separator between a region and its complement. The separator carries a strictly
+positive content $\thick>0$.
+\item \emph{The boundary's interior is an irreducible residue.} The contents of
+the thickness belong determinately to neither $A$ nor not-$A$. They are the
+operational form of the limitative ``residue'' familiar from logic and physics.
+\item \emph{Detection is emergence from the boundary.} A bounded object is
+distinguishable exactly when its own scale exceeds its boundary thickness.
+Below that scale it is engulfed by its separator and cannot be individuated.
+\item \emph{Inquiry rationally halts at the floor.} Thinning a separator toward
+zero content costs without bound for bounded return; a finite knower stops, and
+knowledge thereafter attaches to bounded wholes, never to their sub-floor parts.
+\end{enumerate}
+
+The single hypothesis is that the space in question is bounded and admits a
+finite-resolution partition---the \emph{bounded phase space} hypothesis
+(\Cref{ax:bps}). Everything else is theorem.
+
+\subsection{Why ``thickness''}
+
+The everyday and the technical meet at one point. A single grain of wheat
+makes no sound when dropped; a heap makes a sound. Classically this is a
+paradox: adding one grain never converts silence to sound, yet a heap sounds.
+We resolve it by inverting the usual reading. The grain is silent not because
+it is small in the absolute, but because its \emph{boundary is too thick
+relative to it}: the layered separator one would have to resolve to isolate
+``this grain'' from ``everything else'' is larger than the grain, so the grain
+is buried inside its own boundary and never stands out as a figure against a
+ground. The heap sounds because it is large compared with the same separator:
+it clears its boundary and registers. There is no critical grain because
+``registering'' is emergence across a band of positive width, not a crossing of
+a point. The width of that band is the floor $\thick$. This is
+\Cref{thm:detectability} below, and the sorites paradox is its
+\Cref{cor:sorites}.
+
+\subsection{Why ``bounded''}
+
+Boundedness is not a convenience; it is the source of the floor. On an
+unbounded space one could, in principle, separate a region from its complement
+by an arbitrarily thin frontier and resolve structure to arbitrary depth at
+fixed cost. It is precisely the finiteness of the accessible space---and the
+finiteness of the resolution any embedded knower can purchase---that forbids the
+zero-thickness cut. We make the hypothesis exactly strong enough to force the
+floor and no stronger, and we mark, at each step, where boundedness is used.
+
+\subsection{Two faces of one constant}
+
+The floor $\thick$ has an epistemic face and a physical face, and a central aim
+of the paper is to prove they coincide. Epistemically, $\thick$ is the smallest
+distinction a bounded knower can draw---the thickness of its sharpest boundary.
+Physically, the same hypothesis (\Cref{ax:bps}) forces a partition spectrum,
+a compression law whose cost diverges as a cell is squeezed to zero measure
+(\Cref{thm:compression}), and a minimum energy $\kB T\ln 2$ per binary
+distinction (\Cref{cor:landauer}); these pin a physical floor. We prove
+(\Cref{thm:floor-agreement}) that the epistemic and physical floors are not two
+constants but bounds on one.
+
+\subsection{Relation to existing treatments}
+
+The sorites paradox and vagueness have large literatures: degree theories and
+fuzzy logic~\citep{zadeh1965}, supervaluationism~\citep{fine1975,keefe2000},
+epistemicism~\citep{williamson1994}, and the classical analyses
+of~\citet{black1937}; see~\citet{huttegger2023} for a survey. Our account is
+none of these: it is not a logic of partial truth, nor a claim that a sharp
+boundary exists but is unknowable, but a \emph{geometric} statement that the
+separator is a set of positive content whose interior is determinately
+category-less. The residue connects structurally to limitative results in
+logic~\citep{godel1931,turing1936} and to the thermodynamics of
+computation~\citep{landauer1961,bennett1982}; we use these as analogues and, in
+the physical sections, as tools, never as premises. The topological and
+measure-theoretic machinery is standard~\citep{kelley1955,munkres2000,%
+halmos1950,federer1969,mattila1995}, as is the ergodic and spectral
+background~\citep{poincare1890,birkhoff1931,koopman1931,walters1982,%
+reedsimon1980} and the information geometry~\citep{fisher1925,cencov1982,%
+amari2016}.
+
+\subsection{Method and discipline}
+
+The paper is written to a single standard: every substantive statement is a
+definition, a theorem proved here, or a citation of a standard result compared
+against such a theorem. Where a tempting claim could not be proved at this
+standard it has been removed rather than hedged. Physical interpretation is
+confined to remarks and to \Cref{sec:physics}; the mathematical spine
+(\Cref{sec:setting,sec:thickness,sec:floor,sec:detect,sec:residue,sec:inquiry})
+stands without it.
+
+\subsection{Organisation}
+
+\Cref{sec:setting} fixes the topological and measure-theoretic setting and
+states the bounded phase space hypothesis. \Cref{sec:thickness} proves the
+Boundary--Thickness Theorem. \Cref{sec:floor} gives the three derivations of
+the floor and proves their agreement. \Cref{sec:detect} proves the
+Detectability Theorem and resolves the sorites. \Cref{sec:residue} develops
+the topology of the residue (the boundary interior) and its non-attribution.
+\Cref{sec:inquiry} proves the Inquiry--Cessation Theorem and the
+bounded-attribution capstone. \Cref{sec:physics} exhibits the physical
+realisation. \Cref{sec:scope} states scope and limitations and concludes.

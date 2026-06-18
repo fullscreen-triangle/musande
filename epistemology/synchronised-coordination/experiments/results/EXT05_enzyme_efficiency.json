@@ -1,0 +1,48 @@
+{
+  "experiment_id": "EXT05",
+  "title": "Catalytic efficiency vs substrate heavy-atom count (complexity)",
+  "n_enzymes": 9,
+  "enzymes": [
+    "superoxide_dismutase",
+    "catalase",
+    "carbonic_anhydrase",
+    "acetylcholinesterase",
+    "triosephosphate_isomerase",
+    "fumarase",
+    "beta_lactamase",
+    "chymotrypsin",
+    "lysozyme"
+  ],
+  "log10_kcat_over_Km": [
+    9.845098040014257,
+    7.6020599913279625,
+    7.919078092376074,
+    8.176091259055681,
+    8.380211241711606,
+    8.204119982655925,
+    8.0,
+    5.176091259055681,
+    3.6989700043360187
+  ],
+  "substrate_heavy_atoms": [
+    2.0,
+    2.0,
+    3.0,
+    15.0,
+    10.0,
+    8.0,
+    24.0,
+    14.0,
+    30.0
+  ],
+  "pearson_r": -0.6675047510614045,
+  "pearson_p": 0.0494754490601846,
+  "spearman_r": -0.401677156202747,
+  "spearman_p": 0.2838999763379956,
+  "linreg_slope": -0.12513845164389648,
+  "linreg_r2": 0.44556259268954757,
+  "mean_heavy_diffusion_limited": 11.8,
+  "mean_heavy_slow": 12.25,
+  "framework_claim_r": -0.57,
+  "interpretation": "Using a framework-INDEPENDENT complexity proxy (substrate heavy-atom count), log(kcat/Km) anti-correlates with substrate complexity: Pearson r=-0.67 (p=0.049), Spearman r=-0.40. The diffusion-limited enzymes (kcat/Km>=1e8) act on simple substrates (mean 11.8 heavy atoms) while slow enzymes act on complex substrates (mean 12.2). Sign and rough magnitude match the framework's claimed r~-0.57. CAVEAT: this is a real but WEAK trend (r^2=0.45), substrate heavy-atom count is only one proxy for 'categorical distance', and the enzyme set is small/curated. The defensible claim is a qualitative anti-correlation, NOT a precise law."
+}

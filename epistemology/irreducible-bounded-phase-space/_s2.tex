@@ -1,0 +1,178 @@
+
+% =====================================================================
+\section{The Boundary--Thickness Theorem}
+\label{sec:thickness}
+% =====================================================================
+
+We now prove the central structural fact: a bounded, finitely-resolved knower
+cannot separate a region from its complement by a set of zero content. Every
+separator it can realise has positive content, and that content is bounded
+below by a constant determined by the resolution---the floor.
+
+\subsection{Operational separators}
+
+The topological boundary $\Bdy A$ can have measure zero (e.g.\ a half-space in
+$\R^m$). The theorem is not about $\Bdy A$ in the ambient continuum; it is about
+the separators a finite-resolution knower can actually realise, which must be
+\emph{unions of cells}.
+
+\begin{definition}[Realisable region and separator]
+\label{def:realisable}
+Fix a partition $\Part$ with resolution $\reso$. A region $A$ is
+\emph{$\Part$-realisable} if it is a union of cells of $\Part$. A
+\emph{$\Part$-separator} of a $\Part$-realisable $A$ is the set of cells of
+$\Part$ that meet both $A$ and $\Phase\setminus A$ in the closure---formally,
+\[
+\Sigma_\Part(A)\;=\;\bigcup\bigl\{\cell\in\Part:\ \cl(\cell)\cap\cl(A)\neq\varnothing
+\ \text{and}\ \cl(\cell)\cap\cl(\Phase\setminus A)\neq\varnothing\bigr\}.
+\]
+Because a finite-resolution knower can only point to cells, $\Sigma_\Part(A)$ is
+the thinnest separator it can name.
+\end{definition}
+
+\begin{remark}
+The shift from $\Bdy A$ to $\Sigma_\Part(A)$ is the whole content of
+``operational.'' A continuum knower with unlimited resolution might use $\Bdy A$
+of measure zero; a knower bound by \ref{bps:res} cannot, because it cannot name
+sub-cell sets. The theorem quantifies the price of that limitation.
+\end{remark}
+
+\subsection{Non-triviality of the separator}
+
+\begin{lemma}[The realisable separator is non-empty]
+\label{lem:nonempty-sep}
+Let $A$ be $\Part$-realisable with $\mu(A)>0$ and $\mu(\Phase\setminus A)>0$, and
+suppose $\Phase$ is connected. Then $\Sigma_\Part(A)\neq\varnothing$.
+\end{lemma}
+
+\begin{proof}
+Suppose $\Sigma_\Part(A)=\varnothing$. Then no cell meets the closures of both
+$A$ and $\Phase\setminus A$; hence $\cl(A)$ and $\cl(\Phase\setminus A)$ are
+disjoint unions of whole cells whose closures do not touch. Writing
+$U=\interior(\cl A)$ and $V=\interior(\cl(\Phase\setminus A))$, the sets $U,V$
+are non-empty (each contains a cell of positive measure), open, disjoint, and
+cover $\Phase$ up to a $\mu$-null set; if their closures do not meet, $U\sqcup V$
+is a separation of $\Phase$ into two non-empty clopen pieces, contradicting
+connectedness. Hence $\Sigma_\Part(A)\neq\varnothing$.
+\end{proof}
+
+\begin{remark}[Connectedness]
+\Cref{lem:nonempty-sep} uses connectedness of $\Phase$. If $\Phase$ is
+disconnected, a region can coincide with a component and have empty separator;
+but then $A$ was not genuinely \emph{divided} from its complement---it was given.
+The theorem concerns acts of division \emph{within} a connected whole, which is
+the case of interest (an object carved out of one world). We assume connectedness
+hereafter and note it where used.
+\end{remark}
+
+\subsection{The thickness lower bound}
+
+\begin{definition}[Boundary thickness]
+\label{def:thickness}
+The \emph{boundary thickness} of a $\Part$-realisable region $A$ is the measure
+of its realisable separator,
+\[
+\thick_\Part(A)\;:=\;\mu\bigl(\Sigma_\Part(A)\bigr).
+\]
+\end{definition}
+
+\begin{theorem}[Boundary--Thickness Theorem]
+\label{thm:thickness}
+Let $(\Phase,d,\mu)$ be a connected bounded phase space satisfying
+\Cref{ax:bps}, and let $\Part$ be a realisable partition of resolution $\reso$
+with minimum cell measure $\mu_{\min}>0$. Then for every $\Part$-realisable
+region $A$ with $\mu(A)>0$ and $\mu(\Phase\setminus A)>0$,
+\[
+\boxed{\ \thick_\Part(A)\ \ge\ \mu_{\min}\ >\ 0.\ }
+\]
+In particular no realisable separator is sharp: $\mu(\Sigma_\Part(A))=0$ is
+impossible.
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:nonempty-sep}, $\Sigma_\Part(A)$ contains at least one cell
+$\cell^\ast\in\Part$. By \ref{bps:res} and \Cref{lem:finite-cells} every cell
+has $\mu(\cell)\ge\mu_{\min}>0$. Since $\Sigma_\Part(A)$ is a union of cells and
+contains $\cell^\ast$,
+\[
+\thick_\Part(A)=\mu(\Sigma_\Part(A))\ \ge\ \mu(\cell^\ast)\ \ge\ \mu_{\min}\ >0 .
+\]
+A sharp separator would have $\mu(\Sigma_\Part(A))=0<\mu_{\min}$, a
+contradiction.
+\end{proof}
+
+\begin{definition}[Resolution floor]
+\label{def:floor}
+The \emph{resolution floor} of a knower realising partition $\Part$ is
+\[
+\thick\ :=\ \inf_{A}\ \thick_\Part(A)\ \ge\ \mu_{\min}\ >\ 0,
+\]
+the infimum over all $\Part$-realisable regions of their boundary thickness. By
+\Cref{thm:thickness} the floor is strictly positive.
+\end{definition}
+
+\begin{corollary}[No zero-width cut]
+\label{cor:no-zero-cut}
+Under \Cref{ax:bps}, a bounded finite-resolution knower cannot divide a
+connected whole into a region and its complement by a separator of zero content.
+Every division it performs deposits content $\ge\thick$ in the separator.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:thickness} and \Cref{def:floor}.
+\end{proof}
+
+\subsection{Stability and the role of boundedness}
+
+The next two results show the bound is robust and that boundedness is essential,
+not decorative.
+
+\begin{proposition}[Refinement lowers but never abolishes the floor]
+\label{prop:refine}
+Let $\Part'\preceq\Part$ be a refinement with $\mu'_{\min}\le\mu_{\min}$. Then
+$\thick'\le\thick$ for the refined floor, and still $\thick'\ge\mu'_{\min}>0$.
+The floor decreases monotonically under refinement but is bounded below by the
+finest realisable cell and never reaches zero at any finite stage.
+\end{proposition}
+
+\begin{proof}
+A finer partition can only shrink the separating cells, so
+$\thick'_{\Part'}(A)\le\thick_\Part(A)$ for each $A$, giving $\thick'\le\thick$.
+By \Cref{thm:thickness} applied to $\Part'$, $\thick'\ge\mu'_{\min}>0$. By
+\ref{bps:res} every finite stage carries a positive resolution and hence a
+positive $\mu'_{\min}$; only in the (non-realisable) limit $\reso\to0$ would the
+bound vanish, and that limit is excluded for any embedded knower.
+\end{proof}
+
+\begin{proposition}[Boundedness is necessary]
+\label{prop:bdd-necessary}
+The conclusion of \Cref{thm:thickness} fails without \ref{bps:bdd}. On an
+unbounded space $\R^m$ with Lebesgue measure there exist regions (e.g.\
+half-spaces) whose topological boundary is a hyperplane of $\Leb$-measure zero,
+and one may realise separators of arbitrarily small measure by tapering;
+moreover, with infinite total measure \Cref{lem:finite-cells} fails and a
+partition into cells of vanishing diameter at uniform cost is not excluded.
+\end{proposition}
+
+\begin{proof}
+Take $A=\{x_1\le0\}\subset\R^m$. Then $\Bdy A=\{x_1=0\}$ has
+$\Leb(\Bdy A)=0$, so the topological separator is sharp. The finite-resolution
+obstruction of \Cref{thm:thickness} relied on \Cref{lem:finite-cells}, whose
+proof used $\mu(\Phase)<\infty$; with $\mu(\R^m)=\infty$ the measures of
+infinitely many cells can sum to $\infty$ without forcing
+$\inf_i\mu(\cell_i)=0$, so the uniform lower bound $\mu_{\min}>0$ need not hold.
+Hence the floor argument does not apply, witnessing the necessity of
+\ref{bps:bdd}.
+\end{proof}
+
+\begin{remark}[What the theorem does and does not say]
+\label{rem:thickness-scope}
+\Cref{thm:thickness} does not assert that the ambient continuum has thick
+boundaries; a half-space in $\R^m$ has a measure-zero topological boundary. It
+asserts that a \emph{bounded finite-resolution knower}, who can name only unions
+of positive-measure cells, cannot realise that measure-zero cut: its sharpest
+nameable separator has measure $\ge\mu_{\min}$. The thickness is a property of
+the knower-in-the-world, jointly with boundedness, not of the world in the
+abstract. This is the precise sense in which ``items are bounded'': the divisions
+by which items are individuated are bounded below in content.
+\end{remark}

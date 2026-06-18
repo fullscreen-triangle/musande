@@ -1,0 +1,54 @@
+{
+  "experiment_id": "EXT04",
+  "title": "Sleep-stage Kuramoto order parameter on real EEG (Sleep-EDF SC4001)",
+  "record": "SC4001E0 (33yr female)",
+  "eeg_channels": [
+    "EEG Fpz-Cz",
+    "EEG Pz-Oz"
+  ],
+  "fs_Hz": 100.0,
+  "band_Hz": [
+    0.5,
+    12.0
+  ],
+  "n_epochs_scored": 2650,
+  "epoch_counts_per_stage": {
+    "W": 1997,
+    "N1": 58,
+    "N2": 250,
+    "N3": 220,
+    "REM": 125
+  },
+  "mean_R_per_stage": {
+    "W": 0.6795258011631838,
+    "N1": 0.5083783392104219,
+    "N2": 0.49852972833990683,
+    "N3": 0.4740251654368429,
+    "REM": 0.5156417314191594
+  },
+  "std_R_per_stage": {
+    "W": 0.0554256250030027,
+    "N1": 0.03881542621918561,
+    "N2": 0.031169488016885193,
+    "N3": 0.040182729588126506,
+    "REM": 0.026537318730536098
+  },
+  "observed_order_high_to_low": [
+    "W",
+    "REM",
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "claimed_order": [
+    "N3",
+    "W",
+    "N1",
+    "N2",
+    "REM"
+  ],
+  "N3_is_highest": false,
+  "REM_is_lowest": false,
+  "exact_claimed_order_matches": false,
+  "interpretation": "Real single-night PSG. Observed cross-channel order parameter by stage (high->low): ['W', 'REM', 'N1', 'N2', 'N3']. Claimed: ['N3', 'W', 'N1', 'N2', 'REM']. N3 highest: False; REM lowest: False. NOTE: only 2 EEG channels in this recording, so cross-channel R is a coarse coherence proxy; a single subject is not a population test. Whatever the result, it is reported as-is: this is a genuine external check, and a partial/failed match is itself informative (the stage->regime ordering claim is at most weakly supported by one subject and should be scoped or cut)."
+}

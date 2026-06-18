@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXT07",
+  "title": "Partition extinction: exact transport vanishing below Tc",
+  "partA_resistivity_drop_orders_of_magnitude": {
+    "Pb": 13.744727494896694,
+    "Nb": 14.176091259055681,
+    "Sn": 14.041392685158225,
+    "Hg": 15.763427993562937
+  },
+  "partA_min_orders_drop": 13.744727494896694,
+  "partA_mean_orders_drop": 14.431409858168385,
+  "partB_critical_temperatures_K": {
+    "Al": 1.18,
+    "Sn": 3.72,
+    "Hg": 4.15,
+    "Pb": 7.2,
+    "Nb": 9.25,
+    "Nb3Sn": 18.3,
+    "MgB2": 39.0,
+    "YBCO": 92.0,
+    "Bi2223": 110.0,
+    "Hg-1223": 133.0
+  },
+  "partB_superfluid_He4_lambda_K": 2.17,
+  "n_superconductors": 10,
+  "interpretation": "(A) Measured superconducting resistivity upper bounds lie >=14 orders of magnitude (mean 14) below the normal state -- operationally EXACT zero, consistent with the partition-extinction claim that the transport coefficient vanishes exactly (not asymptotically) once carriers become indistinguishable. Persistent currents show no measurable decay over years, bounding resistivity below any finite value. (B) Tc is a sharp, definite material constant across 10 superconductors (1.2 K to 133 K) plus the He-4 lambda point at 2.17 K where viscosity vanishes. The discontinuous, sharp character matches a true phase transition. IMPORTANT SCOPE: the framework REPRODUCES the qualitative phenomenology (exact vanishing, sharp transition) shared with BCS/Landau theory; it does NOT predict Tc from first principles. Defensible claim: partition-extinction is consistent with the measured exact-zero/sharp-transition phenomenology; it is an interpretation alongside BCS, not a competitor that makes new quantitative predictions here."
+}

@@ -1,0 +1,42 @@
+{
+  "experiment_id": "EXT08_09",
+  "title": "Common-Cell Convergence + catalytic composition on real digits",
+  "dataset": "sklearn load_digits (1797x64, 10 classes)",
+  "representation_disjoint": true,
+  "agents": [
+    "A_topleft",
+    "B_topright",
+    "C_botleft",
+    "D_botright"
+  ],
+  "agent_feature_counts": {
+    "A_topleft": 16,
+    "B_topright": 16,
+    "C_botleft": 16,
+    "D_botright": 16
+  },
+  "individual_error": {
+    "A_topleft": 0.36022253129346316,
+    "B_topright": 0.3282336578581363,
+    "C_botleft": 0.26425591098748263,
+    "D_botright": 0.3282336578581363
+  },
+  "pairwise_label_agreement": {
+    "A_topleft|B_topright": 0.4714881780250348,
+    "A_topleft|C_botleft": 0.5563282336578581,
+    "A_topleft|D_botright": 0.4659248956884562,
+    "B_topright|C_botleft": 0.5187760778859527,
+    "B_topright|D_botright": 0.4853963838664812,
+    "C_botleft|D_botright": 0.5757997218358831
+  },
+  "mean_pairwise_agreement": 0.512285581826611,
+  "chance_agreement": 0.1,
+  "fraction_all_agents_agree": 0.2948539638386648,
+  "accuracy_when_all_agree": 1.0,
+  "ensemble_majority_vote_error": 0.1599443671766342,
+  "best_individual_error": 0.26425591098748263,
+  "ensemble_beats_best_individual": true,
+  "independence_product_error_floor": 0.01025561737455508,
+  "mean_pairwise_error_correlation": 0.14557261921370698,
+  "interpretation": "EXT08 (Common-Cell Convergence): four agents with MUTUALLY DISJOINT pixel representations (disjoint=True) nevertheless map inputs to the same label far above chance: mean pairwise agreement 0.51 vs chance 0.10; all four agree on 29% of inputs and are correct on 100% of those. This is a real instance of the theorem: coordination on the outcome cell (label) without any shared representation. EXT09 (catalytic composition): majority-vote error 0.160 is BELOW the best single agent 0.264 -- composing independent agents lowers the floor, as claimed. BUT the multiplicative 'independence' floor 0.0103 is far below the measured ensemble error: the agents are NOT independent (mean pairwise error-correlation 0.15>0, they share the task and fail on the same hard digits). HONEST CONCLUSION: the qualitative claims hold on real data (disjoint-rep convergence; ensemble beats best member), but the EXACT multiplicative composition law requires independence that real agents violate -- the paper must state the law as an independence-limit bound, not an equality."
+}

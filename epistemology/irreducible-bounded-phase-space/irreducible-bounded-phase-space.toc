@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Thesis}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why ``thickness''}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Why ``bounded''}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Two faces of one constant}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Relation to existing treatments}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Method and discipline}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Organisation}{3}{subsection.1.7}%
+\contentsline {section}{\numberline {2}The setting: bounded phase space and finite resolution}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ambient space}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Partitions and resolution}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The hypothesis}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}The Boundary--Thickness Theorem}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Operational separators}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Non-triviality of the separator}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The thickness lower bound}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Stability and the role of boundedness}{6}{subsection.3.4}%

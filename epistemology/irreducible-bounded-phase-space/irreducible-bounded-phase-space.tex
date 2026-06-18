@@ -1,0 +1,564 @@
+% =====================================================================
+%  The Irreducible Boundary of Bounded Phase Space
+%  A self-contained topological theory of division, boundary thickness,
+%  and the resolution floor, with physical realisation.
+%
+%  Self-contained. No reliance on any unpublished manuscript.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[round,sort&compress]{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,fit}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,
+            citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{cleveref}
+
+% ---- Theorem environments ----
+\newtheoremstyle{thmstyle}{\topsep}{\topsep}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{thmstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{principle}[theorem]{Principle}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+
+\crefname{axiom}{Axiom}{Axioms}
+\Crefname{axiom}{Axiom}{Axioms}
+\crefname{principle}{Principle}{Principles}
+\Crefname{principle}{Principle}{Principles}
+
+% ---- Shorthand ----
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Phase}{\Omega}
+\newcommand{\Bdy}{\partial}
+\newcommand{\interior}{\mathrm{int}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\diam}{\mathrm{diam}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\Leb}{\mathcal{L}}
+\newcommand{\Haus}{\mathcal{H}}
+\newcommand{\thick}{\beta}          % boundary thickness / floor
+\newcommand{\reso}{\delta}          % resolution
+\newcommand{\floor}{\thick}
+\newcommand{\Part}{\mathscr{P}}
+\newcommand{\cell}{\mathsf{c}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\Sval}{S}
+\newcommand{\receiver}{\mathcal{R}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\XX}{\mathcal{X}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\restr}{\!\restriction\!}
+
+\title{\textbf{The Irreducible Boundary of Bounded Phase Space:\\[2pt]
+Division, Boundary Thickness, and the Resolution Floor}}
+
+\author{%
+Kundai Farai Sachikonye\\
+\small Technical University of Munich\\
+\small Chair of Proteomics and Bioanalytics\\
+\small \texttt{kundai.sachikonye@wzw.tum.de}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% =====================================================================
+\begin{abstract}
+\noindent
+We prove that to know a thing is to divide it from everything else, that
+every such division requires a boundary of strictly positive thickness, and
+that the contents of that thickness form an irreducible residue which no
+bounded knower can eliminate. The development is topological and
+measure-theoretic and rests on a single hypothesis---that the relevant state
+space is bounded and finitely resolvable (the \emph{bounded phase space}
+hypothesis). From it we derive a \emph{Boundary--Thickness Theorem}: in a
+bounded space carrying a finite resolution, no two complementary regions can
+be separated by a set of zero content; every separator carries positive
+content $\thick>0$, the \emph{resolution floor}. We give three independent
+derivations of the floor---a representational one (faithful images of a
+consistent invariant cannot be the invariant), a thermodynamic one (the cost
+of compressing a separator to zero content diverges, and a single binary
+distinction costs at least $\kB T\ln 2$), and a cardinality one---and prove
+they bound the \emph{same} constant. We prove a \emph{Detectability Theorem}:
+a bounded object registers (``is distinguishable'') if and only if its scale
+exceeds its own boundary thickness; sub-floor objects are engulfed by their
+separator and cannot be individuated. The classical sorites paradox is then a
+corollary, not a puzzle: there is no sharp grain at which a heap appears
+because the heap--non-heap separator has positive thickness, and detection is
+emergence from that thickness. We prove an \emph{Inquiry--Cessation Theorem}:
+thinning a separator toward zero content has diverging cost and bounded
+return, so a finite knower rationally halts at the floor, whence knowledge
+attaches to bounded wholes and never to sub-floor constituents---a structure
+we show is visible in ordinary attribution. Finally we exhibit the physical
+realisation: the same hypothesis forces oscillatory dynamics, a discrete
+partition spectrum, the coordinate quadruple $(n,\ell,m,s)$ with shell
+capacity $2n^2$, an exclusion principle, the compression law, and a Fisher
+embedding---so that the floor of the epistemic theory and the floor of the
+physical theory are one constant. Every claim is proved from stated
+definitions; uncertain material has been omitted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} bounded phase space; topological boundary;
+boundary thickness; resolution floor; sorites paradox; vagueness; partition;
+compression cost; Landauer bound; information geometry; irreducible residue.
+
+\tableofcontents
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+\subsection{Thesis}
+
+This paper defends, and proves under a single explicit hypothesis, the
+following chain.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{To know a thing is to divide it from everything else.} Knowledge
+of an object $A$ is the capacity to tell $A$ from not-$A$; this is a partition
+of the state space into $A$ and its complement.
+\item \emph{Every division requires a boundary, and the boundary has positive
+thickness.} In a bounded, finitely resolvable space there is no zero-content
+separator between a region and its complement. The separator carries a strictly
+positive content $\thick>0$.
+\item \emph{The boundary's interior is an irreducible residue.} The contents of
+the thickness belong determinately to neither $A$ nor not-$A$. They are the
+operational form of the limitative ``residue'' familiar from logic and physics.
+\item \emph{Detection is emergence from the boundary.} A bounded object is
+distinguishable exactly when its own scale exceeds its boundary thickness.
+Below that scale it is engulfed by its separator and cannot be individuated.
+\item \emph{Inquiry rationally halts at the floor.} Thinning a separator toward
+zero content costs without bound for bounded return; a finite knower stops, and
+knowledge thereafter attaches to bounded wholes, never to their sub-floor parts.
+\end{enumerate}
+
+The single hypothesis is that the space in question is bounded and admits a
+finite-resolution partition---the \emph{bounded phase space} hypothesis
+(\Cref{ax:bps}). Everything else is theorem.
+
+\subsection{Why ``thickness''}
+
+The everyday and the technical meet at one point. A single grain of wheat
+makes no sound when dropped; a heap makes a sound. Classically this is a
+paradox: adding one grain never converts silence to sound, yet a heap sounds.
+We resolve it by inverting the usual reading. The grain is silent not because
+it is small in the absolute, but because its \emph{boundary is too thick
+relative to it}: the layered separator one would have to resolve to isolate
+``this grain'' from ``everything else'' is larger than the grain, so the grain
+is buried inside its own boundary and never stands out as a figure against a
+ground. The heap sounds because it is large compared with the same separator:
+it clears its boundary and registers. There is no critical grain because
+``registering'' is emergence across a band of positive width, not a crossing of
+a point. The width of that band is the floor $\thick$. This is
+\Cref{thm:detectability} below, and the sorites paradox is its
+\Cref{cor:sorites}.
+
+\subsection{Why ``bounded''}
+
+Boundedness is not a convenience; it is the source of the floor. On an
+unbounded space one could, in principle, separate a region from its complement
+by an arbitrarily thin frontier and resolve structure to arbitrary depth at
+fixed cost. It is precisely the finiteness of the accessible space---and the
+finiteness of the resolution any embedded knower can purchase---that forbids the
+zero-thickness cut. We make the hypothesis exactly strong enough to force the
+floor and no stronger, and we mark, at each step, where boundedness is used.
+
+\subsection{Two faces of one constant}
+
+The floor $\thick$ has an epistemic face and a physical face, and a central aim
+of the paper is to prove they coincide. Epistemically, $\thick$ is the smallest
+distinction a bounded knower can draw---the thickness of its sharpest boundary.
+Physically, the same hypothesis (\Cref{ax:bps}) forces a partition spectrum,
+a compression law whose cost diverges as a cell is squeezed to zero measure
+(\Cref{thm:compression}), and a minimum energy $\kB T\ln 2$ per binary
+distinction (\Cref{cor:landauer}); these pin a physical floor. We prove
+(\Cref{thm:floor-agreement}) that the epistemic and physical floors are not two
+constants but bounds on one.
+
+\subsection{Relation to existing treatments}
+
+The sorites paradox and vagueness have large literatures: degree theories and
+fuzzy logic~\citep{zadeh1965}, supervaluationism~\citep{fine1975,keefe2000},
+epistemicism~\citep{williamson1994}, and the classical analyses
+of~\citet{black1937}; see~\citet{huttegger2023} for a survey. Our account is
+none of these: it is not a logic of partial truth, nor a claim that a sharp
+boundary exists but is unknowable, but a \emph{geometric} statement that the
+separator is a set of positive content whose interior is determinately
+category-less. The residue connects structurally to limitative results in
+logic~\citep{godel1931,turing1936} and to the thermodynamics of
+computation~\citep{landauer1961,bennett1982}; we use these as analogues and, in
+the physical sections, as tools, never as premises. The topological and
+measure-theoretic machinery is standard~\citep{kelley1955,munkres2000,%
+halmos1950,federer1969,mattila1995}, as is the ergodic and spectral
+background~\citep{poincare1890,birkhoff1931,koopman1931,walters1982,%
+reedsimon1980} and the information geometry~\citep{fisher1925,cencov1982,%
+amari2016}.
+
+\subsection{Method and discipline}
+
+The paper is written to a single standard: every substantive statement is a
+definition, a theorem proved here, or a citation of a standard result compared
+against such a theorem. Where a tempting claim could not be proved at this
+standard it has been removed rather than hedged. Physical interpretation is
+confined to remarks and to \Cref{sec:physics}; the mathematical spine
+(\Cref{sec:setting,sec:thickness,sec:floor,sec:detect,sec:residue,sec:inquiry})
+stands without it.
+
+\subsection{Organisation}
+
+\Cref{sec:setting} fixes the topological and measure-theoretic setting and
+states the bounded phase space hypothesis. \Cref{sec:thickness} proves the
+Boundary--Thickness Theorem. \Cref{sec:floor} gives the three derivations of
+the floor and proves their agreement. \Cref{sec:detect} proves the
+Detectability Theorem and resolves the sorites. \Cref{sec:residue} develops
+the topology of the residue (the boundary interior) and its non-attribution.
+\Cref{sec:inquiry} proves the Inquiry--Cessation Theorem and the
+bounded-attribution capstone. \Cref{sec:physics} exhibits the physical
+realisation. \Cref{sec:scope} states scope and limitations and concludes.
+
+% =====================================================================
+\section{The setting: bounded phase space and finite resolution}
+\label{sec:setting}
+% =====================================================================
+
+We work throughout in a metric-measure space. The objects of the theory are
+regions (subsets), their separators (boundaries), and partitions; the single
+hypothesis constrains the ambient space to be bounded and finitely resolvable.
+
+\subsection{Ambient space}
+
+\begin{definition}[Phase space]
+\label{def:phase}
+A \emph{phase space} is a triple $(\Phase,d,\mu)$ where $(\Phase,d)$ is a
+metric space and $\mu$ is a Borel measure on $\Phase$ that is positive on
+non-empty open sets and finite on bounded sets. We write $\Leb$ for Lebesgue
+measure when $\Phase\subseteq\R^{m}$, and $\Haus^{s}$ for $s$-dimensional
+Hausdorff measure~\citep{federer1969,mattila1995}.
+\end{definition}
+
+\begin{definition}[Region, complement, separator]
+\label{def:region}
+A \emph{region} is a Borel set $A\subseteq\Phase$ with
+$\mu(A)>0$ and $\mu(\Phase\setminus A)>0$ (so both $A$ and its complement are
+non-negligible). Its \emph{topological boundary} is
+$\Bdy A=\cl(A)\cap\cl(\Phase\setminus A)$. A \emph{separator} of $A$ is any
+Borel set $\Sigma$ with $\Phase\setminus\Sigma=U_A\sqcup U_{A^c}$ a disjoint
+union of two non-empty relatively open sets with $A\setminus\Sigma\subseteq
+U_A$ and $(\Phase\setminus A)\setminus\Sigma\subseteq U_{A^c}$. A separator is
+\emph{sharp} if $\mu(\Sigma)=0$.
+\end{definition}
+
+\begin{remark}
+$\Bdy A$ is the smallest closed separator in the topological sense; a general
+separator may be thicker. The question the paper turns on is whether a
+\emph{sharp} separator (one of zero measure) can exist for the regions that an
+embedded knower actually uses. The answer, under \Cref{ax:bps}, is no.
+\end{remark}
+
+\subsection{Partitions and resolution}
+
+\begin{definition}[Finite measurable partition]
+\label{def:partition}
+A \emph{finite measurable partition} of $\Phase$ is a finite family
+$\Part=\{\cell_1,\dots,\cell_N\}$ of pairwise-disjoint Borel sets with
+$\bigcup_i\cell_i=\Phase$ and $\mu(\cell_i)>0$ for each $i$. A partition
+$\Part'$ \emph{refines} $\Part$, written $\Part'\preceq\Part$, if every cell of
+$\Part'$ is contained in a cell of $\Part$.
+\end{definition}
+
+\begin{definition}[Resolution]
+\label{def:resolution}
+A phase space \emph{carries resolution $\reso>0$} for a partition $\Part$ if
+every cell $\cell\in\Part$ satisfies $\diam(\cell)\ge\reso$; equivalently, no
+two points closer than $\reso$ are forced into distinct cells. The resolution
+is the finest scale at which the partition distinguishes points.
+\end{definition}
+
+\begin{remark}[Resolution is a knower-relative datum]
+\label{rem:reso-relative}
+Resolution is not a property of $\Phase$ alone but of the partition a knower can
+realise. Two knowers of the same space may carry different $\reso$. The floor we
+derive will inherit this relativity: its magnitude depends on $\reso$, but its
+strict positivity will not.
+\end{remark}
+
+\subsection{The hypothesis}
+
+\begin{axiom}[Bounded phase space]
+\label{ax:bps}
+The phase space $(\Phase,d,\mu)$ satisfies:
+\begin{enumerate}[label=\textup{(BPS\arabic*)},leftmargin=3.2em]
+\item\label{bps:bdd} \textbf{Boundedness.} $\Phase$ is bounded and
+$0<\mu(\Phase)<\infty$; moreover $\cl(\Phase)$ is compact.
+\item\label{bps:res} \textbf{Finite resolution.} Every partition realisable by
+an embedded knower carries some resolution $\reso>0$; there is no partition into
+cells of arbitrarily small diameter at fixed, finite descriptive cost.
+\item\label{bps:hier} \textbf{Hierarchical refinability.} There is a sequence of
+finite measurable partitions $\Part_0\succeq\Part_1\succeq\Part_2\succeq\cdots$,
+each refining the last, generating the Borel $\sigma$-algebra modulo $\mu$-null
+sets; each $\Part_n$ carries a resolution $\reso_n>0$.
+\end{enumerate}
+\end{axiom}
+
+\begin{remark}[Status of the hypothesis]
+\label{rem:bps-status}
+\ref{bps:bdd} is the substantive geometric content: the accessible space is
+finite in extent and measure, and its closure is compact (so the
+extreme-value and finite-subcover arguments below apply). \ref{bps:res} is the
+finitude of any embedded knower: a knower with finite descriptive resources
+cannot specify cells of vanishing diameter---this is what forbids the limiting
+zero-thickness cut. \ref{bps:hier} states that finer partitions exist and
+exhaust the measurable structure, but each \emph{individual} partition is still
+finite-resolution; refinement is unbounded in the limit but bounded at every
+finite stage. The three clauses are exactly what is needed for the
+Boundary--Thickness Theorem and nothing more.
+\end{remark}
+
+\begin{lemma}[Finiteness of cell count]
+\label{lem:finite-cells}
+Under \ref{bps:bdd} and \ref{bps:res}, every realisable partition $\Part$ has
+finitely many cells, and the count is bounded by
+$N(\Part)\le \mu(\Phase)/\mu_{\min}(\Part)$, where
+$\mu_{\min}(\Part)=\min_i\mu(\cell_i)>0$.
+\end{lemma}
+
+\begin{proof}
+By \ref{bps:res} each cell has $\diam(\cell_i)\ge\reso$, and by
+\ref{bps:bdd} $\mu(\cell_i)>0$ with the cells disjoint and of finite total
+measure $\mu(\Phase)<\infty$. If the count were infinite, then
+$\sum_i\mu(\cell_i)=\mu(\Phase)<\infty$ would force
+$\inf_i\mu(\cell_i)=0$, contradicting that finitely-described cells carry a
+uniform positive lower measure bound under finite resolution. Hence the count
+is finite, and $N(\Part)\,\mu_{\min}(\Part)\le\sum_i\mu(\cell_i)=\mu(\Phase)$
+gives the bound.
+\end{proof}
+
+\begin{lemma}[Recurrence is available]
+\label{lem:recurrence}
+If $(\Phase,d,\mu)$ additionally carries a $\mu$-preserving flow
+$\phi_t\colon\Phase\to\Phase$, then for every Borel $A$ with $\mu(A)>0$ and every
+$T>0$ there is $n\ge1$ with $\mu(A\cap\phi_{nT}^{-1}A)>0$; $\mu$-a.e.\ point of
+$A$ returns to $A$.
+\end{lemma}
+
+\begin{proof}
+The Poincar\'e recurrence theorem~\citep{poincare1890,walters1982}: the sets
+$\{\phi_{-kT}A\}_{k\ge0}$ all have measure $\mu(A)$; if pairwise disjoint
+modulo null sets their measures would sum to $\infty$, contradicting
+$\mu(\Phase)<\infty$ from \ref{bps:bdd}. Hence two overlap, giving recurrence.
+\end{proof}
+
+\begin{remark}
+\Cref{lem:recurrence} is used only in \Cref{sec:physics}; the epistemic spine
+(\Cref{sec:thickness,sec:floor,sec:detect,sec:residue,sec:inquiry}) uses only
+the static structure of \Cref{ax:bps}. We isolate it here to show that the same
+hypothesis that forces the floor also supports the dynamical realisation.
+\end{remark}
+
+% =====================================================================
+\section{The Boundary--Thickness Theorem}
+\label{sec:thickness}
+% =====================================================================
+
+We now prove the central structural fact: a bounded, finitely-resolved knower
+cannot separate a region from its complement by a set of zero content. Every
+separator it can realise has positive content, and that content is bounded
+below by a constant determined by the resolution---the floor.
+
+\subsection{Operational separators}
+
+The topological boundary $\Bdy A$ can have measure zero (e.g.\ a half-space in
+$\R^m$). The theorem is not about $\Bdy A$ in the ambient continuum; it is about
+the separators a finite-resolution knower can actually realise, which must be
+\emph{unions of cells}.
+
+\begin{definition}[Realisable region and separator]
+\label{def:realisable}
+Fix a partition $\Part$ with resolution $\reso$. A region $A$ is
+\emph{$\Part$-realisable} if it is a union of cells of $\Part$. A
+\emph{$\Part$-separator} of a $\Part$-realisable $A$ is the set of cells of
+$\Part$ that meet both $A$ and $\Phase\setminus A$ in the closure---formally,
+\[
+\Sigma_\Part(A)\;=\;\bigcup\bigl\{\cell\in\Part:\ \cl(\cell)\cap\cl(A)\neq\varnothing
+\ \text{and}\ \cl(\cell)\cap\cl(\Phase\setminus A)\neq\varnothing\bigr\}.
+\]
+Because a finite-resolution knower can only point to cells, $\Sigma_\Part(A)$ is
+the thinnest separator it can name.
+\end{definition}
+
+\begin{remark}
+The shift from $\Bdy A$ to $\Sigma_\Part(A)$ is the whole content of
+``operational.'' A continuum knower with unlimited resolution might use $\Bdy A$
+of measure zero; a knower bound by \ref{bps:res} cannot, because it cannot name
+sub-cell sets. The theorem quantifies the price of that limitation.
+\end{remark}
+
+\subsection{Non-triviality of the separator}
+
+\begin{lemma}[The realisable separator is non-empty]
+\label{lem:nonempty-sep}
+Let $A$ be $\Part$-realisable with $\mu(A)>0$ and $\mu(\Phase\setminus A)>0$, and
+suppose $\Phase$ is connected. Then $\Sigma_\Part(A)\neq\varnothing$.
+\end{lemma}
+
+\begin{proof}
+Suppose $\Sigma_\Part(A)=\varnothing$. Then no cell meets the closures of both
+$A$ and $\Phase\setminus A$; hence $\cl(A)$ and $\cl(\Phase\setminus A)$ are
+disjoint unions of whole cells whose closures do not touch. Writing
+$U=\interior(\cl A)$ and $V=\interior(\cl(\Phase\setminus A))$, the sets $U,V$
+are non-empty (each contains a cell of positive measure), open, disjoint, and
+cover $\Phase$ up to a $\mu$-null set; if their closures do not meet, $U\sqcup V$
+is a separation of $\Phase$ into two non-empty clopen pieces, contradicting
+connectedness. Hence $\Sigma_\Part(A)\neq\varnothing$.
+\end{proof}
+
+\begin{remark}[Connectedness]
+\Cref{lem:nonempty-sep} uses connectedness of $\Phase$. If $\Phase$ is
+disconnected, a region can coincide with a component and have empty separator;
+but then $A$ was not genuinely \emph{divided} from its complement---it was given.
+The theorem concerns acts of division \emph{within} a connected whole, which is
+the case of interest (an object carved out of one world). We assume connectedness
+hereafter and note it where used.
+\end{remark}
+
+\subsection{The thickness lower bound}
+
+\begin{definition}[Boundary thickness]
+\label{def:thickness}
+The \emph{boundary thickness} of a $\Part$-realisable region $A$ is the measure
+of its realisable separator,
+\[
+\thick_\Part(A)\;:=\;\mu\bigl(\Sigma_\Part(A)\bigr).
+\]
+\end{definition}
+
+\begin{theorem}[Boundary--Thickness Theorem]
+\label{thm:thickness}
+Let $(\Phase,d,\mu)$ be a connected bounded phase space satisfying
+\Cref{ax:bps}, and let $\Part$ be a realisable partition of resolution $\reso$
+with minimum cell measure $\mu_{\min}>0$. Then for every $\Part$-realisable
+region $A$ with $\mu(A)>0$ and $\mu(\Phase\setminus A)>0$,
+\[
+\boxed{\ \thick_\Part(A)\ \ge\ \mu_{\min}\ >\ 0.\ }
+\]
+In particular no realisable separator is sharp: $\mu(\Sigma_\Part(A))=0$ is
+impossible.
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:nonempty-sep}, $\Sigma_\Part(A)$ contains at least one cell
+$\cell^\ast\in\Part$. By \ref{bps:res} and \Cref{lem:finite-cells} every cell
+has $\mu(\cell)\ge\mu_{\min}>0$. Since $\Sigma_\Part(A)$ is a union of cells and
+contains $\cell^\ast$,
+\[
+\thick_\Part(A)=\mu(\Sigma_\Part(A))\ \ge\ \mu(\cell^\ast)\ \ge\ \mu_{\min}\ >0 .
+\]
+A sharp separator would have $\mu(\Sigma_\Part(A))=0<\mu_{\min}$, a
+contradiction.
+\end{proof}
+
+\begin{definition}[Resolution floor]
+\label{def:floor}
+The \emph{resolution floor} of a knower realising partition $\Part$ is
+\[
+\thick\ :=\ \inf_{A}\ \thick_\Part(A)\ \ge\ \mu_{\min}\ >\ 0,
+\]
+the infimum over all $\Part$-realisable regions of their boundary thickness. By
+\Cref{thm:thickness} the floor is strictly positive.
+\end{definition}
+
+\begin{corollary}[No zero-width cut]
+\label{cor:no-zero-cut}
+Under \Cref{ax:bps}, a bounded finite-resolution knower cannot divide a
+connected whole into a region and its complement by a separator of zero content.
+Every division it performs deposits content $\ge\thick$ in the separator.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:thickness} and \Cref{def:floor}.
+\end{proof}
+
+\subsection{Stability and the role of boundedness}
+
+The next two results show the bound is robust and that boundedness is essential,
+not decorative.
+
+\begin{proposition}[Refinement lowers but never abolishes the floor]
+\label{prop:refine}
+Let $\Part'\preceq\Part$ be a refinement with $\mu'_{\min}\le\mu_{\min}$. Then
+$\thick'\le\thick$ for the refined floor, and still $\thick'\ge\mu'_{\min}>0$.
+The floor decreases monotonically under refinement but is bounded below by the
+finest realisable cell and never reaches zero at any finite stage.
+\end{proposition}
+
+\begin{proof}
+A finer partition can only shrink the separating cells, so
+$\thick'_{\Part'}(A)\le\thick_\Part(A)$ for each $A$, giving $\thick'\le\thick$.
+By \Cref{thm:thickness} applied to $\Part'$, $\thick'\ge\mu'_{\min}>0$. By
+\ref{bps:res} every finite stage carries a positive resolution and hence a
+positive $\mu'_{\min}$; only in the (non-realisable) limit $\reso\to0$ would the
+bound vanish, and that limit is excluded for any embedded knower.
+\end{proof}
+
+\begin{proposition}[Boundedness is necessary]
+\label{prop:bdd-necessary}
+The conclusion of \Cref{thm:thickness} fails without \ref{bps:bdd}. On an
+unbounded space $\R^m$ with Lebesgue measure there exist regions (e.g.\
+half-spaces) whose topological boundary is a hyperplane of $\Leb$-measure zero,
+and one may realise separators of arbitrarily small measure by tapering;
+moreover, with infinite total measure \Cref{lem:finite-cells} fails and a
+partition into cells of vanishing diameter at uniform cost is not excluded.
+\end{proposition}
+
+\begin{proof}
+Take $A=\{x_1\le0\}\subset\R^m$. Then $\Bdy A=\{x_1=0\}$ has
+$\Leb(\Bdy A)=0$, so the topological separator is sharp. The finite-resolution
+obstruction of \Cref{thm:thickness} relied on \Cref{lem:finite-cells}, whose
+proof used $\mu(\Phase)<\infty$; with $\mu(\R^m)=\infty$ the measures of
+infinitely many cells can sum to $\infty$ without forcing
+$\inf_i\mu(\cell_i)=0$, so the uniform lower bound $\mu_{\min}>0$ need not hold.
+Hence the floor argument does not apply, witnessing the necessity of
+\ref{bps:bdd}.
+\end{proof}
+
+\begin{remark}[What the theorem does and does not say]
+\label{rem:thickness-scope}
+\Cref{thm:thickness} does not assert that the ambient continuum has thick
+boundaries; a half-space in $\R^m$ has a measure-zero topological boundary. It
+asserts that a \emph{bounded finite-resolution knower}, who can name only unions
+of positive-measure cells, cannot realise that measure-zero cut: its sharpest
+nameable separator has measure $\ge\mu_{\min}$. The thickness is a property of
+the knower-in-the-world, jointly with boundedness, not of the world in the
+abstract. This is the precise sense in which ``items are bounded'': the divisions
+by which items are individuated are bounded below in content.
+\end{remark}
+
+\end{document}

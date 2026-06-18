@@ -1,0 +1,84 @@
+{
+  "experiments": [
+    {
+      "id": "EXT01",
+      "claim": "Shell capacity C(n)=2n^2",
+      "verdict": "CONFIRMED*",
+      "note": "Exact as level degeneracy & reproduces period lengths via n+l rule; pure-2n^2 nesting alone does NOT give noble-gas closures (Aufbau needed).",
+      "result_file": "EXT01_shell_capacity.json"
+    },
+    {
+      "id": "EXT02",
+      "claim": "Kuramoto critical coupling",
+      "verdict": "CORRECTION",
+      "note": "Paper's Kc=2 sigma/pi is wrong by sqrt(2pi)~2.51 even for Gaussian; correct law Kc=2/(pi g(0)) (=1.596 sigma Gaussian). Simulation confirms corrected law; 2 sigma/pi fails for uniform/Lorentzian/bimodal.",
+      "result_file": "EXT02_kuramoto_Kc.json"
+    },
+    {
+      "id": "EXT03",
+      "claim": "Wiedemann-Franz universality",
+      "verdict": "CONFIRMED",
+      "note": "Predicted L0=2.443e-8; measured mean 2.511e-8 over 11 metals, 20/22 within 15%. (Reproduces standard physics; not a novel prediction.)",
+      "result_file": "EXT03_wiedemann_franz.json"
+    },
+    {
+      "id": "EXT04",
+      "claim": "Sleep-stage R ordering",
+      "verdict": "CORRECTION",
+      "note": "On real Sleep-EDF EEG the cross-channel order parameter gives W>REM>N1>N2>N3, INVERTING the claimed N3>W>N1>N2>REM (N3 lowest). Channel-geometry caveat noted; claim must be cut or heavily scoped.",
+      "result_file": "EXT04_sleep_order_parameter.json"
+    },
+    {
+      "id": "EXT05",
+      "claim": "Enzyme efficiency anti-correlation",
+      "verdict": "CONFIRMED*",
+      "note": "log(kcat/Km) vs substrate heavy-atom count: Pearson r=-0.67 (p=0.05), matches claimed ~-0.57 in sign/magnitude; but weak (r^2=0.45), Spearman -0.40, extremes-driven. Qualitative only.",
+      "result_file": "EXT05_enzyme_efficiency.json"
+    },
+    {
+      "id": "EXT06",
+      "claim": "Antidepressant response convergence",
+      "verdict": "CONFIRMED*",
+      "note": "Cipriani 2018 ORs cluster tightly (CV=0.10); binding breadth does not predict response (r=0.39, n.s.). Supports convergence; aperture mechanism is one interpretation, not proven cause.",
+      "result_file": "EXT06_antidepressant_convergence.json"
+    },
+    {
+      "id": "EXT07",
+      "claim": "Partition extinction (exact vanishing)",
+      "verdict": "CONFIRMED*",
+      "note": ">=14 orders-of-magnitude resistivity drop (operationally exact zero) at sharp Tc across 10 superconductors + He-4 lambda. Reproduces BCS/Landau phenomenology; does not predict Tc.",
+      "result_file": "EXT07_partition_extinction.json"
+    },
+    {
+      "id": "EXT08",
+      "claim": "Common-Cell Convergence",
+      "verdict": "CONFIRMED",
+      "note": "Four representation-DISJOINT agents (digits) agree on labels 0.51 vs 0.10 chance; when all agree (29%) they are 100% correct. Real instance of coordination without shared representation.",
+      "result_file": "EXT08_09_coordination.json"
+    },
+    {
+      "id": "EXT09",
+      "claim": "Catalytic composition / replication",
+      "verdict": "CONFIRMED*",
+      "note": "Ensemble error 0.16 < best individual 0.26 (composition lowers floor). But exact multiplicative law assumes independence agents violate (err-corr 0.15); state as independence-limit bound, not equality.",
+      "result_file": "EXT08_09_coordination.json"
+    }
+  ],
+  "summary": [
+    "EXT01  CONFIRMED*   Shell capacity C(n)=2n^2",
+    "EXT02  CORRECTION   Kuramoto critical coupling",
+    "EXT03  CONFIRMED    Wiedemann-Franz universality",
+    "EXT04  CORRECTION   Sleep-stage R ordering",
+    "EXT05  CONFIRMED*   Enzyme efficiency anti-correlation",
+    "EXT06  CONFIRMED*   Antidepressant response convergence",
+    "EXT07  CONFIRMED*   Partition extinction (exact vanishing)",
+    "EXT08  CONFIRMED    Common-Cell Convergence",
+    "EXT09  CONFIRMED*   Catalytic composition / replication"
+  ],
+  "verdict_counts": {
+    "CONFIRMED*": 5,
+    "CORRECTION": 2,
+    "CONFIRMED": 2
+  },
+  "headline": "9 external experiments against public data. 2 confirmed outright, 5 confirmed-with-scope, 2 corrections forced by data (Kuramoto Kc factor; sleep-stage ordering). Unlike the original self-referential suite, these test claims against data the framework did not generate, and two of them changed the papers."
+}
