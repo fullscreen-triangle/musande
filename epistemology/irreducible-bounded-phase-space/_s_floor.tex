@@ -1,0 +1,178 @@
+
+% =====================================================================
+\section{Three derivations of the floor}
+\label{sec:floor}
+% =====================================================================
+
+The Boundary--Thickness Theorem produced the floor $\thick>0$ from the geometry
+of separators. We now give two further, independent derivations---one
+representational, one cardinality-theoretic---and a cost argument showing that
+driving a separator toward zero content has diverging cost. The three agree:
+each bounds the same constant from below away from zero, and none can be reduced
+to the others. This redundancy is the paper's evidence that the floor is
+structural and not an artefact of one formalism.
+
+\subsection{The representational derivation}
+
+The first derivation asks what it costs to \emph{name} a region, independently of
+any separator. An embedded agent identifies a region by a finite descriptor
+drawn from a finite scheme; we show no such scheme distinguishes all regions of
+a bounded resolvable space exactly, so a positive descriptive residue persists.
+
+\begin{definition}[Descriptive scheme]
+\label{def:scheme}
+A \emph{descriptive scheme} for a partition $\Part$ with $N$ cells is an
+injection $\rho$ from a set $\mathcal{R}$ of realisable regions into the finite
+set $\{0,1\}^{N}$ of cell-indicator strings: $\rho(A)$ is the string whose
+$i$-th entry is $1$ iff $\cell_i\subseteq A$. A region $A$ is
+\emph{exactly named} by $\rho$ if $A=\bigcup\{\cell_i:\rho(A)_i=1\}$.
+\end{definition}
+
+\begin{proposition}[Representational residue]
+\label{prop:rep-residue}
+Under \Cref{ax:brs}, for any region $A$ that is not $\Part$-realisable the
+descriptive scheme $\rho$ names instead the realisable region
+$\widehat A=\bigcup\{\cell_i:\cell_i\subseteq A\}$, and the discrepancy
+$A\,\triangle\,\widehat A$ lies in the separator $\Sigma_\Part(A)$, of measure
+$\ge\thick$. No finite descriptive scheme over $\Part$ names every region of
+$\Space$ exactly; the unnamed discrepancy has measure at least the floor.
+\end{proposition}
+
+\begin{proof}
+A scheme over $\Part$ has range $\{0,1\}^N$, a finite set, while the regions of
+$\Space$ (Borel sets modulo null sets) are uncountable under \ref{brs:hier}; so
+$\rho$ cannot be injective on all regions and must collapse some region $A$ onto
+a realisable $\widehat A$. The cells contributing to $A$ only partially lie in
+$\Sigma_\Part(A)$: a cell $\cell_i$ with $\cell_i\subseteq A$ is named, a cell
+disjoint from $A$ is omitted, and a cell meeting both $A$ and $\Space\setminus A$
+is exactly a separator cell. Hence $A\,\triangle\,\widehat A\subseteq
+\Sigma_\Part(A)$, and where $A$ is non-realisable this symmetric difference is
+non-null and contained in a separator of measure $\ge\thick$ by
+\Cref{thm:thickness}.
+\end{proof}
+
+\begin{remark}[A faithful image is not the invariant]
+\label{rem:faithful}
+\Cref{prop:rep-residue} says that the best name a finite scheme can give a region
+is a realisable approximant differing from it by at least a floor's worth of
+content. A representation that is faithful at the resolution of $\Part$ is still
+not the region itself; the gap is the same $\thick$ that the separator carries.
+The descriptive and the geometric residues coincide.
+\end{remark}
+
+\subsection{The cardinality derivation}
+
+The second derivation needs no geometry at all---only counting. It shows that the
+collection of distinctions an agent might draw outruns any finite stage of
+representation, so that at each finite stage a positive shortfall remains.
+
+\begin{proposition}[Cardinality shortfall]
+\label{prop:card}
+Under \ref{brs:hier}, the family of regions of $\Space$ \textup{(}Borel modulo
+null\textup{)} has cardinality of the continuum, while the regions exactly
+nameable at any finite stage $\Part_n$ number at most $2^{N(\Part_n)}<\infty$.
+Hence at every finite stage the nameable regions are a measure-dense but
+cardinality-negligible subfamily, and the act of naming any further region
+requires passing to a strictly finer partition, which by \Cref{prop:refine}
+carries its own positive floor $\thick_{n+1}>0$.
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:finite-cells} each $\Part_n$ is finite, so its nameable regions
+(unions of cells) number $2^{N(\Part_n)}$. By \ref{brs:hier} the partitions
+generate the Borel $\sigma$-algebra modulo null sets, whose cardinality is that
+of the continuum; no finite stage attains it. To name a region not realisable at
+stage $n$ one refines to a stage $m>n$ at which it becomes a union of cells; by
+\Cref{prop:refine} every such stage carries $\thick_m\ge\mu_{\min}(\Part_m)>0$.
+Thus the floor reappears at each refinement; there is no finite stage of exact,
+complete naming and no stage with zero floor.
+\end{proof}
+
+\begin{remark}
+\Cref{prop:card} is a pure counting fact and is logically independent of the
+measure-geometry of \Cref{sec:thickness}: even if every separator could somehow
+be made thin, the finite nameable family could never exhaust the continuum of
+regions, so a fresh refinement---with its own floor---would always be required.
+The two derivations corner the floor from disjoint directions.
+\end{remark}
+
+\subsection{The cost derivation}
+
+The third derivation treats the floor as the limit of an optimisation: it shows
+that the cost of thinning a separator toward zero content diverges, so a finite
+agent never reaches the sharp cut. We work with an abstract, monotone cost
+functional and assume only what any reasonable accounting of refinement must
+satisfy.
+
+\begin{definition}[Refinement cost]
+\label{def:cost}
+A \emph{refinement cost} is a functional $\Gamma$ assigning to each realisable
+partition $\Part$ a value $\Gamma(\Part)\in[0,\infty)$ such that
+\begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=3em]
+\item\label{c:mono} \textbf{Monotone.} $\Part'\preceq\Part\Rightarrow
+\Gamma(\Part')\ge\Gamma(\Part)$ \textup{(}finer costs at least as much\textup{)};
+\item\label{c:additive} \textbf{Additive over cells.} splitting a cell of
+measure $m$ into cells of measures $m_1,\dots,m_r$ adds
+$\sum_s g(m_s)-g(m)\ge0$ to $\Gamma$, for a convex $g\colon(0,\infty)\to\R$
+with $g(m)\to+\infty$ as $m\to0^+$;
+\item\label{c:reso} \textbf{Resolution-bounded.} achieving boundary thickness
+$\thick_\Part(A)=t$ for a fixed region requires a partition whose separating
+cells have measure $\le t$, hence each of cost $\ge g(t)$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Cost divergence at the sharp cut]
+\label{thm:cost}
+Let $\Gamma$ be a refinement cost. For a fixed region $A$, the cost of realising
+boundary thickness $t$ satisfies $\Gamma_t\ge g(t)\to+\infty$ as $t\to0^+$.
+Hence no finite-cost separation process attains a sharp ($t=0$) separator; the
+infimum of attainable thickness over finite-cost processes is a strictly
+positive $\thick$.
+\end{theorem}
+
+\begin{proof}
+By \ref{c:reso}, realising thickness $t$ requires separating cells of measure
+$\le t$; by \ref{c:additive} each such cell costs at least $g(t)$, and since at
+least one separating cell is present (\Cref{lem:nonempty-sep}),
+$\Gamma_t\ge g(t)$. Since $g$ is convex with $g(m)\to+\infty$ as $m\to0^+$,
+$\Gamma_t\to+\infty$ as $t\to0^+$. A finite-cost process has $\Gamma\le C<\infty$
+for some bound $C$, so its attainable thickness is bounded below by
+$t_\ast:=\sup\{t:g(t)\le C\}>0$. Setting $\thick=t_\ast$ gives a strictly
+positive floor below which no finite-cost process reaches.
+\end{proof}
+
+\begin{remark}[Bounded return forces a halt]
+\label{rem:bounded-return}
+The cost derivation has a corollary used in \Cref{sec:inquiry}: because the
+return from thinning a separator---the additional content correctly assigned---is
+bounded by the finite measure $\mu(\Space)$ (\ref{brs:bdd}), while the cost
+$g(t)$ diverges as $t\to0^+$, the marginal return per unit cost falls to zero.
+A finite agent with any positive cost-per-return threshold therefore halts at a
+strictly positive thickness. The halt is not a failure of resolve but the
+rational endpoint of a diverging-cost, bounded-return optimisation.
+\end{remark}
+
+\subsection{Agreement of the three}
+
+\begin{theorem}[The floor is one constant]
+\label{thm:floor-agree}
+For a fixed bounded resolvable space and agent, the geometric floor of
+\Cref{def:floor}, the representational residue of \Cref{prop:rep-residue}, and
+the cost-limited thickness of \Cref{thm:cost} are all strictly positive and
+bound the same quantity: each equals or exceeds $\mu_{\min}$ at the agent's
+finest realisable partition, and each vanishes only in the excluded limit
+$\reso\to0$. No one of them can be reduced to zero while the others remain
+positive.
+\end{theorem}
+
+\begin{proof}
+All three are controlled by $\mu_{\min}$ at the finest realisable partition. The
+geometric floor satisfies $\thick\ge\mu_{\min}$ (\Cref{thm:thickness}); the
+representational residue is a separator of measure $\ge\thick\ge\mu_{\min}$
+(\Cref{prop:rep-residue}); the cost-limited thickness $t_\ast$ satisfies
+$g(t_\ast)\le C$ with separating cells of measure $\ge\mu_{\min}$ forced by
+\ref{brs:res}, so $t_\ast\ge\mu_{\min}$. Each is therefore $\ge\mu_{\min}>0$, and
+each $\to0$ only as $\mu_{\min}\to0$, i.e.\ $\reso\to0$, which \ref{brs:res}
+excludes for an embedded agent. Hence they rise and fall together and are
+positive together.
+\end{proof}

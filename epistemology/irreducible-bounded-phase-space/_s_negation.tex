@@ -1,0 +1,159 @@
+
+% =====================================================================
+\section{Individuation by negation, and its non-instantaneity}
+\label{sec:negation}
+% =====================================================================
+
+Before a separator can have thickness there must be something to separate. This
+section settles how a part comes to be at all in a whole with no distinguished
+element, and proves two facts that drive the rest of the paper: individuation is
+forced to proceed by negation (\Cref{thm:negation-unique}), and no individuation
+that yields a genuine part can be completed in a single step
+(\Cref{thm:noninstant}), so that every individuation leaves an untouched
+residue.
+
+\subsection{Individuation without a selector}
+
+\begin{definition}[Individuation]
+\label{def:individuation}
+An \emph{individuation} of a part from the whole $\Space$ is a determination of a
+region $A$ together with a separator certifying $A$ as distinct from
+$\Space\setminus A$. A \emph{selector} is a rule that fixes $A$ by naming an
+element or distinguished point of $A$ in advance of the separation.
+\end{definition}
+
+\begin{definition}[Negation-sequence]
+\label{def:negation}
+For a region $A\subseteq\Space$, its \emph{negation-sequence} is its complement
+together with the separator that certifies the complement,
+\[
+\Neg(A)\;:=\;\Space\setminus A,
+\]
+the totality of what $A$ is not. We say $A$ is \emph{individuated by negation}
+if $A$ is determined as the unique region whose negation-sequence is $\Neg(A)$;
+that is, $A=\Space\setminus\Neg(A)$, with $\Neg(A)$ given first.
+\end{definition}
+
+The point of \Cref{def:negation} is that $\Neg(A)$ requires no selector: it is
+``everything else,'' which is completely specified by the whole and the act of
+withholding $A$, with no element singled out. We now show this is the only
+selector-free route.
+
+\begin{theorem}[Negation is the unique selector-free individuation]
+\label{thm:negation-unique}
+Let $\Space$ contain no distinguished element \textup{(}no point, region, or
+order is given in advance\textup{)}. Then any individuation of a part $A$ that
+uses no selector determines $A$ as $\Space\setminus\Neg(A)$ for its
+negation-sequence $\Neg(A)$; and conversely every $\Neg(A)$ determines a unique
+such $A$. No selector-based rule individuates a part without invoking a further
+selector.
+\end{theorem}
+
+\begin{proof}
+\emph{(Necessity.)} Suppose an individuation fixes $A$ without a selector. To
+fix $A$ is to decide, of each part of $\Space$, whether it belongs to $A$ or to
+the remainder. A positive rule---one that fixes $A$ by asserting membership of
+some element or distinguished feature---names that element or feature; by
+hypothesis no element or feature is distinguished in advance, so the rule must
+itself supply one. Supplying a distinguished element is exactly providing a
+selector, and that selector must in turn be fixed: either it is given in advance
+(contradicting that none is) or it is fixed by a prior rule, which faces the same
+dichotomy. The regress terminates only if some rule fixes $A$ without naming any
+element of $A$. The sole such rule available is the withholding of $A$ from the
+whole: specifying the totality $\Space\setminus A=\Neg(A)$ that $A$ is to be
+distinct from, and taking $A$ as its complement. This names no element of $A$;
+it names only ``the rest,'' which the whole already supplies. Hence
+$A=\Space\setminus\Neg(A)$.
+
+\emph{(Sufficiency and uniqueness.)} Given a negation-sequence
+$\Neg(A)\subsetneq\Space$ with $\mu(\Space\setminus\Neg(A))>0$, the region
+$A:=\Space\setminus\Neg(A)$ is determined uniquely as a set, since complementation
+in $\Space$ is an involution: $\Space\setminus(\Space\setminus\Neg(A))=\Neg(A)$.
+Thus $\Neg$ is a bijection between admissible parts and admissible
+negation-sequences, and each side determines the other without further data.
+\end{proof}
+
+\begin{remark}[Why complementation closes the regress]
+\label{rem:regress}
+A positive selector is a map ``choose an element'' that must itself be chosen; in
+a whole with no distinguished element the choice has no ground and regresses.
+Complementation is the unique operation that fixes a part using only the whole
+and the part's own absence---data already present once the whole is given. This
+is why negation, and not selection, is the primitive of individuation here.
+\end{remark}
+
+\subsection{Non-instantaneity}
+
+We now show that individuation cannot be punctual. The intuition is exact: a
+separation that takes no extent leaves the part indistinguishable from the
+whole, hence is no separation at all. We formalise an individuation as a finite
+sequence of refinements and prove that a zero-length sequence individuates
+nothing.
+
+\begin{definition}[Separation process]
+\label{def:process}
+A \emph{separation process} for a target region $A$ is a finite chain of
+realisable partitions
+$\Part_0\succeq\Part_1\succeq\cdots\succeq\Part_k$
+together with, at each stage $j$, a $\Part_j$-realisable approximant $A_j$
+(a union of cells of $\Part_j$), such that $A_0=\Space$ \textup{(}the
+undifferentiated whole\textup{)} and the chain is \emph{committing}: each step
+$j\to j+1$ moves at least one cell out of the approximant's separator, i.e.\
+$\thick_{\Part_{j+1}}(A_{j+1})<\thick_{\Part_j}(A_j)$ or
+$A_{j+1}\neq A_j$. The \emph{length} of the process is $k$, the number of
+committed steps.
+\end{definition}
+
+\begin{theorem}[Non-instantaneity]
+\label{thm:noninstant}
+Under \Cref{ax:brs} with $\Space$ connected, no separation process of length
+$k=0$ individuates a part: if $k=0$ then $A_0=\Space$ and no region $A$ with
+$\mu(A)>0$ and $\mu(\Space\setminus A)>0$ has been determined. Consequently every
+individuation of a genuine part has length $k\ge1$, and at every stage prior to
+completion a non-empty separator of measure $\ge\thick$ remains uncommitted.
+\end{theorem}
+
+\begin{proof}
+At length $k=0$ the only datum is $A_0=\Space$. Then $\Space\setminus A_0=\varnothing$
+has measure zero, so $A_0$ is not a region in the sense of \Cref{def:region}: it
+fails $\mu(\Space\setminus A_0)>0$. No part distinct from the whole has been
+determined; $A_0$ coincides with $\Space$. Hence a genuine part requires at least
+one committing step, $k\ge1$.
+
+For the residue claim, consider any stage $j<k$ with approximant $A_j$. By
+\Cref{thm:negation-unique} the still-pending determination of $A$ is the
+withholding of $\Neg(A)$, not yet complete at stage $j$, so $A_j\neq A$ and the
+realisable separator $\Sigma_{\Part_j}(A_j)$ is non-empty. By
+\Cref{thm:thickness}, $\mu(\Sigma_{\Part_j}(A_j))\ge\thick>0$. Thus at every
+stage before completion a separator of measure at least the floor remains
+uncommitted---the untouched residue of the individuation in progress.
+\end{proof}
+
+\begin{remark}[The residue]
+\label{rem:residue-origin}
+\Cref{thm:noninstant} is the generative fact behind everything that follows. An
+individuation is not the flash assignment of a boundary but a process that
+withholds $\Neg(A)$ step by step; because it has positive length and the whole
+against which it withholds is itself only ever finitely resolved, what is left
+uncommitted at the close is never empty. We call this remainder the
+\emph{residue} of the individuation. \Cref{sec:residue} shows the residue cannot
+be removed even in principle---not because it is small, but because removing it
+would require verifying $A$ against the very totality that constitutes it.
+\end{remark}
+
+\begin{corollary}[Individuation is monotone in commitments]
+\label{cor:monotone-commit}
+Along any separation process the number of committed steps is non-decreasing, and
+a step once committed---a cell once removed from the separator---cannot be
+un-committed without itself being a further step. Hence the committed-count is a
+monotone record of the process.
+\end{corollary}
+
+\begin{proof}
+By \Cref{def:process} each step is committing and the chain of partitions is a
+refinement chain $\Part_j\succeq\Part_{j+1}$, which is a one-directional order:
+re-coarsening to undo a commitment is a distinct act, not a reversal of the
+order on the original chain. Thus the count of committed steps never decreases
+along the process; it is taken up again as the central object of
+\Cref{sec:inquiry}.
+\end{proof}

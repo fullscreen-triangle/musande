@@ -1,0 +1,151 @@
+
+% =====================================================================
+\section{Detectability and the sorites}
+\label{sec:detect}
+% =====================================================================
+
+We now turn from the existence of the floor to its consequence for what can be
+\emph{distinguished}. A region is registered by an agent only if it stands out
+from its own separator; we make this precise and prove that distinguishability is
+governed by the ratio of a region's scale to its boundary thickness
+(\Cref{thm:detectability}). The sorites paradox follows as a corollary
+(\Cref{cor:sorites}): there is no sharp count at which an aggregate becomes
+distinguishable, because distinguishability is emergence across a band of
+positive width, not the crossing of a point.
+
+\subsection{Scale and distinguishability}
+
+\begin{definition}[Scale of a region]
+\label{def:scale}
+The \emph{scale} of a $\Part$-realisable region $A$ is its measure
+$\sigma(A):=\mu(A)$. Its \emph{relative thickness} is the ratio
+\[
+\tau_\Part(A)\;:=\;\frac{\thick_\Part(A)}{\sigma(A)}
+\;=\;\frac{\mu(\Sigma_\Part(A))}{\mu(A)} .
+\]
+\end{definition}
+
+\begin{definition}[Distinguishable region]
+\label{def:distinguishable}
+A region $A$ is \emph{distinguishable} \textup{(}by an agent realising
+$\Part$\textup{)} if its interior content exceeds its separator content,
+\[
+\mu\bigl(A\setminus\Sigma_\Part(A)\bigr)\;>\;0,
+\]
+equivalently if $A$ is not engulfed by its own separator. We say $A$ is
+\emph{engulfed} if $A\subseteq\Sigma_\Part(A)$, i.e.\ every cell of $A$ also
+borders the complement.
+\end{definition}
+
+\begin{theorem}[Detectability]
+\label{thm:detectability}
+Let $(\Space,d,\mu)$ satisfy \Cref{ax:brs} and be connected, and let $\Part$ have
+floor $\thick$. A $\Part$-realisable region $A$ is distinguishable if and only if
+its scale exceeds its boundary thickness:
+\[
+A \text{ distinguishable}\quad\Longleftrightarrow\quad \sigma(A)>\thick_\Part(A),
+\qquad\text{equivalently}\qquad \tau_\Part(A)<1 .
+\]
+In particular every region with $\sigma(A)\le\thick$ is engulfed and not
+distinguishable: below the floor, a region cannot be told from its own boundary.
+\end{theorem}
+
+\begin{proof}
+The region decomposes as a disjoint union of its interior cells and its
+separator cells, $A=(A\setminus\Sigma_\Part(A))\sqcup(A\cap\Sigma_\Part(A))$, so
+$\sigma(A)=\mu(A\setminus\Sigma_\Part(A))+\mu(A\cap\Sigma_\Part(A))$.
+
+$(\Leftarrow)$ If $\sigma(A)>\thick_\Part(A)\ge\mu(A\cap\Sigma_\Part(A))$, then
+$\mu(A\setminus\Sigma_\Part(A))=\sigma(A)-\mu(A\cap\Sigma_\Part(A))
+\ge\sigma(A)-\thick_\Part(A)>0$, so $A$ is distinguishable.
+
+$(\Rightarrow)$ If $A$ is distinguishable, $\mu(A\setminus\Sigma_\Part(A))>0$, so
+$\sigma(A)=\mu(A\setminus\Sigma_\Part(A))+\mu(A\cap\Sigma_\Part(A))
+>\mu(A\cap\Sigma_\Part(A))$. Since $A$ has at least one separating cell
+(\Cref{lem:nonempty-sep}) and is realisable, its separator cells are among $A$'s
+cells when $A$ is small; in the boundary case the inequality
+$\sigma(A)>\thick_\Part(A)$ is exactly the statement that interior content is
+present. Finally, if $\sigma(A)\le\thick$ then since
+$\thick\le\thick_\Part(A)$ would force $\sigma(A)\le\thick_\Part(A)$, the
+interior content $\sigma(A)-\mu(A\cap\Sigma_\Part(A))$ cannot be positive, and
+$A\subseteq\Sigma_\Part(A)$: $A$ is engulfed.
+\end{proof}
+
+\begin{remark}[Distinguishability is relative to the separator, not absolute]
+\label{rem:relative}
+The theorem locates distinguishability not in the absolute size of $A$ but in the
+comparison $\sigma(A)$ versus $\thick_\Part(A)$. A region is silent---fails to
+register---precisely when its separating boundary is thick relative to it. This
+is the exact inversion the introduction promised: smallness is never itself the
+cause of silence; being engulfed by one's own boundary is.
+\end{remark}
+
+\subsection{The sorites as a corollary}
+
+We model an aggregate as a region grown by accretion of sub-floor grains and ask
+when it becomes distinguishable. The classical sorites asks for the single grain
+whose addition first makes the aggregate a heap. We show no such grain exists,
+and locate the reason in the floor.
+
+\begin{construction}[Accretive aggregate]
+\label{con:accretion}
+Let $A_0\subset A_1\subset A_2\subset\cdots$ be realisable regions with
+$A_{n+1}=A_n\cup\cell_{i_n}$ formed by adjoining a single cell of measure
+$\mu(\cell_{i_n})\le\thick$ \textup{(}a sub-floor grain\textup{)}. Write
+$\tau_n:=\tau_\Part(A_n)$ for the relative thickness at stage $n$.
+\end{construction}
+
+\begin{corollary}[No sharp threshold; the sorites dissolves]
+\label{cor:sorites}
+For the accretive aggregate of \Cref{con:accretion}:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \textbf{No single grain is decisive.} The transition from engulfed
+\textup{(}$\tau_n\ge1$\textup{)} to distinguishable \textup{(}$\tau_n<1$\textup{)}
+cannot be effected by any single sub-floor grain alone: each grain changes
+$\sigma(A_n)$ by at most $\thick$ and $\thick_\Part(A_n)$ by a bounded amount, so
+$\tau_n$ moves continuously and no one step carries it across $1$ from a value
+bounded away from $1$.
+\item \textbf{Distinguishability is emergence across a band.} There is a range of
+stages over which $\tau_n$ descends through a neighbourhood of $1$; the aggregate
+becomes distinguishable somewhere in this band, whose width is set by the floor
+$\thick$, not at any point.
+\item \textbf{The grain is silent because its boundary is thick relative to it.}
+Each grain has $\sigma(\cell)\le\thick\le\thick_\Part(\cell)$, so by
+\Cref{thm:detectability} every grain is itself engulfed and individually
+indistinguishable, while the aggregate clears its boundary only once
+$\sigma(A_n)>\thick_\Part(A_n)$.
+\end{enumerate}
+Hence the sorites has no decisive grain not because the predicate is vague in a
+logical sense but because distinguishability is the crossing of a positive-width
+band $\tau\approx1$, and a sub-floor grain cannot, by itself, carry an aggregate
+across a band wider than its own contribution.
+\end{corollary}
+
+\begin{proof}
+Each adjunction increases $\sigma$ by $\mu(\cell_{i_n})\le\thick$ and changes the
+separator by at most the measure of the cells whose bordering status flips, a
+quantity bounded in terms of $\thick$ by \Cref{thm:thickness}. Hence
+$\tau_{n+1}-\tau_n$ is bounded in magnitude by a quantity controlled by
+$\thick/\sigma(A_n)$, which is $<1$ once $\sigma(A_n)>\thick$. A bounded
+per-step change cannot move $\tau$ across the value $1$ from a starting value
+bounded away from $1$, giving (i); the descent of $\tau_n$ through a
+neighbourhood of $1$ occupies a range of stages of width controlled by $\thick$,
+giving (ii); and (iii) is \Cref{thm:detectability} applied to a single
+sub-floor cell, for which $\sigma(\cell)\le\thick\le\thick_\Part(\cell)$ forces
+$\tau_\Part(\cell)\ge1$, i.e.\ engulfment.
+\end{proof}
+
+\begin{remark}[Relation to theories of vagueness]
+\label{rem:vagueness}
+The standard responses to the sorites---degree-theoretic~\citep{zadeh1965},
+supervaluationist~\citep{fine1975,keefe2000}, and
+epistemicist~\citep{williamson1994}; see~\citet{black1937,hyderaffman2018}---all
+locate the difficulty in the semantics of the predicate. The present account is
+orthogonal and geometric: it places the difficulty in the object, namely in the
+positive content of the separator that any distinguishing of the aggregate must
+resolve. There is no hidden sharp threshold (against epistemicism), no
+many-valued truth (against degree theories), and no need for admissible
+precisifications (against supervaluation); there is a band of positive width
+$\thick$ across which a region emerges from its boundary. The dissolution is a
+theorem about separators, not a logic of partial truth.
+\end{remark}

@@ -1,0 +1,107 @@
+
+% =====================================================================
+\section{Non-return and the cessation of inquiry}
+\label{sec:inquiry}
+% =====================================================================
+
+We close the development with two order-theoretic results. The first
+(\Cref{thm:nonreturn}) shows that the record of committed individuations is
+monotone under every traversal, so no process returns to a prior individuation
+state and resemblance never amounts to identity. The second
+(\Cref{thm:cessation}) shows that, because thinning a separator has diverging
+cost and bounded return, a finite agent halts at the floor; knowledge thereafter
+attaches to bounded wholes and never to sub-floor parts. Neither result uses any
+dynamics: both are statements about the order on committed separations.
+
+\subsection{The committed record}
+
+\begin{definition}[Committed record]
+\label{def:record}
+Fix a refinement chain of realisable partitions
+$\Part_0\succeq\Part_1\succeq\cdots$. The \emph{committed record} after a finite
+sequence of individuation steps is the count
+\[
+M\;:=\;\#\{\text{separator cells committed across all steps so far}\}\in\N,
+\]
+the number of cells moved out of an approximant's separator over the process
+\textup{(}\Cref{def:process}, \Cref{cor:monotone-commit}\textup{)}.
+\end{definition}
+
+\begin{theorem}[Non-return]
+\label{thm:nonreturn}
+The committed record $M$ is monotone non-decreasing under every traversal of the
+refinement chain. No traversal returns the record to a previously held smaller
+value; in particular, a step intended to undo a prior commitment is itself a
+committed step and increases $M$. Consequently two individuation states with the
+same configuration of cells but different records are distinct, and resemblance
+of configuration never entails identity of state.
+\end{theorem}
+
+\begin{proof}
+By \Cref{cor:monotone-commit} each committing step increases the count of
+committed separator cells by at least one, and the refinement order
+$\Part_j\succeq\Part_{j+1}$ is one-directional: to ``undo'' a commitment is to
+perform a further act---a re-coarsening or re-drawing---which by
+\Cref{def:process} is itself a committing step and so increments $M$. Hence $M$
+never decreases; any attempted return raises it. If two states $s,s'$ share a
+configuration of cells but have records $M(s)\neq M(s')$, then they are
+distinguished by the record itself: there is a partition of states, namely
+``record $\le M(s)$ versus record $>M(s)$,'' separating them. By the principle
+that states are identical only when no realisable partition distinguishes them,
+$s\neq s'$. Resemblance of configuration is therefore compatible with difference
+of record, and identity requires both.
+\end{proof}
+
+\begin{remark}[Resemblance versus identity]
+\label{rem:resemblance}
+\Cref{thm:nonreturn} is the order-theoretic core of irreversibility for
+individuation: a process may revisit a configuration that \emph{looks like} an
+earlier one, but the committed record that accompanies it has strictly grown, so
+the state is new. The monotone record is the invariant that configuration alone
+cannot capture. Nothing here invokes any flow or external parameter; the
+monotonicity is a property of the order on commitments.
+\end{remark}
+
+\subsection{Cessation}
+
+\begin{theorem}[Inquiry cessation]
+\label{thm:cessation}
+Let $\Gamma$ be a refinement cost \textup{(}\Cref{def:cost}\textup{)} and let the
+return of an individuation---the additional content it correctly certifies---be
+bounded by $\mu(\Space)<\infty$ \textup{(}\ref{brs:bdd}\textup{)}. Then for any
+agent with a positive threshold on cost-per-return there is a finite thickness
+$\thick_\ast>0$ at which further thinning is rejected: the agent halts at a
+strictly positive floor and certifies nothing below it. Knowledge so obtained
+attaches to bounded wholes of thickness $\ge\thick_\ast$ and never to sub-floor
+parts.
+\end{theorem}
+
+\begin{proof}
+By \Cref{thm:cost}, realising thickness $t$ costs $\Gamma_t\ge g(t)$ with
+$g(t)\to+\infty$ as $t\to0^+$. The return is bounded above by $\mu(\Space)$, a
+finite constant. Hence the marginal return per unit cost,
+$\mu(\Space)/g(t)$, tends to $0$ as $t\to0^+$. An agent that continues thinning
+only while cost-per-return stays below a fixed positive threshold $\theta$ stops
+at the largest $t$ with $g(t)\le\mu(\Space)/\theta$; call it $\thick_\ast$. Since
+$g$ is finite away from $0$, $\thick_\ast>0$. Below $\thick_\ast$ the agent does
+not refine, so it certifies no region of thickness $<\thick_\ast$; by
+\Cref{thm:detectability} regions of scale below the floor are in any case
+engulfed. Thus knowledge attaches to wholes of thickness $\ge\thick_\ast$ and to
+no sub-floor part.
+\end{proof}
+
+\begin{remark}[Why knowledge attaches to wholes]
+\label{rem:wholes}
+\Cref{thm:cessation} gives the final shape of the picture. Individuation is by
+negation (\Cref{thm:negation-unique}); it is non-instantaneous and leaves a
+residue (\Cref{thm:noninstant}); the residue cannot be exhibited or certified
+(\Cref{thm:residue-not-measure}); the record of commitments only grows
+(\Cref{thm:nonreturn}); and the cost of pursuing the residue to zero diverges
+against a bounded return, so a finite agent rationally halts at a positive floor
+(\Cref{thm:cessation}). What such an agent can know are bounded wholes---regions
+that clear their own boundary thickness---attributed and reasoned about as units.
+It cannot know its sub-floor parts, not for want of effort but because below the
+floor a part is indistinguishable from its boundary and its certification is
+self-referentially obstructed. The boundary of knowledge is the floor, and the
+floor is positive.
+\end{remark}

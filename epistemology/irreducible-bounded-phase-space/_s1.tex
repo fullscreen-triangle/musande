@@ -1,33 +1,33 @@
 
 % =====================================================================
-\section{The setting: bounded phase space and finite resolution}
+\section{The setting: a bounded resolvable space}
 \label{sec:setting}
 % =====================================================================
 
-We work throughout in a metric-measure space. The objects of the theory are
+We work throughout in a metric--measure space. The objects of the theory are
 regions (subsets), their separators (boundaries), and partitions; the single
 hypothesis constrains the ambient space to be bounded and finitely resolvable.
 
 \subsection{Ambient space}
 
-\begin{definition}[Phase space]
-\label{def:phase}
-A \emph{phase space} is a triple $(\Phase,d,\mu)$ where $(\Phase,d)$ is a
-metric space and $\mu$ is a Borel measure on $\Phase$ that is positive on
+\begin{definition}[Resolvable space]
+\label{def:space}
+A \emph{resolvable space} is a triple $(\Space,d,\mu)$ where $(\Space,d)$ is a
+metric space and $\mu$ is a Borel measure on $\Space$ that is positive on
 non-empty open sets and finite on bounded sets. We write $\Leb$ for Lebesgue
-measure when $\Phase\subseteq\R^{m}$, and $\Haus^{s}$ for $s$-dimensional
+measure when $\Space\subseteq\R^{m}$, and $\Haus^{s}$ for $s$-dimensional
 Hausdorff measure~\citep{federer1969,mattila1995}.
 \end{definition}
 
 \begin{definition}[Region, complement, separator]
 \label{def:region}
-A \emph{region} is a Borel set $A\subseteq\Phase$ with
-$\mu(A)>0$ and $\mu(\Phase\setminus A)>0$ (so both $A$ and its complement are
+A \emph{region} is a Borel set $A\subseteq\Space$ with
+$\mu(A)>0$ and $\mu(\Space\setminus A)>0$ (so both $A$ and its complement are
 non-negligible). Its \emph{topological boundary} is
-$\Bdy A=\cl(A)\cap\cl(\Phase\setminus A)$. A \emph{separator} of $A$ is any
-Borel set $\Sigma$ with $\Phase\setminus\Sigma=U_A\sqcup U_{A^c}$ a disjoint
+$\Bdy A=\cl(A)\cap\cl(\Space\setminus A)$. A \emph{separator} of $A$ is any
+Borel set $\Sigma$ with $\Space\setminus\Sigma=U_A\sqcup U_{A^c}$ a disjoint
 union of two non-empty relatively open sets with $A\setminus\Sigma\subseteq
-U_A$ and $(\Phase\setminus A)\setminus\Sigma\subseteq U_{A^c}$. A separator is
+U_A$ and $(\Space\setminus A)\setminus\Sigma\subseteq U_{A^c}$. A separator is
 \emph{sharp} if $\mu(\Sigma)=0$.
 \end{definition}
 
@@ -35,48 +35,48 @@ U_A$ and $(\Phase\setminus A)\setminus\Sigma\subseteq U_{A^c}$. A separator is
 $\Bdy A$ is the smallest closed separator in the topological sense; a general
 separator may be thicker. The question the paper turns on is whether a
 \emph{sharp} separator (one of zero measure) can exist for the regions that an
-embedded knower actually uses. The answer, under \Cref{ax:bps}, is no.
+embedded agent actually uses. The answer, under \Cref{ax:brs}, is no.
 \end{remark}
 
 \subsection{Partitions and resolution}
 
 \begin{definition}[Finite measurable partition]
 \label{def:partition}
-A \emph{finite measurable partition} of $\Phase$ is a finite family
+A \emph{finite measurable partition} of $\Space$ is a finite family
 $\Part=\{\cell_1,\dots,\cell_N\}$ of pairwise-disjoint Borel sets with
-$\bigcup_i\cell_i=\Phase$ and $\mu(\cell_i)>0$ for each $i$. A partition
+$\bigcup_i\cell_i=\Space$ and $\mu(\cell_i)>0$ for each $i$. A partition
 $\Part'$ \emph{refines} $\Part$, written $\Part'\preceq\Part$, if every cell of
 $\Part'$ is contained in a cell of $\Part$.
 \end{definition}
 
 \begin{definition}[Resolution]
 \label{def:resolution}
-A phase space \emph{carries resolution $\reso>0$} for a partition $\Part$ if
-every cell $\cell\in\Part$ satisfies $\diam(\cell)\ge\reso$; equivalently, no
+A resolvable space \emph{carries resolution $\reso>0$} for a partition $\Part$
+if every cell $\cell\in\Part$ satisfies $\diam(\cell)\ge\reso$; equivalently, no
 two points closer than $\reso$ are forced into distinct cells. The resolution
 is the finest scale at which the partition distinguishes points.
 \end{definition}
 
-\begin{remark}[Resolution is a knower-relative datum]
+\begin{remark}[Resolution is an agent-relative datum]
 \label{rem:reso-relative}
-Resolution is not a property of $\Phase$ alone but of the partition a knower can
-realise. Two knowers of the same space may carry different $\reso$. The floor we
-derive will inherit this relativity: its magnitude depends on $\reso$, but its
-strict positivity will not.
+Resolution is not a property of $\Space$ alone but of the partition an agent can
+realise. Two agents resolving the same space may carry different $\reso$. The
+floor we derive will inherit this relativity: its magnitude depends on $\reso$,
+but its strict positivity will not.
 \end{remark}
 
 \subsection{The hypothesis}
 
-\begin{axiom}[Bounded phase space]
-\label{ax:bps}
-The phase space $(\Phase,d,\mu)$ satisfies:
-\begin{enumerate}[label=\textup{(BPS\arabic*)},leftmargin=3.2em]
-\item\label{bps:bdd} \textbf{Boundedness.} $\Phase$ is bounded and
-$0<\mu(\Phase)<\infty$; moreover $\cl(\Phase)$ is compact.
-\item\label{bps:res} \textbf{Finite resolution.} Every partition realisable by
-an embedded knower carries some resolution $\reso>0$; there is no partition into
+\begin{axiom}[Bounded resolvable space]
+\label{ax:brs}
+The space $(\Space,d,\mu)$ satisfies:
+\begin{enumerate}[label=\textup{(BRS\arabic*)},leftmargin=3.2em]
+\item\label{brs:bdd} \textbf{Boundedness.} $\Space$ is bounded and
+$0<\mu(\Space)<\infty$; moreover $\cl(\Space)$ is compact.
+\item\label{brs:res} \textbf{Finite resolution.} Every partition realisable by
+an embedded agent carries some resolution $\reso>0$; there is no partition into
 cells of arbitrarily small diameter at fixed, finite descriptive cost.
-\item\label{bps:hier} \textbf{Hierarchical refinability.} There is a sequence of
+\item\label{brs:hier} \textbf{Hierarchical refinability.} There is a sequence of
 finite measurable partitions $\Part_0\succeq\Part_1\succeq\Part_2\succeq\cdots$,
 each refining the last, generating the Borel $\sigma$-algebra modulo $\mu$-null
 sets; each $\Part_n$ carries a resolution $\reso_n>0$.
@@ -84,13 +84,13 @@ sets; each $\Part_n$ carries a resolution $\reso_n>0$.
 \end{axiom}
 
 \begin{remark}[Status of the hypothesis]
-\label{rem:bps-status}
-\ref{bps:bdd} is the substantive geometric content: the accessible space is
+\label{rem:brs-status}
+\ref{brs:bdd} is the substantive geometric content: the accessible space is
 finite in extent and measure, and its closure is compact (so the
-extreme-value and finite-subcover arguments below apply). \ref{bps:res} is the
-finitude of any embedded knower: a knower with finite descriptive resources
+extreme-value and finite-subcover arguments below apply). \ref{brs:res} is the
+finitude of any embedded agent: an agent with finite descriptive resources
 cannot specify cells of vanishing diameter---this is what forbids the limiting
-zero-thickness cut. \ref{bps:hier} states that finer partitions exist and
+zero-thickness cut. \ref{brs:hier} states that finer partitions exist and
 exhaust the measurable structure, but each \emph{individual} partition is still
 finite-resolution; refinement is unbounded in the limit but bounded at every
 finite stage. The three clauses are exactly what is needed for the
@@ -99,41 +99,19 @@ Boundary--Thickness Theorem and nothing more.
 
 \begin{lemma}[Finiteness of cell count]
 \label{lem:finite-cells}
-Under \ref{bps:bdd} and \ref{bps:res}, every realisable partition $\Part$ has
+Under \ref{brs:bdd} and \ref{brs:res}, every realisable partition $\Part$ has
 finitely many cells, and the count is bounded by
-$N(\Part)\le \mu(\Phase)/\mu_{\min}(\Part)$, where
+$N(\Part)\le \mu(\Space)/\mu_{\min}(\Part)$, where
 $\mu_{\min}(\Part)=\min_i\mu(\cell_i)>0$.
 \end{lemma}
 
 \begin{proof}
-By \ref{bps:res} each cell has $\diam(\cell_i)\ge\reso$, and by
-\ref{bps:bdd} $\mu(\cell_i)>0$ with the cells disjoint and of finite total
-measure $\mu(\Phase)<\infty$. If the count were infinite, then
-$\sum_i\mu(\cell_i)=\mu(\Phase)<\infty$ would force
+By \ref{brs:res} each cell has $\diam(\cell_i)\ge\reso$, and by
+\ref{brs:bdd} $\mu(\cell_i)>0$ with the cells disjoint and of finite total
+measure $\mu(\Space)<\infty$. If the count were infinite, then
+$\sum_i\mu(\cell_i)=\mu(\Space)<\infty$ would force
 $\inf_i\mu(\cell_i)=0$, contradicting that finitely-described cells carry a
 uniform positive lower measure bound under finite resolution. Hence the count
-is finite, and $N(\Part)\,\mu_{\min}(\Part)\le\sum_i\mu(\cell_i)=\mu(\Phase)$
+is finite, and $N(\Part)\,\mu_{\min}(\Part)\le\sum_i\mu(\cell_i)=\mu(\Space)$
 gives the bound.
 \end{proof}
-
-\begin{lemma}[Recurrence is available]
-\label{lem:recurrence}
-If $(\Phase,d,\mu)$ additionally carries a $\mu$-preserving flow
-$\phi_t\colon\Phase\to\Phase$, then for every Borel $A$ with $\mu(A)>0$ and every
-$T>0$ there is $n\ge1$ with $\mu(A\cap\phi_{nT}^{-1}A)>0$; $\mu$-a.e.\ point of
-$A$ returns to $A$.
-\end{lemma}
-
-\begin{proof}
-The Poincar\'e recurrence theorem~\citep{poincare1890,walters1982}: the sets
-$\{\phi_{-kT}A\}_{k\ge0}$ all have measure $\mu(A)$; if pairwise disjoint
-modulo null sets their measures would sum to $\infty$, contradicting
-$\mu(\Phase)<\infty$ from \ref{bps:bdd}. Hence two overlap, giving recurrence.
-\end{proof}
-
-\begin{remark}
-\Cref{lem:recurrence} is used only in \Cref{sec:physics}; the epistemic spine
-(\Cref{sec:thickness,sec:floor,sec:detect,sec:residue,sec:inquiry}) uses only
-the static structure of \Cref{ax:bps}. We isolate it here to show that the same
-hypothesis that forces the floor also supports the dynamical realisation.
-\end{remark}

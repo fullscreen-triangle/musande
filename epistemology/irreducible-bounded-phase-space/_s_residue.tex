@@ -1,0 +1,176 @@
+
+% =====================================================================
+\section{Non-self-verifiability and the irreducible residue}
+\label{sec:residue}
+% =====================================================================
+
+The previous sections show the separator has positive content and that this
+content silences sub-floor regions. We now reach the deepest obstruction: the
+separator cannot be \emph{verified} from within. To verify a part is to decide it
+against the totality that constitutes it---its negation-sequence---and that
+decision is self-referential, with no consistent value. We prove this by a
+self-contained diagonal argument (\Cref{thm:diagonal}), deduce that the
+irreducible residue is not a locatable set but a self-referential impossibility
+(\Cref{thm:residue-not-measure}), and conclude that the floor can only ever be
+bounded below, never exhibited (\Cref{cor:floor-only-bounded}).
+
+\subsection{Verification as deciding membership in the negation}
+
+Recall (\Cref{def:negation}) that $A$ is constituted as $\Space\setminus\Neg(A)$:
+its identity is fixed by the totality $\Neg(A)=\Space\setminus A$ of what it is
+not. We make verification precise as the decision that constitutes this identity.
+
+\begin{definition}[Verifier]
+\label{def:verifier}
+A \emph{verifier} for the parts of $\Space$ is a map $\Ver$ that, given a part
+$X$ and a candidate constituting totality $T$, returns $\Ver(X,T)\in\{0,1\}$,
+intended to read $1$ iff $X$ is exactly the part constituted by withholding $T$,
+i.e.\ iff $X=\Space\setminus T$. To \emph{verify $A$} is to evaluate
+$\Ver(A,\Neg(A))$: to decide whether $A$ is the part its own negation-sequence
+constitutes.
+\end{definition}
+
+\begin{remark}[Why verification is membership in the negation]
+\label{rem:ver-membership}
+By \Cref{def:negation}, $A=\Space\setminus\Neg(A)$ exactly when $A$ and $\Neg(A)$
+partition $\Space$; deciding this is deciding, of the constituting totality
+$\Neg(A)$, whether what it omits is precisely $A$---a question about $A$ posed
+entirely in terms of the collection $\Neg(A)$ that is defined as
+``everything but $A$.'' Verification of $A$ is thus inseparable from a question
+of self-membership: $A$ figures, through its own definition, inside the totality
+against which it is checked.
+\end{remark}
+
+\subsection{A self-contained diagonal obstruction}
+
+We now prove, without invoking any external impossibility theorem, that no
+verifier decides every part correctly. The argument is a diagonal one, in the
+shape of the classical results of~\citet{russell1903,cantor1891,tarski1936} and
+the general form of~\citet{lawvere1969}, but it is self-contained: it uses only
+the definitions above.
+
+\begin{theorem}[Diagonal obstruction to verification]
+\label{thm:diagonal}
+There is no verifier $\Ver$ such that, for every part $X$ of $\Space$,
+\[
+\Ver\bigl(X,\Neg(X)\bigr)=1 .
+\]
+More precisely, suppose a verifier is \emph{self-applicable}: it can take as its
+candidate part the very specification of its own verifying behaviour. Then the
+part
+\[
+D\;:=\;\bigl\{\,\text{parts } X : \Ver(X,\Neg(X))=0\,\bigr\}
+\]
+\textup{(}the parts the verifier declares not constituted by their own
+negation\textup{)} cannot be consistently assigned a verification value:
+$\Ver(D,\Neg(D))=1$ and $\Ver(D,\Neg(D))=0$ each entail the other.
+\end{theorem}
+
+\begin{proof}
+Suppose, for contradiction, a self-applicable verifier $\Ver$ exists. Form $D$ as
+stated: $D$ collects exactly those parts $X$ for which the verifier returns $0$
+on the self-referential query $\Ver(X,\Neg(X))$. Now ask the verifier about $D$
+itself.
+
+If $\Ver(D,\Neg(D))=1$, then $D$ is declared constituted by its own negation;
+but by the defining property of $D$, membership-defining condition for $D$ is
+$\Ver(X,\Neg(X))=0$, so $D$ satisfying its own membership condition would require
+$\Ver(D,\Neg(D))=0$. Reading $D$ through its own definition therefore forces
+$\Ver(D,\Neg(D))=0$, contradicting the assumed value $1$.
+
+If instead $\Ver(D,\Neg(D))=0$, then $D$ meets its own membership condition, so
+$D$ is among the parts collected by $D$, i.e.\ $D$ is constituted as the part its
+negation withholds, which is the assertion $\Ver(D,\Neg(D))=1$, contradicting the
+assumed value $0$.
+
+Both values are self-refuting, so no consistent value exists for
+$\Ver(D,\Neg(D))$. Hence no self-applicable verifier decides every part; in
+particular none returns $1$ on every part, for the construction of $D$ is
+available whenever the verifier is total. This is the diagonal obstruction.
+\end{proof}
+
+\begin{remark}[Self-application is unavoidable for an embedded agent]
+\label{rem:self-app}
+The hypothesis of self-applicability is not a technical convenience; it is forced
+by embedding. An agent that verifies parts of $\Space$ while being itself a part
+of $\Space$ can have its own verifying region presented as a candidate part. The
+diagonal part $D$ is then a genuine region, and \Cref{thm:diagonal} applies. An
+agent that could stand outside $\Space$ would escape the argument---but no
+embedded agent can, and the whole subject of the paper is the embedded agent. The
+obstruction is therefore a structural feature of verification-from-within, not an
+artefact of an artificial total verifier.
+\end{remark}
+
+\subsection{The residue is not a set}
+
+The diagonal obstruction lets us characterise the irreducible residue. One might
+hope that the un-verified remainder of an individuation is a definite set---small,
+locatable, perhaps measurable---which a finer effort could in principle exhibit
+and remove. We show this hope is incoherent: a locatable residue would be
+verifiable, and the diagonal obstruction forbids verifying it.
+
+\begin{definition}[Irreducible residue]
+\label{def:irreducible}
+The \emph{irreducible residue} of the individuation of $A$ is the obstruction to
+deciding $\Ver(A,\Neg(A))$: the content that an individuation cannot certify
+about itself. It is \emph{exhibitable} if there is a realisable region $E$ with
+$\mu(E)>0$ such that verifying $A$ reduces to verifying $A$ on $\Space\setminus E$
+together with a separate certification of $E$.
+\end{definition}
+
+\begin{theorem}[The irreducible residue is not exhibitable]
+\label{thm:residue-not-measure}
+Under \Cref{ax:brs} with an embedded \textup{(}self-applicable\textup{)} agent,
+the irreducible residue of any individuation is not exhibitable: there is no
+realisable region $E$ of positive measure whose separate certification completes
+the verification of $A$. The residue is a self-referential impossibility, not a
+locatable set.
+\end{theorem}
+
+\begin{proof}
+Suppose the residue were exhibitable by some realisable $E$ with $\mu(E)>0$.
+Certifying $E$ separately means deciding $\Ver(E,\Neg(E))$---verifying $E$ as the
+part constituted by its own negation---and, by hypothesis, doing so completes the
+verification of $A$. But $E$ is itself a part of $\Space$, and an embedded agent
+is self-applicable (\Cref{rem:self-app}); the diagonal construction of
+\Cref{thm:diagonal} produces a part on which $\Ver$ has no consistent value, so no
+verifier certifies every part, $E$ among them. Hence the supposed certification
+of $E$ cannot be guaranteed to terminate with a consistent value; the reduction
+fails. Therefore no such $E$ exists: the residue cannot be localised to a
+positive-measure set and removed by certifying it. It is the standing
+impossibility of the self-referential decision, not a region awaiting finer
+treatment.
+\end{proof}
+
+\begin{corollary}[The floor can only be bounded below]
+\label{cor:floor-only-bounded}
+The resolution floor $\thick$ admits a strict positive lower bound
+\textup{(}$\thick\ge\mu_{\min}>0$, \Cref{thm:thickness}\textup{)} but no exact
+exhibition as $\mu(R)$ for a definite residue set $R$. Every attempt to write the
+residue as the measure of a located set $R$ supplies an exhibitable $E=R$,
+contradicting \Cref{thm:residue-not-measure}. The floor is known only as the
+positive quantity below which no individuation can certify itself.
+\end{corollary}
+
+\begin{proof}
+The lower bound is \Cref{thm:thickness}. If $\thick=\mu(R)$ for a realisable $R$
+of positive measure, then $R$ exhibits the residue, contradicting
+\Cref{thm:residue-not-measure}. Hence no such exhibition exists, and $\thick$ is
+characterised solely as a positive lower bound on un-certifiable content.
+\end{proof}
+
+\begin{remark}[The recognition gap]
+\label{rem:recognition-gap}
+\Cref{thm:residue-not-measure} has a reading in terms of the relation between an
+agent and the part it would verify. To certify $A$ completely, the agent must
+decide $A$ against the totality $\Neg(A)$ that constitutes $A$; but the agent,
+being embedded, is itself within that totality, so a complete certification would
+require it to occupy both sides of the constituting partition at once---to be at
+the same time the part verified and a portion of the totality against which it is
+verified. The residue is the irreducible gap that keeps the two apart. Closing
+the gap would collapse the distinction on which verification depends; the floor
+$\thick$ is the measure of how far the gap can never be closed. This is the
+precise sense in which the boundary of knowledge is constitutive, not contingent:
+the un-knowable remainder is the very condition under which anything is
+individuated at all.
+\end{remark}

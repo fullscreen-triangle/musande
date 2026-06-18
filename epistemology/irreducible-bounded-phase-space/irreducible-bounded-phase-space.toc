@@ -1,17 +1,40 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Thesis}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Why ``thickness''}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Why ``bounded''}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Two faces of one constant}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Relation to existing treatments}{3}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Method and discipline}{3}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Organisation}{3}{subsection.1.7}%
-\contentsline {section}{\numberline {2}The setting: bounded phase space and finite resolution}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Ambient space}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The problem of individuation without a selector}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Thesis}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}On the word ``knowledge''}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Why ``thickness''}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Why ``bounded''}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Relation to existing work}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Method}{3}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Organisation}{4}{subsection.1.8}%
+\contentsline {section}{\numberline {2}The setting: a bounded resolvable space}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Ambient space}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Partitions and resolution}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}The hypothesis}{4}{subsection.2.3}%
 \contentsline {section}{\numberline {3}The Boundary--Thickness Theorem}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Operational separators}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Non-triviality of the separator}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}The thickness lower bound}{5}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Stability and the role of boundedness}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.2}Non-triviality of the separator}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The thickness lower bound}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Stability and the role of boundedness}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Individuation by negation, and its non-instantaneity}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Individuation without a selector}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Non-instantaneity}{8}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Three derivations of the floor}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The representational derivation}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The cardinality derivation}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The cost derivation}{10}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Agreement of the three}{11}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Detectability and the sorites}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Scale and distinguishability}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The sorites as a corollary}{12}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Non-self-verifiability and the irreducible residue}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Verification as deciding membership in the negation}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}A self-contained diagonal obstruction}{13}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The residue is not a set}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Non-return and the cessation of inquiry}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The committed record}{15}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Cessation}{16}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Scope and conclusion}{16}{section.9}%
+\contentsline {subsection}{\numberline {9.1}What has been proved}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Scope}{17}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Conclusion}{17}{subsection.9.3}%

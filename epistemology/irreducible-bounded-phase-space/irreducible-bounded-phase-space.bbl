@@ -1,0 +1,121 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Birkhoff(1967)]{birkhoff1967}
+Garrett Birkhoff.
+\newblock \emph{Lattice Theory}.
+\newblock American Mathematical Society, Providence, RI, 3 edition, 1967.
+
+\bibitem[Black(1937)]{black1937}
+Max Black.
+\newblock Vagueness: An exercise in logical analysis.
+\newblock \emph{Philosophy of Science}, 4\penalty0 (4):\penalty0 427--455,
+  1937.
+
+\bibitem[Cantor(1891)]{cantor1891}
+Georg Cantor.
+\newblock {\"U}ber eine elementare frage der mannigfaltigkeitslehre.
+\newblock \emph{Jahresbericht der Deutschen Mathematiker-Vereinigung},
+  1:\penalty0 75--78, 1891.
+
+\bibitem[Davey and Priestley(2002)]{daveypriestley2002}
+Brian~A. Davey and Hilary~A. Priestley.
+\newblock \emph{Introduction to Lattices and Order}.
+\newblock Cambridge University Press, Cambridge, 2 edition, 2002.
+
+\bibitem[Engelking(1995)]{engelking1995}
+Ryszard Engelking.
+\newblock \emph{Theory of Dimensions, Finite and Infinite}.
+\newblock Heldermann Verlag, Lemgo, 1995.
+
+\bibitem[Federer(1969)]{federer1969}
+Herbert Federer.
+\newblock \emph{Geometric Measure Theory}.
+\newblock Springer, Berlin, 1969.
+
+\bibitem[Fine(1975)]{fine1975}
+Kit Fine.
+\newblock Vagueness, truth and logic.
+\newblock \emph{Synthese}, 30\penalty0 (3--4):\penalty0 265--300, 1975.
+
+\bibitem[G{\"o}del(1931)]{godel1931}
+Kurt G{\"o}del.
+\newblock {\"U}ber formal unentscheidbare s{\"a}tze der principia mathematica
+  und verwandter systeme i.
+\newblock \emph{Monatshefte f{\"u}r Mathematik und Physik}, 38:\penalty0
+  173--198, 1931.
+
+\bibitem[Halmos(1950)]{halmos1950}
+Paul~R. Halmos.
+\newblock \emph{Measure Theory}.
+\newblock Van Nostrand, New York, 1950.
+
+\bibitem[Hurewicz and Wallman(1941)]{hurewicz1941}
+Witold Hurewicz and Henry Wallman.
+\newblock \emph{Dimension Theory}.
+\newblock Princeton University Press, Princeton, NJ, 1941.
+
+\bibitem[Hyde and Raffman(2018)]{hyderaffman2018}
+Dominic Hyde and Diana Raffman.
+\newblock Sorites paradox.
+\newblock In Edward~N. Zalta, editor, \emph{The Stanford Encyclopedia of
+  Philosophy}. Metaphysics Research Lab, Stanford University, 2018.
+
+\bibitem[Keefe(2000)]{keefe2000}
+Rosanna Keefe.
+\newblock \emph{Theories of Vagueness}.
+\newblock Cambridge University Press, Cambridge, 2000.
+
+\bibitem[Kelley(1955)]{kelley1955}
+John~L. Kelley.
+\newblock \emph{General Topology}.
+\newblock Van Nostrand, Princeton, NJ, 1955.
+
+\bibitem[Lawvere(1969)]{lawvere1969}
+F.~William Lawvere.
+\newblock Diagonal arguments and cartesian closed categories.
+\newblock \emph{Lecture Notes in Mathematics}, 92:\penalty0 134--145, 1969.
+
+\bibitem[Mattila(1995)]{mattila1995}
+Pertti Mattila.
+\newblock \emph{Geometry of Sets and Measures in Euclidean Spaces: Fractals and
+  Rectifiability}.
+\newblock Cambridge University Press, Cambridge, 1995.
+
+\bibitem[Munkres(2000)]{munkres2000}
+James~R. Munkres.
+\newblock \emph{Topology}.
+\newblock Prentice Hall, Upper Saddle River, NJ, 2 edition, 2000.
+
+\bibitem[Russell(1903)]{russell1903}
+Bertrand Russell.
+\newblock \emph{The Principles of Mathematics}.
+\newblock Cambridge University Press, Cambridge, 1903.
+
+\bibitem[Tarski(1936)]{tarski1936}
+Alfred Tarski.
+\newblock Der wahrheitsbegriff in den formalisierten sprachen.
+\newblock \emph{Studia Philosophica}, 1:\penalty0 261--405, 1936.
+
+\bibitem[Tarski(1955)]{tarski1955}
+Alfred Tarski.
+\newblock A lattice-theoretical fixpoint theorem and its applications.
+\newblock \emph{Pacific Journal of Mathematics}, 5\penalty0 (2):\penalty0
+  285--309, 1955.
+
+\bibitem[Williamson(1994)]{williamson1994}
+Timothy Williamson.
+\newblock \emph{Vagueness}.
+\newblock Routledge, London, 1994.
+
+\bibitem[Zadeh(1965)]{zadeh1965}
+Lotfi~A. Zadeh.
+\newblock Fuzzy sets.
+\newblock \emph{Information and Control}, 8\penalty0 (3):\penalty0 338--353,
+  1965.
+
+\end{thebibliography}
