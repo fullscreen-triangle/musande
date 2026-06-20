@@ -105,7 +105,13 @@ distinguishable, because the separating boundary has positive width and
 distinguishability is emergence from that width. We give three independent
 derivations of the floor---representational, cardinality-theoretic, and a
 cost argument by which compressing a separator to zero content diverges---and
-prove they bound the same constant. We then identify the deepest obstruction:
+prove they bound the same constant. We then separate two relations a region may
+bear: being \emph{located} by an agent that individuates it, which is costly and
+whose cost grows with the logarithm of the region's rarity, and being
+\emph{visited} by a measure-preserving traversal, which is free and scales with
+rarity only in frequency; from this asymmetry we classify three invalid
+inferences that transfer a cost of locating onto being reached. We then identify
+the deepest obstruction:
 to \emph{verify} that a part is what it is requires deciding its membership
 in the very collection that constitutes it (its negation), a self-referential
 question with no consistent value. The irreducible residue is therefore not a
@@ -167,6 +173,11 @@ occupies the process and leaves an untouched remainder
 distinguishable exactly when its scale exceeds its own boundary thickness;
 below that scale it is engulfed (\Cref{sec:detect}). The sorites paradox is a
 corollary.
+\item \emph{Locating is priced; being reached is not.} The cost of
+individuation is paid by singling a region out, and scales with the logarithm of
+how rare the region is; it is not paid by a measure-preserving traversal that
+merely passes through the region, which does so freely and only less often when
+the region is rarer (\Cref{sec:locating}).
 \item \emph{Verification is self-referentially obstructed.} To verify a part
 is to decide its membership in the collection that constitutes it; this has no
 consistent value, so the residue is irreducible---bounded below by $\thick$
@@ -189,7 +200,7 @@ boundaries are theorems about knowledge in this exact sense.
 \subsection{Why ``thickness''}
 
 The everyday and the formal meet at the sorites. An aggregate built one unit
-at a time is, at first, not distinguishable as an aggregate; at some size it
+at a step is, at first, not distinguishable as an aggregate; at some size it
 is; yet no single unit is the one that makes it so. Classically this is a
 paradox. We resolve it by inverting the reading: a sub-threshold collection is
 indistinguishable not because it is small in the absolute but because its
@@ -228,8 +239,13 @@ whose verification is self-referentially obstructed. The self-reference
 results we use are proved here in self-contained form; the classical results
 of~\citet{russell1903,cantor1891,tarski1936} are cited only as the shape the
 argument shares. A reasonable reader will recognise that the abstract
-hypotheses below are satisfied by a range of concrete systems; we make no such
-identification and prove everything of the abstract space alone.
+hypotheses below are satisfied by a range of concrete systems---and that several
+of the problems we phrase abstractly, about rare regions costly to single out yet
+freely reached by a traversal (\Cref{sec:locating}), have well-known concrete
+instances; we make no such identification and prove everything of the abstract
+space alone, using only quantities (measure, log-measure, probability, visiting
+frequency, cost) that are defined within measure theory and information
+theory~\citep{shannon1948,cover2006}.
 
 \subsection{Method}
 
@@ -238,8 +254,9 @@ citation of a standard mathematical result compared against such a theorem.
 Where a tempting claim could not be proved at this standard, it has been
 removed rather than weakened. The development is uniform: a single hypothesis,
 a single invariant $\thick$, and a chain of theorems that return to it from
-five directions---topological, representational, cardinality-theoretic,
-self-referential, and order-theoretic---each shown to bound the same constant.
+six directions---topological, representational, cardinality-theoretic,
+economic, self-referential, and order-theoretic---each shown to bound or price
+the same constant.
 
 \subsection{Organisation}
 
@@ -248,7 +265,9 @@ self-referential, and order-theoretic---each shown to bound the same constant.
 is non-instantaneous, yielding the residue. \Cref{sec:thickness} proves the
 Boundary--Thickness Theorem. \Cref{sec:floor} gives the three agreeing
 derivations of the floor. \Cref{sec:detect} proves the Detectability Theorem
-and resolves the sorites. \Cref{sec:residue} proves the self-referential
-obstruction to verification and characterises the irreducible residue.
-\Cref{sec:inquiry} proves the Non-Return and Inquiry--Cessation Theorems.
-\Cref{sec:scope} states scope and concludes.
+and resolves the sorites. \Cref{sec:locating} distinguishes locating a region
+from a traversal's visiting it, proves the asymmetry of their costs, and
+classifies three invalid transfers between them. \Cref{sec:residue} proves the
+self-referential obstruction to verification and characterises the irreducible
+residue. \Cref{sec:inquiry} proves the Non-Return and Inquiry--Cessation
+Theorems. \Cref{sec:scope} states scope and concludes.

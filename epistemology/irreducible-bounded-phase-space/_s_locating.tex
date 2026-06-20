@@ -1,0 +1,277 @@
+
+% =====================================================================
+\section{Locating versus visiting}
+\label{sec:locating}
+% =====================================================================
+
+The results so far concern an agent that \emph{individuates} a region: draws a
+separator, pays the floor, distinguishes the region from its complement. There is
+a second, entirely different relation a region can stand in---being \emph{arrived
+at} by a traversal of the space, with no separator drawn and no agent acting. This
+section formalises the two relations and proves they obey opposite economies. The
+distinction is purely measure- and order-theoretic; it names no dynamics. Its
+consequence is a precise account of why a region can be free to be reached yet
+costly to single out, and a classification of three invalid inferences that
+silently exchange the two.
+
+\subsection{Log-measure, probability, and traversal}
+
+We add three abstract quantities, each with a standard home in measure theory and
+information theory~\citep{shannon1948,cover2006}, and one abstract map.
+
+\begin{definition}[Log-measure and probability of a region]
+\label{def:logmeasure}
+For a region $W\subseteq\Space$ with $\mu(W)>0$, its \emph{probability} is the
+normalised measure
+\[
+p(W)\;:=\;\frac{\mu(W)}{\mu(\Space)}\in(0,1],
+\]
+and its \emph{log-measure} is
+\[
+S(W)\;:=\;\log\mu(W).
+\]
+A region is \emph{rare} if $p(W)$ is small, equivalently if $S(W)$ is small
+relative to $\log\mu(\Space)$.
+\end{definition}
+
+\begin{remark}[One quantity under two names]
+\label{rem:one-quantity}
+$S(W)$ and $\log p(W)=S(W)-\log\mu(\Space)$ differ by an additive constant
+independent of $W$. ``Small log-measure'' and ``small probability'' are therefore
+not two correlated attributes of a region but a single attribute under two names.
+No operation lowers $p(W)$ while holding $S(W)$ fixed, or raises one while fixing
+the other; they move together by definition. This identity is used in
+\Cref{prop:cannot-raise} and is the abstract counterpart of the familiar
+log-count relation in information theory.
+\end{remark}
+
+\begin{definition}[Measure-preserving traversal]
+\label{def:traversal}
+A \emph{traversal} of $\Space$ is a measurable map $T\colon\Space\to\Space$ with
+$\mu(T^{-1}E)=\mu(E)$ for every Borel $E$ \textup{(}it preserves $\mu$\textup{)}.
+A point $x$ \emph{visits} a region $W$ \emph{at step} $n$ if $T^{n}(x)\in W$. The
+\emph{visiting frequency} of $W$ along $x$ is
+\[
+\bar f_W(x)\;:=\;\lim_{N\to\infty}\frac1N\sum_{n=0}^{N-1}\mathbf 1_W\!\bigl(T^{n}(x)\bigr),
+\]
+when the limit exists. No agent, separator, or choice appears in this definition.
+\end{definition}
+
+\begin{remark}[Why this is not ``dynamics'']
+\label{rem:not-dynamics}
+A traversal is an iterated measure-preserving self-map---an order-theoretic and
+measure-theoretic object, the discrete shift along the orbit
+$x,Tx,T^2x,\dots$. We use it only through two classical facts: that on a
+finite-measure space such a map returns almost every point to any positive-measure
+region (recurrence), and that the visiting frequency, when it exists, equals the
+region's probability (the ergodic average). Both are theorems of measure theory;
+neither requires a continuum parameter, a rate, or any external scale.
+\end{remark}
+
+\subsection{Two relations to a region}
+
+\begin{definition}[Visiting and locating]
+\label{def:visit-locate}
+A point \emph{visits} a region $W$ under a traversal $T$ when some iterate
+$T^{n}(x)$ lies in $W$ \textup{(}\Cref{def:traversal}\textup{)}: a fact about the
+orbit, involving no separator and no agent. An embedded agent \emph{locates} $W$
+when it individuates $W$---draws a realisable separator marking $W$ off from
+$\Space\setminus W$ to its finite resolution \textup{(}\Cref{def:individuation},
+\Cref{def:realisable}\textup{)}: an act carrying the floor residue. Visiting
+relates a traversal to a point; locating relates an agent to a region.
+\end{definition}
+
+\begin{remark}[The relations are categorically distinct]
+\label{rem:two-relations}
+At every step a point occupies exactly one maximally fine position, visited
+because the traversal took it there, with no agent locating it. Conversely an
+agent may locate a region no orbit visits within any finite horizon. A region's
+being visited says nothing about its being located, and vice versa. The rest of
+the section is the consequence of holding the two apart.
+\end{remark}
+
+\subsection{The asymmetry}
+
+\begin{theorem}[Locating--Visiting Asymmetry]
+\label{thm:asymmetry}
+Let $W$ be a realisable region of $(\Space,d,\mu)$ under \Cref{ax:brs} with
+$\Space$ connected, and let $T$ be a measure-preserving traversal. Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.4em]
+\item \textbf{Locating is costly.} Any individuation of $W$ by an embedded agent
+deposits separator content $\ge\thick>0$ \textup{(}\Cref{thm:thickness}\textup{)};
+the cost does not depend on $p(W)$ and is never zero.
+\item \textbf{Visiting is free.} Almost every point visits $W$ under $T$, with no
+agent and no separator; by recurrence on the finite-measure space
+$\mu(\Space)<\infty$ the visit occurs, and being a fact about the orbit it carries
+no individuation cost.
+\item \textbf{Only frequency scales with rarity.} The visiting frequency satisfies
+$\bar f_W(x)=p(W)$ for an ergodic traversal \textup{(}and is bounded by the
+recurrence fraction in general\textup{)}; thus a rare $W$ is visited just as
+freely as a common one, only \emph{less often}. Rarity is a statement about
+$p(W)$, never about the cost or possibility of a visit.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) is \Cref{thm:thickness}: a realisable separator in a connected bounded
+finitely-resolved space has measure $\ge\mu_{\min}=\thick>0$, independently of
+$\mu(W)$. (ii): on a space with $\mu(\Space)<\infty$ a measure-preserving $T$
+returns almost every point of any positive-measure region to that region (the sets
+$T^{-k}W$ cannot be pairwise disjoint modulo null sets, since their equal measures
+$\mu(W)>0$ would otherwise sum past $\mu(\Space)$); the visit is a property of the
+orbit and involves no separator, hence no floor. (iii): the visiting frequency is
+the average of the indicator $\mathbf 1_W$ along the orbit, which for an ergodic
+$T$ equals $\int \mathbf 1_W\,\mathrm d(\mu/\mu(\Space))=p(W)$; smallness of the
+frequency is exactly smallness of $p(W)$, and is independent of (i)--(ii).
+\end{proof}
+
+\begin{remark}[The asymmetry in one line]
+\label{rem:needle}
+A region may be hard to single out and yet effortlessly reached: it is hard to
+\emph{locate} a distinguished region among many alternatives, but a traversal
+passes through it regardless of whether anything locates it, and through a rare
+region only \emph{less frequently}, never at greater cost. The cost lives entirely
+on the locating side; the rarity lives entirely on the visiting side; nothing
+carries one to the other.
+\end{remark}
+
+\subsection{The cost of locating among alternatives}
+
+Locating a single region costs the floor (\Cref{thm:thickness}). Locating one
+region \emph{among many} costs more, and the excess grows with how rare the target
+is---a quantitative refinement of detectability.
+
+\begin{theorem}[Locating cost grows with the log of the alternatives]
+\label{thm:locating-cost}
+Let $W$ be one region among $K$ pairwise-disjoint realisable alternatives of equal
+measure that together exhaust a fixed portion of $\Space$. To single out $W$ from
+the other $K-1$, an embedded agent performs at least $\lceil\log_2 K\rceil$ binary
+individuations, each depositing residue $\ge\thick$; hence the total locating cost
+is at least
+\[
+\thick\,\lceil\log_2 K\rceil .
+\]
+Since the target's probability is $p(W)=1/K$ of the exhausted portion, the cost
+grows like $\thick\,\log_2(1/p(W))$: rarer targets are costlier to locate, while
+\textup{(}by \Cref{thm:asymmetry}\textup{)} no rarer to visit.
+\end{theorem}
+
+\begin{proof}
+Distinguishing $W$ from $K-1$ equally-sized alternatives is a search whose outcome
+selects one of $K$ possibilities; any decision procedure resolving one of $K$
+equiprobable outcomes makes at least $\lceil\log_2 K\rceil$ binary distinctions
+(a counting bound: $b$ binary tests distinguish at most $2^{b}$ cases, so
+$2^{b}\ge K$). Each binary distinction is an individuation---a separator between
+the surviving candidates and the rejected ones---carrying residue $\ge\thick$ by
+\Cref{thm:thickness}. Summing over the $\ge\lceil\log_2 K\rceil$ distinctions
+gives total residue $\ge\thick\lceil\log_2 K\rceil$. With $p(W)=1/K$ this is
+$\thick\,\lceil\log_2(1/p(W))\rceil$.
+\end{proof}
+
+\begin{remark}[Consistency with the cardinality derivation]
+\label{rem:consistent-card}
+\Cref{thm:locating-cost} refines \Cref{prop:card}: where the cardinality argument
+showed that exhausting the regions of $\Space$ requires unbounded refinement, each
+stage carrying its own floor, this shows that even \emph{within} a fixed finite
+family of $K$ alternatives the cost of singling out one member scales with
+$\log K$. The floor appears once per binary distinction, and the number of
+distinctions is set by the rarity of the target.
+\end{remark}
+
+\subsection{Three invalid transfers}
+
+The asymmetry blocks a family of inferences that move an attribute of locating
+onto visiting, or silently alter the measure that constitutes a region. We state
+the three that arise in practice and show each is invalid; they share a single
+form (\Cref{prop:one-form}).
+
+\begin{proposition}[Naming confers no structural priority]
+\label{prop:rename}
+Let $y=T^{n}(x)$ with $n\ge1$, so $y$ is reached by the traversal and has
+predecessors. Designating $y$ ``the starting point'' is a locating act
+\textup{(}a label\textup{)} and does not endow $y$ with the structural property
+of an origin---having no predecessor. Any statement whose hypothesis is ``has no
+predecessor'' fails to apply to $y$ whatever $y$ is called.
+\end{proposition}
+
+\begin{proof}
+``Starting point'' has two senses: a bookkeeping origin chosen by the agent, and
+the structural origin, a point with no predecessor under $T$. A reached point
+$y=T^{n}(x)$, $n\ge1$, has the predecessor $T^{n-1}(x)$, so it meets the first
+sense by stipulation and fails the second by construction. A statement proved
+under ``no predecessor'' reads a property $y$ lacks; the label supplies only the
+inert first sense. The transfer carries nothing.
+\end{proof}
+
+\begin{proposition}[Specificity does not entail an arranger]
+\label{prop:arrange}
+From ``$W$ is highly specific'' \textup{(}rare; small $p(W)$\textup{)} one cannot
+infer ``some agent located or produced $W$.'' Specificity is a measure attribute
+of the region; production is an act of an agent. The first does not entail the
+second.
+\end{proposition}
+
+\begin{proof}
+\Cref{thm:asymmetry}(ii) provides a standing counterexample: under any traversal,
+the position $T^{n}(x)$ at each step is a maximally fine, individually rare
+location that no agent located---it is visited, not located. Hence a region can be
+as rare as one likes while having been singled out by no one. Rarity is $p(W)$;
+arrangement is agency; rarity does not imply agency.
+\end{proof}
+
+\begin{proposition}[A region cannot be made probable at fixed log-measure]
+\label{prop:cannot-raise}
+There is no operation that makes a rare region the most probable destination while
+it remains rare. ``Most probable'' is largest measure and ``rare'' is smallest
+measure; by \Cref{rem:one-quantity} these are the same scale, so the demand is that
+one region be simultaneously least and most. Any construction appearing to achieve
+it has enlarged the region---changed $\mu(W)$, hence $S(W)$ and $p(W)$ together---and
+so has replaced the rare region by a different, common one.
+\end{proposition}
+
+\begin{proof}
+By \Cref{rem:one-quantity}, $p(W)$ and $S(W)$ are the same scale up to an additive
+constant; maximising $p(W)$ maximises $\mu(W)$. To keep $W$ rare is to keep
+$\mu(W)$ small; to make it most probable is to make $\mu(W)$ largest. Requiring
+both is requiring $\mu(W)=\min$ and $\mu(W)=\max$, impossible unless the family is
+trivial. A purported construction that ``raises the probability of the rare
+region'' has increased $\mu(W)$ and thereby exchanged $W$ for a larger region; the
+original rare region was not made probable but replaced.
+\end{proof}
+
+\begin{proposition}[The three transfers share one form]
+\label{prop:one-form}
+\Cref{prop:rename,prop:arrange,prop:cannot-raise} are instances of one invalid
+move: an attribute established for the agent's relation to a region
+\textup{(}locating: naming, singling out, producing\textup{)} is carried onto the
+traversal's relation to the region \textup{(}visiting\textup{)}, or the measure
+that constitutes the region is silently changed. Under \Cref{thm:asymmetry} and
+\Cref{rem:one-quantity} each move is blocked, because the two relations obey
+opposite economies and the constituting measure is the probability.
+\end{proposition}
+
+\begin{proof}
+\Cref{prop:rename} carries a label (locating) onto a structural predicate of
+visiting (having no predecessor). \Cref{prop:arrange} carries an agency claim
+(production) onto a measure attribute (rarity). \Cref{prop:cannot-raise} alters
+the measure that is the probability. In each case validity would require visiting
+to inherit locating's cost-structure, or a region to change its measure while
+keeping its identity; \Cref{thm:asymmetry} forbids the former and
+\Cref{rem:one-quantity} the latter.
+\end{proof}
+
+\begin{remark}[What this section adds]
+\label{rem:locating-adds}
+The floor (\Cref{sec:thickness,sec:floor}) priced the act of individuation; this
+section shows that price is paid by \emph{locating} alone and not by
+\emph{visiting}, that it scales with the log of a target's rarity
+(\Cref{thm:locating-cost}), and that the appearance of paradox in problems about
+rare configurations is produced by transferring the locating price onto visiting
+(\Cref{prop:one-form}). A reader will recognise that many concrete problems about
+rare states---in which a configuration seems impossible to reach because it is
+costly to arrange---have exactly this shape; the resolution in each case is the
+asymmetry proved here, that what is costly to single out may be free to be reached
+and merely seldom so. The self-referential obstruction of the next section shows
+why even the locating price can never be driven to zero: the residue it leaves
+cannot be certified away from within.
+\end{remark}
