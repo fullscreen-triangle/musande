@@ -1,0 +1,42 @@
+\contentsline {part}{I\hspace {1em}Foundations}{2}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Aim and the independence requirement}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}The coordination phenomenon}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Contributions, and what is and is not new}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}A note on the five ``regimes''}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Organisation}{3}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Axioms and the S-entropy manifold}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Partition coordinates and capacity}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The triple equivalence and the S-entropy coordinates}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The state manifold}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Single-agent dynamics: potential, action, and explicit Euler--Lagrange equations}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The partition potential}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Onsager--Machlup action}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Explicit Euler--Lagrange derivation}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Kuramoto bifurcation and the corrected critical coupling}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}The five operational bands}{7}{subsection.3.5}%
+\contentsline {part}{II\hspace {1em}Ensembles and Coordination}{8}{part.2}%
+\contentsline {section}{\numberline {4}Ensembles and the joint action}{8}{section.4}%
+\contentsline {section}{\numberline {5}Coordination on a common outcome}{8}{section.5}%
+\contentsline {part}{III\hspace {1em}Partition Extinction}{9}{part.3}%
+\contentsline {section}{\numberline {6}An analogy-free theory of partition extinction}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Partition operations and lag}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The extinction theorem}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Functional vs.\ ontological indistinguishability}{11}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Synchronisation as a structural correspondence}{11}{subsection.6.4}%
+\contentsline {part}{IV\hspace {1em}External Validation, Scope, and Conclusion}{11}{part.4}%
+\contentsline {section}{\numberline {7}External validation against public data}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Why external, and what ``validation'' means here}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The nine experiments}{13}{subsection.7.2}%
+\contentsline {paragraph}{EXT01 --- Shell capacity $C(n)=2n^2$ (atomic structure).}{13}{section*.7}%
+\contentsline {paragraph}{EXT02 --- Kuramoto critical coupling (direct simulation).}{13}{section*.8}%
+\contentsline {paragraph}{EXT03 --- Wiedemann--Franz constant (eleven metals).}{13}{section*.9}%
+\contentsline {paragraph}{EXT04 --- Sleep-stage order parameter (real EEG).}{13}{section*.10}%
+\contentsline {paragraph}{EXT05 --- Enzyme efficiency vs.\ substrate complexity.}{13}{section*.11}%
+\contentsline {paragraph}{EXT06 --- Antidepressant response convergence.}{14}{section*.12}%
+\contentsline {paragraph}{EXT07 --- Partition extinction (superconductors).}{14}{section*.14}%
+\contentsline {paragraph}{EXT08 --- Common-cell convergence (disjoint representations).}{14}{section*.15}%
+\contentsline {paragraph}{EXT09 --- Catalytic composition (real classifiers).}{14}{section*.16}%
+\contentsline {subsection}{\numberline {7.3}Summary of verdicts}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Scope and limitations}{14}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{15}{section.9}%
