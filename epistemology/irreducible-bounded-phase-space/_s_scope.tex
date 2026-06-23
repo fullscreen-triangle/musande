@@ -33,19 +33,25 @@ visits the region freely and scales with rarity only in frequency; three invalid
 inferences transferring the former onto the latter are classified and blocked
 (\Cref{prop:one-form}).
 \item \textbf{Non-self-verifiability} (\Cref{thm:diagonal},
-\Cref{thm:residue-not-measure}): verification is a self-referential decision with
-no consistent value; the irreducible residue is not an exhibitable set, and the
-floor can only be bounded below, never displayed.
+\Cref{thm:residue-not-measure}): no verifier is total and closed under its own
+diagonal, an unconditional self-contained result; and \emph{under the explicit
+closure hypothesis} \ref{sa:closed}---that a behaviour-defined collection of
+regions is again a region---the irreducible residue is not an exhibitable set and
+the floor can only be bounded below, never displayed. This last upgrade is stated
+conditionally; the positivity of the floor (items 3--4) does not rely on it.
 \item \textbf{Non-return and cessation} (\Cref{thm:nonreturn},
 \Cref{thm:cessation}): the committed record is monotone, so no process returns to
 a prior individuation state; thinning a separator has diverging cost and bounded
 return, so a finite agent halts at the floor and knows only bounded wholes.
 \end{enumerate}
 
-These results turn on one constant, the floor $\thick>0$, reached from six
-independent directions---topological, representational, cardinality-theoretic,
-economic, self-referential, and order-theoretic---each shown to bound or price
-the same quantity.
+These results turn on one constant, the floor $\thick>0$. Its positivity is
+reached from four independent directions---topological, representational,
+cardinality-theoretic, and economic---each shown to bound or price the same
+quantity unconditionally. Two further directions speak to its character rather
+than its positivity: the self-referential, which under the closure hypothesis
+\ref{sa:closed} shows the floor cannot be displayed as a located set, and the
+order-theoretic, which shows the record of individuations cannot return.
 
 \subsection{Scope}
 
@@ -59,11 +65,22 @@ been marked, and the necessity of boundedness is shown by a counterexample
 (\Cref{prop:bdd-necessary}). Material that could not be proved at this standard
 has been omitted rather than asserted.
 
+One hypothesis beyond \Cref{ax:brs} is used, and only in \Cref{sec:residue}: the
+closure hypothesis \ref{sa:closed}, that a collection of regions defined by a
+verifier's own behaviour is again a region of $\Space$. We do not prove
+\ref{sa:closed}; we isolate it, argue that an embedding makes it natural, note
+that discharging it in general would require exhibiting the measurable encoding
+and point-surjection that the classical fixed-point theorem of~\citet{lawvere1969}
+needs, and mark every conclusion that depends on it. The positive floor and all
+results of \Cref{sec:thickness,sec:floor,sec:detect,sec:locating,sec:inquiry}
+stand independently of \ref{sa:closed}.
+
 \subsection{Conclusion}
 
 A bounded whole, finitely resolved, cannot be divided into a part and its
 complement without depositing positive content into the separator, and that
-content cannot be certified from within or driven to zero. The part is
+content cannot be driven to zero---and, where the agent's own verifying behaviour
+is itself a region, cannot be certified from within. The part is
 individuated by what it is not; the separation is never instantaneous and never
 exact; the residue is irreducible; the record of separations only grows; and a
 finite agent rationally halts at a positive floor, knowing bounded wholes and not

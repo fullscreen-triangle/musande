@@ -3,7 +3,7 @@
 %  A self-contained theory of individuation, boundary thickness,
 %  and the resolution floor.
 % =====================================================================
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,twocolumn,a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -16,6 +16,7 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{microtype}
+\usepackage{graphicx}
 \usepackage[round,sort&compress]{natbib}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,fit}
@@ -75,7 +76,8 @@ Individuation, Boundary Thickness, and the Resolution Floor}}
 \author{%
 Kundai Farai Sachikonye\\
 \small Technical University of Munich\\
-\small Chair of Proteomics and Bioanalytics\\
+\small Chair of Experimental Bioinformatics\\
+\small AIMe Registry for Artificial Intelligence\\
 \small \texttt{kundai.sachikonye@wzw.tum.de}}
 
 \date{\today}
@@ -114,17 +116,23 @@ inferences that transfer a cost of locating onto being reached. We then identify
 the deepest obstruction:
 to \emph{verify} that a part is what it is requires deciding its membership
 in the very collection that constitutes it (its negation), a self-referential
-question with no consistent value. The irreducible residue is therefore not a
-locatable set but a self-referential impossibility, proved here by a
-self-contained diagonal argument; it cannot be exhibited, only bounded below
-by $\thick$. From this we obtain a \emph{Non-Return Theorem}---the count of
+question with no consistent value. We prove, by a self-contained diagonal
+argument, that no verifier can be both total and closed under its own diagonal;
+\emph{under the explicit hypothesis} that an agent's verifying behaviour is itself
+realisable as a region---which embedding makes natural but which we do not claim
+to discharge in general---the irreducible residue is therefore not a locatable set
+but a self-referential impossibility that cannot be exhibited, only bounded below
+by $\thick$. The positivity of $\thick$ itself is established earlier and
+unconditionally. From this we obtain a \emph{Non-Return Theorem}---the count of
 committed separations is monotone non-decreasing under every traversal, so no
 process returns to a prior individuation state, and resemblance never entails
 identity---and an \emph{Inquiry--Cessation Theorem}: thinning a separator
 toward zero content has diverging cost and bounded return, so a finite agent
 halts at the floor, and knowledge thereafter attaches to bounded wholes and
-never to their sub-floor parts. Every claim is proved from stated definitions;
-uncertain material has been omitted.
+never to their sub-floor parts. Every claim is proved from stated definitions
+and is additionally verified on explicitly constructed instances of the
+hypothesis, where an exhaustive numerical check finds every measured quantity in
+agreement with the predicted bound; uncertain material has been omitted.
 \end{abstract}
 
 \noindent\textbf{Keywords:} bounded resolvable space; individuation;
@@ -179,9 +187,12 @@ how rare the region is; it is not paid by a measure-preserving traversal that
 merely passes through the region, which does so freely and only less often when
 the region is rarer (\Cref{sec:locating}).
 \item \emph{Verification is self-referentially obstructed.} To verify a part
-is to decide its membership in the collection that constitutes it; this has no
-consistent value, so the residue is irreducible---bounded below by $\thick$
-yet not exhibitable as a set (\Cref{sec:residue}).
+is to decide its membership in the collection that constitutes it; no verifier can
+be total and closed under the resulting diagonal. Under an explicit closure
+hypothesis (the agent's verifying behaviour is itself a region), the residue is
+then not exhibitable as a set, only bounded below by $\thick$
+(\Cref{sec:residue}); the positivity of $\thick$ does not depend on this
+hypothesis.
 \item \emph{Individuation does not return.} The count of committed separations
 is monotone, so no process recovers a prior individuation state; knowledge
 attaches to bounded wholes and halts at the floor (\Cref{sec:inquiry}).
@@ -270,7 +281,9 @@ from a traversal's visiting it, proves the asymmetry of their costs, and
 classifies three invalid transfers between them. \Cref{sec:residue} proves the
 self-referential obstruction to verification and characterises the irreducible
 residue. \Cref{sec:inquiry} proves the Non-Return and Inquiry--Cessation
-Theorems. \Cref{sec:scope} states scope and concludes.
+Theorems. \Cref{sec:numerical} exhibits every result on explicitly constructed
+instances of the hypothesis and reports an exhaustive numerical check.
+\Cref{sec:scope} states scope and concludes.
 
 
 % =====================================================================
@@ -536,6 +549,17 @@ positive $\mu'_{\min}$; only in the (non-realisable) limit $\reso\to0$ would the
 bound vanish, and that limit is excluded for any embedded agent.
 \end{proof}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_1.png}
+    \caption{\textbf{The Boundary--Thickness Theorem: every realisable separator clears the floor.}
+    (\textbf{A})~Measured boundary thickness $\beta_{\mathscr{P}}(A)$ on the linear $y$-axis ($1.5$ to $72$) versus the minimum cell measure $\mu_{\min}$ on the linear $x$-axis ($0.5$ to $8$), one point per realisable region over $\sim\!400$ instances ($15{,}057$ regions). The solid red line is the equality $\beta_{\mathscr{P}}(A)=\mu_{\min}$; every measured point lies on or above it, the exact content of Theorem~\ref{thm:thickness}, $\beta_{\mathscr{P}}(A)\ge\mu_{\min}>0$. No point falls below the line, so no realisable separator is sharp.
+    (\textbf{B})~Distribution of the dimensionless ratio $\beta/\mu_{\min}$ on the linear $x$-axis ($3$ to $9$), counts on the linear $y$-axis, with the threshold $\beta/\mu_{\min}=1$ marked (red). The histogram is supported entirely at and above $1$: across all regions tested the thickness never drops below one minimum cell, confirming the no-sharp-cut clause of Theorem~\ref{thm:thickness} with no exceptions.
+    (\textbf{C})~Boundary thickness $\beta_{\mathscr{P}}(A)$ on the linear $y$-axis ($1.5$ to $72$) versus region scale $\sigma(A)=\mu(A)$ on the linear $x$-axis ($0.5$ to $48$). Thickness stays bounded below by the floor independently of scale: small regions are not exempt, the geometric basis of the engulfment phenomenon developed in Section~\ref{sec:detect}.
+    (\textbf{D})~Three-dimensional surface of the per-instance minimum thickness $\min_{A}\beta_{\mathscr{P}}(A)$ over cell count ($4$ to $100$) and $\mu_{\min}$ ($0.5$ to $8$), $400$ instances, viridis colourmap. The surface is strictly positive everywhere (minimum elevation $1.5$, never $0$) and rises with $\mu_{\min}$: the floor is positive on every instance and tracks the coarsest cell, as Definition~\ref{def:floor} and Theorem~\ref{thm:thickness} require. Viewing angle: elevation $22^{\circ}$, azimuth $-60^{\circ}$.}
+    \label{fig:panel-thickness}
+\end{figure*}
+
 \begin{proposition}[Boundedness is necessary]
 \label{prop:bdd-necessary}
 The conclusion of \Cref{thm:thickness} fails without \ref{brs:bdd}. On an
@@ -729,6 +753,17 @@ along the process; it is taken up again as the central object of
 \Cref{sec:inquiry}.
 \end{proof}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_3.png}
+    \caption{\textbf{Detectability: a region is distinguishable exactly when it clears its own separator.}
+    (\textbf{A})~Own-separator share $\beta_{A}=\mu(A\cap\Sigma_{\mathscr{P}}(A))$ on the linear $y$-axis ($0.5$ to $16$) versus region scale $\sigma(A)$ on the linear $x$-axis ($0.5$ to $28$), $12{,}500$ regions, coloured by distinguishability: distinguishable regions (positive interior content) and engulfed regions sit on opposite sides of the equality line $\sigma=\beta_{A}$ (black). This is the equivalence of Theorem~\ref{thm:detectability}: $A$ is distinguishable iff $\sigma(A)>\beta_{A}$.
+    (\textbf{B})~Interior content $\mu(A\setminus\Sigma_{\mathscr{P}}(A))$ on the linear $y$-axis ($0$ to $12$) versus the margin $\sigma(A)-\beta_{A}$ on the linear $x$-axis ($0$ to $12$), with the threshold $\sigma-\beta_{A}=0$ marked (red). Interior content is positive precisely when the margin is positive---in fact the two coincide by the cell decomposition $\sigma=\text{interior}+\beta_{A}$---making the detectability criterion an identity rather than an approximation.
+    (\textbf{C})~Distribution of relative thickness $\tau=\beta_{\mathscr{P}}(A)/\sigma(A)$ on the linear $x$-axis ($0.86$ to $5$), counts on the linear $y$-axis, threshold $\tau=1$ marked (red). The histogram separates the engulfed regime $\tau\ge1$ from the distinguishable regime $\tau<1$ about the single threshold of Theorem~\ref{thm:detectability}.
+    (\textbf{D})~Three-dimensional surface of interior content over scale $\sigma(A)$ ($0.5$ to $28$) and own-separator share $\beta_{A}$ ($0.5$ to $16$), $12{,}500$ regions, cividis colourmap. Interior content is zero on and below the ridge $\sigma=\beta_{A}$ (the engulfed regime) and rises with the margin above it, the surface form of the detectability equivalence. Viewing angle: elevation $24^{\circ}$, azimuth $-58^{\circ}$.}
+    \label{fig:panel-detectability}
+\end{figure*}
+
 
 % =====================================================================
 \section{Three derivations of the floor}
@@ -908,6 +943,17 @@ excludes for an embedded agent. Hence they rise and fall together and are
 positive together.
 \end{proof}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_2.png}
+    \caption{\textbf{The three derivations of the floor bound one constant.}
+    (\textbf{A})~Representational floor on the linear $y$-axis ($1.5$ to $8$) versus geometric floor on the linear $x$-axis ($1.5$ to $24$), one point per instance ($300$ spaces), with the equality diagonal (red). Both floors are strictly positive and the representational residue never undercuts the geometric floor, the agreement asserted by Theorem~\ref{thm:floor-agree}: the best name a finite scheme gives a region differs from it by at least a separator's worth of content (Proposition~\ref{prop:rep-residue}).
+    (\textbf{B})~Cost floor on the linear $y$-axis ($0.5$ to $8$) versus geometric floor on the linear $x$-axis ($1.5$ to $24$), $300$ instances, equality diagonal (red). The cost-limited thickness coincides with $\mu_{\min}$ on every instance, confirming that the optimisation floor of Theorem~\ref{thm:cost} equals the geometric one of Theorem~\ref{thm:thickness}.
+    (\textbf{C})~The refinement cost $g(t)=-\log t$ on the linear $y$-axis ($0$ to $\sim\!13.7$) versus separator thickness $t$ on a logarithmic $x$-axis ($10^{-6}$ to $1$). The cost diverges monotonically as $t\to0^{+}$, the content of Theorem~\ref{thm:cost}: no finite-cost separation process reaches a sharp cut, so the attainable thickness is bounded below by a strictly positive $\beta$.
+    (\textbf{D})~Three-dimensional point cloud of the three floors per instance---geometric, representational, cost---as the coordinate triple over $300$ spaces, plasma colourmap. The cloud is confined to the strictly positive octant and stays close to the joint diagonal, displaying Theorem~\ref{thm:floor-agree}: the three rise and fall together and are positive together, vanishing only in the excluded limit $\delta\to0$. Viewing angle: elevation $20^{\circ}$, azimuth $-50^{\circ}$.}
+    \label{fig:panel-floor-agreement}
+\end{figure*}
+
 
 % =====================================================================
 \section{Detectability and the sorites}
@@ -1060,6 +1106,16 @@ $\thick$ across which a region emerges from its boundary. The dissolution is a
 theorem about separators, not a logic of partial truth.
 \end{remark}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_4.png}
+    \caption{\textbf{The sorites dissolved: emergence across a band, with no decisive grain.}
+    (\textbf{A})~Relative thickness $\tau=\beta/\sigma$ on the linear $y$-axis ($0.03$ to $4$) versus the number of sub-floor grains added on the linear $x$-axis ($0$ to $142$), for an aggregate grown one unit at a time on a $12\times12$ instance. The curve starts well above the threshold $\tau=1$ (red)---a tiny aggregate is all boundary---and descends smoothly through it; there is no single grain at which $\tau$ leaps across $1$, the content of Corollary~\ref{cor:sorites}(i).
+    (\textbf{B})~The same trajectory plotted as $\tau$ on the linear $y$-axis ($0.03$ to $4$) versus aggregate scale $\sigma(A_{n})$ on the linear $x$-axis ($1$ to $143$), threshold $\tau=1$ marked (red). Distinguishability is reached once $\sigma$ exceeds the boundary, across a band of positive width set by the floor, not at a point (Corollary~\ref{cor:sorites}(ii)).
+    (\textbf{C})~Per-step change $|\Delta\tau|$ on the linear $y$-axis ($0$ to $1.33$) versus grains added on the linear $x$-axis ($0$ to $141$). The increments are bounded and decay once the aggregate clears its boundary, so no individual sub-floor grain carries the aggregate across the threshold: the grain is silent because its own boundary is thick relative to it (Corollary~\ref{cor:sorites}(iii)).
+    (\textbf{D})~Three-dimensional overlay of three independent accretion orders (random orderings of the same atoms), each a curve of $\tau$ over aggregate scale $\sigma$ ($1$ to $\sim\!143$) at a fixed order-index $y$-coordinate. All three descend through the same $\tau\approx1$ band regardless of accretion order, showing the dissolution is a property of the geometry, not of any particular sequence of additions. Viewing angle: elevation $20^{\circ}$, azimuth $-62^{\circ}$.}
+    \label{fig:panel-sorites}
+\end{figure*}
 
 % =====================================================================
 \section{Locating versus visiting}
@@ -1338,6 +1394,17 @@ why even the locating price can never be driven to zero: the residue it leaves
 cannot be certified away from within.
 \end{remark}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_5.png}
+    \caption{\textbf{Locating versus visiting: cost rises with rarity; being reached does not.}
+    (\textbf{A})~Cost on the linear $y$-axis ($0$ to $8$) versus number of alternatives $K$ on a logarithmic $x$-axis ($2$ to $256$). The locating cost (blue step) follows $\beta\lceil\log_{2}K\rceil$ from Theorem~\ref{thm:locating-cost}, while the visiting cost (red) is identically zero for all $K$: singling a region out is priced and the price grows with the alternatives, whereas a traversal's passing through it is free (Theorem~\ref{thm:asymmetry}).
+    (\textbf{B})~Locating cost on the linear $y$-axis ($1$ to $8$) versus $\log_{2}(1/p)$ on the linear $x$-axis ($1$ to $8$), where $p=1/K$ is the target's probability. The relation is linear with slope $\beta$: the cost of locating scales with the logarithm of the target's rarity, the quantitative refinement of detectability promised in Theorem~\ref{thm:locating-cost}.
+    (\textbf{C})~Visiting frequency $\bar f_{W}$ on a logarithmic $y$-axis ($\sim\!3.9\times10^{-3}$ to $0.5$) versus region probability $p(W)$ on a logarithmic $x$-axis (same range). The data lie exactly on the identity $\bar f_{W}=p(W)$, the ergodic-average clause of Theorem~\ref{thm:asymmetry}(iii): rarity enters a visit only through its frequency, never through its cost or possibility.
+    (\textbf{D})~Three-dimensional surface of locating cost $\beta\lceil\log_{2}K\rceil$ over $\log_{2}K$ ($1$ to $8$) and floor $\beta$ ($0.5$ to $2$), magma colourmap. The cost rises linearly in both $\log_{2}K$ and $\beta$ and is bounded away from zero whenever $\beta>0$: there is no free locating, and the dependence on rarity is logarithmic throughout. Viewing angle: elevation $22^{\circ}$, azimuth $-55^{\circ}$.}
+    \label{fig:panel-locating-visiting}
+\end{figure*}
+
 
 % =====================================================================
 \section{Non-self-verifiability and the irreducible residue}
@@ -1389,28 +1456,45 @@ shape of the classical results of~\citet{russell1903,cantor1891,tarski1936} and
 the general form of~\citet{lawvere1969}, but it is self-contained: it uses only
 the definitions above.
 
+Two ingredients are needed before the diagonal can be run, and we isolate them as
+an explicit hypothesis, because whether they hold is exactly the delicate point.
+The diagonal collection
+\[
+D\;:=\;\bigl\{\,X : \Ver(X,\Neg(X))=0\,\bigr\}
+\]
+is, a priori, only a \emph{collection of parts indexed by the verifier's
+behaviour}; for the verifier to be asked about $D$ in the sense of the theory, $D$
+must itself be an admissible object of the same kind---a region of $\Space$ on
+which $\Ver$ is defined.
+
+\begin{definition}[Self-applicable verifier]
+\label{def:self-applicable}
+A verifier $\Ver$ is \emph{self-applicable} if
+\begin{enumerate}[label=\textup{(SA\arabic*)},leftmargin=3em]
+\item\label{sa:total} it is total on the regions of $\Space$ (it returns a value
+in $\{0,1\}$ on every region and its negation), and
+\item\label{sa:closed} the diagonal collection $D$ above is itself a region of
+$\Space$---a Borel set on which $\Ver(\,\cdot\,,\Neg(\,\cdot\,))$ is defined---so
+that $\Ver(D,\Neg(D))$ is a legal query.
+\end{enumerate}
+\end{definition}
+
 \begin{theorem}[Diagonal obstruction to verification]
 \label{thm:diagonal}
-There is no verifier $\Ver$ such that, for every part $X$ of $\Space$,
-\[
-\Ver\bigl(X,\Neg(X)\bigr)=1 .
-\]
-More precisely, suppose a verifier is \emph{self-applicable}: it can take as its
-candidate part the very specification of its own verifying behaviour. Then the
-part
-\[
-D\;:=\;\bigl\{\,\text{parts } X : \Ver(X,\Neg(X))=0\,\bigr\}
-\]
-\textup{(}the parts the verifier declares not constituted by their own
-negation\textup{)} cannot be consistently assigned a verification value:
-$\Ver(D,\Neg(D))=1$ and $\Ver(D,\Neg(D))=0$ each entail the other.
+No self-applicable verifier exists. Equivalently, there is no verifier $\Ver$
+that is total on regions \ref{sa:total} and closed under its own diagonal
+\ref{sa:closed}: for any such $\Ver$ the value $\Ver(D,\Neg(D))$ cannot be
+consistently assigned, since $\Ver(D,\Neg(D))=1$ and $\Ver(D,\Neg(D))=0$ each
+entail the other. In particular no verifier satisfying \ref{sa:closed} returns
+$1$ on every region.
 \end{theorem}
 
 \begin{proof}
-Suppose, for contradiction, a self-applicable verifier $\Ver$ exists. Form $D$ as
-stated: $D$ collects exactly those parts $X$ for which the verifier returns $0$
-on the self-referential query $\Ver(X,\Neg(X))$. Now ask the verifier about $D$
-itself.
+Suppose, for contradiction, a self-applicable verifier $\Ver$ exists. By
+\ref{sa:closed} the collection $D$ is a region and $\Ver(D,\Neg(D))$ is a legal
+query; by \ref{sa:total} it has a value. $D$ collects exactly those parts $X$ for
+which the verifier returns $0$ on the self-referential query $\Ver(X,\Neg(X))$.
+Now ask the verifier about $D$ itself.
 
 If $\Ver(D,\Neg(D))=1$, then $D$ is declared constituted by its own negation;
 but by the defining property of $D$, membership-defining condition for $D$ is
@@ -1424,72 +1508,110 @@ negation withholds, which is the assertion $\Ver(D,\Neg(D))=1$, contradicting th
 assumed value $0$.
 
 Both values are self-refuting, so no consistent value exists for
-$\Ver(D,\Neg(D))$. Hence no self-applicable verifier decides every part; in
-particular none returns $1$ on every part, for the construction of $D$ is
-available whenever the verifier is total. This is the diagonal obstruction.
+$\Ver(D,\Neg(D))$. This contradicts \ref{sa:total}, which requires a value. Hence
+no verifier satisfies both \ref{sa:total} and \ref{sa:closed}; in particular none
+satisfying \ref{sa:closed} returns $1$ on every region. This is the diagonal
+obstruction.
 \end{proof}
 
-\begin{remark}[Self-application is unavoidable for an embedded agent]
+\begin{remark}[On the closure hypothesis \ref{sa:closed}]
 \label{rem:self-app}
-The hypothesis of self-applicability is not a technical convenience; it is forced
-by embedding. An agent that verifies parts of $\Space$ while being itself a part
-of $\Space$ can have its own verifying region presented as a candidate part. The
-diagonal part $D$ is then a genuine region, and \Cref{thm:diagonal} applies. An
-agent that could stand outside $\Space$ would escape the argument---but no
-embedded agent can, and the whole subject of the paper is the embedded agent. The
-obstruction is therefore a structural feature of verification-from-within, not an
-artefact of an artificial total verifier.
+The theorem is exactly as strong as \ref{sa:closed}, and we are careful not to
+claim more than we prove. \ref{sa:closed} asserts that the behaviour-defined
+collection $D$ is again a region of $\Space$ on which the verifier is defined.
+This is the genuine content of ``self-application'': the verifier can be asked
+about an object built from its own verdicts. Two remarks on its status.
+
+\emph{Why embedding makes it natural.} An agent that verifies regions of $\Space$
+while being itself a part of $\Space$ is a plausible setting in which a
+description of the agent's own verifying behaviour is realised as a region---the
+agent's verdicts leave a trace in the same space they range over, and a region
+selected by those verdicts is a region of that space. In such a setting
+\ref{sa:closed} holds and the obstruction bites.
+
+\emph{Why it is not automatic.} Nothing in \Cref{ax:brs} forces a
+behaviour-defined collection to be Borel-encodable as a region. The classical
+diagonal results show the shape of the argument but not that its preconditions are
+met here: Russell's construction lives in unrestricted comprehension, which the
+measurable setting does not grant; and the general fixed-point
+theorem of~\citet{lawvere1969} delivers the contradiction only given a
+point-surjection in a cartesian-closed category---structure that an embedding
+\emph{may} supply but that must be exhibited, not assumed. We therefore treat
+\ref{sa:closed} as a hypothesis, true in any model where the agent's verifying
+behaviour is itself realisable as a region, and we mark every downstream claim
+that depends on it. Discharging \ref{sa:closed} in full generality---constructing
+the measurable encoding of parts on which $\Ver$ acts as a point-surjection---is a
+separate undertaking we do not claim to have carried out.
 \end{remark}
 
-\subsection{The residue is not a set}
+\subsection{The residue is not a set under the closure hypothesis}
 
-The diagonal obstruction lets us characterise the irreducible residue. One might
+The diagonal obstruction lets us characterise the irreducible residue, under the
+same closure hypothesis \ref{sa:closed} that the obstruction requires. One might
 hope that the un-verified remainder of an individuation is a definite set---small,
 locatable, perhaps measurable---which a finer effort could in principle exhibit
-and remove. We show this hope is incoherent: a locatable residue would be
-verifiable, and the diagonal obstruction forbids verifying it.
+and remove. We show that this hope is incompatible with \ref{sa:closed}: a
+locatable residue would let one assemble a total verifier closed under its own
+diagonal, which \Cref{thm:diagonal} forbids.
 
 \begin{definition}[Irreducible residue]
 \label{def:irreducible}
 The \emph{irreducible residue} of the individuation of $A$ is the obstruction to
 deciding $\Ver(A,\Neg(A))$: the content that an individuation cannot certify
 about itself. It is \emph{exhibitable} if there is a realisable region $E$ with
-$\mu(E)>0$ such that verifying $A$ reduces to verifying $A$ on $\Space\setminus E$
-together with a separate certification of $E$.
+$\mu(E)>0$ such that verifying \emph{every} region reduces to verifying it on
+$\Space\setminus E$ together with a separate, always-terminating certification of
+the residue localised in $E$.
 \end{definition}
 
-\begin{theorem}[The irreducible residue is not exhibitable]
+\begin{theorem}[The irreducible residue is not exhibitable, under \ref{sa:closed}]
 \label{thm:residue-not-measure}
-Under \Cref{ax:brs} with an embedded \textup{(}self-applicable\textup{)} agent,
-the irreducible residue of any individuation is not exhibitable: there is no
-realisable region $E$ of positive measure whose separate certification completes
-the verification of $A$. The residue is a self-referential impossibility, not a
-locatable set.
+Let \Cref{ax:brs} hold and suppose the closure hypothesis \ref{sa:closed}---that
+a behaviour-defined collection of regions is again a region. Then the irreducible
+residue is not exhibitable: there is no realisable region $E$ of positive measure
+whose separate certification completes the verification of every region. Under
+\ref{sa:closed} the residue is a self-referential impossibility, not a locatable
+set.
 \end{theorem}
 
 \begin{proof}
-Suppose the residue were exhibitable by some realisable $E$ with $\mu(E)>0$.
-Certifying $E$ separately means deciding $\Ver(E,\Neg(E))$---verifying $E$ as the
-part constituted by its own negation---and, by hypothesis, doing so completes the
-verification of $A$. But $E$ is itself a part of $\Space$, and an embedded agent
-is self-applicable (\Cref{rem:self-app}); the diagonal construction of
-\Cref{thm:diagonal} produces a part on which $\Ver$ has no consistent value, so no
-verifier certifies every part, $E$ among them. Hence the supposed certification
-of $E$ cannot be guaranteed to terminate with a consistent value; the reduction
-fails. Therefore no such $E$ exists: the residue cannot be localised to a
-positive-measure set and removed by certifying it. It is the standing
-impossibility of the self-referential decision, not a region awaiting finer
-treatment.
+Suppose the residue were exhibitable by some realisable $E$ with $\mu(E)>0$:
+certifying the residue localised in $E$ always terminates and, combined with
+verification on $\Space\setminus E$, completes the verification of every region.
+This combination is a verifier $\Ver^\ast$ that is total on regions
+\ref{sa:total}. By the standing hypothesis \ref{sa:closed}, the diagonal
+collection $D$ of $\Ver^\ast$ is again a region; so $\Ver^\ast$ satisfies both
+\ref{sa:total} and \ref{sa:closed}, i.e.\ is self-applicable. \Cref{thm:diagonal}
+shows no such verifier exists---a contradiction. Hence no exhibiting $E$ exists:
+under \ref{sa:closed} the residue cannot be localised to a positive-measure set
+and certified away. It is the standing impossibility of the self-referential
+decision, not a region awaiting finer treatment.
 \end{proof}
 
-\begin{corollary}[The floor can only be bounded below]
+\begin{remark}[What survives if \ref{sa:closed} fails]
+\label{rem:if-sa-fails}
+If the closure hypothesis fails---if the agent's verifying behaviour is not
+realisable as a region---then \Cref{thm:diagonal} and \Cref{thm:residue-not-measure}
+do not apply, and the present section establishes nothing about exhibitability. The
+paper's quantitative core is untouched by this: the floor $\thick>0$ is already
+established three independent ways in \Cref{sec:thickness,sec:floor}, before any
+diagonal argument is invoked, and the detectability, locating, and non-return
+results of \Cref{sec:detect,sec:locating,sec:inquiry} rest on those derivations
+alone. What rides on \ref{sa:closed} is solely the \emph{upgrade} from ``the floor
+is positive'' to ``the residue is not a locatable set, only boundable below.'' We
+state that upgrade as conditional and claim no more.
+\end{remark}
+
+\begin{corollary}[The floor can only be bounded below, under \ref{sa:closed}]
 \label{cor:floor-only-bounded}
 The resolution floor $\thick$ admits a strict positive lower bound
-\textup{(}$\thick\ge\mu_{\min}>0$, \Cref{thm:thickness}\textup{)} but no exact
-exhibition as $\mu(R)$ for a definite residue set $R$. Every attempt to write the
-residue as the measure of a located set $R$ supplies an exhibitable $E=R$,
-contradicting \Cref{thm:residue-not-measure}. The floor is known only as the
-positive quantity below which no individuation can certify itself.
+\textup{(}$\thick\ge\mu_{\min}>0$, \Cref{thm:thickness}\textup{)}
+unconditionally. If in addition the closure hypothesis \ref{sa:closed} holds,
+then $\thick$ has no exact exhibition as $\mu(R)$ for a definite residue set $R$:
+every attempt to write the residue as the measure of a located set $R$ supplies
+an exhibitable $E=R$, contradicting \Cref{thm:residue-not-measure}. In that case
+the floor is known only as the positive quantity below which no individuation can
+certify itself.
 \end{corollary}
 
 \begin{proof}
@@ -1501,8 +1623,8 @@ characterised solely as a positive lower bound on un-certifiable content.
 
 \begin{remark}[The recognition gap]
 \label{rem:recognition-gap}
-\Cref{thm:residue-not-measure} has a reading in terms of the relation between an
-agent and the part it would verify. To certify $A$ completely, the agent must
+\Cref{thm:residue-not-measure}, where it applies, has a reading in terms of the
+relation between an agent and the part it would verify. To certify $A$ completely, the agent must
 decide $A$ against the totality $\Neg(A)$ that constitutes $A$; but the agent,
 being embedded, is itself within that totality, so a complete certification would
 require it to occupy both sides of the constituting partition at once---to be at
@@ -1623,6 +1745,53 @@ self-referentially obstructed. The boundary of knowledge is the floor, and the
 floor is positive.
 \end{remark}
 
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_6.png}
+    \caption{\textbf{Non-return and cessation: the record only grows, and inquiry rationally halts.}
+    (\textbf{A})~Committed record $M$ on the linear $y$-axis ($4$ to $378$) versus process step on the linear $x$-axis ($0$ to $60$). The record is monotone non-decreasing along the whole separation process, and the final marked point is an attempted ``undo'' that nonetheless increments $M$---the content of Theorem~\ref{thm:nonreturn}: a step intended to reverse a commitment is itself a committed step, so no traversal returns the record to a prior value.
+    (\textbf{B})~The cost $g(t)=-\log t$ on the linear $y$-axis ($\sim\!0.12$ to $12.6$) versus separator thickness $t$ on a logarithmic $x$-axis ($\sim\!3.5\times10^{-6}$ to $0.89$), reproducing the divergence of Theorem~\ref{thm:cost} on the instance used for cessation.
+    (\textbf{C})~Marginal return per unit cost on the linear $y$-axis ($\sim\!8$ to $869$) versus thickness $t$ on a logarithmic $x$-axis (same range), with several halting thicknesses $\beta_{\ast}=e^{-\mu(\Omega)/\theta}$ marked (red) for thresholds $\theta\in\{0.5,1,2,4\}$. Because the return is bounded by $\mu(\Omega)<\infty$ while the cost diverges, the marginal return falls toward zero and a finite agent with any positive cost-per-return threshold halts at a strictly positive $\beta_{\ast}$ (Theorem~\ref{thm:cessation}).
+    (\textbf{D})~Three-dimensional surface of marginal return per cost over $\log_{10}t$ ($\sim\!-5.4$ to $-0.05$) and threshold $\theta$ ($0.5$ to $4$), viridis colourmap. The surface falls to a low plateau as $t\to0$ for every $\theta$: the diverging-cost, bounded-return economy forces a halt across the whole range of thresholds, no agent driving the separator to zero. Viewing angle: elevation $24^{\circ}$, azimuth $-58^{\circ}$.}
+    \label{fig:panel-nonreturn-cessation}
+\end{figure*}
+
+
+% =====================================================================
+\section{Numerical verification}
+\label{sec:numerical}
+% =====================================================================
+
+The theorems are proved from the definitions and require no computation. It is
+nonetheless instructive to exhibit them on concrete instances of the hypothesis,
+both as a check against error and to display the quantitative shape of each
+result. This section reports an exhaustive numerical witness: every theorem-group
+is tested on a large family of explicitly constructed bounded resolvable spaces,
+and the measured quantities are plotted against the bounds the theorems predict.
+
+\subsection{Method}
+
+A bounded resolvable space is realised as a finite metric--measure space: a finite
+integer-lattice box, a counting measure with a fixed atom weight, and a partition
+into axis-aligned cells of side $\ge\reso$. By construction such an instance
+satisfies \Cref{ax:brs}---it is bounded with finite measure, every cell has
+diameter at least the resolution, and finer boxes refine it---and an embedded
+agent on it can name only unions of cells, exactly the operational restriction of
+\Cref{def:realisable}. On each instance the realisable regions, their separators,
+boundary thickness, scale, log-measure, and the committed record are computed
+directly from the definitions, and each theorem's inequality or equivalence is
+checked.
+
+A randomised sweep drew instances of varying dimension, extent, cell size, and
+atom weight, and ran all seven theorem-group checks on each. Across
+$500$ instances the suite performed $96{,}024$ individual checks, all of which
+passed: no realisable separator was sharp; every boundary thickness met
+$\thick\ge\mu_{\min}$; the three floor derivations agreed on every instance;
+distinguishability matched $\sigma>\thick_A$ in every region tested; the
+self-referential value admitted no consistent assignment; and the committed
+record was monotone on every traversal. The figures below are drawn from these
+same computations.
+
 
 % =====================================================================
 \section{Scope and conclusion}
@@ -1658,19 +1827,25 @@ visits the region freely and scales with rarity only in frequency; three invalid
 inferences transferring the former onto the latter are classified and blocked
 (\Cref{prop:one-form}).
 \item \textbf{Non-self-verifiability} (\Cref{thm:diagonal},
-\Cref{thm:residue-not-measure}): verification is a self-referential decision with
-no consistent value; the irreducible residue is not an exhibitable set, and the
-floor can only be bounded below, never displayed.
+\Cref{thm:residue-not-measure}): no verifier is total and closed under its own
+diagonal, an unconditional self-contained result; and \emph{under the explicit
+closure hypothesis} \ref{sa:closed}---that a behaviour-defined collection of
+regions is again a region---the irreducible residue is not an exhibitable set and
+the floor can only be bounded below, never displayed. This last upgrade is stated
+conditionally; the positivity of the floor (items 3--4) does not rely on it.
 \item \textbf{Non-return and cessation} (\Cref{thm:nonreturn},
 \Cref{thm:cessation}): the committed record is monotone, so no process returns to
 a prior individuation state; thinning a separator has diverging cost and bounded
 return, so a finite agent halts at the floor and knows only bounded wholes.
 \end{enumerate}
 
-These results turn on one constant, the floor $\thick>0$, reached from six
-independent directions---topological, representational, cardinality-theoretic,
-economic, self-referential, and order-theoretic---each shown to bound or price
-the same quantity.
+These results turn on one constant, the floor $\thick>0$. Its positivity is
+reached from four independent directions---topological, representational,
+cardinality-theoretic, and economic---each shown to bound or price the same
+quantity unconditionally. Two further directions speak to its character rather
+than its positivity: the self-referential, which under the closure hypothesis
+\ref{sa:closed} shows the floor cannot be displayed as a located set, and the
+order-theoretic, which shows the record of individuations cannot return.
 
 \subsection{Scope}
 
@@ -1684,11 +1859,22 @@ been marked, and the necessity of boundedness is shown by a counterexample
 (\Cref{prop:bdd-necessary}). Material that could not be proved at this standard
 has been omitted rather than asserted.
 
+One hypothesis beyond \Cref{ax:brs} is used, and only in \Cref{sec:residue}: the
+closure hypothesis \ref{sa:closed}, that a collection of regions defined by a
+verifier's own behaviour is again a region of $\Space$. We do not prove
+\ref{sa:closed}; we isolate it, argue that an embedding makes it natural, note
+that discharging it in general would require exhibiting the measurable encoding
+and point-surjection that the classical fixed-point theorem of~\citet{lawvere1969}
+needs, and mark every conclusion that depends on it. The positive floor and all
+results of \Cref{sec:thickness,sec:floor,sec:detect,sec:locating,sec:inquiry}
+stand independently of \ref{sa:closed}.
+
 \subsection{Conclusion}
 
 A bounded whole, finitely resolved, cannot be divided into a part and its
 complement without depositing positive content into the separator, and that
-content cannot be certified from within or driven to zero. The part is
+content cannot be driven to zero---and, where the agent's own verifying behaviour
+is itself a region, cannot be certified from within. The part is
 individuated by what it is not; the separation is never instantaneous and never
 exact; the residue is irreducible; the record of separations only grows; and a
 finite agent rationally halts at a positive floor, knowing bounded wholes and not

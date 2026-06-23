@@ -1,0 +1,176 @@
+
+% =====================================================================
+\section{T2 and T3: the residual is a conserved region}
+\label{sec:residual}
+% =====================================================================
+
+We now identify the quantity that survives every re-encoding of a contact graph.
+The parts (vertices) may be relabelled, merged, re-described; what cannot be
+removed is the boundary content between them---the \emph{cut-residual}. We prove
+it is bounded below (T2), realised by no single vertex so that it is a region and
+never a point (T2), and invariant under every weighted isomorphism (T3), hence
+the unique conserved object from which the relabellable surface derives.
+
+\subsection{The cut-residual}
+
+\begin{definition}[Cut-residual of a partition]
+\label{def:residual}
+For a partition $\mathcal{P}=\{U_1,\dots,U_k\}$ of $\V$ into nonempty parts, its
+\emph{cut-residual} is the total weight of inter-part boundary,
+\[
+\Res(\mathcal{P})\;=\;\tfrac12\sum_{i=1}^{k}\wt(\cut(U_i))
+\;=\!\!\sum_{\substack{i<j}}\!\!\wt(\cut(U_i,U_j)),
+\]
+the sum over distinct part-pairs of the weight of the edges crossing between
+them. The \emph{residual of $\Gph$} is the minimum over nontrivial partitions,
+\[
+\Res(\Gph)\;=\;\min_{\mathcal{P}\,:\,k\ge 2}\Res(\mathcal{P}),
+\]
+attained by finiteness of $\V$.
+\end{definition}
+
+\begin{remark}[The residual is the ``interstice'']
+\label{rem:interstice}
+$\Res(\mathcal{P})$ is the content of the boundaries \emph{between} the parts:
+not what any part contains, but what lies in the gaps that separate them. As the
+parts are packed (the partition refined or coarsened), this interstitial content
+changes shape; T3 shows its total, suitably taken, does not change under mere
+relabelling. The residual is the graph's ``negative space.''
+\end{remark}
+
+\subsection{T2: the residual is bounded below and is a region}
+
+\begin{theorem}[Residual positivity and non-locality]
+\label{thm:residual-region}
+Let $\Gph$ be a contact graph with floor $\floorc>0$. Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \textbf{Bounded below.} Every nontrivial partition has
+$\Res(\mathcal{P})\ge\floorc>0$; hence $\Res(\Gph)\ge\floorc>0$.
+\item \textbf{Realised by no single vertex.} There is no vertex $v$ with
+$\Res(\Gph)=\wt(\cut(\{v\}))$ forced; the residual is a property of the
+partition (a region of the graph), not of any one vertex. Equivalently, the
+minimiser of \Cref{def:residual} is in general not a singleton, and the residual
+cannot be localised to a point.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) A nontrivial partition has $k\ge2$ parts; since $\Gph$ is connected, at
+least one part-pair $(U_i,U_j)$ has $\cut(U_i,U_j)\neq\varnothing$, contributing
+weight $\ge\floorc$ by \Cref{thm:floor}. Hence $\Res(\mathcal{P})\ge\floorc>0$,
+and taking the minimum, $\Res(\Gph)\ge\floorc$.
+
+(ii) Suppose, for contradiction, the residual were always realised by isolating a
+single vertex, i.e. $\Res(\Gph)=\min_v\wt(\cut(\{v\}))$ for every contact graph.
+Consider any graph in which the minimum-weight nontrivial cut separates a part
+$U$ with $\abs{U}\ge 2$ from its complement at total weight strictly below
+$\min_v\wt(\cut(\{v\}))$---for instance two dense clusters joined by a single
+floor-weight edge, where the cheapest cut splits the two clusters
+($\wt=\floorc$) but every singleton has several incident edges
+($\wt(\cut(\{v\}))\ge 2\floorc$). Then the residual is realised by the
+bipartition, not by any singleton, contradicting the supposition. Hence the
+residual is in general a property of a multi-vertex partition: it is a region,
+not a point.
+\end{proof}
+
+\begin{corollary}[No point carries the residual; the sorites for parts]
+\label{cor:point-forbidden}
+The residual of a contact graph is never carried by a lone vertex in general:
+``what separates the parts'' is borne by a region of positive boundary content,
+not by any single part. Consequently there is no sharp vertex at which a coarse
+aggregate becomes a distinct part---the transition is spread across a band of
+boundary content of width $\ge\floorc$, the graph analogue of the sorites
+\citep{black1937,williamson1994}.
+\end{corollary}
+
+\begin{proof}
+The first claim is \Cref{thm:residual-region}(ii). For the second: growing a
+part one vertex at a time changes its boundary cost $b(U)$ by a bounded amount
+per step (the weights of the edges whose crossing status flips, each $\ge
+\floorc$ and finite in number), so $b(U)$ cannot jump across any threshold in a
+single step from a value bounded away from it; the part becomes distinguishable
+across a range of stages, of width controlled by $\floorc$, not at a point.
+\end{proof}
+
+\subsection{T3: the residual is invariant under re-encoding}
+
+We now show the residual is a graph invariant: it depends on the graph up to
+weighted isomorphism, not on any labelling. Combined with the fact that the
+vertices (the surface data) are freely relabellable, this makes the residual the
+conserved object beneath the surface.
+
+\begin{theorem}[Conservation of the residual]
+\label{thm:residual-invariant}
+The residual $\Res(\Gph)$ is a weighted-graph invariant: if
+$\phi\colon\Gph\to\Gph'$ is a weighted isomorphism then
+$\Res(\Gph)=\Res(\Gph')$. In particular $\Res$ is invariant under every
+automorphism of $\Gph$, hence under every relabelling of its vertices.
+\end{theorem}
+
+\begin{proof}
+Let $\phi\colon\Gph\to\Gph'$ be a weighted isomorphism. For any partition
+$\mathcal{P}=\{U_1,\dots,U_k\}$ of $\V$, the image
+$\phi(\mathcal{P})=\{\phi(U_1),\dots,\phi(U_k)\}$ is a partition of $\V'$, and
+$\phi$ being edge- and weight-preserving gives, for each pair,
+$\wt'(\cut'(\phi(U_i),\phi(U_j)))=\wt(\cut(U_i,U_j))$. Summing,
+$\Res(\phi(\mathcal{P}))=\Res(\mathcal{P})$. The correspondence
+$\mathcal{P}\leftrightarrow\phi(\mathcal{P})$ is a bijection between nontrivial
+partitions of $\V$ and of $\V'$ (with inverse $\phi^{-1}$), so the minima agree:
+$\Res(\Gph')=\min_{\mathcal{P}'}\Res(\mathcal{P}')=
+\min_{\mathcal{P}}\Res(\phi(\mathcal{P}))=\min_{\mathcal{P}}\Res(\mathcal{P})=
+\Res(\Gph)$.
+\end{proof}
+
+\begin{theorem}[The residual is the conserved invariant beneath the surface]
+\label{thm:residual-conserved}
+Let $\mathcal{R}(\Gph)$ denote the orbit of $\Gph$ under all weighted
+relabellings of its vertices \textup{(}its isomorphism class\textup{)}. Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item every vertex label is variable across $\mathcal{R}(\Gph)$---no labelling is
+fixed; and
+\item $\Res$ is constant on $\mathcal{R}(\Gph)$ and strictly positive.
+\end{enumerate}
+Hence, among data attached to a contact graph, the residual is an invariant of
+the isomorphism class while the vertex labels are not: it is conserved under
+exactly the operation---re-encoding---that moves everything else.
+\end{theorem}
+
+\begin{proof}
+(i) For any vertex $v$ and any other vertex $v'$ of the same degree-and-weight
+type, there is a relabelling carrying $v$ to a different label; more simply, the
+identity of a vertex is a label, and labels are by definition permuted across the
+isomorphism class. So no label is fixed across $\mathcal{R}(\Gph)$. (ii) is
+\Cref{thm:residual-invariant} (constancy) together with
+\Cref{thm:residual-region}(i) (positivity). The two together say: the
+relabellable surface (vertex identities) carries no invariant, while the residual
+is invariant and positive.
+\end{proof}
+
+\begin{remark}[Knowing is repacking, not draining]
+\label{rem:repacking}
+\Cref{thm:residual-conserved} has a reading we record but do not rely on. If one
+identifies the vertices (the parts one has individuated) with ``what is known''
+and the residual (the conserved interstice) with ``what remains true regardless
+of how one has carved things up,'' then acquiring or re-describing knowledge is
+the relabelling and repartitioning of vertices---which by
+\Cref{thm:residual-invariant} leaves the residual unchanged in total. One never
+drains the residual by re-encoding; one only re-shapes which boundaries one
+holds. The conserved residual is, in this reading, the invariant ``truth'' that
+no re-encoding removes, bounded below by the floor and---by
+\Cref{thm:residual-region}(ii)---never a point. The reading is offered as
+orientation only; the theorems above are purely graph-theoretic.
+\end{remark}
+
+\begin{remark}[A definite-yet-uncloseable quantity]
+\label{rem:cat-parity}
+A residual can be perfectly well-defined and yet impossible to fix by any single
+completed partition. Consider a quantity such as the parity of $\abs{\V}$ when
+the vertex set is itself in flux---vertices entering and leaving faster than any
+partition can be committed. The parity is definite at every instant yet never
+stabilises long enough to be read off a fixed graph; a finite procedure
+correctly leaves it in the residual rather than paying unboundedly to chase it.
+This illustrates \Cref{thm:residual-region}(ii): the residual is what a finite
+process rationally leaves uncommitted, the ``sufficient unknown,'' and forcing it
+to a point would cost without return. (Offered as illustration; no theorem
+depends on it.)
+\end{remark}

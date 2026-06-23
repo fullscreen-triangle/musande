@@ -1,0 +1,111 @@
+
+% =====================================================================
+\section{T4: every part has a private invariant}
+\label{sec:invariant}
+% =====================================================================
+
+The residual of \Cref{sec:residual} is an invariant of the whole graph. We now
+show the same construction localises: every connected part carries its own
+invariant under its own relabellings, computed from its internal boundary
+content together with the boundary that joins it to the rest. This per-part
+invariant is the standing structure from which the part's surface activity
+derives.
+
+\subsection{The internal residual of a part}
+
+\begin{definition}[Private invariant of a part]
+\label{def:private}
+Let $\Agent=\Gph[U]$ be a part (a connected induced subgraph,
+\Cref{def:subgraph}). Its \emph{private invariant} is the pair
+\[
+\Res_{\mathrm{priv}}(\Agent)\;=\;\bigl(\Res(\Agent),\,b(U)\bigr),
+\]
+where $\Res(\Agent)$ is the internal residual of the induced subgraph
+\textup{(}\Cref{def:residual} applied to $\Agent$\textup{)} and $b(U)=\wt(\cut(U))$
+is its boundary cost to the rest of $\Gph$. We treat $\Res_{\mathrm{priv}}$ up to
+weighted isomorphism of $\Agent$ as an abstract subgraph.
+\end{definition}
+
+\begin{theorem}[Privacy and invariance of the part-invariant]
+\label{thm:private}
+For every part $\Agent$ of a contact graph:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \textbf{Positivity.} $\Res(\Agent)\ge\floorc>0$ whenever $\abs{U}\ge2$,
+and $b(U)\ge\floorc>0$ always; the private invariant is bounded away from zero in
+both components.
+\item \textbf{Invariance.} $\Res_{\mathrm{priv}}(\Agent)$ is invariant under
+$\mathrm{Aut}(\Agent)$ and under any weighted isomorphism of $\Agent$ that
+preserves its boundary cost; it is a property of $\Agent$'s isomorphism class,
+not of its labelling.
+\item \textbf{Privacy.} Two parts with the same private invariant need not be the
+same part of $\Gph$; conversely a part's private invariant is determined by the
+part alone, independently of how the rest of $\Gph$ is labelled.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) $\Agent$ is a contact graph in its own right (a finite, connected, weighted
+graph with the inherited floor $\floorc$), so \Cref{thm:residual-region}(i) gives
+$\Res(\Agent)\ge\floorc$ for $\abs{U}\ge2$; and $b(U)\ge\floorc$ by
+\Cref{thm:floor}. (ii) Apply \Cref{thm:residual-invariant} to the contact graph
+$\Agent$: $\Res(\Agent)$ is invariant under weighted isomorphisms of $\Agent$;
+$b(U)$ is the total weight of the boundary cut, manifestly preserved by any
+isomorphism fixing that cut setwise. Hence the pair is invariant on the relevant
+class. (iii) The internal residual and boundary cost are computed from $\Agent$
+and its incident cut alone; relabelling the complement $\V\setminus U$ changes
+neither, establishing independence from the rest's labelling. That distinct parts
+may share the invariant is immediate (e.g. two isomorphic clusters in different
+positions).
+\end{proof}
+
+\subsection{The invariant is the standing structure}
+
+\begin{proposition}[Surface walks derive from the private invariant]
+\label{prop:surface-derives}
+Fix a part $\Agent=\Gph[U]$. Any $\gate$-admissible walk confined to $\Agent$
+\textup{(}\Cref{def:walk,def:gate}\textup{)} traverses only edges of $\Agent$,
+whose existence and weights are fixed by $\Agent$'s isomorphism class. Hence the
+set of walks available within $\Agent$ is determined by $\Agent$ up to
+relabelling, while no individual walk is an invariant of $\Agent$: the walks are
+the variable surface, the subgraph \textup{(}with its private invariant\textup{)}
+is the standing structure they run on.
+\end{proposition}
+
+\begin{proof}
+A walk within $\Agent$ uses only edges $uv$ with $u,v\in U$; the availability of
+each such step is exactly the presence of that edge in $\Gph[U]$, an
+isomorphism-invariant datum. Thus the \emph{space} of available walks transforms
+covariantly with $\Agent$ under relabelling (it is carried bijectively by any
+isomorphism), so it is determined by $\Agent$'s class. A single walk, by
+contrast, is a labelled sequence and is not preserved by a nontrivial
+relabelling; hence no individual walk is invariant. The standing/variable split
+follows.
+\end{proof}
+
+\begin{remark}[Interpretation: the part's ``identity'', on which nothing depends]
+\label{rem:character}
+\Cref{thm:private} and \Cref{prop:surface-derives} say a part has a conserved
+internal structure---its private invariant---distinct from any of the particular
+trajectories it may run, and unique to it only up to isomorphism. If one reads a
+part as an agent and its walks as the agent's successive states, then the private
+invariant is the agent's standing identity: the conserved bottom from which its
+changing activity derives, the local counterpart of the global conserved residual
+of \Cref{sec:residual}. The reading is offered as orientation; the theorems are
+graph-theoretic and used only as such below.
+\end{remark}
+
+\begin{corollary}[Private and global invariants are one construction at two
+scales]
+\label{cor:two-scales}
+The global residual $\Res(\Gph)$ \textup{(}\Cref{def:residual}\textup{)} and the
+private invariant $\Res_{\mathrm{priv}}(\Agent)$ \textup{(}\Cref{def:private}\textup{)}
+are the same functional---minimum inter-part boundary content---evaluated on the
+whole graph and on an induced subgraph respectively. Both are positive
+\textup{(}T0\textup{)} and invariant under re-encoding \textup{(}T3\textup{)}. The
+private invariant is the global construction restricted to a part.
+\end{corollary}
+
+\begin{proof}
+Immediate by comparing \Cref{def:residual} with \Cref{def:private} and applying
+\Cref{thm:residual-region,thm:residual-invariant} to $\Gph$ and to $\Agent$.
+\end{proof}

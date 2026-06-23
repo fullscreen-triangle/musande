@@ -1,0 +1,161 @@
+
+% =====================================================================
+\section{The contact graph and its derived objects}
+\label{sec:setting}
+% =====================================================================
+
+We fix notation and the objects on which the ladder is built. Throughout,
+$\Gph=(\V,\E,\wt)$ is a contact graph in the sense of \Cref{ax:finite}: a finite,
+connected, weighted graph with weight floor $\floorc>0$. Graphs are simple
+(no loops or multi-edges) unless stated; all standard graph-theoretic terms are
+as in~\citet{bondymurty2008,diestel2017}.
+
+\subsection{Vertices, edges, weights}
+
+\begin{definition}[Contact graph]
+\label{def:contactgraph}
+A \emph{contact graph} is a triple $\Gph=(\V,\E,\wt)$ where $\V$ is a finite set
+of \emph{vertices} (the individuated parts), $\E\subseteq\binom{\V}{2}$ is a set
+of \emph{edges}, and $\wt\colon\E\to[\floorc,\infty)$ is a \emph{weight}
+assigning to each edge the cost of the separation it records, with
+$\floorc>0$ the \emph{floor}. For $S,T\subseteq\V$ disjoint, the
+\emph{cut} between them is
+\[
+\cut(S,T)\;=\;\{\,uv\in\E : u\in S,\ v\in T\,\},
+\qquad
+\wt(\cut(S,T))\;=\!\!\sum_{e\in\cut(S,T)}\!\!\wt(e).
+\]
+We write $\cut(S):=\cut(S,\V\setminus S)$ for the boundary of $S$.
+\end{definition}
+
+\begin{definition}[Neighbourhood and complement-neighbourhood]
+\label{def:nbr}
+For $v\in\V$, the \emph{neighbourhood} is
+$\Nbr(v)=\{u\in\V : uv\in\E\}$ and the \emph{closed neighbourhood} is
+$\Nbr[v]=\Nbr(v)\cup\{v\}$. The \emph{complement-neighbourhood} is
+\[
+\co\Nbr[v]\;:=\;\V\setminus\Nbr[v],
+\]
+the set of vertices that $v$ neither is nor touches---``everything $v$ is not.''
+\end{definition}
+
+\begin{remark}[The floor is the whole content of ``contact'']
+\label{rem:floor-content}
+A contact graph differs from an arbitrary weighted graph in exactly one
+respect: the positive lower bound $\floorc$ on edge weights. This single
+constraint---no separation is free---is what every theorem below turns on. A
+weighted graph permitting $\wt(e)\to0$ is not a contact graph; it is the
+degenerate object against which our results are stated by contrast
+(\Cref{sec:master}).
+\end{remark}
+
+\subsection{Subgraphs as parts-within-the-whole}
+
+\begin{definition}[Induced subgraph; agent]
+\label{def:subgraph}
+For $\varnothing\neq U\subseteq\V$, the \emph{induced subgraph} $\Gph[U]$ has
+vertex set $U$ and edge set $\{uv\in\E : u,v\in U\}$ with inherited weights. A
+connected induced subgraph $\Agent=\Gph[U]$ with $1<\abs{U}<\abs{\V}$ is called a
+\emph{part} (or, where we wish to emphasise that a part may itself individuate
+others, an \emph{agent}); its \emph{boundary} is the cut $\cut(U)$.
+\end{definition}
+
+\begin{remark}[Vocabulary]
+\label{rem:agent-word}
+The word ``agent'' is used only as a name for a connected induced subgraph that
+participates in further separations; it carries no further commitment. Every
+theorem stated for an agent is a theorem about an induced subgraph and its
+boundary cut.
+\end{remark}
+
+\subsection{Isomorphism, automorphism, invariant}
+
+\begin{definition}[Weighted isomorphism]
+\label{def:iso}
+A \emph{weighted isomorphism} $\phi\colon\Gph\to\Gph'$ is a bijection
+$\phi\colon\V\to\V'$ with $uv\in\E\iff\phi(u)\phi(v)\in\E'$ and
+$\wt'(\phi(u)\phi(v))=\wt(uv)$. An \emph{automorphism} is a weighted isomorphism
+$\Gph\to\Gph$; the automorphisms form the group $\mathrm{Aut}(\Gph)$. A
+\emph{graph invariant} is a function $\iota$ on contact graphs with
+$\iota(\Gph)=\iota(\Gph')$ whenever $\Gph\cong\Gph'$.
+\end{definition}
+
+\begin{remark}[Re-encoding is relabelling]
+\label{rem:reencode}
+A change of representation that preserves which parts are separated from which,
+and at what cost, is precisely a weighted isomorphism: it relabels vertices
+without altering the graph. Quantities that survive all such relabellings are
+the graph invariants; quantities tied to particular labels do not. This
+distinction---surface labels versus invariants---is the form in which
+``what is conserved under re-encoding'' appears below (\Cref{sec:residual}).
+\end{remark}
+
+\subsection{Walks and gating}
+
+\begin{definition}[Walk]
+\label{def:walk}
+A \emph{walk} of length $\ell$ is a sequence
+$\Walk=(v_0,v_1,\dots,v_\ell)$ with $v_{i}v_{i+1}\in\E$ for each $i$. A walk may
+repeat vertices and edges. The \emph{committed multiset} of $\Walk$ is the
+multiset of edges $\{v_0v_1,\dots,v_{\ell-1}v_\ell\}$ traversed, and its
+\emph{committed count} is $\rec(\Walk)=\ell$, the number of steps taken.
+\end{definition}
+
+\begin{definition}[Gating function]
+\label{def:gate}
+A \emph{gating function} on $\Gph$ is a map
+$\gate\colon\V\times\E\to[0,1]$ assigning to each vertex $v$ and incident edge
+$e\ni v$ a forward weight $\gate(v,e)$, with $\sum_{e\ni v}\gate(v,e)\le 1$ for
+each $v$. A walk is \emph{$\gate$-admissible} if every step $v_iv_{i+1}$ has
+$\gate(v_i,v_iv_{i+1})>0$. The gate \emph{selects} a step when it assigns
+positive forward weight to exactly one incident edge.
+\end{definition}
+
+\begin{remark}[Why gating is needed at all]
+\label{rem:gate-need}
+A contact graph is, in general, far from a path: a vertex has many incident
+edges, so a walk's next step is underdetermined by the graph alone. Some
+additional datum---a gating function---is required to pick the next edge. The
+necessity of such a datum, not its particular form, is what
+\Cref{sec:gating} establishes. We treat $\gate$ abstractly; any rule that biases
+the next step is a gating function in the sense of \Cref{def:gate}.
+\end{remark}
+
+\subsection{The quotient of a partition}
+
+\begin{definition}[Quotient graph]
+\label{def:quotient}
+Let $\mathcal{P}=\{U_1,\dots,U_k\}$ be a partition of $\V$ into connected
+classes. The \emph{quotient graph} $\Gph/\mathcal{P}=(\Quot,\E_{\Quot},\wt_{\Quot})$
+has vertex set $\Quot=\{U_1,\dots,U_k\}$, an edge $U_iU_j$ whenever
+$\cut(U_i,U_j)\neq\varnothing$, and weight
+$\wt_{\Quot}(U_iU_j)=\wt(\cut(U_i,U_j))$. The quotient is itself a weighted
+graph; when each class is a part in the sense of \Cref{def:subgraph}, the
+quotient records the contacts \emph{between} parts.
+\end{definition}
+
+\begin{remark}[A graph of parts is again a graph]
+\label{rem:quotient}
+\Cref{def:quotient} lets the same theory apply one level up: the parts of a
+contact graph, taken as vertices and joined by their mutual cuts, form a
+weighted graph to which \Cref{ax:finite} again applies (its floor is the
+minimum nonzero cut weight). This self-similarity is used in
+\Cref{sec:quotient}.
+\end{remark}
+
+\begin{lemma}[The quotient inherits a floor]
+\label{lem:quotient-floor}
+If $\Gph$ is a contact graph with floor $\floorc$ and $\mathcal{P}$ is a
+partition into connected classes such that every pair of classes joined in
+$\Gph/\mathcal{P}$ is joined by at least one edge of $\Gph$, then
+$\Gph/\mathcal{P}$ is a contact graph with floor $\ge\floorc$.
+\end{lemma}
+
+\begin{proof}
+Each edge $U_iU_j$ of the quotient has weight
+$\wt_{\Quot}(U_iU_j)=\wt(\cut(U_i,U_j))=\sum_{e\in\cut(U_i,U_j)}\wt(e)$, a sum of
+at least one term each $\ge\floorc$ by \Cref{ax:finite}. Hence
+$\wt_{\Quot}(U_iU_j)\ge\floorc>0$. The quotient is finite (at most $\abs{\V}$
+classes) and, since $\Gph$ is connected, connected. Thus it satisfies
+\Cref{ax:finite}.
+\end{proof}

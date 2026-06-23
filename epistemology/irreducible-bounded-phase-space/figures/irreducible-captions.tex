@@ -1,0 +1,94 @@
+% =====================================================================
+%  Figure captions for the six validation panels of
+%  "The Irreducible Boundary of a Bounded Resolvable Space".
+%  Each panel is one row of four data-driven charts (>=1 in 3D),
+%  white background, minimal in-figure text. All series are computed
+%  from explicitly constructed bounded resolvable spaces (integer-lattice
+%  boxes; cells of side >= delta; counting measure), the same instances on
+%  which the validation suite ran 96{,}024 checks across 500 spaces with
+%  zero failures.
+% =====================================================================
+
+% ---------------------------------------------------------------------
+%  PANEL 1 -- Boundary-Thickness Theorem
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_1.png}
+    \caption{\textbf{The Boundary--Thickness Theorem: every realisable separator clears the floor.}
+    (\textbf{A})~Measured boundary thickness $\beta_{\mathscr{P}}(A)$ on the linear $y$-axis ($1.5$ to $72$) versus the minimum cell measure $\mu_{\min}$ on the linear $x$-axis ($0.5$ to $8$), one point per realisable region over $\sim\!400$ instances ($15{,}057$ regions). The solid red line is the equality $\beta_{\mathscr{P}}(A)=\mu_{\min}$; every measured point lies on or above it, the exact content of Theorem~\ref{thm:thickness}, $\beta_{\mathscr{P}}(A)\ge\mu_{\min}>0$. No point falls below the line, so no realisable separator is sharp.
+    (\textbf{B})~Distribution of the dimensionless ratio $\beta/\mu_{\min}$ on the linear $x$-axis ($3$ to $9$), counts on the linear $y$-axis, with the threshold $\beta/\mu_{\min}=1$ marked (red). The histogram is supported entirely at and above $1$: across all regions tested the thickness never drops below one minimum cell, confirming the no-sharp-cut clause of Theorem~\ref{thm:thickness} with no exceptions.
+    (\textbf{C})~Boundary thickness $\beta_{\mathscr{P}}(A)$ on the linear $y$-axis ($1.5$ to $72$) versus region scale $\sigma(A)=\mu(A)$ on the linear $x$-axis ($0.5$ to $48$). Thickness stays bounded below by the floor independently of scale: small regions are not exempt, the geometric basis of the engulfment phenomenon developed in Section~\ref{sec:detect}.
+    (\textbf{D})~Three-dimensional surface of the per-instance minimum thickness $\min_{A}\beta_{\mathscr{P}}(A)$ over cell count ($4$ to $100$) and $\mu_{\min}$ ($0.5$ to $8$), $400$ instances, viridis colourmap. The surface is strictly positive everywhere (minimum elevation $1.5$, never $0$) and rises with $\mu_{\min}$: the floor is positive on every instance and tracks the coarsest cell, as Definition~\ref{def:floor} and Theorem~\ref{thm:thickness} require. Viewing angle: elevation $22^{\circ}$, azimuth $-60^{\circ}$.}
+    \label{fig:panel-thickness}
+\end{figure*}
+
+% ---------------------------------------------------------------------
+%  PANEL 2 -- Three derivations of the floor agree
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_2.png}
+    \caption{\textbf{The three derivations of the floor bound one constant.}
+    (\textbf{A})~Representational floor on the linear $y$-axis ($1.5$ to $8$) versus geometric floor on the linear $x$-axis ($1.5$ to $24$), one point per instance ($300$ spaces), with the equality diagonal (red). Both floors are strictly positive and the representational residue never undercuts the geometric floor, the agreement asserted by Theorem~\ref{thm:floor-agree}: the best name a finite scheme gives a region differs from it by at least a separator's worth of content (Proposition~\ref{prop:rep-residue}).
+    (\textbf{B})~Cost floor on the linear $y$-axis ($0.5$ to $8$) versus geometric floor on the linear $x$-axis ($1.5$ to $24$), $300$ instances, equality diagonal (red). The cost-limited thickness coincides with $\mu_{\min}$ on every instance, confirming that the optimisation floor of Theorem~\ref{thm:cost} equals the geometric one of Theorem~\ref{thm:thickness}.
+    (\textbf{C})~The refinement cost $g(t)=-\log t$ on the linear $y$-axis ($0$ to $\sim\!13.7$) versus separator thickness $t$ on a logarithmic $x$-axis ($10^{-6}$ to $1$). The cost diverges monotonically as $t\to0^{+}$, the content of Theorem~\ref{thm:cost}: no finite-cost separation process reaches a sharp cut, so the attainable thickness is bounded below by a strictly positive $\beta$.
+    (\textbf{D})~Three-dimensional point cloud of the three floors per instance---geometric, representational, cost---as the coordinate triple over $300$ spaces, plasma colourmap. The cloud is confined to the strictly positive octant and stays close to the joint diagonal, displaying Theorem~\ref{thm:floor-agree}: the three rise and fall together and are positive together, vanishing only in the excluded limit $\delta\to0$. Viewing angle: elevation $20^{\circ}$, azimuth $-50^{\circ}$.}
+    \label{fig:panel-floor-agreement}
+\end{figure*}
+
+% ---------------------------------------------------------------------
+%  PANEL 3 -- Detectability
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_3.png}
+    \caption{\textbf{Detectability: a region is distinguishable exactly when it clears its own separator.}
+    (\textbf{A})~Own-separator share $\beta_{A}=\mu(A\cap\Sigma_{\mathscr{P}}(A))$ on the linear $y$-axis ($0.5$ to $16$) versus region scale $\sigma(A)$ on the linear $x$-axis ($0.5$ to $28$), $12{,}500$ regions, coloured by distinguishability: distinguishable regions (positive interior content) and engulfed regions sit on opposite sides of the equality line $\sigma=\beta_{A}$ (black). This is the equivalence of Theorem~\ref{thm:detectability}: $A$ is distinguishable iff $\sigma(A)>\beta_{A}$.
+    (\textbf{B})~Interior content $\mu(A\setminus\Sigma_{\mathscr{P}}(A))$ on the linear $y$-axis ($0$ to $12$) versus the margin $\sigma(A)-\beta_{A}$ on the linear $x$-axis ($0$ to $12$), with the threshold $\sigma-\beta_{A}=0$ marked (red). Interior content is positive precisely when the margin is positive---in fact the two coincide by the cell decomposition $\sigma=\text{interior}+\beta_{A}$---making the detectability criterion an identity rather than an approximation.
+    (\textbf{C})~Distribution of relative thickness $\tau=\beta_{\mathscr{P}}(A)/\sigma(A)$ on the linear $x$-axis ($0.86$ to $5$), counts on the linear $y$-axis, threshold $\tau=1$ marked (red). The histogram separates the engulfed regime $\tau\ge1$ from the distinguishable regime $\tau<1$ about the single threshold of Theorem~\ref{thm:detectability}.
+    (\textbf{D})~Three-dimensional surface of interior content over scale $\sigma(A)$ ($0.5$ to $28$) and own-separator share $\beta_{A}$ ($0.5$ to $16$), $12{,}500$ regions, cividis colourmap. Interior content is zero on and below the ridge $\sigma=\beta_{A}$ (the engulfed regime) and rises with the margin above it, the surface form of the detectability equivalence. Viewing angle: elevation $24^{\circ}$, azimuth $-58^{\circ}$.}
+    \label{fig:panel-detectability}
+\end{figure*}
+
+% ---------------------------------------------------------------------
+%  PANEL 4 -- Sorites
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_4.png}
+    \caption{\textbf{The sorites dissolved: emergence across a band, with no decisive grain.}
+    (\textbf{A})~Relative thickness $\tau=\beta/\sigma$ on the linear $y$-axis ($0.03$ to $4$) versus the number of sub-floor grains added on the linear $x$-axis ($0$ to $142$), for an aggregate grown one unit at a time on a $12\times12$ instance. The curve starts well above the threshold $\tau=1$ (red)---a tiny aggregate is all boundary---and descends smoothly through it; there is no single grain at which $\tau$ leaps across $1$, the content of Corollary~\ref{cor:sorites}(i).
+    (\textbf{B})~The same trajectory plotted as $\tau$ on the linear $y$-axis ($0.03$ to $4$) versus aggregate scale $\sigma(A_{n})$ on the linear $x$-axis ($1$ to $143$), threshold $\tau=1$ marked (red). Distinguishability is reached once $\sigma$ exceeds the boundary, across a band of positive width set by the floor, not at a point (Corollary~\ref{cor:sorites}(ii)).
+    (\textbf{C})~Per-step change $|\Delta\tau|$ on the linear $y$-axis ($0$ to $1.33$) versus grains added on the linear $x$-axis ($0$ to $141$). The increments are bounded and decay once the aggregate clears its boundary, so no individual sub-floor grain carries the aggregate across the threshold: the grain is silent because its own boundary is thick relative to it (Corollary~\ref{cor:sorites}(iii)).
+    (\textbf{D})~Three-dimensional overlay of three independent accretion orders (random orderings of the same atoms), each a curve of $\tau$ over aggregate scale $\sigma$ ($1$ to $\sim\!143$) at a fixed order-index $y$-coordinate. All three descend through the same $\tau\approx1$ band regardless of accretion order, showing the dissolution is a property of the geometry, not of any particular sequence of additions. Viewing angle: elevation $20^{\circ}$, azimuth $-62^{\circ}$.}
+    \label{fig:panel-sorites}
+\end{figure*}
+
+% ---------------------------------------------------------------------
+%  PANEL 5 -- Locating versus visiting
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_5.png}
+    \caption{\textbf{Locating versus visiting: cost rises with rarity; being reached does not.}
+    (\textbf{A})~Cost on the linear $y$-axis ($0$ to $8$) versus number of alternatives $K$ on a logarithmic $x$-axis ($2$ to $256$). The locating cost (blue step) follows $\beta\lceil\log_{2}K\rceil$ from Theorem~\ref{thm:locating-cost}, while the visiting cost (red) is identically zero for all $K$: singling a region out is priced and the price grows with the alternatives, whereas a traversal's passing through it is free (Theorem~\ref{thm:asymmetry}).
+    (\textbf{B})~Locating cost on the linear $y$-axis ($1$ to $8$) versus $\log_{2}(1/p)$ on the linear $x$-axis ($1$ to $8$), where $p=1/K$ is the target's probability. The relation is linear with slope $\beta$: the cost of locating scales with the logarithm of the target's rarity, the quantitative refinement of detectability promised in Theorem~\ref{thm:locating-cost}.
+    (\textbf{C})~Visiting frequency $\bar f_{W}$ on a logarithmic $y$-axis ($\sim\!3.9\times10^{-3}$ to $0.5$) versus region probability $p(W)$ on a logarithmic $x$-axis (same range). The data lie exactly on the identity $\bar f_{W}=p(W)$, the ergodic-average clause of Theorem~\ref{thm:asymmetry}(iii): rarity enters a visit only through its frequency, never through its cost or possibility.
+    (\textbf{D})~Three-dimensional surface of locating cost $\beta\lceil\log_{2}K\rceil$ over $\log_{2}K$ ($1$ to $8$) and floor $\beta$ ($0.5$ to $2$), magma colourmap. The cost rises linearly in both $\log_{2}K$ and $\beta$ and is bounded away from zero whenever $\beta>0$: there is no free locating, and the dependence on rarity is logarithmic throughout. Viewing angle: elevation $22^{\circ}$, azimuth $-55^{\circ}$.}
+    \label{fig:panel-locating-visiting}
+\end{figure*}
+
+% ---------------------------------------------------------------------
+%  PANEL 6 -- Non-return and cessation
+% ---------------------------------------------------------------------
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_6.png}
+    \caption{\textbf{Non-return and cessation: the record only grows, and inquiry rationally halts.}
+    (\textbf{A})~Committed record $M$ on the linear $y$-axis ($4$ to $378$) versus process step on the linear $x$-axis ($0$ to $60$). The record is monotone non-decreasing along the whole separation process, and the final marked point is an attempted ``undo'' that nonetheless increments $M$---the content of Theorem~\ref{thm:nonreturn}: a step intended to reverse a commitment is itself a committed step, so no traversal returns the record to a prior value.
+    (\textbf{B})~The cost $g(t)=-\log t$ on the linear $y$-axis ($\sim\!0.12$ to $12.6$) versus separator thickness $t$ on a logarithmic $x$-axis ($\sim\!3.5\times10^{-6}$ to $0.89$), reproducing the divergence of Theorem~\ref{thm:cost} on the instance used for cessation.
+    (\textbf{C})~Marginal return per unit cost on the linear $y$-axis ($\sim\!8$ to $869$) versus thickness $t$ on a logarithmic $x$-axis (same range), with several halting thicknesses $\beta_{\ast}=e^{-\mu(\Omega)/\theta}$ marked (red) for thresholds $\theta\in\{0.5,1,2,4\}$. Because the return is bounded by $\mu(\Omega)<\infty$ while the cost diverges, the marginal return falls toward zero and a finite agent with any positive cost-per-return threshold halts at a strictly positive $\beta_{\ast}$ (Theorem~\ref{thm:cessation}).
+    (\textbf{D})~Three-dimensional surface of marginal return per cost over $\log_{10}t$ ($\sim\!-5.4$ to $-0.05$) and threshold $\theta$ ($0.5$ to $4$), viridis colourmap. The surface falls to a low plateau as $t\to0$ for every $\theta$: the diverging-cost, bounded-return economy forces a halt across the whole range of thresholds, no agent driving the separator to zero. Viewing angle: elevation $24^{\circ}$, azimuth $-58^{\circ}$.}
+    \label{fig:panel-nonreturn-cessation}
+\end{figure*}

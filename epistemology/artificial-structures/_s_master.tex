@@ -1,0 +1,159 @@
+
+% =====================================================================
+\section{The Master Theorem, scope, and conclusion}
+\label{sec:master}
+% =====================================================================
+
+We now show that the entire ladder T0--T8 is forced by, and only by, the
+Finiteness Premise: each rung holds for finite contact graphs and fails to be
+forced when finiteness or the positive floor is dropped. This is the sense in
+which the structures of the paper are necessary substructures of a finite
+world---and the sense in which structure itself is the consequence of finitude.
+
+\subsection{Where finiteness is used}
+
+\begin{proposition}[Dependence on the premise]
+\label{prop:dependence}
+Each rung uses the Finiteness Premise \textup{(}\Cref{ax:finite}\textup{)} as
+follows:
+\begin{enumerate}[label=\textup{(T\arabic*)},leftmargin=3em,start=0]
+\item the positive floor $\floorc>0$ on edge weights, with connectedness, forces
+$\wt(\cut(U))\ge\floorc$ \textup{(}\Cref{thm:floor}\textup{)};
+\item finiteness of $\V$ and the absence of a distinguished vertex force
+determination by complementation \textup{(}\Cref{thm:negation}\textup{)};
+\item the floor forces $\Res\ge\floorc$, and finiteness attains the minimising
+partition, giving a positive region-valued residual
+\textup{(}\Cref{thm:residual-region}\textup{)};
+\item finiteness makes the isomorphism class and its partition lattice
+well-defined, so $\Res$ is an attained invariant
+\textup{(}\Cref{thm:residual-invariant}\textup{)};
+\item the floor and finiteness localise to subgraphs, giving a positive,
+attained private invariant \textup{(}\Cref{thm:private}\textup{)};
+\item finite degree with branching forces a gate to break finitely many ties
+\textup{(}\Cref{thm:gate-necessary}\textup{)};
+\item discreteness of steps makes the committed count a strictly monotone natural
+number \textup{(}\Cref{thm:nonreturn}\textup{)};
+\item the quotient of a finite graph is a finite contact graph, inheriting the
+floor, so a single gate is forced on a coherent collective
+\textup{(}\Cref{thm:single-gate}\textup{)};
+\item finiteness of the specification against the infinitude of the forward
+closure forces open-endedness, and the monotone count forces non-duplication
+\textup{(}\Cref{thm:open,thm:nondup}\textup{)}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each clause restates the cited theorem's use of \Cref{ax:finite}; the proofs are
+those given in \Cref{sec:floor,sec:negation,sec:residual,sec:invariant,%
+sec:gating,sec:monotone,sec:quotient,sec:construct}.
+\end{proof}
+
+\subsection{Failure without finiteness}
+
+We show the ladder is not forced once the premise is dropped, by exhibiting, for
+each load-bearing structure, a non-finite or zero-floor graph in which it fails.
+
+\begin{proposition}[Necessity of the premise]
+\label{prop:necessity}
+Drop either clause of \Cref{ax:finite}:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.2em]
+\item \textbf{Zero floor.} If edge weights may approach $0$
+\textup{(}$\inf_e\wt(e)=0$\textup{)}, then a part may be separated from the rest
+by a cut of arbitrarily small weight; $\wt(\cut(U))$ is no longer bounded below,
+so T0 fails, and with it the residual positivity of T2 and the gate-tie
+guarantees that rely on a floor.
+\item \textbf{Infinite vertex set.} If $\abs{\V}=\infty$, a vertex may have
+infinite degree, so a gate must break infinitely many ties at once and the finite
+tie-breaking of T5 is not available in the same form; minimising partitions need
+not be attained, so the residual of T2 need not be realised; and a walk's
+``committed count'' may fail to be a well-ordered monotone natural number if
+steps are not discrete, weakening T6.
+\item \textbf{Complete graph with vanishing weights.} On an infinite complete
+graph with weights tending to $0$, every part is adjacent to every other at
+negligible cost: there is no positive residual, no privileged complement
+structure, and no forced gate---none of T0--T8 is compelled.
+\end{enumerate}
+Hence the substructures are consequences of the premise, not of graphs in
+general.
+\end{proposition}
+
+\begin{proof}
+(a) Take a graph with a sequence of cuts of weight $2^{-n}\to0$ separating a
+fixed part; then $\inf_U\wt(\cut(U))=0$, contradicting the conclusion of
+\Cref{thm:floor}, which used $\wt(e)\ge\floorc>0$. (b) On an infinite star, the
+centre has infinite degree, so no single sub-normalised distribution over its
+incident edges selects after finitely many comparisons; and the partition lattice
+of an infinite vertex set need not attain its infimum, so $\Res(\Gph)$ as a
+minimum may not exist. (c) On $K_\infty$ with $\wt(e_n)=2^{-n}$, for any part $U$
+one may route its separation through ever-cheaper edges so that
+$\inf\wt(\cut(U))=0$; the floor, the positive residual, and the negation-based
+individuation (which needs a determinate complement structure) all dissolve.
+Each construction violates the conclusion of the corresponding rung, so finiteness
+with a positive floor is necessary.
+\end{proof}
+
+\subsection{The Master Theorem}
+
+\begin{theorem}[Structure is the shadow of finitude]
+\label{thm:master}
+Let $\Gph$ be a graph. The substructures T0--T8 are all forced if $\Gph$ is a
+finite contact graph \textup{(}\Cref{ax:finite}\textup{)}, and none is forced if
+$\Gph$ is infinite or admits edge weights with infimum $0$. Consequently a graph
+is necessarily structured---carries the floor, the negation-determined parts, the
+conserved region-valued residual, the private invariants, the gated trajectories,
+the non-returning histories, the single-gated collectives, and the bounded
+authorability---\emph{if and only if} it is finite with a positive floor. Structure
+is neither imposed on a world from outside nor present in it independently of its
+parts; it is exactly the form a world of finitely many positively separated parts
+is compelled to take.
+\end{theorem}
+
+\begin{proof}
+The forward direction is \Cref{prop:dependence} together with the theorems it
+cites: under \Cref{ax:finite} each of T0--T8 holds. The reverse direction is
+\Cref{prop:necessity}: dropping finiteness or the positive floor defeats each
+load-bearing rung by explicit construction. Hence the conjunction of T0--T8 is
+equivalent, over graphs, to the Finiteness Premise: finite-with-floor on one
+side, the full ladder of structure on the other. The closing statement is the
+biconditional read in words.
+\end{proof}
+
+\subsection{Scope}
+
+The theorems are statements about finite weighted graphs and an embedded gating
+datum; nothing more is assumed. The single premise (\Cref{ax:finite}) is a finite
+graph whose edges cost something. We have made no claim about any particular
+system. Where each rung uses the premise is marked (\Cref{prop:dependence}); that
+the premise is necessary is shown by counterexample (\Cref{prop:necessity}).
+Interpretive readings---of parts as agents, gates as selecting fields, quotient
+gates as collective purpose, residuals as conserved truth, private invariants as
+identities, authored structures as manufactured individuals---are confined to
+remarks (\Cref{rem:negation-interp,rem:repacking,rem:character,rem:field,%
+rem:purpose,rem:onelaw,rem:new-category}) on which no theorem depends. A reader
+will recognise that finitely many bounded parts---of many kinds---satisfy the
+premise; we prove everything of the abstract graph alone, and material that could
+not be proved at this standard has been omitted.
+
+\subsection{Conclusion}
+
+From the single hypothesis that a world is a finite graph of positively separated
+parts, an entire architecture follows of necessity: no separation is free; parts
+are fixed by what they are not; the boundary content between parts is a conserved
+region that no relabelling removes and no point realises; each part carries a
+private conserved invariant beneath its changing trajectories; those trajectories
+require a selector and never return to a prior state; a coherent collective of
+parts has exactly one selector on its quotient; and such structures, being
+completely specifiable, can be authored---though authorship reaches only the
+instrument and not its music, produces only new individuals and never copies, and
+resolves only to its own floor. Each is forced by finiteness and dissolves
+without it. The answer to why a world is structured at all is therefore not that
+structure is added to it or discovered in it, but that structure is what a world
+\emph{must} be for finitely many bounded parts to stand apart within it at all.
+Structure is the shadow of finitude; the contact graph is its form.
+
+% =====================================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+% =====================================================================
+
+\end{document}

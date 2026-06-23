@@ -1,0 +1,130 @@
+
+% =====================================================================
+\section{T1: individuation by negation}
+\label{sec:negation}
+% =====================================================================
+
+The floor says separations cost something; it does not yet say how a part is
+\emph{determined}. We now show that in a contact graph with no distinguished
+vertex, a part can be fixed only by its complement---by everything it is
+not---and that any attempt to fix it positively, by naming a distinguished
+element, regresses. This is the graph-theoretic form of individuation by
+negation.
+
+\subsection{No distinguished vertex}
+
+\begin{definition}[Selector; selector-free determination]
+\label{def:selector}
+A \emph{selector} for a part $U\subseteq\V$ is a rule that fixes $U$ by naming a
+distinguished vertex of $U$ in advance of the separation. A determination of $U$
+is \emph{selector-free} if it names no distinguished vertex of $U$. We say
+$\Gph$ has \emph{no distinguished vertex} if its weighted automorphism group
+acts with no fixed datum singling out a vertex in advance---formally, if the
+specification of $\Gph$ provided to a determining rule is invariant under
+$\mathrm{Aut}(\Gph)$, so that no vertex is named by the data alone.
+\end{definition}
+
+\begin{remark}[The setting of T1]
+\label{rem:nodist}
+T1 concerns the determination of parts from the graph's own data, with no
+external label supplied. This is the relevant case for a self-contained finite
+system: there is no oracle outside $\Gph$ to point at a vertex, so any vertex
+named must be named \emph{by the structure}, and the structure is fixed only up
+to $\mathrm{Aut}(\Gph)$. We make this precise and show negation is the only
+route.
+\end{remark}
+
+\subsection{Complementation determines a part}
+
+\begin{definition}[Negation-set]
+\label{def:negationset}
+For a part $U\subseteq\V$, its \emph{negation-set} is the complement
+$\co U:=\V\setminus U$. A part $U$ is \emph{individuated by negation} if it is
+determined as the unique part whose negation-set is a given $\co U$; that is,
+$U=\V\setminus\co U$, with $\co U$ specified first.
+\end{definition}
+
+\begin{lemma}[Complementation is an involution on parts]
+\label{lem:involution}
+The map $U\mapsto\co U=\V\setminus U$ is a bijection on the subsets of $\V$ with
+$\co{(\co U)}=U$. Hence specifying $\co U$ determines $U$ uniquely, and
+conversely, with no further data.
+\end{lemma}
+
+\begin{proof}
+For finite (indeed any) $\V$, $\V\setminus(\V\setminus U)=U$; complementation is
+its own inverse, hence a bijection. Uniqueness of $U$ given $\co U$ is immediate.
+\end{proof}
+
+\subsection{Negation is the unique selector-free determination}
+
+\begin{theorem}[Individuation by negation]
+\label{thm:negation}
+Let $\Gph$ have no distinguished vertex \textup{(}\Cref{def:selector}\textup{)}.
+Then any selector-free determination of a part $U$ fixes $U$ as
+$\V\setminus\co U$ for its negation-set $\co U$; and conversely every admissible
+negation-set determines a unique part. No selector-based rule fixes a part
+without invoking a further selector.
+\end{theorem}
+
+\begin{proof}
+\emph{(Necessity.)} Suppose a rule fixes a part $U$ without a selector. To fix
+$U$ is to decide, for each vertex of $\V$, whether it lies in $U$ or in the
+remainder. A \emph{positive} rule---one that fixes $U$ by asserting membership of
+a distinguished vertex or feature of $U$---must name that vertex or feature. By
+hypothesis the data are $\mathrm{Aut}(\Gph)$-invariant and single out no vertex,
+so the rule itself must supply the distinguished vertex. Supplying a
+distinguished vertex is exactly providing a selector, and that selector must in
+turn be fixed: either it is given in advance (contradicting that none is) or it
+is fixed by a prior rule, which faces the same dichotomy. The regress terminates
+only if some rule fixes $U$ while naming no vertex of $U$. The sole such rule is
+the withholding of $U$ from the whole: specify the complement $\co U=\V\setminus
+U$ that $U$ is to be distinct from, and take $U$ as what remains. This names no
+vertex of $U$; it names only ``the rest,'' which the whole $\V$ already
+supplies. Hence $U=\V\setminus\co U$.
+
+\emph{(Sufficiency and uniqueness.)} Given an admissible negation-set
+$\co U\subsetneq\V$ with $\V\setminus\co U\neq\varnothing$, the part
+$U:=\V\setminus\co U$ is determined uniquely by \Cref{lem:involution}. Thus
+complementation is a bijection between admissible parts and admissible
+negation-sets, each side determining the other without further data.
+\end{proof}
+
+\begin{corollary}[A vertex is fixed by its non-neighbours]
+\label{cor:vertex-negation}
+For a single vertex $v$, the finest selector-free determination available is by
+its complement-neighbourhood: $v$ is distinguished from the parts it touches
+only through $\co\Nbr[v]=\V\setminus\Nbr[v]$, the totality of what it neither is
+nor contacts. In a graph with no distinguished vertex, $v$ is individuated by
+$\co\Nbr[v]$, not by any intrinsic mark.
+\end{corollary}
+
+\begin{proof}
+Apply \Cref{thm:negation} with $U=\{v\}$ at the resolution of the graph: the
+selector-free data fixing $\{v\}$ are the complement
+$\V\setminus\{v\}$, refined by adjacency into $\Nbr(v)$ (what $v$ touches) and
+$\co\Nbr[v]$ (what it does not). Since no intrinsic mark distinguishes $v$
+(no distinguished vertex), the determining datum is the partition of the rest
+into neighbours and non-neighbours, i.e. $\co\Nbr[v]$ together with $\Nbr(v)$;
+the non-neighbours $\co\Nbr[v]$ are the part of this datum that names nothing of
+$v$ itself.
+\end{proof}
+
+\begin{remark}[Why complementation closes the regress]
+\label{rem:regress}
+A positive selector is a rule ``choose a vertex'' that must itself be chosen; in
+a graph with no distinguished vertex the choice has no ground and regresses.
+Complementation is the unique operation that fixes a part using only the whole
+$\V$ and the part's own absence---data already present once the graph is given.
+This is why negation, not selection, is the primitive of individuation in a
+self-contained finite system, and it is the form in which all later
+determinations (of residuals, of invariants, of verifications) are cast.
+\end{remark}
+
+\begin{remark}[Interpretation, on which nothing depends]
+\label{rem:negation-interp}
+A reader may recognise \Cref{thm:negation} as the statement that, absent a
+privileged chooser, a thing is what it is by being marked off from everything
+else. We use the result only in its graph form; no theorem below relies on any
+such reading.
+\end{remark}

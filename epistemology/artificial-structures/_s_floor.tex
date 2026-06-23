@@ -1,0 +1,99 @@
+
+% =====================================================================
+\section{T0: the floor}
+\label{sec:floor}
+% =====================================================================
+
+The first substructure is the floor itself: in a contact graph no part can be
+separated from the rest at zero cost. The statement is immediate from the
+premise, but its consequences---restated for cuts, for parts, and for the
+limiting behaviour under refinement---are what the later rungs use, so we record
+them with care.
+
+\subsection{Every separation is costly}
+
+\begin{theorem}[Floor Theorem]
+\label{thm:floor}
+Let $\Gph$ be a contact graph with floor $\floorc>0$. Then every nonempty proper
+part $U\subsetneq\V$ has boundary weight bounded below by the floor:
+\[
+\boxed{\ \wt(\cut(U))\ \ge\ \floorc\ >\ 0.\ }
+\]
+In particular no part is separated from its complement by a cut of zero
+weight: a \emph{sharp} separation, $\wt(\cut(U))=0$, is impossible.
+\end{theorem}
+
+\begin{proof}
+Since $\Gph$ is connected (\Cref{ax:finite}) and $U$ is a nonempty proper
+subset, there is at least one edge with one endpoint in $U$ and the other in
+$\V\setminus U$; otherwise $U$ and $\V\setminus U$ would be unjoined, splitting
+the connected graph $\Gph$ into two nonempty components, a contradiction. Hence
+$\cut(U)\neq\varnothing$, and
+\[
+\wt(\cut(U))\;=\!\!\sum_{e\in\cut(U)}\!\!\wt(e)\;\ge\;\wt(e^\ast)\;\ge\;\floorc>0
+\]
+for any $e^\ast\in\cut(U)$, using $\wt(e)\ge\floorc$ from \Cref{ax:finite}. A
+sharp separation would require $\wt(\cut(U))=0<\floorc$, impossible.
+\end{proof}
+
+\begin{definition}[Boundary cost; the realised floor]
+\label{def:boundarycost}
+The \emph{boundary cost} of a part $U$ is $b(U):=\wt(\cut(U))$. The
+\emph{realised floor} of $\Gph$ is
+\[
+\floorc_\Gph\;:=\;\min_{\varnothing\neq U\subsetneq\V} b(U)\;\ge\;\floorc>0,
+\]
+the least boundary cost of any part. By \Cref{thm:floor} it is strictly
+positive, and by finiteness of $\V$ the minimum is attained.
+\end{definition}
+
+\begin{corollary}[No zero-cost individuation]
+\label{cor:no-zero}
+In a contact graph, individuating any part from the rest deposits boundary cost
+at least $\floorc_\Gph>0$. Equivalently, the map $U\mapsto b(U)$ is bounded
+away from zero on nonempty proper parts.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:floor} and \Cref{def:boundarycost}.
+\end{proof}
+
+\subsection{Refinement lowers but never abolishes the floor}
+
+A finer description splits parts into smaller ones. We show this can only lower
+the realised floor toward, but never to, zero---so long as the graph remains
+finite with a positive weight floor.
+
+\begin{proposition}[Refinement bound]
+\label{prop:refine}
+Let $\Gph'$ be obtained from $\Gph$ by any sequence of vertex splits that
+preserves the floor $\floorc$ on all edges \textup{(}each new edge again has
+weight $\ge\floorc$\textup{)}. Then the realised floor satisfies
+$\floorc\le\floorc_{\Gph'}$, and in particular $\floorc_{\Gph'}>0$. The realised
+floor can decrease under refinement but is bounded below by $\floorc$ and never
+reaches zero at any finite stage.
+\end{proposition}
+
+\begin{proof}
+$\Gph'$ is again finite (a finite number of splits of a finite graph) and, by
+hypothesis, has all edge weights $\ge\floorc$, hence is a contact graph with
+floor $\floorc$. By \Cref{thm:floor} applied to $\Gph'$, every part of $\Gph'$
+has boundary cost $\ge\floorc$, so $\floorc_{\Gph'}\ge\floorc>0$. Splitting can
+only introduce parts with smaller boundary cost, so $\floorc_{\Gph'}\le
+\floorc_\Gph$ is possible; in all cases the bound $\floorc_{\Gph'}\ge\floorc$
+holds. Only in the non-admissible limit of infinitely many splits, or of edge
+weights tending to $0$, would the bound vanish---both excluded by
+\Cref{ax:finite}.
+\end{proof}
+
+\begin{remark}[What T0 does and does not assert]
+\label{rem:floor-scope}
+\Cref{thm:floor} does not assert that some ambient continuum has thick
+boundaries; it asserts that a \emph{finite, positively weighted} graph cannot
+exhibit a zero-cost cut. The floor is a property of the graph-with-its-weights,
+i.e. of the finite system of separated parts, not of any underlying space. This
+is the precise sense in which, for finitely many bounded parts, ``every
+distinction costs something.'' Every later rung consumes \Cref{thm:floor} as the
+guarantee that boundaries, residuals, and gated steps are bounded away from
+zero.
+\end{remark}

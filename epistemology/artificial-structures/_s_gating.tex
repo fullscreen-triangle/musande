@@ -1,0 +1,117 @@
+
+% =====================================================================
+\section{T5: selection requires a gate}
+\label{sec:gating}
+% =====================================================================
+
+A contact graph fixes which steps are \emph{possible}---the edges---but not which
+step is \emph{taken}. We show that whenever a vertex has more than one forward
+option, the next step is underdetermined by the graph alone, so that selecting a
+walk requires an additional datum: a gating function. The necessity of such a
+datum, and the form of the walk it produces, is T5.
+
+\subsection{Underdetermination of the next step}
+
+\begin{lemma}[Forward branching]
+\label{lem:branching}
+Let $\Gph$ be a contact graph and $v\in\V$ with degree $\deg(v)\ge 2$. Then there
+are at least two distinct walks of length one from $v$, and the graph alone does
+not determine which is taken.
+\end{lemma}
+
+\begin{proof}
+By definition $\deg(v)=\abs{\Nbr(v)}\ge2$, so there are distinct
+$u_1,u_2\in\Nbr(v)$ and distinct one-step walks $(v,u_1)$, $(v,u_2)$, each
+admissible since $vu_1,vu_2\in\E$. Nothing in $(\V,\E,\wt)$ privileges one over
+the other: both are equally edges of equal-or-incomparable weight, and the graph
+carries no ordering of incident edges. Hence the next step is not a function of
+$\Gph$ alone.
+\end{proof}
+
+\begin{remark}[Most vertices branch]
+\label{rem:branch-generic}
+A connected contact graph with $\abs{\V}\ge3$ has at least one vertex of degree
+$\ge2$ \textup{(}else it is a single edge\textup{)}; in a graph rich enough to
+individuate many parts, branching is the generic condition. So
+underdetermination is not an edge case but the normal situation a walk faces.
+\end{remark}
+
+\subsection{The gate as the minimal selecting datum}
+
+\begin{theorem}[Necessity of a gate]
+\label{thm:gate-necessary}
+Let $\Gph$ be a contact graph in which some vertex has degree $\ge2$. Then a walk
+that is determined step-by-step requires a gating function
+\textup{(}\Cref{def:gate}\textup{)}: there is no rule depending on $\Gph$ alone
+that selects a unique next step at every branching vertex. Conversely, any rule
+that does select a unique next step at each vertex \emph{is} a gating function
+that selects \textup{(}assigns positive forward weight to exactly one incident
+edge\textup{)}.
+\end{theorem}
+
+\begin{proof}
+\emph{(Necessity.)} At a branching vertex $v$ (degree $\ge2$), \Cref{lem:branching}
+exhibits $\ge2$ admissible next steps not distinguished by $\Gph$. A rule that
+nonetheless outputs a unique next step must use a datum beyond $(\V,\E,\wt)$ to
+break the tie. Encode that datum as $\gate(v,\cdot)$ by setting
+$\gate(v,e)>0$ for the chosen edge and $0$ for the others; this is a gating
+function in the sense of \Cref{def:gate} (nonnegative, sub-normalised). Hence a
+gate is required and the selecting rule is realised as one.
+
+\emph{(Converse.)} If $\gate$ assigns, at each vertex, positive forward weight to
+exactly one incident edge, then at every step the admissible continuation is
+unique, so $\gate$ determines a unique walk from any start vertex. Thus selecting
+rules and selecting gates coincide.
+\end{proof}
+
+\begin{definition}[Selected walk; the gated trajectory]
+\label{def:gated-walk}
+Given a selecting gate $\gate$ and a start vertex $v_0$, the \emph{gated
+trajectory} is the unique walk $\Walk_\gate(v_0)=(v_0,v_1,\dots)$ with each
+$v_{i+1}$ the $\gate$-selected neighbour of $v_i$. When $\gate$ assigns positive
+weight to several edges \textup{(}a \emph{soft} gate\textup{)}, it determines
+instead a distribution over walks, with the probability of a walk the product of
+its step-weights; the selecting case is the deterministic limit.
+\end{definition}
+
+\subsection{The gate biases an otherwise free graph}
+
+\begin{proposition}[Reachability is near-total; the gate fixes the order]
+\label{prop:reachability}
+In a connected contact graph, every vertex is reachable from every other by some
+walk. Hence the graph alone does not constrain \emph{which} vertices a trajectory
+visits, only that any are reachable; it is the gate that fixes the \emph{order}
+in which they are visited and therefore the trajectory's identity.
+\end{proposition}
+
+\begin{proof}
+Connectedness gives a path between any two vertices (\Cref{ax:finite}), so all
+vertices are mutually reachable; the set of reachable vertices from any start is
+all of $\V$. Thus the reachable set is invariant (everything), while the realised
+walk depends entirely on the step-choices, i.e. on $\gate$ (\Cref{def:gated-walk}).
+Two different gates from the same start in general yield different walks through
+the same reachable set, so the gate, not the graph, individuates the trajectory.
+\end{proof}
+
+\begin{remark}[Interpretation: the selecting field, on which nothing depends]
+\label{rem:field}
+One may read the gate as a field that, given a situation, biases which step a
+part takes next---so that what is ``thought next'' from a given vertex is set not
+by the graph (which makes everything reachable, \Cref{prop:reachability}) but by
+the gate. In that reading the order, not the availability, is the content of a
+trajectory, and the gate is the situation-dependent selector that supplies the
+order. Different situations are different gates and hence different orders over
+the same reachable graph. We use only the graph statement
+\textup{(}\Cref{thm:gate-necessary,prop:reachability}\textup{)}; the reading is
+orientation and is not relied upon.
+\end{remark}
+
+\begin{remark}[Why a gate is cheaper than the graph]
+\label{rem:gate-cheap}
+A gate is a local datum---one sub-normalised distribution per vertex---whereas
+specifying a walk by exhaustively comparing all global continuations would
+require resolving the whole graph at each step. The gate is the minimal addition
+that makes stepping decidable: it is to the trajectory what a local rule is to a
+global search. This minimality is why selection is realised by gating rather than
+by re-deriving the graph at every step.
+\end{remark}

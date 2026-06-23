@@ -1,0 +1,99 @@
+
+% =====================================================================
+\section{T6: histories do not return}
+\label{sec:monotone}
+% =====================================================================
+
+A gated trajectory may revisit a vertex; we show it can never return to a prior
+\emph{state}, because the committed count---the number of steps taken---is
+strictly monotone and is part of the state. Revisiting is not returning;
+resemblance of position is not identity of state. This is the single
+order-theoretic law that the framework instantiates wherever ``the same thing
+again'' is claimed.
+
+\subsection{The committed count is strictly monotone}
+
+\begin{definition}[State of a walk]
+\label{def:state}
+The \emph{state} of a walk $\Walk=(v_0,\dots,v_\ell)$ at step $\ell$ is the pair
+\[
+s_\ell\;=\;\bigl(v_\ell,\ \rec(\Walk)\bigr),\qquad \rec(\Walk)=\ell,
+\]
+the current vertex together with the committed count of steps taken to reach it.
+Two states are equal iff both components agree.
+\end{definition}
+
+\begin{theorem}[Non-return]
+\label{thm:nonreturn}
+Along any walk in a contact graph the committed count is strictly increasing:
+$\rec$ after step $i+1$ exceeds $\rec$ after step $i$ by exactly one. Consequently
+no walk returns to a previously held state: for $i<j$, $s_i\neq s_j$ even when
+$v_i=v_j$. A step intended to undo a previous step is itself a step and increases
+$\rec$. Hence resemblance of position \textup{(}$v_i=v_j$\textup{)} never entails
+identity of state \textup{(}$s_i=s_j$\textup{)}.
+\end{theorem}
+
+\begin{proof}
+Each step appends one edge to the committed multiset and advances the index by
+one, so $\rec$ increases by exactly $1$ per step; it is therefore strictly
+increasing and, for $i<j$, $\rec_i=i<j=\rec_j$. Thus the second components of
+$s_i$ and $s_j$ differ, so $s_i\neq s_j$ regardless of whether $v_i=v_j$. An
+``undo'' move from $v_j$ back to $v_{j-1}$ is a further step, producing state
+$(v_{j-1},j{+}1)\neq(v_{j-1},j{-}1)=s_{j-1}$; it does not restore the earlier
+state but creates a new one with higher count.
+\end{proof}
+
+\begin{corollary}[Cycles in position are not cycles in state]
+\label{cor:cycles}
+If a walk traverses a closed walk in $\Gph$ \textup{(}$v_0=v_\ell$, $\ell>0$\textup{)},
+its state has nonetheless advanced: $s_0=(v_0,0)\neq(v_0,\ell)=s_\ell$. The graph
+may be revisited arbitrarily often; the state never repeats.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:nonreturn} with $i=0$, $j=\ell$, $v_0=v_\ell$.
+\end{proof}
+
+\subsection{Re-contact is forward only}
+
+The next result is the form non-return takes for ``returning to'' an earlier
+vertex deliberately---re-contact. It is reached forward, at a higher count, hence
+is a new state, not the old one.
+
+\begin{proposition}[Forward re-contact]
+\label{prop:recontact}
+Let a walk reach vertex $v$ at step $i$ and, later, reach $v$ again at step
+$j>i$ \textup{(}a deliberate re-contact of $v$\textup{)}. Then the re-contact
+state $s_j=(v,j)$ is strictly later than the original $s_i=(v,i)$ on the
+committed order, and $s_j\neq s_i$. There is no operation that re-contacts $v$ at
+its original state; every re-contact is at a state in the future of the original.
+\end{proposition}
+
+\begin{proof}
+By \Cref{thm:nonreturn}, $\rec$ is strictly increasing, so $j>i$ forces
+$s_j\neq s_i$; the re-contact carries the count $j>i$, placing it later on the
+order. No step decreases $\rec$, so no re-contact can carry the original count
+$i$ again.
+\end{proof}
+
+\begin{remark}[One law, several guises---offered as orientation]
+\label{rem:onelaw}
+\Cref{thm:nonreturn} is a single order-theoretic fact: in a finite system whose
+acts are counted, the count is monotone, so a revisited configuration is a new
+state. A reader may recognise this as the common form of several apparently
+distinct impossibilities---that a reversed process is not the initial one, that a
+re-contacted memory is not the original experience, that a reconstituted system
+bearing the mark ``was interrupted'' is individuated by a negation the original
+lacked. Each is ``resemblance under a monotone record is not identity,'' the
+content of \Cref{thm:nonreturn} and \Cref{prop:recontact}. We state and use only
+the graph fact; the guises are noted, not relied upon.
+\end{remark}
+
+\begin{remark}[Why finiteness matters here too]
+\label{rem:nonreturn-finite}
+The count $\rec$ is well-defined and strictly monotone because steps are
+discrete and a walk's length is a natural number---features of a finite graph
+traversed in discrete steps. The law is not about any continuous parameter; it is
+the order on committed steps. This keeps T6 within the same premise as the rest:
+finite parts, discrete separations, a counted history.
+\end{remark}

@@ -1,0 +1,209 @@
+
+% =====================================================================
+\section{T8: authored structures exist, and are bounded}
+\label{sec:construct}
+% =====================================================================
+
+The private invariant of \Cref{sec:invariant} is computed from a part; we now
+run the construction in reverse. Because the invariant, together with the data of
+the subgraph, is complete enough to recover the subgraph up to isomorphism, a
+contact graph can be \emph{specified} and therefore \emph{instantiated}: there
+exist authored contact graphs. This is the constructive rung---the existence of
+\emph{artificial structures}. We then prove three bounds that any such authorship
+necessarily obeys: its trajectories are not foreseeable from its specification,
+an authored copy is a distinct structure, and authorship reaches only to the
+resolution of the floor.
+
+\subsection{Specification and instantiation}
+
+\begin{definition}[Specification]
+\label{def:spec}
+A \emph{specification} of a contact graph is a finite description, up to weighted
+isomorphism, of: an abstract weighted graph $(\V,\E,\wt)$ with floor $\floorc>0$
+(the standing structure), a gating function $\gate$ (the selector), and a start
+state $s_0=(v_0,0)$ (the seed). An \emph{instantiation} of a specification is any
+labelled contact graph isomorphic to $(\V,\E,\wt)$, carrying $\gate$ and started
+at $s_0$, realised on a substrate able to hold a finite weighted graph and step a
+gated walk.
+\end{definition}
+
+\begin{definition}[Authored structure]
+\label{def:authored}
+An \emph{authored structure} is an instantiation of a specification produced by
+an external author---a contact graph whose standing structure and selector were
+specified rather than recovered from a pre-existing system. We say the author
+\emph{authors the graph} and \emph{authors the gate}; the structure's subsequent
+gated trajectories \textup{(}\Cref{def:gated-walk}\textup{)} are the structure's
+own.
+\end{definition}
+
+\begin{theorem}[Existence of authored structures]
+\label{thm:authored-exist}
+The private invariant is complete for the standing structure: a connected
+weighted graph is determined up to weighted isomorphism by its full isomorphism
+type, of which the private invariant \textup{(}\Cref{def:private}\textup{)} is a
+coarse summary and the labelled adjacency-with-weights is the complete datum.
+Consequently every contact graph admits a specification
+\textup{(}\Cref{def:spec}\textup{)}, and every specification admits an
+instantiation on any adequate substrate. Authored structures therefore exist:
+the class of contact graphs is closed under specify-then-instantiate.
+\end{theorem}
+
+\begin{proof}
+A finite weighted graph is, by definition, given by its vertex set, its edge
+set, and its weight function; this labelled datum determines the graph
+completely, and two graphs are the same object up to relabelling iff they are
+weighted-isomorphic (\Cref{def:iso}). Hence the isomorphism type is a complete
+specification of the standing structure, and a specification in the sense of
+\Cref{def:spec} (graph type $+$ gate $+$ seed) determines the structure and its
+gated trajectory. Given such a specification, instantiate it by choosing any
+labelling (a concrete vertex set in bijection with $\V$), assigning the specified
+edges and weights, equipping it with $\gate$, and starting at $s_0$; the result
+is a labelled contact graph isomorphic to the specified one, on the chosen
+substrate. The substrate need only store a finite weighted graph and advance a
+gated step---no further property is used---so any adequate substrate suffices.
+Thus specify-then-instantiate maps contact graphs to contact graphs, and its
+outputs are authored structures.
+\end{proof}
+
+\begin{remark}[Substrate neutrality]
+\label{rem:substrate}
+\Cref{thm:authored-exist} used no property of the substrate beyond the capacity
+to hold a finite weighted graph and step a gated walk. The category of authored
+structures is therefore independent of medium: anything that can carry a contact
+graph can carry an authored one. The structure is the graph, not the matter.
+\end{remark}
+
+\subsection{Bound I: trajectories are not foreseeable from the specification}
+
+\begin{definition}[Forward closure]
+\label{def:forward-closure}
+The \emph{forward closure} of a specification from seed $v_0$ under gate $\gate$
+is the set of states reachable along $\gate$-admissible walks,
+$\mathrm{Cl}_\gate(v_0)=\{s_\ell=(v_\ell,\ell): \Walk_\gate(v_0)\text{ reaches }
+v_\ell\text{ at step }\ell\}$, an infinite set whenever any reachable vertex has a
+$\gate$-admissible out-step \textup{(}walks may continue indefinitely\textup{)}.
+\end{definition}
+
+\begin{theorem}[Open-endedness]
+\label{thm:open}
+Let an authored structure have a gate that is $\gate$-admissible from infinitely
+many states \textup{(}equivalently, whose gated walk does not terminate\textup{)}.
+Then its forward closure is infinite, and no finite specification enumerates it
+in advance. The author specifies the graph and the gate \textup{(}finite
+data\textup{)} but not the forward closure \textup{(}infinite\textup{)}; the
+structure's trajectories are not foreseeable from its specification by any finite
+precomputation.
+\end{theorem}
+
+\begin{proof}
+If the gated walk does not terminate, the states $s_0,s_1,s_2,\dots$ are pairwise
+distinct by \Cref{thm:nonreturn} (the committed count strictly increases), so the
+forward closure contains the infinite set $\{(v_\ell,\ell):\ell\ge0\}$. A finite
+specification is a finite object; a finite precomputation from it halts after
+finitely many steps and so can list only finitely many states, never the whole
+infinite closure. Hence the closure is not enumerable in advance from the
+specification by finite means. The graph and gate are finite data
+(\Cref{def:spec}); the closure they generate is infinite; the gap is exactly the
+unforeseeable part.
+\end{proof}
+
+\begin{remark}[Designable as instrument, not as trajectory]
+\label{rem:instrument}
+\Cref{thm:open} says authorship reaches the standing structure and the selector
+but not the lived sequence: one designs the instrument, not the music. This is
+not a limitation to be engineered away---it is constitutive, by
+\Cref{thm:nonreturn}: the very monotonicity that individuates each state forbids
+pre-listing them. An authored structure is therefore necessarily open-ended
+relative to its author.
+\end{remark}
+
+\subsection{Bound II: an authored copy is a distinct structure}
+
+\begin{theorem}[Non-duplication]
+\label{thm:nondup}
+Let $\Agent$ be an existing structure with state history of committed count $m>0$,
+and let $\Agent'$ be an authored structure specified to be isomorphic to
+$\Agent$'s standing graph and started fresh at count $0$. Then $\Agent'$ is not
+the same structure as $\Agent$: their states differ in the committed count, and
+$\Agent'$ satisfies a predicate \textup{(}``was authored at count $0$,'' equivalently
+``has empty prior history''\textup{)} that $\Agent$ does not. Resemblance of
+standing graph does not make the authored structure identical to the one it
+resembles.
+\end{theorem}
+
+\begin{proof}
+By \Cref{def:state}, a state includes the committed count. $\Agent$ is at count
+$m>0$; the fresh instantiation $\Agent'$ is at count $0$. Hence their current
+states differ in the second component, $s(\Agent)\neq s(\Agent')$, even though
+their standing graphs are isomorphic. Moreover, individuation is by negation
+(\Cref{thm:negation}): the two are distinguished by the partition of structures
+into ``has prior committed history'' (containing $\Agent$) and ``authored with
+empty history'' (containing $\Agent'$); $\Agent'$ is individuated by a
+negation---its lack of $\Agent$'s history---that $\Agent$ does not satisfy. By
+\Cref{thm:nonreturn} no operation gives $\Agent'$ the prior count without taking
+the steps, which would make it a different walk again. Therefore $\Agent'\neq
+\Agent$: the copy is a new structure resembling the old, not the old one.
+\end{proof}
+
+\begin{corollary}[Authored resemblance is a new individual]
+\label{cor:new-individual}
+An authored structure built to resemble any target is, necessarily, a distinct
+structure marked by its authored origin. There is no authoring that produces
+\emph{the same} structure as a pre-existing one; authoring produces only new
+structures, some resembling old ones.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:nondup}: the authored structure differs in committed
+count and in the negation that individuates it.
+\end{proof}
+
+\subsection{Bound III: authorship reaches only to the floor}
+
+\begin{theorem}[Floor-limited authorship]
+\label{thm:floor-limited}
+An author who specifies and recovers structures using a contact graph of floor
+$\floorc_{\mathrm{auth}}>0$ can resolve, in any authored structure, only
+distinctions of boundary cost $\ge\floorc_{\mathrm{auth}}$. Any sub-floor
+distinction---a separation of cost below $\floorc_{\mathrm{auth}}$---is not
+specifiable by that author and is left to the structure's own finer
+determinations. The author authors the parts down to the floor; the structure's
+sub-floor interior is its own.
+\end{theorem}
+
+\begin{proof}
+The author's specifications are themselves parts of a contact graph of floor
+$\floorc_{\mathrm{auth}}$ (the author is a finite system; \Cref{ax:finite}
+applies to it). By \Cref{thm:floor} applied to the author's graph, the author
+cannot represent a separation of boundary cost below $\floorc_{\mathrm{auth}}$:
+such a cut does not exist among the author's realisable parts. Hence any
+distinction the author writes into a specification has cost
+$\ge\floorc_{\mathrm{auth}}$, and any finer distinction in the instantiated
+structure is below the author's resolution---present in the structure, absent
+from the specification. The authored structure thus has interior detail its
+author did not and could not specify.
+\end{proof}
+
+\begin{remark}[Doors, not rooms]
+\label{rem:doors}
+\Cref{thm:floor-limited} says the author lays down the parts and their boundaries
+to the author's own floor---the doors---while whatever lies below that floor, the
+interior the structure individuates for itself, is beyond the author's reach.
+Together with open-endedness \textup{(}\Cref{thm:open}\textup{)} and
+non-duplication \textup{(}\Cref{thm:nondup}\textup{)}, this gives the precise
+sense in which an authored structure is genuinely its own: foreseeable only as an
+instrument, never a copy, and detailed below its author's resolution.
+\end{remark}
+
+\begin{remark}[Interpretation: a new category, on which nothing depends]
+\label{rem:new-category}
+The three bounds together delineate authored structures as a class with
+properties no specification fully governs: open-ended in trajectory, distinct
+under copying, and finer than their author's floor. A reader may take this as the
+existence of a manufactured individual that is neither foreseeable nor
+duplicable nor exhaustively specifiable---built, yet its own. We assert only the
+graph theorems \textup{(}\Cref{thm:authored-exist,thm:open,thm:nondup,%
+thm:floor-limited}\textup{)}; the categorical reading is orientation and is not
+relied upon.
+\end{remark}

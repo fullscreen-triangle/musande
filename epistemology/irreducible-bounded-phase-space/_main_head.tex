@@ -16,6 +16,7 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{microtype}
+\usepackage{graphicx}
 \usepackage[round,sort&compress]{natbib}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,fit}
@@ -114,17 +115,23 @@ inferences that transfer a cost of locating onto being reached. We then identify
 the deepest obstruction:
 to \emph{verify} that a part is what it is requires deciding its membership
 in the very collection that constitutes it (its negation), a self-referential
-question with no consistent value. The irreducible residue is therefore not a
-locatable set but a self-referential impossibility, proved here by a
-self-contained diagonal argument; it cannot be exhibited, only bounded below
-by $\thick$. From this we obtain a \emph{Non-Return Theorem}---the count of
+question with no consistent value. We prove, by a self-contained diagonal
+argument, that no verifier can be both total and closed under its own diagonal;
+\emph{under the explicit hypothesis} that an agent's verifying behaviour is itself
+realisable as a region---which embedding makes natural but which we do not claim
+to discharge in general---the irreducible residue is therefore not a locatable set
+but a self-referential impossibility that cannot be exhibited, only bounded below
+by $\thick$. The positivity of $\thick$ itself is established earlier and
+unconditionally. From this we obtain a \emph{Non-Return Theorem}---the count of
 committed separations is monotone non-decreasing under every traversal, so no
 process returns to a prior individuation state, and resemblance never entails
 identity---and an \emph{Inquiry--Cessation Theorem}: thinning a separator
 toward zero content has diverging cost and bounded return, so a finite agent
 halts at the floor, and knowledge thereafter attaches to bounded wholes and
-never to their sub-floor parts. Every claim is proved from stated definitions;
-uncertain material has been omitted.
+never to their sub-floor parts. Every claim is proved from stated definitions
+and is additionally verified on explicitly constructed instances of the
+hypothesis, where an exhaustive numerical check finds every measured quantity in
+agreement with the predicted bound; uncertain material has been omitted.
 \end{abstract}
 
 \noindent\textbf{Keywords:} bounded resolvable space; individuation;
@@ -179,9 +186,12 @@ how rare the region is; it is not paid by a measure-preserving traversal that
 merely passes through the region, which does so freely and only less often when
 the region is rarer (\Cref{sec:locating}).
 \item \emph{Verification is self-referentially obstructed.} To verify a part
-is to decide its membership in the collection that constitutes it; this has no
-consistent value, so the residue is irreducible---bounded below by $\thick$
-yet not exhibitable as a set (\Cref{sec:residue}).
+is to decide its membership in the collection that constitutes it; no verifier can
+be total and closed under the resulting diagonal. Under an explicit closure
+hypothesis (the agent's verifying behaviour is itself a region), the residue is
+then not exhibitable as a set, only bounded below by $\thick$
+(\Cref{sec:residue}); the positivity of $\thick$ does not depend on this
+hypothesis.
 \item \emph{Individuation does not return.} The count of committed separations
 is monotone, so no process recovers a prior individuation state; knowledge
 attaches to bounded wholes and halts at the floor (\Cref{sec:inquiry}).
@@ -270,4 +280,6 @@ from a traversal's visiting it, proves the asymmetry of their costs, and
 classifies three invalid transfers between them. \Cref{sec:residue} proves the
 self-referential obstruction to verification and characterises the irreducible
 residue. \Cref{sec:inquiry} proves the Non-Return and Inquiry--Cessation
-Theorems. \Cref{sec:scope} states scope and concludes.
+Theorems. \Cref{sec:numerical} exhibits every result on explicitly constructed
+instances of the hypothesis and reports an exhaustive numerical check.
+\Cref{sec:scope} states scope and concludes.

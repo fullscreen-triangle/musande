@@ -49,28 +49,45 @@ shape of the classical results of~\citet{russell1903,cantor1891,tarski1936} and
 the general form of~\citet{lawvere1969}, but it is self-contained: it uses only
 the definitions above.
 
+Two ingredients are needed before the diagonal can be run, and we isolate them as
+an explicit hypothesis, because whether they hold is exactly the delicate point.
+The diagonal collection
+\[
+D\;:=\;\bigl\{\,X : \Ver(X,\Neg(X))=0\,\bigr\}
+\]
+is, a priori, only a \emph{collection of parts indexed by the verifier's
+behaviour}; for the verifier to be asked about $D$ in the sense of the theory, $D$
+must itself be an admissible object of the same kind---a region of $\Space$ on
+which $\Ver$ is defined.
+
+\begin{definition}[Self-applicable verifier]
+\label{def:self-applicable}
+A verifier $\Ver$ is \emph{self-applicable} if
+\begin{enumerate}[label=\textup{(SA\arabic*)},leftmargin=3em]
+\item\label{sa:total} it is total on the regions of $\Space$ (it returns a value
+in $\{0,1\}$ on every region and its negation), and
+\item\label{sa:closed} the diagonal collection $D$ above is itself a region of
+$\Space$---a Borel set on which $\Ver(\,\cdot\,,\Neg(\,\cdot\,))$ is defined---so
+that $\Ver(D,\Neg(D))$ is a legal query.
+\end{enumerate}
+\end{definition}
+
 \begin{theorem}[Diagonal obstruction to verification]
 \label{thm:diagonal}
-There is no verifier $\Ver$ such that, for every part $X$ of $\Space$,
-\[
-\Ver\bigl(X,\Neg(X)\bigr)=1 .
-\]
-More precisely, suppose a verifier is \emph{self-applicable}: it can take as its
-candidate part the very specification of its own verifying behaviour. Then the
-part
-\[
-D\;:=\;\bigl\{\,\text{parts } X : \Ver(X,\Neg(X))=0\,\bigr\}
-\]
-\textup{(}the parts the verifier declares not constituted by their own
-negation\textup{)} cannot be consistently assigned a verification value:
-$\Ver(D,\Neg(D))=1$ and $\Ver(D,\Neg(D))=0$ each entail the other.
+No self-applicable verifier exists. Equivalently, there is no verifier $\Ver$
+that is total on regions \ref{sa:total} and closed under its own diagonal
+\ref{sa:closed}: for any such $\Ver$ the value $\Ver(D,\Neg(D))$ cannot be
+consistently assigned, since $\Ver(D,\Neg(D))=1$ and $\Ver(D,\Neg(D))=0$ each
+entail the other. In particular no verifier satisfying \ref{sa:closed} returns
+$1$ on every region.
 \end{theorem}
 
 \begin{proof}
-Suppose, for contradiction, a self-applicable verifier $\Ver$ exists. Form $D$ as
-stated: $D$ collects exactly those parts $X$ for which the verifier returns $0$
-on the self-referential query $\Ver(X,\Neg(X))$. Now ask the verifier about $D$
-itself.
+Suppose, for contradiction, a self-applicable verifier $\Ver$ exists. By
+\ref{sa:closed} the collection $D$ is a region and $\Ver(D,\Neg(D))$ is a legal
+query; by \ref{sa:total} it has a value. $D$ collects exactly those parts $X$ for
+which the verifier returns $0$ on the self-referential query $\Ver(X,\Neg(X))$.
+Now ask the verifier about $D$ itself.
 
 If $\Ver(D,\Neg(D))=1$, then $D$ is declared constituted by its own negation;
 but by the defining property of $D$, membership-defining condition for $D$ is
@@ -84,72 +101,110 @@ negation withholds, which is the assertion $\Ver(D,\Neg(D))=1$, contradicting th
 assumed value $0$.
 
 Both values are self-refuting, so no consistent value exists for
-$\Ver(D,\Neg(D))$. Hence no self-applicable verifier decides every part; in
-particular none returns $1$ on every part, for the construction of $D$ is
-available whenever the verifier is total. This is the diagonal obstruction.
+$\Ver(D,\Neg(D))$. This contradicts \ref{sa:total}, which requires a value. Hence
+no verifier satisfies both \ref{sa:total} and \ref{sa:closed}; in particular none
+satisfying \ref{sa:closed} returns $1$ on every region. This is the diagonal
+obstruction.
 \end{proof}
 
-\begin{remark}[Self-application is unavoidable for an embedded agent]
+\begin{remark}[On the closure hypothesis \ref{sa:closed}]
 \label{rem:self-app}
-The hypothesis of self-applicability is not a technical convenience; it is forced
-by embedding. An agent that verifies parts of $\Space$ while being itself a part
-of $\Space$ can have its own verifying region presented as a candidate part. The
-diagonal part $D$ is then a genuine region, and \Cref{thm:diagonal} applies. An
-agent that could stand outside $\Space$ would escape the argument---but no
-embedded agent can, and the whole subject of the paper is the embedded agent. The
-obstruction is therefore a structural feature of verification-from-within, not an
-artefact of an artificial total verifier.
+The theorem is exactly as strong as \ref{sa:closed}, and we are careful not to
+claim more than we prove. \ref{sa:closed} asserts that the behaviour-defined
+collection $D$ is again a region of $\Space$ on which the verifier is defined.
+This is the genuine content of ``self-application'': the verifier can be asked
+about an object built from its own verdicts. Two remarks on its status.
+
+\emph{Why embedding makes it natural.} An agent that verifies regions of $\Space$
+while being itself a part of $\Space$ is a plausible setting in which a
+description of the agent's own verifying behaviour is realised as a region---the
+agent's verdicts leave a trace in the same space they range over, and a region
+selected by those verdicts is a region of that space. In such a setting
+\ref{sa:closed} holds and the obstruction bites.
+
+\emph{Why it is not automatic.} Nothing in \Cref{ax:brs} forces a
+behaviour-defined collection to be Borel-encodable as a region. The classical
+diagonal results show the shape of the argument but not that its preconditions are
+met here: Russell's construction lives in unrestricted comprehension, which the
+measurable setting does not grant; and the general fixed-point
+theorem of~\citet{lawvere1969} delivers the contradiction only given a
+point-surjection in a cartesian-closed category---structure that an embedding
+\emph{may} supply but that must be exhibited, not assumed. We therefore treat
+\ref{sa:closed} as a hypothesis, true in any model where the agent's verifying
+behaviour is itself realisable as a region, and we mark every downstream claim
+that depends on it. Discharging \ref{sa:closed} in full generality---constructing
+the measurable encoding of parts on which $\Ver$ acts as a point-surjection---is a
+separate undertaking we do not claim to have carried out.
 \end{remark}
 
-\subsection{The residue is not a set}
+\subsection{The residue is not a set under the closure hypothesis}
 
-The diagonal obstruction lets us characterise the irreducible residue. One might
+The diagonal obstruction lets us characterise the irreducible residue, under the
+same closure hypothesis \ref{sa:closed} that the obstruction requires. One might
 hope that the un-verified remainder of an individuation is a definite set---small,
 locatable, perhaps measurable---which a finer effort could in principle exhibit
-and remove. We show this hope is incoherent: a locatable residue would be
-verifiable, and the diagonal obstruction forbids verifying it.
+and remove. We show that this hope is incompatible with \ref{sa:closed}: a
+locatable residue would let one assemble a total verifier closed under its own
+diagonal, which \Cref{thm:diagonal} forbids.
 
 \begin{definition}[Irreducible residue]
 \label{def:irreducible}
 The \emph{irreducible residue} of the individuation of $A$ is the obstruction to
 deciding $\Ver(A,\Neg(A))$: the content that an individuation cannot certify
 about itself. It is \emph{exhibitable} if there is a realisable region $E$ with
-$\mu(E)>0$ such that verifying $A$ reduces to verifying $A$ on $\Space\setminus E$
-together with a separate certification of $E$.
+$\mu(E)>0$ such that verifying \emph{every} region reduces to verifying it on
+$\Space\setminus E$ together with a separate, always-terminating certification of
+the residue localised in $E$.
 \end{definition}
 
-\begin{theorem}[The irreducible residue is not exhibitable]
+\begin{theorem}[The irreducible residue is not exhibitable, under \ref{sa:closed}]
 \label{thm:residue-not-measure}
-Under \Cref{ax:brs} with an embedded \textup{(}self-applicable\textup{)} agent,
-the irreducible residue of any individuation is not exhibitable: there is no
-realisable region $E$ of positive measure whose separate certification completes
-the verification of $A$. The residue is a self-referential impossibility, not a
-locatable set.
+Let \Cref{ax:brs} hold and suppose the closure hypothesis \ref{sa:closed}---that
+a behaviour-defined collection of regions is again a region. Then the irreducible
+residue is not exhibitable: there is no realisable region $E$ of positive measure
+whose separate certification completes the verification of every region. Under
+\ref{sa:closed} the residue is a self-referential impossibility, not a locatable
+set.
 \end{theorem}
 
 \begin{proof}
-Suppose the residue were exhibitable by some realisable $E$ with $\mu(E)>0$.
-Certifying $E$ separately means deciding $\Ver(E,\Neg(E))$---verifying $E$ as the
-part constituted by its own negation---and, by hypothesis, doing so completes the
-verification of $A$. But $E$ is itself a part of $\Space$, and an embedded agent
-is self-applicable (\Cref{rem:self-app}); the diagonal construction of
-\Cref{thm:diagonal} produces a part on which $\Ver$ has no consistent value, so no
-verifier certifies every part, $E$ among them. Hence the supposed certification
-of $E$ cannot be guaranteed to terminate with a consistent value; the reduction
-fails. Therefore no such $E$ exists: the residue cannot be localised to a
-positive-measure set and removed by certifying it. It is the standing
-impossibility of the self-referential decision, not a region awaiting finer
-treatment.
+Suppose the residue were exhibitable by some realisable $E$ with $\mu(E)>0$:
+certifying the residue localised in $E$ always terminates and, combined with
+verification on $\Space\setminus E$, completes the verification of every region.
+This combination is a verifier $\Ver^\ast$ that is total on regions
+\ref{sa:total}. By the standing hypothesis \ref{sa:closed}, the diagonal
+collection $D$ of $\Ver^\ast$ is again a region; so $\Ver^\ast$ satisfies both
+\ref{sa:total} and \ref{sa:closed}, i.e.\ is self-applicable. \Cref{thm:diagonal}
+shows no such verifier exists---a contradiction. Hence no exhibiting $E$ exists:
+under \ref{sa:closed} the residue cannot be localised to a positive-measure set
+and certified away. It is the standing impossibility of the self-referential
+decision, not a region awaiting finer treatment.
 \end{proof}
 
-\begin{corollary}[The floor can only be bounded below]
+\begin{remark}[What survives if \ref{sa:closed} fails]
+\label{rem:if-sa-fails}
+If the closure hypothesis fails---if the agent's verifying behaviour is not
+realisable as a region---then \Cref{thm:diagonal} and \Cref{thm:residue-not-measure}
+do not apply, and the present section establishes nothing about exhibitability. The
+paper's quantitative core is untouched by this: the floor $\thick>0$ is already
+established three independent ways in \Cref{sec:thickness,sec:floor}, before any
+diagonal argument is invoked, and the detectability, locating, and non-return
+results of \Cref{sec:detect,sec:locating,sec:inquiry} rest on those derivations
+alone. What rides on \ref{sa:closed} is solely the \emph{upgrade} from ``the floor
+is positive'' to ``the residue is not a locatable set, only boundable below.'' We
+state that upgrade as conditional and claim no more.
+\end{remark}
+
+\begin{corollary}[The floor can only be bounded below, under \ref{sa:closed}]
 \label{cor:floor-only-bounded}
 The resolution floor $\thick$ admits a strict positive lower bound
-\textup{(}$\thick\ge\mu_{\min}>0$, \Cref{thm:thickness}\textup{)} but no exact
-exhibition as $\mu(R)$ for a definite residue set $R$. Every attempt to write the
-residue as the measure of a located set $R$ supplies an exhibitable $E=R$,
-contradicting \Cref{thm:residue-not-measure}. The floor is known only as the
-positive quantity below which no individuation can certify itself.
+\textup{(}$\thick\ge\mu_{\min}>0$, \Cref{thm:thickness}\textup{)}
+unconditionally. If in addition the closure hypothesis \ref{sa:closed} holds,
+then $\thick$ has no exact exhibition as $\mu(R)$ for a definite residue set $R$:
+every attempt to write the residue as the measure of a located set $R$ supplies
+an exhibitable $E=R$, contradicting \Cref{thm:residue-not-measure}. In that case
+the floor is known only as the positive quantity below which no individuation can
+certify itself.
 \end{corollary}
 
 \begin{proof}
@@ -161,8 +216,8 @@ characterised solely as a positive lower bound on un-certifiable content.
 
 \begin{remark}[The recognition gap]
 \label{rem:recognition-gap}
-\Cref{thm:residue-not-measure} has a reading in terms of the relation between an
-agent and the part it would verify. To certify $A$ completely, the agent must
+\Cref{thm:residue-not-measure}, where it applies, has a reading in terms of the
+relation between an agent and the part it would verify. To certify $A$ completely, the agent must
 decide $A$ against the totality $\Neg(A)$ that constitutes $A$; but the agent,
 being embedded, is itself within that totality, so a complete certification would
 require it to occupy both sides of the constituting partition at once---to be at

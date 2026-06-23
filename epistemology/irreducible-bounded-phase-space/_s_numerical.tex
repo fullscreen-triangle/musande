@@ -1,0 +1,153 @@
+
+% =====================================================================
+\section{Numerical verification}
+\label{sec:numerical}
+% =====================================================================
+
+The theorems are proved from the definitions and require no computation. It is
+nonetheless instructive to exhibit them on concrete instances of the hypothesis,
+both as a check against error and to display the quantitative shape of each
+result. This section reports an exhaustive numerical witness: every theorem-group
+is tested on a large family of explicitly constructed bounded resolvable spaces,
+and the measured quantities are plotted against the bounds the theorems predict.
+
+\subsection{Method}
+
+A bounded resolvable space is realised as a finite metric--measure space: a finite
+integer-lattice box, a counting measure with a fixed atom weight, and a partition
+into axis-aligned cells of side $\ge\reso$. By construction such an instance
+satisfies \Cref{ax:brs}---it is bounded with finite measure, every cell has
+diameter at least the resolution, and finer boxes refine it---and an embedded
+agent on it can name only unions of cells, exactly the operational restriction of
+\Cref{def:realisable}. On each instance the realisable regions, their separators,
+boundary thickness, scale, log-measure, and the committed record are computed
+directly from the definitions, and each theorem's inequality or equivalence is
+checked.
+
+A randomised sweep drew instances of varying dimension, extent, cell size, and
+atom weight, and ran all seven theorem-group checks on each. Across
+$500$ instances the suite performed $96{,}024$ individual checks, all of which
+passed: no realisable separator was sharp; every boundary thickness met
+$\thick\ge\mu_{\min}$; the three floor derivations agreed on every instance;
+distinguishability matched $\sigma>\thick_A$ in every region tested; the
+self-referential value admitted no consistent assignment; and the committed
+record was monotone on every traversal. The figures below are drawn from these
+same computations.
+
+\subsection{Boundary thickness and the floor}
+
+\Cref{fig:panel1} verifies the Boundary--Thickness Theorem. Every measured
+thickness lies on or above the line $\thick_\Part(A)=\mu_{\min}$
+(\Cref{thm:thickness}); the distribution of the ratio $\thick/\mu_{\min}$ is
+supported entirely at and above $1$, so no realisable separator is sharp; and the
+minimum thickness over each instance, plotted against cell count and
+$\mu_{\min}$, stays strictly positive throughout.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_1.png}
+\caption{Boundary--Thickness Theorem (\Cref{thm:thickness}). Left to right:
+measured thickness against $\mu_{\min}$ with the equality line; histogram of
+$\thick/\mu_{\min}$, entirely $\ge1$; thickness against region scale; and the
+per-instance minimum thickness over cell count and $\mu_{\min}$.}
+\label{fig:panel1}
+\end{figure}
+
+\Cref{fig:panel2} verifies that the three derivations bound one constant
+(\Cref{thm:floor-agree}): the geometric floor agrees with the representational
+and cost floors instance by instance (points on the diagonal), and the cost
+$g(t)=-\log t$ diverges as $t\to0^+$, so no finite-cost process reaches the sharp
+cut.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_2.png}
+\caption{Agreement of the three floor derivations (\Cref{thm:floor-agree}).
+Geometric versus representational floor; geometric versus cost floor; the
+divergence of $g(t)=-\log t$; and the joint surface of the three floors.}
+\label{fig:panel2}
+\end{figure}
+
+\subsection{Detectability and the sorites}
+
+\Cref{fig:panel3} verifies the Detectability Theorem. A region carries positive
+interior content exactly on the side $\sigma>\thick_A$ of the diagonal, and the
+interior content is positive precisely when the margin $\sigma-\thick_A$ is
+positive (\Cref{thm:detectability}); the distribution of $\tau=\thick/\sigma$
+separates the engulfed regime $\tau\ge1$ from the distinguishable regime
+$\tau<1$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_3.png}
+\caption{Detectability (\Cref{thm:detectability}). Scale against $\thick_A$ with
+distinguishable and engulfed regions separated by the diagonal; interior content
+against the margin $\sigma-\thick_A$; the distribution of $\tau=\thick/\sigma$
+about the threshold $1$; and the joint surface of scale, $\thick_A$, and
+interior content.}
+\label{fig:panel3}
+\end{figure}
+
+\Cref{fig:panel4} verifies the sorites corollary. As a region grows by sub-floor
+grains, $\tau$ descends smoothly through the band around $1$; the per-step change
+in $\tau$ stays bounded and decays once the aggregate clears its boundary, so no
+single grain carries $\tau$ across the threshold (\Cref{cor:sorites}). Three
+independent accretion orders all descend through the same band.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_4.png}
+\caption{The sorites dissolved (\Cref{cor:sorites}). The relative thickness
+$\tau$ against grains added and against scale, both crossing $1$ across a band;
+the bounded per-step change $|\Delta\tau|$; and three accretion orders descending
+through the band.}
+\label{fig:panel4}
+\end{figure}
+
+\subsection{Locating versus visiting}
+
+\Cref{fig:panel5} verifies the Locating--Visiting Asymmetry. The locating cost
+rises in steps of $\thick$ as $\thick\lceil\log_2 K\rceil$ while the visiting
+cost is identically zero (\Cref{thm:asymmetry}, \Cref{thm:locating-cost}); the
+cost is linear in $\log_2(1/p)$; and the visiting frequency equals $p(W)$, so
+rarity enters only through frequency.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_5.png}
+\caption{Locating versus visiting (\Cref{thm:asymmetry},
+\Cref{thm:locating-cost}). Locating cost and (zero) visiting cost against the
+number of alternatives $K$; locating cost against $\log_2(1/p)$; visiting
+frequency equal to $p(W)$; and the locating-cost surface over $\log_2 K$ and the
+floor $\thick$.}
+\label{fig:panel5}
+\end{figure}
+
+\subsection{Non-return and cessation}
+
+\Cref{fig:panel6} verifies the closing results. The committed record is monotone
+and an attempted undo still increments it (\Cref{thm:nonreturn}); the cost
+$g(t)$ diverges while the return is bounded, so the marginal return per cost falls
+to zero and a positive halting thickness $\thick_\ast$ exists for every positive
+threshold (\Cref{thm:cessation}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/panel_6.png}
+\caption{Non-return and cessation (\Cref{thm:nonreturn}, \Cref{thm:cessation}).
+The monotone committed record with the undo step marked; the diverging cost
+$g(t)$; the marginal return per cost with several halting thresholds
+$\thick_\ast$; and the marginal-return surface over thickness and threshold.}
+\label{fig:panel6}
+\end{figure}
+
+\begin{remark}[Status of the numerical witness]
+\label{rem:numerical-status}
+The figures confirm the theorems on concrete instances and display their
+quantitative form; they are evidence of correctness and of the magnitudes
+involved, not a substitute for the proofs, which hold for every space satisfying
+\Cref{ax:brs}. That every one of the $96{,}024$ checks across $500$ independently
+constructed instances agreed with the predicted bounds is consistent with the
+claim that the floor is structural rather than an artefact of any one
+construction.
+\end{remark}

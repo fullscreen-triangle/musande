@@ -1,0 +1,134 @@
+
+% =====================================================================
+\section{T7: plurality forces a single quotient gate}
+\label{sec:quotient}
+% =====================================================================
+
+The gating of \Cref{sec:gating} selects a walk within a graph. We now lift it:
+when many parts act as one, the same theory applies to their quotient graph
+(\Cref{def:quotient}), and a coherent collective admits exactly one gating
+function on that quotient. The lift is a homomorphism---the four-place structure
+of part, whole, gate, and invariant recurs one scale up---and its single-gate
+conclusion is the structural condition for a family of parts to be one
+collective rather than several.
+
+\subsection{The collective as a quotient}
+
+\begin{definition}[Collective; coherence]
+\label{def:collective}
+Let $\mathcal{P}=\{U_1,\dots,U_k\}$ be a partition of $\V$ into parts (connected
+induced subgraphs). The \emph{collective} on $\mathcal{P}$ is the quotient graph
+$\Quot=\Gph/\mathcal{P}$ (\Cref{def:quotient}), whose vertices are the parts and
+whose edges are their mutual cuts. A gating function on $\Quot$
+(\Cref{def:gate}) is a \emph{collective gate}; it biases which part acts next,
+toward which neighbouring part. The collective is \emph{coherent} if it carries a
+single collective gate that selects a unique next part at each branching part of
+$\Quot$.
+\end{definition}
+
+\begin{remark}[Why this is the right lift]
+\label{rem:lift}
+By \Cref{lem:quotient-floor}, $\Quot$ is itself a contact graph: finite,
+connected, with floor $\ge\floorc$. Hence every theorem proved for contact graphs
+applies to $\Quot$ verbatim---T0 (its cuts are positive), T1 (its vertices, the
+parts, are individuated by negation among parts), T5 (selecting a walk over parts
+needs a gate). The collective is not a new kind of object; it is a contact graph
+whose vertices happen to be the parts of another.
+\end{remark}
+
+\subsection{A coherent collective has exactly one gate}
+
+\begin{theorem}[Single quotient gate]
+\label{thm:single-gate}
+Let $\Quot=\Gph/\mathcal{P}$ be a collective with at least one part of quotient
+degree $\ge2$. Then:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \textbf{Existence.} Selecting a walk over the parts requires a collective
+gate \textup{(}T5 applied to $\Quot$, \Cref{thm:gate-necessary}\textup{)}.
+\item \textbf{Uniqueness for coherence.} If the collective is coherent in the
+sense that, at each branching part, the next part is determined, then the
+selecting collective gate is unique on its support: any two selecting gates that
+both make the collective coherent agree wherever either selects.
+\end{enumerate}
+A collective that admits two distinct selecting gates over the same parts is not
+one coherent collective but two, partitioning into the sub-collectives on which
+each gate is the selector.
+\end{theorem}
+
+\begin{proof}
+(i) is \Cref{thm:gate-necessary} for the contact graph $\Quot$
+(\Cref{rem:lift}). (ii) Suppose $\gate,\gate'$ are both selecting gates rendering
+the collective coherent. At each branching part $U$, coherence means a unique
+next part is determined; a selecting gate, by \Cref{def:gate}, assigns positive
+forward weight to exactly the edge to that determined next part and zero to the
+others. Hence at $U$ both $\gate$ and $\gate'$ have support exactly the single
+edge to the determined successor, so $\gate(U,\cdot)$ and $\gate'(U,\cdot)$ have
+the same support and both select it; they agree as selecting gates at $U$. As $U$
+was an arbitrary branching part, $\gate$ and $\gate'$ agree wherever either
+selects. If instead $\gate$ and $\gate'$ select \emph{different} successors at
+some part, then at that part the collective has two competing determinations of
+``what acts next''; the relation ``shares a selected successor'' partitions the
+parts into blocks within which a single gate selects consistently, i.e. into
+distinct sub-collectives---so the original was not one coherent collective but a
+union of them.
+\end{proof}
+
+\begin{corollary}[Single-valuedness of a collective]
+\label{cor:single-valued}
+A coherent collective is single-gated: at each step exactly one part is selected
+to act next. Two simultaneous selecting gates are the signature of fission into
+two collectives. \textup{(}This is T5's single-step determinacy lifted to the
+quotient, and is the collective analogue of a single trajectory having a single
+next step.\textup{)}
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:single-gate}.
+\end{proof}
+
+\subsection{The scaling homomorphism}
+
+The constructions of the paper recur at the collective scale. We record the
+correspondence as a homomorphism of four-place structures.
+
+\begin{proposition}[Scale homomorphism]
+\label{prop:homomorphism}
+The assignment
+\[
+\bigl(\text{vertex},\ \Gph,\ \text{gate }\gate,\ \Res\bigr)
+\ \longmapsto\
+\bigl(\text{part},\ \Quot,\ \text{collective gate},\ \Res(\Quot)\bigr)
+\]
+carries each object of the single-graph theory to its counterpart in the quotient
+theory, preserving the roles: the moving unit \textup{(}a step over vertices
+$\mapsto$ a step over parts\textup{)}, the standing structure \textup{(}the graph
+$\mapsto$ the quotient\textup{)}, the selector \textup{(}gate $\mapsto$ collective
+gate\textup{)}, and the conserved invariant \textup{(}residual $\mapsto$ quotient
+residual\textup{)}. Every theorem T0--T6 holds of $\Quot$ as a contact graph.
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:quotient-floor} $\Quot$ is a contact graph, so T0
+(\Cref{thm:floor}), T1 (\Cref{thm:negation}), T2--T3
+(\Cref{thm:residual-region,thm:residual-invariant}), T4 (\Cref{thm:private}
+applied to sub-collectives), T5 (\Cref{thm:gate-necessary}), and T6
+(\Cref{thm:nonreturn}) all hold of $\Quot$ verbatim. The listed correspondence is
+the identification of each object's role in $\Gph$ with the same role in $\Quot$,
+which the definitions make a role-preserving map; it is a homomorphism of the
+four-place structure (unit, whole, selector, invariant).
+\end{proof}
+
+\begin{remark}[Interpretation: collective purpose, on which nothing depends]
+\label{rem:purpose}
+Read the parts as agents, each running gated trajectories, and the collective
+gate as the field that selects which agent acts next and toward what. Then
+\Cref{cor:single-valued} says a coherent collective has a single such selecting
+field, and two such fields mean two collectives---the structural form of a group
+having one purpose, with competing purposes amounting to schism. The scale
+homomorphism \Cref{prop:homomorphism} then reads as: \emph{part is to whole, and
+gate is to invariant, exactly as agent is to collective, and purpose is to shared
+invariant}. The collective's conserved residual $\Res(\Quot)$ is the invariant
+from which the collective's surface activity derives, the analogue at this scale
+of the private invariant of \Cref{sec:invariant}. We use only the graph
+statements; the reading is orientation and is not relied upon.
+\end{remark}

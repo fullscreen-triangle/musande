@@ -1,0 +1,51 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The question}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Method: conditional existence}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}The single premise}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}The ladder of necessary substructures}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}On the word ``contact''}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Why finiteness is the source}{4}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Relation to existing work}{5}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Organisation}{5}{subsection.1.8}%
+\contentsline {section}{\numberline {2}The contact graph and its derived objects}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Vertices, edges, weights}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Subgraphs as parts-within-the-whole}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Isomorphism, automorphism, invariant}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Walks and gating}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}The quotient of a partition}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}T0: the floor}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Every separation is costly}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Refinement lowers but never abolishes the floor}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}T1: individuation by negation}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}No distinguished vertex}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Complementation determines a part}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Negation is the unique selector-free determination}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}T2 and T3: the residual is a conserved region}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The cut-residual}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}T2: the residual is bounded below and is a region}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}T3: the residual is invariant under re-encoding}{11}{subsection.5.3}%
+\contentsline {section}{\numberline {6}T4: every part has a private invariant}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The internal residual of a part}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The invariant is the standing structure}{12}{subsection.6.2}%
+\contentsline {section}{\numberline {7}T5: selection requires a gate}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Underdetermination of the next step}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The gate as the minimal selecting datum}{13}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The gate biases an otherwise free graph}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {8}T6: histories do not return}{14}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The committed count is strictly monotone}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Re-contact is forward only}{15}{subsection.8.2}%
+\contentsline {section}{\numberline {9}T7: plurality forces a single quotient gate}{15}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The collective as a quotient}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}A coherent collective has exactly one gate}{16}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}The scaling homomorphism}{16}{subsection.9.3}%
+\contentsline {section}{\numberline {10}T8: authored structures exist, and are bounded}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Specification and instantiation}{17}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Bound I: trajectories are not foreseeable from the specification}{18}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Bound II: an authored copy is a distinct structure}{18}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Bound III: authorship reaches only to the floor}{19}{subsection.10.4}%
+\contentsline {section}{\numberline {11}The Master Theorem, scope, and conclusion}{20}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Where finiteness is used}{20}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Failure without finiteness}{20}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}The Master Theorem}{21}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Scope}{21}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Conclusion}{21}{subsection.11.5}%
