@@ -76,6 +76,61 @@ order. No step decreases $\rec$, so no re-contact can carry the original count
 $i$ again.
 \end{proof}
 
+\subsection{The progressing whole: non-return from a growing complement}
+
+The committed count gives non-return internally. There is a second, independent
+source of non-return when the whole itself progresses: the complement against
+which a part is individuated grows, so a part is individuated against a strictly
+larger negation-set at each later stage. We record this, as it grounds the
+forward-only character in the non-completability of \Cref{sec:ground}.
+
+\begin{definition}[Progressing whole]
+\label{def:progressing}
+A whole $\med$ \emph{progresses} if its committed history grows: at stage $j>i$
+the set of parts and committed boundaries present includes those present at stage
+$i$ and at least one more. Equivalently, the medium relative to a fixed part
+$A$---its complement $\med\setminus A$---is non-decreasing and strictly larger at
+some later stage.
+\end{definition}
+
+\begin{theorem}[Temporal non-return]
+\label{thm:temporal-nonreturn}
+Let $\med$ be a non-completable, progressing whole and $A$ a fixed thing. Then
+$A$ at stage $j>i$ is individuated against a strictly larger complement than $A$
+at stage $i$; hence the individuation-state of $A$ at $j$ differs from that at
+$i$, even though $A$'s interior residue \textup{(}its conserved identity\textup{)}
+is unchanged. A thing is therefore distinguishable from itself at every earlier
+and later stage: its conserved interior the same, its individuating exterior never
+the same.
+\end{theorem}
+
+\begin{proof}
+By \Cref{def:progressing} the complement $\med\setminus A$ at stage $j$ properly
+contains that at stage $i$. Individuation of $A$ is determination against its
+complement (\Cref{thm:negation}); a strictly larger complement is a different
+negation-set, so the individuation-state---the pair of $A$ with the complement it
+is individuated against---differs between $i$ and $j$. The interior residue of $A$
+is its private invariant (\Cref{def:private}), conserved under reshuffling
+(\Cref{thm:private}), hence unchanged. Thus $A$-at-$j$ and $A$-at-$i$ share the
+conserved interior but differ in the individuating exterior, and are
+distinguishable as individuation-states while identical in conserved identity.
+\end{proof}
+
+\begin{corollary}[Same interior, different state, across all stages]
+\label{cor:same-different}
+For a fixed thing in a progressing whole, ``the same thing'' across stages is a
+resemblance of conserved interior against an ever-growing exterior. By
+\Cref{thm:nonreturn} and \Cref{thm:temporal-nonreturn} this resemblance is never
+identity of state: the committed record grows and the complement grows, so no
+later stage returns to an earlier individuation-state.
+\end{corollary}
+
+\begin{proof}
+Combine the internal monotone count (\Cref{thm:nonreturn}) with the growing
+complement (\Cref{thm:temporal-nonreturn}); both strictly advance the
+individuation-state, while the interior residue (\Cref{def:private}) is conserved.
+\end{proof}
+
 \begin{remark}[One law, several guises---offered as orientation]
 \label{rem:onelaw}
 \Cref{thm:nonreturn} is a single order-theoretic fact: in a finite system whose

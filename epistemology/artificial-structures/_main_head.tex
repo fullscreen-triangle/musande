@@ -64,6 +64,8 @@
 \newcommand{\Quot}{Q}                     % quotient graph
 \newcommand{\rec}{M}                      % committed record
 \newcommand{\Ver}{\mathsf{V}}             % verifier
+\newcommand{\med}{\mathsf{M}}             % the medium / whole
+\newcommand{\idres}{\rho_{\!*}}            % identification residual
 \newcommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\restr}{\!\restriction\!}
@@ -89,10 +91,16 @@ We ask a structural question---\emph{why is a world structured at all?}---and
 answer it with a single hypothesis about graphs. A \emph{contact graph} is a
 finite weighted graph whose vertices are the parts that have been individuated
 within a whole and whose edges carry the cost of separating one part from
-another. We take as our only premise that such a graph is \emph{finite} and
-that its edge weights are bounded below by a positive constant; we call this the
-Finiteness Premise. From it alone we derive, as a chain of existence theorems, a
-ladder of substructures that any finite contact graph must contain. We prove:
+another. We first show that the central constant of the theory need not be
+assumed: from the two facts that a thing is a proper part of a whole and that the
+whole is \emph{non-completable} \textup{(}no finite stage exhausts it\textup{)},
+we prove a \emph{Floor from Infinitude} theorem---the comparison identifying a
+thing against the rest can never be completed, so every thing carries a strictly
+positive irreducible residual. The positive floor is thus derived, not posited;
+it is the trace the non-completable whole leaves on each of its finite parts. With
+the floor in hand we proceed from a single working premise---that a finite contact
+graph with this positive floor exists---and derive, as a chain of existence
+theorems, a ladder of substructures any such graph must contain. We prove:
 \textbf{(T0)} a strictly positive \emph{floor} on every separating boundary---no
 two parts are adjacent at zero cost; \textbf{(T1)} that each vertex is fixed only
 by its complement-neighbourhood, so that individuation must proceed by negation
@@ -113,14 +121,25 @@ and \textbf{(T8)} that, because the subgraph invariant is complete, contact
 graphs are specifiable and hence instantiable---authored finite structures
 exist---subject to three bounds we prove: their walks are not foreseeable from
 their specification, an authored copy is a distinct structure, and authorship is
-limited to the resolution of the floor. We close with a Master Theorem: every
-substructure T0--T8 is forced for finite graphs and is \emph{not} forced for
-infinite or zero-floor graphs. Structure is therefore neither imposed on a world
+limited to the resolution of the floor. We then give the operational reading: a
+\emph{measurement} is a reshuffling of the graph that conserves the medium, so it
+tightens a part's boundary while leaving its interior residue---its
+identity---untouched; resolving a thing's identity to a point would require
+exhausting the non-completable whole, which reshuffling conserves, so identity is
+structurally unreachable, and point-identity is refuted in two independent
+ways---resolution never saturates and independent lines of measurement never
+become redundant. We close with a Master Theorem: every substructure T0--T8 is
+forced for finite graphs in a non-completable whole and is \emph{not} forced for
+completable or zero-floor graphs, and the whole ladder is equivalent to the
+identifiability of any one thing at all. Structure is therefore neither imposed on a world
 nor intrinsic to it independent of its parts; it is the necessary form a world
-must take to be resolved by finitely many bounded parts. \emph{Structure is the
-shadow of finitude.} Every claim is proved from the single premise; uncertain
-material has been omitted, and the interpretations a reader may attach are
-confined to clearly marked remarks on which no theorem depends.
+must take to be resolved by finitely many parts within a whole they cannot
+exhaust. \emph{The floor is the trace of the whole on its parts; structure is the
+shadow of finitude meeting the inexhaustible.} Every claim is proved from the
+stated premises; uncertain material has been omitted, and the interpretations a
+reader may attach---of parts as agents, residuals as conserved truth, the medium
+as the whole, measurement as inquiry---are confined to clearly marked remarks on
+which no theorem depends.
 \end{abstract}
 
 \noindent\textbf{Keywords:} contact graph; finite weighted graph; edge-weight
@@ -157,28 +176,47 @@ everything else.
 
 \subsection{Method: conditional existence}
 
-The paper proves no empirical claim. It establishes a conditional: \emph{if} a
-finite contact graph exists, \emph{then} a determinate ladder of substructures
-must exist within it. Each rung is an existence theorem of the form ``under the
-Finiteness Premise, the following is forced.'' We assume nothing about what the
-vertices \emph{are}; we assume only that they are finite in number and
-positively separated, and we read off what their graph cannot lack. The
-deductions are combinatorial and order-theoretic throughout. Where a tempting
-claim could not be proved at this standard it has been removed rather than
-weakened.
+The paper proves no empirical claim. It establishes a conditional: \emph{if}
+anything is identifiable at all within a non-completable whole, \emph{then} a
+determinate ladder of substructures must exist. We first derive, from
+identifiability and non-completability, that the central constant---the positive
+floor---is forced rather than assumed (\Cref{sec:ground}); the working premise
+below then becomes a consequence, and the remaining rungs are existence theorems
+of the form ``under this premise, the following is forced.'' We assume nothing
+about what the vertices \emph{are}; we assume only that a thing can be told from
+the rest of an inexhaustible whole, and we read off what the resulting graph
+cannot lack. The deductions are combinatorial and order-theoretic throughout.
+Where a tempting claim could not be proved at this standard it has been removed
+rather than weakened.
 
-\subsection{The single premise}
+\subsection{The ground premise and the derived floor}
+
+The deepest premise is not the graph but identifiability itself. \Cref{sec:ground}
+takes as given only that there is a whole $\med$ that is \emph{non-completable}
+(no finite stage exhausts it) and that a \emph{thing} is a proper part of it. From
+these we prove the \emph{Floor from Infinitude} theorem
+(\Cref{thm:floor-infinitude}): identifying a thing is comparing it against the
+rest of the whole, and were that comparison completable the whole would be
+finite; since it is not, the comparison cannot finish and every thing carries a
+strictly positive irreducible residual. The positive floor is thereby
+\emph{derived}---it is the trace the non-completable whole leaves on each finite
+part (\Cref{cor:floor-derived})---and the following Finiteness Premise is retained
+only as the working hypothesis for the graph development.
 
 \begin{axiom}[Finiteness Premise]
 \label{ax:finite}
 A \emph{contact graph} is a finite weighted graph $\Gph=(\V,\E,\wt)$ with
 $\abs{\V}<\infty$, in which every edge weight is bounded below by a positive
 constant: there is $\floorc>0$ with $\wt(e)\ge\floorc$ for all $e\in\E$. We
-assume throughout that a contact graph exists and that it is connected.
+assume throughout that a contact graph exists and that it is connected. By
+\Cref{cor:floor-derived} the positive floor $\floorc$ is not an independent
+posit but the derived residual of \Cref{thm:floor-infinitude}; we keep the
+premise in this form for the combinatorial development.
 \end{axiom}
 
-The premise is almost nothing: a finite graph whose edges cost something. Its
-consequences are almost everything we mean by structure.
+The premise is almost nothing: a finite graph whose edges cost something---and
+even that cost is earned, not assumed. Its consequences are almost everything we
+mean by structure.
 
 \subsection{The ladder of necessary substructures}
 
@@ -211,6 +249,16 @@ the subgraph invariant is complete, so contact graphs are specifiable and
 instantiable; their walks are unforeseeable from the specification, an authored
 copy is a distinct structure, and authorship reaches only to the floor.
 \end{enumerate}
+
+Two further developments frame the ladder. Beneath it, \Cref{sec:ground} derives
+the floor from identifiability in a non-completable whole and names the conserved
+reference, the \emph{medium}, against which every part is individuated. Atop it,
+\Cref{sec:measurement} gives the operational reading: a measurement is a
+reshuffling that conserves the medium, so it tightens a part's boundary while
+leaving its interior residue---its identity---untouched; identity-resolution would
+require exhausting the whole and is therefore unreachable, and point-identity is
+refuted both because resolution never saturates and because independent lines of
+measurement never become redundant.
 
 \Cref{sec:master} proves the Master Theorem: T0--T8 are forced for finite
 graphs and not forced when finiteness or the positive floor is dropped.
@@ -257,9 +305,13 @@ on which no theorem depends.
 
 \subsection{Organisation}
 
-\Cref{sec:setting} fixes the contact graph and its derived objects.
-\Cref{sec:floor} proves T0. \Cref{sec:negation} proves T1. \Cref{sec:residual}
-proves T2 and T3. \Cref{sec:invariant} proves T4. \Cref{sec:gating} proves T5.
-\Cref{sec:monotone} proves T6. \Cref{sec:quotient} proves T7.
-\Cref{sec:construct} proves T8. \Cref{sec:master} proves the Master Theorem and
-concludes.
+\Cref{sec:ground} derives the floor from identifiability in a non-completable
+whole and introduces the medium. \Cref{sec:setting} fixes the contact graph and
+its derived objects. \Cref{sec:floor} proves T0. \Cref{sec:negation} proves T1.
+\Cref{sec:residual} proves T2 and T3. \Cref{sec:invariant} proves T4.
+\Cref{sec:gating} proves T5. \Cref{sec:monotone} proves T6, including the temporal
+corollary by which a progressing whole forces non-return. \Cref{sec:quotient}
+proves T7. \Cref{sec:construct} proves T8. \Cref{sec:measurement} gives the
+operational reading---measurement as reshuffling, the unreachability of identity,
+and the two-pronged falsification of point-identity. \Cref{sec:master} proves the
+Master Theorem and concludes.

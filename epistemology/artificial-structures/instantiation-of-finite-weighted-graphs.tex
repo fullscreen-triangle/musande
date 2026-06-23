@@ -64,6 +64,8 @@
 \newcommand{\Quot}{Q}                     % quotient graph
 \newcommand{\rec}{M}                      % committed record
 \newcommand{\Ver}{\mathsf{V}}             % verifier
+\newcommand{\med}{\mathsf{M}}             % the medium / whole
+\newcommand{\idres}{\rho_{\!*}}            % identification residual
 \newcommand{\abs}[1]{\lvert#1\rvert}
 \newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\restr}{\!\restriction\!}
@@ -89,10 +91,16 @@ We ask a structural question---\emph{why is a world structured at all?}---and
 answer it with a single hypothesis about graphs. A \emph{contact graph} is a
 finite weighted graph whose vertices are the parts that have been individuated
 within a whole and whose edges carry the cost of separating one part from
-another. We take as our only premise that such a graph is \emph{finite} and
-that its edge weights are bounded below by a positive constant; we call this the
-Finiteness Premise. From it alone we derive, as a chain of existence theorems, a
-ladder of substructures that any finite contact graph must contain. We prove:
+another. We first show that the central constant of the theory need not be
+assumed: from the two facts that a thing is a proper part of a whole and that the
+whole is \emph{non-completable} \textup{(}no finite stage exhausts it\textup{)},
+we prove a \emph{Floor from Infinitude} theorem---the comparison identifying a
+thing against the rest can never be completed, so every thing carries a strictly
+positive irreducible residual. The positive floor is thus derived, not posited;
+it is the trace the non-completable whole leaves on each of its finite parts. With
+the floor in hand we proceed from a single working premise---that a finite contact
+graph with this positive floor exists---and derive, as a chain of existence
+theorems, a ladder of substructures any such graph must contain. We prove:
 \textbf{(T0)} a strictly positive \emph{floor} on every separating boundary---no
 two parts are adjacent at zero cost; \textbf{(T1)} that each vertex is fixed only
 by its complement-neighbourhood, so that individuation must proceed by negation
@@ -113,14 +121,25 @@ and \textbf{(T8)} that, because the subgraph invariant is complete, contact
 graphs are specifiable and hence instantiable---authored finite structures
 exist---subject to three bounds we prove: their walks are not foreseeable from
 their specification, an authored copy is a distinct structure, and authorship is
-limited to the resolution of the floor. We close with a Master Theorem: every
-substructure T0--T8 is forced for finite graphs and is \emph{not} forced for
-infinite or zero-floor graphs. Structure is therefore neither imposed on a world
+limited to the resolution of the floor. We then give the operational reading: a
+\emph{measurement} is a reshuffling of the graph that conserves the medium, so it
+tightens a part's boundary while leaving its interior residue---its
+identity---untouched; resolving a thing's identity to a point would require
+exhausting the non-completable whole, which reshuffling conserves, so identity is
+structurally unreachable, and point-identity is refuted in two independent
+ways---resolution never saturates and independent lines of measurement never
+become redundant. We close with a Master Theorem: every substructure T0--T8 is
+forced for finite graphs in a non-completable whole and is \emph{not} forced for
+completable or zero-floor graphs, and the whole ladder is equivalent to the
+identifiability of any one thing at all. Structure is therefore neither imposed on a world
 nor intrinsic to it independent of its parts; it is the necessary form a world
-must take to be resolved by finitely many bounded parts. \emph{Structure is the
-shadow of finitude.} Every claim is proved from the single premise; uncertain
-material has been omitted, and the interpretations a reader may attach are
-confined to clearly marked remarks on which no theorem depends.
+must take to be resolved by finitely many parts within a whole they cannot
+exhaust. \emph{The floor is the trace of the whole on its parts; structure is the
+shadow of finitude meeting the inexhaustible.} Every claim is proved from the
+stated premises; uncertain material has been omitted, and the interpretations a
+reader may attach---of parts as agents, residuals as conserved truth, the medium
+as the whole, measurement as inquiry---are confined to clearly marked remarks on
+which no theorem depends.
 \end{abstract}
 
 \noindent\textbf{Keywords:} contact graph; finite weighted graph; edge-weight
@@ -157,28 +176,47 @@ everything else.
 
 \subsection{Method: conditional existence}
 
-The paper proves no empirical claim. It establishes a conditional: \emph{if} a
-finite contact graph exists, \emph{then} a determinate ladder of substructures
-must exist within it. Each rung is an existence theorem of the form ``under the
-Finiteness Premise, the following is forced.'' We assume nothing about what the
-vertices \emph{are}; we assume only that they are finite in number and
-positively separated, and we read off what their graph cannot lack. The
-deductions are combinatorial and order-theoretic throughout. Where a tempting
-claim could not be proved at this standard it has been removed rather than
-weakened.
+The paper proves no empirical claim. It establishes a conditional: \emph{if}
+anything is identifiable at all within a non-completable whole, \emph{then} a
+determinate ladder of substructures must exist. We first derive, from
+identifiability and non-completability, that the central constant---the positive
+floor---is forced rather than assumed (\Cref{sec:ground}); the working premise
+below then becomes a consequence, and the remaining rungs are existence theorems
+of the form ``under this premise, the following is forced.'' We assume nothing
+about what the vertices \emph{are}; we assume only that a thing can be told from
+the rest of an inexhaustible whole, and we read off what the resulting graph
+cannot lack. The deductions are combinatorial and order-theoretic throughout.
+Where a tempting claim could not be proved at this standard it has been removed
+rather than weakened.
 
-\subsection{The single premise}
+\subsection{The ground premise and the derived floor}
+
+The deepest premise is not the graph but identifiability itself. \Cref{sec:ground}
+takes as given only that there is a whole $\med$ that is \emph{non-completable}
+(no finite stage exhausts it) and that a \emph{thing} is a proper part of it. From
+these we prove the \emph{Floor from Infinitude} theorem
+(\Cref{thm:floor-infinitude}): identifying a thing is comparing it against the
+rest of the whole, and were that comparison completable the whole would be
+finite; since it is not, the comparison cannot finish and every thing carries a
+strictly positive irreducible residual. The positive floor is thereby
+\emph{derived}---it is the trace the non-completable whole leaves on each finite
+part (\Cref{cor:floor-derived})---and the following Finiteness Premise is retained
+only as the working hypothesis for the graph development.
 
 \begin{axiom}[Finiteness Premise]
 \label{ax:finite}
 A \emph{contact graph} is a finite weighted graph $\Gph=(\V,\E,\wt)$ with
 $\abs{\V}<\infty$, in which every edge weight is bounded below by a positive
 constant: there is $\floorc>0$ with $\wt(e)\ge\floorc$ for all $e\in\E$. We
-assume throughout that a contact graph exists and that it is connected.
+assume throughout that a contact graph exists and that it is connected. By
+\Cref{cor:floor-derived} the positive floor $\floorc$ is not an independent
+posit but the derived residual of \Cref{thm:floor-infinitude}; we keep the
+premise in this form for the combinatorial development.
 \end{axiom}
 
-The premise is almost nothing: a finite graph whose edges cost something. Its
-consequences are almost everything we mean by structure.
+The premise is almost nothing: a finite graph whose edges cost something---and
+even that cost is earned, not assumed. Its consequences are almost everything we
+mean by structure.
 
 \subsection{The ladder of necessary substructures}
 
@@ -211,6 +249,16 @@ the subgraph invariant is complete, so contact graphs are specifiable and
 instantiable; their walks are unforeseeable from the specification, an authored
 copy is a distinct structure, and authorship reaches only to the floor.
 \end{enumerate}
+
+Two further developments frame the ladder. Beneath it, \Cref{sec:ground} derives
+the floor from identifiability in a non-completable whole and names the conserved
+reference, the \emph{medium}, against which every part is individuated. Atop it,
+\Cref{sec:measurement} gives the operational reading: a measurement is a
+reshuffling that conserves the medium, so it tightens a part's boundary while
+leaving its interior residue---its identity---untouched; identity-resolution would
+require exhausting the whole and is therefore unreachable, and point-identity is
+refuted both because resolution never saturates and because independent lines of
+measurement never become redundant.
 
 \Cref{sec:master} proves the Master Theorem: T0--T8 are forced for finite
 graphs and not forced when finiteness or the positive floor is dropped.
@@ -257,12 +305,199 @@ on which no theorem depends.
 
 \subsection{Organisation}
 
-\Cref{sec:setting} fixes the contact graph and its derived objects.
-\Cref{sec:floor} proves T0. \Cref{sec:negation} proves T1. \Cref{sec:residual}
-proves T2 and T3. \Cref{sec:invariant} proves T4. \Cref{sec:gating} proves T5.
-\Cref{sec:monotone} proves T6. \Cref{sec:quotient} proves T7.
-\Cref{sec:construct} proves T8. \Cref{sec:master} proves the Master Theorem and
-concludes.
+\Cref{sec:ground} derives the floor from identifiability in a non-completable
+whole and introduces the medium. \Cref{sec:setting} fixes the contact graph and
+its derived objects. \Cref{sec:floor} proves T0. \Cref{sec:negation} proves T1.
+\Cref{sec:residual} proves T2 and T3. \Cref{sec:invariant} proves T4.
+\Cref{sec:gating} proves T5. \Cref{sec:monotone} proves T6, including the temporal
+corollary by which a progressing whole forces non-return. \Cref{sec:quotient}
+proves T7. \Cref{sec:construct} proves T8. \Cref{sec:measurement} gives the
+operational reading---measurement as reshuffling, the unreachability of identity,
+and the two-pronged falsification of point-identity. \Cref{sec:master} proves the
+Master Theorem and concludes.
+
+
+% =====================================================================
+\section{The ground premise: identifiability, the whole, and the derived floor}
+\label{sec:ground}
+% =====================================================================
+
+The Finiteness Premise (\Cref{ax:finite}) posits a positive floor. We now show
+the floor need not be posited: it is forced by a more primitive fact---that a
+thing can be identified at all within a whole that is not completable. This
+section derives the positive floor from identifiability and non-completability,
+so that \Cref{ax:finite} becomes a consequence rather than an assumption, and
+identifies the conserved reference---the \emph{medium}---against which all
+individuation occurs.
+
+\subsection{The whole and its parts}
+
+\begin{definition}[The whole; a part]
+\label{def:whole}
+The \emph{whole} is the total system $\med$ within which individuation occurs.
+A \emph{thing} is a part $A$ of $\med$ that is \emph{proper}: $A\neq\med$ and
+$A\neq\varnothing$. A thing is thus, by definition, not the whole---anything that
+were the whole would not be a distinct thing within it but the whole itself.
+\end{definition}
+
+\begin{definition}[Non-completable whole]
+\label{def:noncompletable}
+The whole $\med$ is \emph{non-completable} if no finite stage exhausts it: for
+every finite sub-collection $F$ of parts already individuated, there is a further
+part of $\med$ not in $F$. We do not assume $\med$ is a completed infinite set;
+we assume only that the process of exhausting it does not terminate. This is the
+sole sense of ``infinite'' used in the paper, and it is an order condition
+\textup{(}no terminal stage\textup{)}, not a cardinality posit.
+\end{definition}
+
+\begin{remark}[Why non-completability, not cardinality]
+\label{rem:noncompletable}
+We are careful to phrase the inexhaustibility of the whole as
+non-completability rather than as a completed uncountable set, for two reasons.
+First, the substructures of this paper \textup{(}attained minimum cuts, a
+positive floor, determinate complements\textup{)} require finiteness at each
+stage and could fail against a completed infinity \textup{(}\Cref{sec:master}\textup{)}.
+Second, and decisively, it is exactly non-completability---the impossibility of
+finishing the comparison of a part against the whole---that forces the positive
+floor below. A completed totality is not needed and would be the wrong object; a
+never-finishing process is both sufficient and correct.
+\end{remark}
+
+\subsection{Identification and its residual}
+
+\begin{definition}[Identification]
+\label{def:identification}
+To \emph{identify} a thing $A$ is to compare it against the rest of the whole:
+to determine $A$ by individuating it from $\med\setminus A$
+\textup{(}individuation by negation, \Cref{thm:negation}\textup{)}. An
+identification is \emph{complete} if the comparison of $A$ against the entirety of
+$\med\setminus A$ is finished---every part of the complement has been brought to
+bear in distinguishing $A$.
+\end{definition}
+
+\begin{definition}[Identification residual]
+\label{def:idresidual}
+The \emph{identification residual} of $A$, written $\idres(A)$, is the content of
+the comparison of $A$ against $\med\setminus A$ that remains unfinished. A
+complete identification has $\idres(A)=0$; an identification that cannot be
+finished has $\idres(A)>0$, the irreducible remainder.
+\end{definition}
+
+\subsection{The floor is forced by infinitude}
+
+\begin{theorem}[Floor from Infinitude]
+\label{thm:floor-infinitude}
+Let $\med$ be a non-completable whole \textup{(}\Cref{def:noncompletable}\textup{)}
+and let $A$ be a thing \textup{(}a proper part, \Cref{def:whole}\textup{)} that is
+identified by comparison against $\med\setminus A$. Then the identification of $A$
+cannot be completed, and its identification residual is strictly positive:
+\[
+\boxed{\ \idres(A)\ >\ 0.\ }
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose, for contradiction, that the identification of $A$ were complete, so that
+$\idres(A)=0$. By \Cref{def:identification}, completion means the comparison of
+$A$ against the entirety of $\med\setminus A$ is finished: every part of the
+complement has been brought to bear. But to finish comparing $A$ against
+$\med\setminus A$ is to exhaust $\med\setminus A$, and since $A$ is a fixed proper
+part, exhausting $\med\setminus A$ exhausts $\med$ up to the fixed $A$---a finite
+addition. Hence a completed identification yields a finite stage that exhausts
+$\med$, contradicting non-completability \textup{(}\Cref{def:noncompletable}\textup{)}.
+Therefore the identification cannot be completed, and $\idres(A)>0$.
+\end{proof}
+
+\begin{corollary}[The positive floor is derived]
+\label{cor:floor-derived}
+For a thing $A$ in a non-completable whole, the irreducible boundary content of
+its individuation is bounded below by a positive constant
+$\floorc:=\inf_A\idres(A)>0$. The positive floor of \Cref{ax:finite} is therefore
+not an independent assumption but a consequence of: \textup{(}i\textup{)} a thing
+is a proper part, and \textup{(}ii\textup{)} the whole is non-completable.
+\end{corollary}
+
+\begin{proof}
+By \Cref{thm:floor-infinitude}, $\idres(A)>0$ for every thing $A$; the infimum of
+strictly positive identification residuals over the things of $\med$ is a
+constant $\floorc\ge0$. If $\floorc=0$ there would be things with arbitrarily
+small residual, i.e. arbitrarily near-complete identifications; but each such
+identification, in the limit, would finish the comparison and exhaust $\med$, the
+same contradiction as in \Cref{thm:floor-infinitude}. Hence $\floorc>0$. Taking
+this $\floorc$ as the edge-weight floor recovers \Cref{ax:finite} as a derived
+statement: every separating boundary in the contact graph of $\med$'s parts costs
+at least the unfinishable remainder $\floorc>0$.
+\end{proof}
+
+\begin{remark}[The floor is the trace of the whole on its parts]
+\label{rem:floor-trace}
+\Cref{thm:floor-infinitude} reverses the status of the floor. It is not a
+limitation of measurement nor a stipulated constant; it is the structural
+shadow that a non-completable whole casts on each of its finite parts. A finite
+thing in an inexhaustible whole cannot complete its comparison against the rest,
+and the unfinishable remainder of that comparison \emph{is} the floor. Were the
+whole completable \textup{(}finite\textup{)}, the comparison could finish, the
+residual could reach zero, and a thing's truth could be a point; because the
+whole is not completable, the residual is positive and a thing's truth is a
+region \textup{(}\Cref{sec:residual}\textup{)}. Finitude makes the thing;
+non-completability of the whole makes the thing's truth a cell.
+\end{remark}
+
+\subsection{The medium as conserved reference}
+
+Identification is comparison against the rest. We name the reference and record
+that it is the conserved invariant of the construction.
+
+\begin{definition}[Medium]
+\label{def:medium}
+The \emph{medium} is the whole $\med$ in its role as the reference against which
+every part is individuated: the totality simultaneously in contact with every
+part, such that the separation cost of a part $A$ is the cost of its boundary to
+$\med\setminus A$. Individuation of $A$ is undefined absent the medium---there is
+then no reference against which $A$ is a part rather than the whole.
+\end{definition}
+
+\begin{proposition}[Individuation requires the medium]
+\label{prop:medium-required}
+For a thing $A$, the separation cost $b(A)=\wt(\cut(A))$ is defined only relative
+to the medium $\med\setminus A$. Removing the medium leaves $b(A)$ undefined:
+without a complement to be individuated against, $A$ is not determined as a part.
+\end{proposition}
+
+\begin{proof}
+By \Cref{thm:negation} a part is fixed only as the complement of its
+negation-set; the negation-set of $A$ within $\med$ is $\med\setminus A$, the
+medium relative to $A$. The boundary $\cut(A)$ is the set of edges between $A$ and
+$\med\setminus A$; with no $\med\setminus A$ there are no such edges and $b(A)$
+has no value. Hence individuation is defined only against the medium.
+\end{proof}
+
+\begin{remark}[Marbles in water]
+\label{rem:marbles}
+The relation of parts to medium is that of marbles to the water they sit in. The
+marbles are the individuated parts---what is known, the knowledge built so far;
+the water is the medium---the conserved invariant in contact with every marble.
+Rearranging the marbles \textup{(}building new boundaries, re-encoding\textup{)}
+does not change the water: the medium is invariant under all such reshuffling
+\textup{(}\Cref{thm:residual-invariant}\textup{)}. A thing's identity is the
+water on its own side of its boundary---the conserved residue it holds---not the
+marbles around it nor the boundary edges that mark it off. We return to this
+reading, on which no theorem depends, in \Cref{sec:measurement}.
+\end{remark}
+
+\begin{remark}[Identifiability is the premise of the whole ladder]
+\label{rem:identifiability}
+\Cref{thm:floor-infinitude} and \Cref{cor:floor-derived} let us read the entire
+paper from a single near-undeniable starting point: \emph{that anything is
+identifiable at all within a non-completable whole}. From this the positive floor
+\textup{(}T0\textup{)} follows by \Cref{cor:floor-derived}; individuation by
+negation \textup{(}T1\textup{)} follows because identification is comparison
+against the rest \textup{(}\Cref{def:identification}\textup{)}; and the remaining
+rungs T2--T8 follow from these as proved below. The Finiteness Premise is retained
+as the working hypothesis for the graph-theoretic development, now justified as a
+consequence of identifiability rather than an axiom in its own right. We make this
+equivalence precise in the Master Theorem \textup{(}\Cref{sec:master}\textup{)}.
+\end{remark}
 
 
 % =====================================================================
@@ -434,9 +669,12 @@ classes) and, since $\Gph$ is connected, connected. Thus it satisfies
 
 The first substructure is the floor itself: in a contact graph no part can be
 separated from the rest at zero cost. The statement is immediate from the
-premise, but its consequences---restated for cuts, for parts, and for the
-limiting behaviour under refinement---are what the later rungs use, so we record
-them with care.
+working premise, and the premise is itself earned---\Cref{sec:ground} derives the
+positive floor from identifiability in a non-completable whole
+(\Cref{thm:floor-infinitude,cor:floor-derived}), so the constant $\floorc>0$ used
+here is the irreducible identification residual, not a free posit. Its
+consequences---restated for cuts, for parts, and for the limiting behaviour under
+refinement---are what the later rungs use, so we record them with care.
 
 \subsection{Every separation is costly}
 
@@ -820,6 +1058,20 @@ no re-encoding removes, bounded below by the floor and---by
 orientation only; the theorems above are purely graph-theoretic.
 \end{remark}
 
+\begin{remark}[Two faces of the cut: boundary and interior]
+\label{rem:two-faces}
+The residual of a part has two faces, distinguished in \Cref{sec:measurement}.
+The \emph{boundary} face is the cut edges---the distinctions of the part from the
+rest, what it is \emph{not}; this is what a measurement builds. The
+\emph{interior} face is the conserved content on the part's own side that no
+re-encoding transfers across the cut---the part's private invariant
+(\Cref{sec:invariant}), what it \emph{is}. \Cref{thm:residual-invariant} concerns
+the conserved total; \Cref{thm:identity-interior} will show that identity is the
+interior face, approached only by tightening the boundary from outside and never
+delivered. We flag the distinction here and develop it where measurement is
+defined.
+\end{remark}
+
 \begin{remark}[A definite-yet-uncloseable quantity]
 \label{rem:cat-parity}
 A residual can be perfectly well-defined and yet impossible to fix by any single
@@ -1140,6 +1392,61 @@ By \Cref{thm:nonreturn}, $\rec$ is strictly increasing, so $j>i$ forces
 $s_j\neq s_i$; the re-contact carries the count $j>i$, placing it later on the
 order. No step decreases $\rec$, so no re-contact can carry the original count
 $i$ again.
+\end{proof}
+
+\subsection{The progressing whole: non-return from a growing complement}
+
+The committed count gives non-return internally. There is a second, independent
+source of non-return when the whole itself progresses: the complement against
+which a part is individuated grows, so a part is individuated against a strictly
+larger negation-set at each later stage. We record this, as it grounds the
+forward-only character in the non-completability of \Cref{sec:ground}.
+
+\begin{definition}[Progressing whole]
+\label{def:progressing}
+A whole $\med$ \emph{progresses} if its committed history grows: at stage $j>i$
+the set of parts and committed boundaries present includes those present at stage
+$i$ and at least one more. Equivalently, the medium relative to a fixed part
+$A$---its complement $\med\setminus A$---is non-decreasing and strictly larger at
+some later stage.
+\end{definition}
+
+\begin{theorem}[Temporal non-return]
+\label{thm:temporal-nonreturn}
+Let $\med$ be a non-completable, progressing whole and $A$ a fixed thing. Then
+$A$ at stage $j>i$ is individuated against a strictly larger complement than $A$
+at stage $i$; hence the individuation-state of $A$ at $j$ differs from that at
+$i$, even though $A$'s interior residue \textup{(}its conserved identity\textup{)}
+is unchanged. A thing is therefore distinguishable from itself at every earlier
+and later stage: its conserved interior the same, its individuating exterior never
+the same.
+\end{theorem}
+
+\begin{proof}
+By \Cref{def:progressing} the complement $\med\setminus A$ at stage $j$ properly
+contains that at stage $i$. Individuation of $A$ is determination against its
+complement (\Cref{thm:negation}); a strictly larger complement is a different
+negation-set, so the individuation-state---the pair of $A$ with the complement it
+is individuated against---differs between $i$ and $j$. The interior residue of $A$
+is its private invariant (\Cref{def:private}), conserved under reshuffling
+(\Cref{thm:private}), hence unchanged. Thus $A$-at-$j$ and $A$-at-$i$ share the
+conserved interior but differ in the individuating exterior, and are
+distinguishable as individuation-states while identical in conserved identity.
+\end{proof}
+
+\begin{corollary}[Same interior, different state, across all stages]
+\label{cor:same-different}
+For a fixed thing in a progressing whole, ``the same thing'' across stages is a
+resemblance of conserved interior against an ever-growing exterior. By
+\Cref{thm:nonreturn} and \Cref{thm:temporal-nonreturn} this resemblance is never
+identity of state: the committed record grows and the complement grows, so no
+later stage returns to an earlier individuation-state.
+\end{corollary}
+
+\begin{proof}
+Combine the internal monotone count (\Cref{thm:nonreturn}) with the growing
+complement (\Cref{thm:temporal-nonreturn}); both strictly advance the
+individuation-state, while the interior residue (\Cref{def:private}) is conserved.
 \end{proof}
 
 \begin{remark}[One law, several guises---offered as orientation]
@@ -1511,15 +1818,234 @@ relied upon.
 
 
 % =====================================================================
+\section{Measurement as reshuffling, and the unreachability of identity}
+\label{sec:measurement}
+% =====================================================================
+
+We now give the operational reading of the invariant residual and the monotone
+record: what it is to \emph{measure} a part, and why measurement reduces ignorance
+about a thing without ever delivering the thing. A measurement is a reshuffling of
+the knowledge-graph that conserves the medium; it tightens the boundary of a part
+and shrinks the part's interior residue toward, but never to, the floor. We prove
+that resolving a part's identity to a point would require exhausting the medium,
+which reshuffling conserves by construction---so identity is structurally
+unreachable. The section closes with the two-pronged way this prediction is borne
+out wherever finitely many parts are identified by instruments.
+
+\subsection{Measurement reshuffles; the medium is conserved}
+
+\begin{definition}[Reshuffling]
+\label{def:reshuffle}
+A \emph{reshuffling} of a contact graph $\Gph$ relative to a medium $\med$ is a
+weighted isomorphism of $\Gph$ that fixes the medium: a relabelling and
+re-edging of the parts that preserves all edge weights and leaves the medium's
+total contact unchanged. A \emph{measurement} of a part $A$ is a reshuffling that
+adds boundary edges incident to $A$---new distinctions of $A$ from the rest.
+\end{definition}
+
+\begin{proposition}[Measurement conserves the invariant]
+\label{prop:measure-conserves}
+A measurement, being a reshuffling \textup{(}weighted isomorphism fixing the
+medium\textup{)}, leaves the residual invariant: $\Res(\Gph')=\Res(\Gph)$
+\textup{(}\Cref{thm:residual-invariant}\textup{)}, and leaves the medium's
+conserved content unchanged. Measurement builds new boundary from existing
+material; it creates no new invariant content.
+\end{proposition}
+
+\begin{proof}
+By \Cref{def:reshuffle} a measurement is a weighted isomorphism; by
+\Cref{thm:residual-invariant} the residual is preserved under weighted
+isomorphism, so $\Res(\Gph')=\Res(\Gph)$. The medium is fixed by the reshuffling
+(\Cref{def:reshuffle}), so its total contact is unchanged. The new edges incident
+to $A$ are re-arrangements within the fixed total; no invariant content is added.
+\end{proof}
+
+\subsection{Identity is the interior residue, not the boundary}
+
+We distinguish the two faces of a part's minimum boundary. The boundary edges are
+what a measurement \emph{builds} (the marks of what the part is not); the interior
+residue is what a measurement \emph{cannot reach} (the part's own conserved
+content). Identity is the latter.
+
+\begin{definition}[Interior residue; boundary]
+\label{def:interior}
+Let $A$ be a part with minimum boundary $\cut(A)$ to the medium. Its
+\emph{boundary} is the edge set $\cut(A)$---the distinctions of $A$ from the rest
+\textup{(}the ``not-$A$'' relations\textup{)}. Its \emph{interior residue} is the
+conserved content on $A$'s own side of the boundary that no reshuffling
+transfers across $\cut(A)$: the part's private invariant
+\textup{(}\Cref{def:private}\textup{)} regarded as the water $A$ holds.
+\end{definition}
+
+\begin{theorem}[Identity is the conserved interior, approached only from outside]
+\label{thm:identity-interior}
+For a part $A$ in a medium $\med$:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item a measurement adds edges to the boundary $\cut(A)$, tightening the
+distinction of $A$ from the rest, and thereby reduces the \emph{exterior}
+ambiguity of $A$ \textup{(}what $A$ might be confused with\textup{)};
+\item it does not alter the interior residue, which is conserved under all
+reshuffling \textup{(}\Cref{prop:measure-conserves}\textup{)};
+\item hence measurement reduces how much is unsettled \emph{about the placement of
+$A$ among the rest}, never delivering the interior residue itself. Identity---the
+interior---is approached from outside by tightening the boundary and is never
+reached.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) A measurement adds boundary edges (\Cref{def:reshuffle}); each new edge
+distinguishes $A$ from a further part, reducing the set of parts from which $A$ is
+not yet distinguished---its exterior ambiguity. (ii) The interior residue is the
+private invariant of $A$ (\Cref{def:interior,def:private}), invariant under
+weighted isomorphism (\Cref{thm:private}\,(ii)), hence unchanged by the reshuffling
+that the measurement is (\Cref{prop:measure-conserves}). (iii) Combining: each
+measurement moves only the exterior (the boundary), never the interior; the
+interior is conserved. So the sequence of measurements drives exterior ambiguity
+downward while the interior stands fixed, and the interior is never produced by
+the process---only ever bounded more tightly from outside.
+\end{proof}
+
+\subsection{The self-defeat of identity-resolution}
+
+\begin{theorem}[Identity-resolution would exhaust the medium]
+\label{thm:self-defeat}
+Let $\med$ be a non-completable medium \textup{(}\Cref{def:noncompletable}\textup{)}
+and $A$ a thing in it. To resolve $A$'s identity to a point---to drive its
+interior residue to zero, $\idres(A)=0$---would require the comparison of $A$
+against $\med\setminus A$ to be complete, hence the medium to be exhausted. But a
+measurement is a reshuffling that conserves the medium
+\textup{(}\Cref{prop:measure-conserves}\textup{)}. Therefore no measurement, and
+no sequence of measurements, resolves $A$'s identity: the operation available for
+the task conserves exactly the quantity the task would have to eliminate.
+\end{theorem}
+
+\begin{proof}
+By \Cref{thm:floor-infinitude}, $\idres(A)=0$ requires the comparison of $A$
+against $\med\setminus A$ to be complete, which exhausts the medium and
+contradicts non-completability. Independently, the only operation in hand---
+measurement---is by \Cref{prop:measure-conserves} a reshuffling that leaves the
+medium's conserved content unchanged; it cannot exhaust the medium, since it
+conserves it. Thus the goal ($\idres(A)=0$) demands eliminating the medium while
+the means (measurement) conserves it: the procedure is self-defeating, and
+$\idres(A)>0$ persists under every measurement.
+\end{proof}
+
+\begin{corollary}[To know the thing exactly is to know the whole exactly]
+\label{cor:know-whole}
+Resolving $A$'s identity to a point would require knowing $\med\setminus A$
+exactly---everything $A$ is compared against. Since $\med$ is non-completable and
+measurement conserves it, this is unreachable. One cannot know a thing exactly
+without exhausting the inexhaustible reference in which it is a thing.
+\end{corollary}
+
+\begin{proof}
+Immediate from \Cref{thm:self-defeat}: completing the comparison is exhausting
+$\med\setminus A$, i.e. knowing the medium exactly, which non-completability and
+conservation jointly forbid.
+\end{proof}
+
+\subsection{Resolution and multiplicity: a standing falsification of point-truth}
+
+The preceding theorems make a prediction about any system in which finitely many
+parts are identified by repeated measurement: identification never terminates, and
+it never terminates in two distinct ways---by depth and by direction. We record
+the prediction and note that it is what is observed.
+
+\begin{proposition}[Resolution never saturates]
+\label{prop:resolution}
+If the identity of a part were a point \textup{(}$\idres(A)=0$ attainable\textup{)},
+there would be a finite measurement past which further measurement is inert---the
+point being already reached. Under \Cref{thm:self-defeat}, $\idres(A)>0$ after
+every measurement, so further measurement always reduces residual and never
+becomes inert: \emph{resolution} \textup{(}the depth of distinction\textup{)} can
+always be increased and never saturates.
+\end{proposition}
+
+\begin{proof}
+Point-identity would make some finite measurement terminal, as resolving a point
+admits no improvement past attainment. \Cref{thm:self-defeat} forbids attainment:
+the interior residue is positive after every measurement, so each further
+measurement strictly tightens the boundary (\Cref{thm:identity-interior}\,(i)) and
+none is terminal. Hence resolution increases without saturation.
+\end{proof}
+
+\begin{proposition}[Multiplicity never terminates]
+\label{prop:multiplicity}
+If the identity of a part were a point, a single line of measurement would exhaust
+it, and a second line of measurement on an independent basis would be redundant.
+Under \Cref{thm:self-defeat}, each independent line of measurement is a distinct
+family of boundary edges---a distinct complement against which $A$ is
+individuated---and each reduces a distinct portion of exterior ambiguity. Hence
+independent lines of measurement are never redundant: \emph{multiplicity}
+\textup{(}the number of independent bases of distinction\textup{)} can always be
+extended.
+\end{proposition}
+
+\begin{proof}
+A point identity is exhausted by any complete comparison, so a second independent
+comparison adds nothing---redundancy. By \Cref{thm:self-defeat} no comparison is
+complete; by \Cref{thm:identity-interior} each line of measurement contributes its
+own boundary edges against its own complement, reducing a portion of exterior
+ambiguity not addressed by the others. Therefore each independent line contributes
+non-redundantly, and new lines can always be added.
+\end{proof}
+
+\begin{theorem}[Two-pronged falsification of point-truth]
+\label{thm:falsification}
+In any system of finitely many parts identified by measurement within a
+non-completable medium, point-identity is refuted in two independent ways:
+resolution does not saturate \textup{(}\Cref{prop:resolution}\textup{)} and
+independent lines of measurement do not become redundant
+\textup{(}\Cref{prop:multiplicity}\textup{)}. Both are consequences of
+$\idres(A)>0$ \textup{(}\Cref{thm:self-defeat}\textup{)}, and either alone is
+inconsistent with point-identity. The identity of a part is therefore a region
+\textup{(}a cell of positive interior residue\textup{)}, never a point.
+\end{theorem}
+
+\begin{proof}
+Point-identity implies a terminal resolution (contradicted by
+\Cref{prop:resolution}) and the redundancy of a second independent line
+(contradicted by \Cref{prop:multiplicity}). Each contradiction alone refutes
+point-identity; both follow from the positive interior residue of
+\Cref{thm:self-defeat}. Positive interior residue is exactly cell-identity
+(\Cref{thm:residual-region}). Hence identity is a cell.
+\end{proof}
+
+\begin{remark}[Interpretation: what an instrument does, on which nothing depends]
+\label{rem:instrument-reading}
+A reader may recognise \Cref{thm:falsification} in the practice of identifying a
+substance by instruments. Were the identity of a substance a point---a single
+determinate value---one instrument would suffice and no finer one would be wanted;
+yet substances are identified by many instruments on incommensurable principles,
+each refined across generations, none terminal. On the present reading each
+instrument is a line of measurement contributing boundary edges against its own
+complement; ``the substance'' is the cell these lines jointly bracket---the
+conserved interior no instrument delivers. A measurement does not make the
+substance more itself, nor its value more true; the invariant is conserved
+(\Cref{prop:measure-conserves}). It reduces how much is unsettled about the
+substance's placement among everything it is not. That resolution never saturates
+and instruments never stop multiplying is, on this reading, the standing evidence
+that identity is a cell and not a point: a point would need neither finer
+resolution nor a second instrument. We assert only the graph theorems
+(\Cref{thm:identity-interior,thm:self-defeat,thm:falsification}); the reading is
+orientation and is not relied upon.
+\end{remark}
+
+
+% =====================================================================
 \section{The Master Theorem, scope, and conclusion}
 \label{sec:master}
 % =====================================================================
 
 We now show that the entire ladder T0--T8 is forced by, and only by, the
-Finiteness Premise: each rung holds for finite contact graphs and fails to be
-forced when finiteness or the positive floor is dropped. This is the sense in
-which the structures of the paper are necessary substructures of a finite
-world---and the sense in which structure itself is the consequence of finitude.
+Finiteness Premise---and that the premise is itself forced by the identifiability
+of any one thing in a non-completable whole (\Cref{sec:ground}). Each rung holds
+for finite contact graphs and fails to be forced when finiteness or the positive
+floor is dropped. This is the sense in which the structures of the paper are
+necessary substructures of a finite world within an inexhaustible whole---and the
+sense in which structure itself is the consequence of finitude meeting
+non-completability.
 
 \subsection{Where finiteness is used}
 
@@ -1629,6 +2155,58 @@ side, the full ladder of structure on the other. The closing statement is the
 biconditional read in words.
 \end{proof}
 
+\subsection{Identifiability and the trace of the whole}
+
+The Master Theorem ties the ladder to the Finiteness Premise. We close the
+deduction by tying that premise, in turn, to the bare fact of identifiability,
+using \Cref{sec:ground}.
+
+\begin{theorem}[Identifiability Theorem]
+\label{thm:identifiability}
+Let $\med$ be a whole. The following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item there exists an identifiable thing in $\med$---a proper part told from the
+rest of a non-completable whole;
+\item the contact graph of $\med$'s parts satisfies the Finiteness Premise with a
+strictly positive floor \textup{(}\Cref{ax:finite}\textup{)};
+\item the full ladder T0--T8 holds of that graph.
+\end{enumerate}
+Consequently a world in which T0--T8 fail is one in which nothing is
+identifiable---only the undifferentiated whole. Structure and identifiability are
+the same fact.
+\end{theorem}
+
+\begin{proof}
+$(\mathrm{i})\Rightarrow(\mathrm{ii})$: an identifiable thing is a proper part
+$A\neq\med$ compared against $\med\setminus A$; by \Cref{thm:floor-infinitude} the
+comparison cannot complete and $\idres(A)>0$, and by \Cref{cor:floor-derived} the
+infimum of these residuals is a positive floor $\floorc$, which is the edge-weight
+floor of the contact graph of $\med$'s parts---the Finiteness Premise.
+$(\mathrm{ii})\Rightarrow(\mathrm{iii})$: the Master Theorem (\Cref{thm:master}),
+forward direction. $(\mathrm{iii})\Rightarrow(\mathrm{i})$: T0 alone provides a
+part with a positive boundary cut (\Cref{thm:floor}), i.e. a proper part told from
+the rest at positive cost---an identifiable thing. The contrapositive of the cycle
+gives the closing statement: no identifiable thing $\iff$ no positive floor
+$\iff$ the ladder fails, leaving only the whole undifferentiated.
+\end{proof}
+
+\begin{corollary}[The floor is the trace of the whole on its parts]
+\label{cor:trace}
+The positive floor is neither a measurement artifact nor a free constant: it is
+the strictly positive identification residual that a non-completable whole forces
+on each of its finite parts \textup{(}\Cref{thm:floor-infinitude}\textup{)}. Were
+the whole completable, the residual could vanish, a thing's truth could be a
+point, and the ladder would not be forced; because the whole is non-completable,
+the residual is positive, truth is a cell, and the ladder stands. The floor is the
+trace the inexhaustible whole leaves on whatever is finite within it.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:floor-infinitude} and \Cref{cor:floor-derived} give the positive
+residual; \Cref{prop:necessity} gives the failure of the ladder when the floor is
+absent (completable or zero-floor case). The contrast is the stated trace.
+\end{proof}
+
 \subsection{Scope}
 
 The theorems are statements about finite weighted graphs and an embedded gating
@@ -1637,13 +2215,19 @@ graph whose edges cost something. We have made no claim about any particular
 system. Where each rung uses the premise is marked (\Cref{prop:dependence}); that
 the premise is necessary is shown by counterexample (\Cref{prop:necessity}).
 Interpretive readings---of parts as agents, gates as selecting fields, quotient
-gates as collective purpose, residuals as conserved truth, private invariants as
-identities, authored structures as manufactured individuals---are confined to
-remarks (\Cref{rem:negation-interp,rem:repacking,rem:character,rem:field,%
-rem:purpose,rem:onelaw,rem:new-category}) on which no theorem depends. A reader
+gates as collective purpose, residuals as conserved truth, the medium as the
+whole, private invariants as identities, measurement as inquiry, authored
+structures as manufactured individuals---are confined to remarks
+(\Cref{rem:negation-interp,rem:repacking,rem:character,rem:field,%
+rem:purpose,rem:onelaw,rem:new-category,rem:floor-trace,rem:marbles,%
+rem:identifiability,rem:instrument-reading}) on which no theorem depends. A reader
 will recognise that finitely many bounded parts---of many kinds---satisfy the
 premise; we prove everything of the abstract graph alone, and material that could
-not be proved at this standard has been omitted.
+not be proved at this standard has been omitted. One hypothesis beyond the graph
+is used, and only in \Cref{sec:ground}: that the whole is non-completable. It is
+not a cardinality posit but an order condition (no terminal stage), and it is
+exactly what forces the floor; absent it, the floor may vanish and the ladder is
+not compelled.
 
 \subsection{Conclusion}
 
@@ -1656,11 +2240,21 @@ require a selector and never return to a prior state; a coherent collective of
 parts has exactly one selector on its quotient; and such structures, being
 completely specifiable, can be authored---though authorship reaches only the
 instrument and not its music, produces only new individuals and never copies, and
-resolves only to its own floor. Each is forced by finiteness and dissolves
-without it. The answer to why a world is structured at all is therefore not that
+resolves only to its own floor. And beneath the hypothesis lies a barer one: that anything is identifiable at all
+within a whole one cannot exhaust. From that alone the positive floor is
+forced---the comparison identifying a thing against the rest can never finish, so
+an irreducible residual remains---and with the floor, the whole ladder. To
+measure a thing is then to reshuffle the knowledge around it, conserving the whole
+and tightening the boundary, reducing how much is unsettled about the thing
+without ever delivering the thing: identity is the conserved interior no
+reshuffling reaches, and to resolve it to a point would be to exhaust the whole.
+Each result is forced by finitude meeting the inexhaustible and dissolves without
+either. The answer to why a world is structured at all is therefore not that
 structure is added to it or discovered in it, but that structure is what a world
-\emph{must} be for finitely many bounded parts to stand apart within it at all.
-Structure is the shadow of finitude; the contact graph is its form.
+\emph{must} be for finitely many parts to stand apart within a whole they cannot
+exhaust. The floor is the trace of the whole on its parts; structure is the shadow
+of finitude meeting the inexhaustible; and identifiability, conserved truth, and
+structure are one fact. The contact graph is its form.
 
 % =====================================================================
 \bibliographystyle{plainnat}

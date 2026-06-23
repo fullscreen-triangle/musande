@@ -1,0 +1,182 @@
+
+% =====================================================================
+\section{The ground premise: identifiability, the whole, and the derived floor}
+\label{sec:ground}
+% =====================================================================
+
+The Finiteness Premise (\Cref{ax:finite}) posits a positive floor. We now show
+the floor need not be posited: it is forced by a more primitive fact---that a
+thing can be identified at all within a whole that is not completable. This
+section derives the positive floor from identifiability and non-completability,
+so that \Cref{ax:finite} becomes a consequence rather than an assumption, and
+identifies the conserved reference---the \emph{medium}---against which all
+individuation occurs.
+
+\subsection{The whole and its parts}
+
+\begin{definition}[The whole; a part]
+\label{def:whole}
+The \emph{whole} is the total system $\med$ within which individuation occurs.
+A \emph{thing} is a part $A$ of $\med$ that is \emph{proper}: $A\neq\med$ and
+$A\neq\varnothing$. A thing is thus, by definition, not the whole---anything that
+were the whole would not be a distinct thing within it but the whole itself.
+\end{definition}
+
+\begin{definition}[Non-completable whole]
+\label{def:noncompletable}
+The whole $\med$ is \emph{non-completable} if no finite stage exhausts it: for
+every finite sub-collection $F$ of parts already individuated, there is a further
+part of $\med$ not in $F$. We do not assume $\med$ is a completed infinite set;
+we assume only that the process of exhausting it does not terminate. This is the
+sole sense of ``infinite'' used in the paper, and it is an order condition
+\textup{(}no terminal stage\textup{)}, not a cardinality posit.
+\end{definition}
+
+\begin{remark}[Why non-completability, not cardinality]
+\label{rem:noncompletable}
+We are careful to phrase the inexhaustibility of the whole as
+non-completability rather than as a completed uncountable set, for two reasons.
+First, the substructures of this paper \textup{(}attained minimum cuts, a
+positive floor, determinate complements\textup{)} require finiteness at each
+stage and could fail against a completed infinity \textup{(}\Cref{sec:master}\textup{)}.
+Second, and decisively, it is exactly non-completability---the impossibility of
+finishing the comparison of a part against the whole---that forces the positive
+floor below. A completed totality is not needed and would be the wrong object; a
+never-finishing process is both sufficient and correct.
+\end{remark}
+
+\subsection{Identification and its residual}
+
+\begin{definition}[Identification]
+\label{def:identification}
+To \emph{identify} a thing $A$ is to compare it against the rest of the whole:
+to determine $A$ by individuating it from $\med\setminus A$
+\textup{(}individuation by negation, \Cref{thm:negation}\textup{)}. An
+identification is \emph{complete} if the comparison of $A$ against the entirety of
+$\med\setminus A$ is finished---every part of the complement has been brought to
+bear in distinguishing $A$.
+\end{definition}
+
+\begin{definition}[Identification residual]
+\label{def:idresidual}
+The \emph{identification residual} of $A$, written $\idres(A)$, is the content of
+the comparison of $A$ against $\med\setminus A$ that remains unfinished. A
+complete identification has $\idres(A)=0$; an identification that cannot be
+finished has $\idres(A)>0$, the irreducible remainder.
+\end{definition}
+
+\subsection{The floor is forced by infinitude}
+
+\begin{theorem}[Floor from Infinitude]
+\label{thm:floor-infinitude}
+Let $\med$ be a non-completable whole \textup{(}\Cref{def:noncompletable}\textup{)}
+and let $A$ be a thing \textup{(}a proper part, \Cref{def:whole}\textup{)} that is
+identified by comparison against $\med\setminus A$. Then the identification of $A$
+cannot be completed, and its identification residual is strictly positive:
+\[
+\boxed{\ \idres(A)\ >\ 0.\ }
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose, for contradiction, that the identification of $A$ were complete, so that
+$\idres(A)=0$. By \Cref{def:identification}, completion means the comparison of
+$A$ against the entirety of $\med\setminus A$ is finished: every part of the
+complement has been brought to bear. But to finish comparing $A$ against
+$\med\setminus A$ is to exhaust $\med\setminus A$, and since $A$ is a fixed proper
+part, exhausting $\med\setminus A$ exhausts $\med$ up to the fixed $A$---a finite
+addition. Hence a completed identification yields a finite stage that exhausts
+$\med$, contradicting non-completability \textup{(}\Cref{def:noncompletable}\textup{)}.
+Therefore the identification cannot be completed, and $\idres(A)>0$.
+\end{proof}
+
+\begin{corollary}[The positive floor is derived]
+\label{cor:floor-derived}
+For a thing $A$ in a non-completable whole, the irreducible boundary content of
+its individuation is bounded below by a positive constant
+$\floorc:=\inf_A\idres(A)>0$. The positive floor of \Cref{ax:finite} is therefore
+not an independent assumption but a consequence of: \textup{(}i\textup{)} a thing
+is a proper part, and \textup{(}ii\textup{)} the whole is non-completable.
+\end{corollary}
+
+\begin{proof}
+By \Cref{thm:floor-infinitude}, $\idres(A)>0$ for every thing $A$; the infimum of
+strictly positive identification residuals over the things of $\med$ is a
+constant $\floorc\ge0$. If $\floorc=0$ there would be things with arbitrarily
+small residual, i.e. arbitrarily near-complete identifications; but each such
+identification, in the limit, would finish the comparison and exhaust $\med$, the
+same contradiction as in \Cref{thm:floor-infinitude}. Hence $\floorc>0$. Taking
+this $\floorc$ as the edge-weight floor recovers \Cref{ax:finite} as a derived
+statement: every separating boundary in the contact graph of $\med$'s parts costs
+at least the unfinishable remainder $\floorc>0$.
+\end{proof}
+
+\begin{remark}[The floor is the trace of the whole on its parts]
+\label{rem:floor-trace}
+\Cref{thm:floor-infinitude} reverses the status of the floor. It is not a
+limitation of measurement nor a stipulated constant; it is the structural
+shadow that a non-completable whole casts on each of its finite parts. A finite
+thing in an inexhaustible whole cannot complete its comparison against the rest,
+and the unfinishable remainder of that comparison \emph{is} the floor. Were the
+whole completable \textup{(}finite\textup{)}, the comparison could finish, the
+residual could reach zero, and a thing's truth could be a point; because the
+whole is not completable, the residual is positive and a thing's truth is a
+region \textup{(}\Cref{sec:residual}\textup{)}. Finitude makes the thing;
+non-completability of the whole makes the thing's truth a cell.
+\end{remark}
+
+\subsection{The medium as conserved reference}
+
+Identification is comparison against the rest. We name the reference and record
+that it is the conserved invariant of the construction.
+
+\begin{definition}[Medium]
+\label{def:medium}
+The \emph{medium} is the whole $\med$ in its role as the reference against which
+every part is individuated: the totality simultaneously in contact with every
+part, such that the separation cost of a part $A$ is the cost of its boundary to
+$\med\setminus A$. Individuation of $A$ is undefined absent the medium---there is
+then no reference against which $A$ is a part rather than the whole.
+\end{definition}
+
+\begin{proposition}[Individuation requires the medium]
+\label{prop:medium-required}
+For a thing $A$, the separation cost $b(A)=\wt(\cut(A))$ is defined only relative
+to the medium $\med\setminus A$. Removing the medium leaves $b(A)$ undefined:
+without a complement to be individuated against, $A$ is not determined as a part.
+\end{proposition}
+
+\begin{proof}
+By \Cref{thm:negation} a part is fixed only as the complement of its
+negation-set; the negation-set of $A$ within $\med$ is $\med\setminus A$, the
+medium relative to $A$. The boundary $\cut(A)$ is the set of edges between $A$ and
+$\med\setminus A$; with no $\med\setminus A$ there are no such edges and $b(A)$
+has no value. Hence individuation is defined only against the medium.
+\end{proof}
+
+\begin{remark}[Marbles in water]
+\label{rem:marbles}
+The relation of parts to medium is that of marbles to the water they sit in. The
+marbles are the individuated parts---what is known, the knowledge built so far;
+the water is the medium---the conserved invariant in contact with every marble.
+Rearranging the marbles \textup{(}building new boundaries, re-encoding\textup{)}
+does not change the water: the medium is invariant under all such reshuffling
+\textup{(}\Cref{thm:residual-invariant}\textup{)}. A thing's identity is the
+water on its own side of its boundary---the conserved residue it holds---not the
+marbles around it nor the boundary edges that mark it off. We return to this
+reading, on which no theorem depends, in \Cref{sec:measurement}.
+\end{remark}
+
+\begin{remark}[Identifiability is the premise of the whole ladder]
+\label{rem:identifiability}
+\Cref{thm:floor-infinitude} and \Cref{cor:floor-derived} let us read the entire
+paper from a single near-undeniable starting point: \emph{that anything is
+identifiable at all within a non-completable whole}. From this the positive floor
+\textup{(}T0\textup{)} follows by \Cref{cor:floor-derived}; individuation by
+negation \textup{(}T1\textup{)} follows because identification is comparison
+against the rest \textup{(}\Cref{def:identification}\textup{)}; and the remaining
+rungs T2--T8 follow from these as proved below. The Finiteness Premise is retained
+as the working hypothesis for the graph-theoretic development, now justified as a
+consequence of identifiability rather than an axiom in its own right. We make this
+equivalence precise in the Master Theorem \textup{(}\Cref{sec:master}\textup{)}.
+\end{remark}
