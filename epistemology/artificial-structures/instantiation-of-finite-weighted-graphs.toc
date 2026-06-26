@@ -1,69 +1,69 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}The question}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Method: conditional existence}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}The ground premise and the derived floor}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}The ladder of necessary substructures}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}On the word ``contact''}{4}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Why finiteness is the source}{4}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Relation to existing work}{4}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Organisation}{4}{subsection.1.8}%
-\contentsline {section}{\numberline {2}The ground premise: identifiability, the whole, and the derived floor}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}The whole and its parts}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Identification and its residual}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}The floor is forced by infinitude}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}The medium as conserved reference}{6}{subsection.2.4}%
-\contentsline {section}{\numberline {3}The contact graph and its derived objects}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Vertices, edges, weights}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Subgraphs as parts-within-the-whole}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Isomorphism, automorphism, invariant}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Walks and gating}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}The quotient of a partition}{8}{subsection.3.5}%
-\contentsline {section}{\numberline {4}T0: the floor}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Every separation is costly}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Refinement lowers but never abolishes the floor}{9}{subsection.4.2}%
-\contentsline {section}{\numberline {5}T1: individuation by negation}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}No distinguished vertex}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Complementation determines a part}{10}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Negation is the unique selector-free determination}{10}{subsection.5.3}%
-\contentsline {section}{\numberline {6}T2 and T3: the residual is a conserved region}{11}{section.6}%
-\contentsline {subsection}{\numberline {6.1}The cut-residual}{11}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}T2: the residual is bounded below and is a region}{11}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}T3: the residual is invariant under re-encoding}{12}{subsection.6.3}%
-\contentsline {section}{\numberline {7}T4: every part has a private invariant}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}The internal residual of a part}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The invariant is the standing structure}{14}{subsection.7.2}%
-\contentsline {section}{\numberline {8}T5: selection requires a gate}{14}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Underdetermination of the next step}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}The gate as the minimal selecting datum}{15}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}The gate biases an otherwise free graph}{15}{subsection.8.3}%
-\contentsline {section}{\numberline {9}T6: histories do not return}{16}{section.9}%
-\contentsline {subsection}{\numberline {9.1}The committed count is strictly monotone}{16}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Re-contact is forward only}{16}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}The progressing whole: non-return from a growing complement}{17}{subsection.9.3}%
-\contentsline {section}{\numberline {10}T7: plurality forces a single quotient gate}{18}{section.10}%
-\contentsline {subsection}{\numberline {10.1}The collective as a quotient}{18}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}A coherent collective has exactly one gate}{18}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}The scaling homomorphism}{19}{subsection.10.3}%
-\contentsline {section}{\numberline {11}T8: authored structures exist, and are bounded}{19}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Specification and instantiation}{19}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Bound I: trajectories are not foreseeable from the specification}{20}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Bound II: an authored copy is a distinct structure}{21}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Bound III: authorship reaches only to the floor}{21}{subsection.11.4}%
-\contentsline {section}{\numberline {12}Measurement as reshuffling, and the unreachability of identity}{22}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Measurement reshuffles; the medium is conserved}{22}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Identity is the interior residue, not the boundary}{22}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}The self-defeat of identity-resolution}{23}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Resolution and multiplicity: a standing falsification of point-truth}{23}{subsection.12.4}%
-\contentsline {section}{\numberline {13}Numerical verification}{24}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Method}{24}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}The derived floor and T0}{25}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Negation, residual, and the private invariant}{29}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Gating, non-return, and the quotient}{29}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Authored structures and measurement}{29}{subsection.13.5}%
-\contentsline {section}{\numberline {14}The Master Theorem, scope, and conclusion}{29}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Where finiteness is used}{29}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Failure without finiteness}{30}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}The Master Theorem}{30}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Identifiability and the trace of the whole}{30}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Scope}{31}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Conclusion}{31}{subsection.14.6}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The question}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Method: conditional existence}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}The ground premise and the derived floor}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}The ladder of necessary substructures}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}On the word ``contact''}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Why finiteness is the source}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Relation to existing work}{5}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Organisation}{6}{subsection.1.8}%
+\contentsline {section}{\numberline {2}The ground premise: identifiability, the whole, and the derived floor}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The whole and its parts}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Identification and its residual}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The floor is forced by infinitude}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}The medium as conserved reference}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}The contact graph and its derived objects}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Vertices, edges, weights}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Subgraphs as parts-within-the-whole}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Isomorphism, automorphism, invariant}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Walks and gating}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}The quotient of a partition}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}T0: the floor}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Every separation is costly}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Refinement lowers but never abolishes the floor}{11}{subsection.4.2}%
+\contentsline {section}{\numberline {5}T1: individuation by negation}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}No distinguished vertex}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Complementation determines a part}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Negation is the unique selector-free determination}{12}{subsection.5.3}%
+\contentsline {section}{\numberline {6}T2 and T3: the residual is a conserved region}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The cut-residual}{13}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}T2: the residual is bounded below and is a region}{13}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}T3: the residual is invariant under re-encoding}{14}{subsection.6.3}%
+\contentsline {section}{\numberline {7}T4: every part has a private invariant}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The internal residual of a part}{15}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The invariant is the standing structure}{15}{subsection.7.2}%
+\contentsline {section}{\numberline {8}T5: selection requires a gate}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Underdetermination of the next step}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}The gate as the minimal selecting datum}{17}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}The gate biases an otherwise free graph}{17}{subsection.8.3}%
+\contentsline {section}{\numberline {9}T6: histories do not return}{18}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The committed count is strictly monotone}{18}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Re-contact is forward only}{18}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}The progressing whole: non-return from a growing complement}{18}{subsection.9.3}%
+\contentsline {section}{\numberline {10}T7: plurality forces a single quotient gate}{19}{section.10}%
+\contentsline {subsection}{\numberline {10.1}The collective as a quotient}{20}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}A coherent collective has exactly one gate}{20}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}The scaling homomorphism}{20}{subsection.10.3}%
+\contentsline {section}{\numberline {11}T8: authored structures exist, and are bounded}{21}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Specification and instantiation}{21}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Bound I: trajectories are not foreseeable from the specification}{22}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Bound II: an authored copy is a distinct structure}{22}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Bound III: authorship reaches only to the floor}{23}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Measurement as reshuffling, and the unreachability of identity}{24}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Measurement reshuffles; the medium is conserved}{24}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Identity is the interior residue, not the boundary}{24}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}The self-defeat of identity-resolution}{25}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Resolution and multiplicity: a standing falsification of point-truth}{25}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Numerical verification}{26}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Method}{26}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}The derived floor and T0}{27}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Negation, residual, and the private invariant}{28}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Gating, non-return, and the quotient}{28}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Authored structures and measurement}{28}{subsection.13.5}%
+\contentsline {section}{\numberline {14}The Master Theorem, scope, and conclusion}{31}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Where finiteness is used}{31}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Failure without finiteness}{31}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}The Master Theorem}{32}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Identifiability and the trace of the whole}{32}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Scope}{33}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Conclusion}{33}{subsection.14.6}%
