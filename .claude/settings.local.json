@@ -14,5 +14,9 @@
       "Bash(python synchronised_coordination_validation.py)",
       "Bash(python operational_intelligence_validation.py)"
     ]
+  },
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://compat.bitagent.dev",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-gateway-credential:gw_8287d83503517ecc9866b65295bf9fc60969b5db15fe8799be7d2342fc3c98b1"
   }
 }

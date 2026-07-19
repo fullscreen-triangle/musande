@@ -1,0 +1,35 @@
+{
+  "experiment": "EXP03_history_phase_search",
+  "seed": 42,
+  "reference_runtime": {
+    "V5_alternation_pass": true,
+    "V6a_monotone_count_pass": true,
+    "V6b_distinct_copies_pass": true,
+    "V7_recall_is_search_pass": true,
+    "V7_repeated_query_evolves": true,
+    "final_count": 139,
+    "count_trace_head": [
+      6,
+      10,
+      17,
+      23,
+      24,
+      33,
+      41,
+      49
+    ]
+  },
+  "negative_controls": {
+    "fetch_cache_V7_violation_detected": true,
+    "rollback_V6_violation_detected": true,
+    "multitask_V5_violation_detected": true
+  },
+  "summary": {
+    "V5_alternation_pass": true,
+    "V6a_monotone_count_pass": true,
+    "V6b_distinct_copies_pass": true,
+    "V7_recall_is_search_pass": true,
+    "controls_all_detected": true
+  },
+  "verdict": "CONFIRMED"
+}

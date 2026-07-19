@@ -1,0 +1,201 @@
+{
+  "experiment": "EXP01_identity_invariant",
+  "seed": 42,
+  "cases": [
+    {
+      "n": 4,
+      "density": 0.2,
+      "spread": 0.5,
+      "chi": 2.0470886739438248,
+      "realised_floor": 2.0470886739438248
+    },
+    {
+      "n": 4,
+      "density": 0.2,
+      "spread": 3.0,
+      "chi": 2.191451768312526,
+      "realised_floor": 2.191451768312526
+    },
+    {
+      "n": 4,
+      "density": 0.5,
+      "spread": 0.5,
+      "chi": 6.567366048293014,
+      "realised_floor": 6.567366048293014
+    },
+    {
+      "n": 4,
+      "density": 0.5,
+      "spread": 3.0,
+      "chi": 6.685777313673824,
+      "realised_floor": 6.685777313673824
+    },
+    {
+      "n": 4,
+      "density": 0.8,
+      "spread": 0.5,
+      "chi": 6.454464325898513,
+      "realised_floor": 6.454464325898513
+    },
+    {
+      "n": 4,
+      "density": 0.8,
+      "spread": 3.0,
+      "chi": 10.242758662538176,
+      "realised_floor": 10.242758662538176
+    },
+    {
+      "n": 5,
+      "density": 0.2,
+      "spread": 0.5,
+      "chi": 2.152978312075326,
+      "realised_floor": 2.152978312075326
+    },
+    {
+      "n": 5,
+      "density": 0.2,
+      "spread": 3.0,
+      "chi": 2.2481899997673156,
+      "realised_floor": 2.2481899997673156
+    },
+    {
+      "n": 5,
+      "density": 0.5,
+      "spread": 0.5,
+      "chi": 6.46544501624324,
+      "realised_floor": 6.46544501624324
+    },
+    {
+      "n": 5,
+      "density": 0.5,
+      "spread": 3.0,
+      "chi": 6.6654949856369985,
+      "realised_floor": 6.6654949856369985
+    },
+    {
+      "n": 5,
+      "density": 0.8,
+      "spread": 0.5,
+      "chi": 4.51535291653139,
+      "realised_floor": 4.51535291653139
+    },
+    {
+      "n": 5,
+      "density": 0.8,
+      "spread": 3.0,
+      "chi": 8.924903879175528,
+      "realised_floor": 8.924903879175528
+    },
+    {
+      "n": 6,
+      "density": 0.2,
+      "spread": 0.5,
+      "chi": 4.211434129193583,
+      "realised_floor": 4.211434129193583
+    },
+    {
+      "n": 6,
+      "density": 0.2,
+      "spread": 3.0,
+      "chi": 3.4427312849002356,
+      "realised_floor": 3.4427312849002356
+    },
+    {
+      "n": 6,
+      "density": 0.5,
+      "spread": 0.5,
+      "chi": 7.11376269773162,
+      "realised_floor": 7.11376269773162
+    },
+    {
+      "n": 6,
+      "density": 0.5,
+      "spread": 3.0,
+      "chi": 11.396670102494644,
+      "realised_floor": 11.396670102494644
+    },
+    {
+      "n": 6,
+      "density": 0.8,
+      "spread": 0.5,
+      "chi": 6.628462654763165,
+      "realised_floor": 6.628462654763165
+    },
+    {
+      "n": 6,
+      "density": 0.8,
+      "spread": 3.0,
+      "chi": 12.459563365654589,
+      "realised_floor": 12.459563365654589
+    },
+    {
+      "n": 7,
+      "density": 0.2,
+      "spread": 0.5,
+      "chi": 2.186130786595774,
+      "realised_floor": 2.186130786595774
+    },
+    {
+      "n": 7,
+      "density": 0.2,
+      "spread": 3.0,
+      "chi": 5.274150599962179,
+      "realised_floor": 5.274150599962179
+    },
+    {
+      "n": 7,
+      "density": 0.5,
+      "spread": 0.5,
+      "chi": 4.513243564890322,
+      "realised_floor": 4.513243564890322
+    },
+    {
+      "n": 7,
+      "density": 0.5,
+      "spread": 3.0,
+      "chi": 10.692799403505997,
+      "realised_floor": 10.692799403505997
+    },
+    {
+      "n": 7,
+      "density": 0.8,
+      "spread": 0.5,
+      "chi": 10.533445700189969,
+      "realised_floor": 10.533445700189969
+    },
+    {
+      "n": 7,
+      "density": 0.8,
+      "spread": 3.0,
+      "chi": 16.06906606888813,
+      "realised_floor": 16.06906606888813
+    }
+  ],
+  "two_triangle_witness": {
+    "chi": 2.0,
+    "minimising_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ]
+    ],
+    "minimiser_is_singleton_split": false,
+    "realised_floor": 2.0,
+    "V2c_nonlocal_pass": true
+  },
+  "summary": {
+    "n_random_cases": 24,
+    "V1_floor_pass": true,
+    "V2a_invariance_max_deviation": 1.7763568394002505e-15,
+    "V2a_invariance_pass": true,
+    "V2b_positivity_pass": true,
+    "V2c_nonlocal_witness_pass": true
+  },
+  "verdict": "CONFIRMED"
+}

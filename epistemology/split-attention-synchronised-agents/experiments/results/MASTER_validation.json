@@ -1,0 +1,175 @@
+{
+  "paper": "Split-Attention Synchronised Agents",
+  "seed": 42,
+  "n_predictions": 18,
+  "n_pass": 18,
+  "all_pass": true,
+  "experiment_verdicts": {
+    "EXP01": "CONFIRMED",
+    "EXP02": "CONFIRMED",
+    "EXP03": "CONFIRMED",
+    "EXP04": "CONFIRMED"
+  },
+  "key_quantities": {
+    "identity_invariance_max_deviation": 1.7763568394002505e-15,
+    "waterfilling_max_dev_vs_scipy": 6.043608633266029e-07,
+    "waterfilling_margin_spread": 4.440892098500626e-16,
+    "kuramoto_max_R": 0.9999887017901627,
+    "crowd_mc_vs_formula_max_error": 0.00137221737704879,
+    "society_selfsim_max_dev": 6.517356904156557e-07
+  },
+  "honesty_notes": [
+    "V2a/V2b/V2c/V3b/V8a exact: brute-force enumeration or KKT, machine precision.",
+    "V3a/V9 are CROSS-METHOD: bisection water-filling vs scipy SLSQP; agreement ~6e-7 reflects SLSQP's own convergence tolerance, not a defect of either method.",
+    "V8d is Monte-Carlo (2e5 trials); ~1e-3 error is sampling noise, consistent with 1/sqrt(N).",
+    "V5/V6b/V7 pass includes NEGATIVE CONTROLS: purpose-built violating runtimes (fetch-cache, rollback, multitask) are each detected by the predicate, so a pass on the reference runtime is a meaningful test, not a tautology.",
+    "V8b uses REAL Kuramoto ODE integration to drive R from dispersed to locked; C=lambda(1-R) is then evaluated on the achieved R, not assumed.",
+    "These test internal mathematical consistency of the paper's claims. They are NOT external empirical validation against real-world attention/coordination data."
+  ],
+  "verdict_table": [
+    {
+      "prediction": "V1  floor: no zero cut, realised floor>0",
+      "theorem": "thm:floor",
+      "experiment": "EXP01",
+      "summary_key": "V1_floor_pass",
+      "method": "exact enumeration",
+      "pass": true
+    },
+    {
+      "prediction": "V2a identity invariant under relabelling",
+      "theorem": "thm:identity(ii)",
+      "experiment": "EXP01",
+      "summary_key": "V2a_invariance_pass",
+      "method": "exact (random automorphism-domain perms)",
+      "pass": true
+    },
+    {
+      "prediction": "V2b identity positive (>= floor)",
+      "theorem": "thm:identity(i)",
+      "experiment": "EXP01",
+      "summary_key": "V2b_positivity_pass",
+      "method": "exact enumeration",
+      "pass": true
+    },
+    {
+      "prediction": "V2c identity non-local (witness)",
+      "theorem": "thm:identity(iii)",
+      "experiment": "EXP01",
+      "summary_key": "V2c_nonlocal_witness_pass",
+      "method": "exact witness",
+      "pass": true
+    },
+    {
+      "prediction": "V3a water-filling matches convex solver",
+      "theorem": "thm:waterfill",
+      "experiment": "EXP02",
+      "summary_key": "V3a_bisection_matches_convex_pass",
+      "method": "cross-method vs scipy SLSQP",
+      "pass": true
+    },
+    {
+      "prediction": "V3b marginal gains equalise at one price",
+      "theorem": "cor:preoccupied",
+      "experiment": "EXP02",
+      "summary_key": "V3b_equalisation_pass",
+      "method": "exact (KKT margins)",
+      "pass": true
+    },
+    {
+      "prediction": "V3c price monotone in budget",
+      "theorem": "thm:waterfill",
+      "experiment": "EXP02",
+      "summary_key": "V3c_budget_monotone_pass",
+      "method": "monotone sweep",
+      "pass": true
+    },
+    {
+      "prediction": "V3c price monotone in #scenes",
+      "theorem": "thm:waterfill",
+      "experiment": "EXP02",
+      "summary_key": "V3c_scene_monotone_pass",
+      "method": "monotone sweep",
+      "pass": true
+    },
+    {
+      "prediction": "V4  token presence (alloc -> 0+)",
+      "theorem": "cor:token",
+      "experiment": "EXP02",
+      "summary_key": "V4_token_pass",
+      "method": "limit sweep",
+      "pass": true
+    },
+    {
+      "prediction": "V5  construction/commitment alternation",
+      "theorem": "thm:alternation",
+      "experiment": "EXP03",
+      "summary_key": "V5_alternation_pass",
+      "method": "reference runtime + neg. control",
+      "pass": true
+    },
+    {
+      "prediction": "V6a committed count strictly increasing",
+      "theorem": "thm:history(i)",
+      "experiment": "EXP03",
+      "summary_key": "V6a_monotone_count_pass",
+      "method": "reference runtime",
+      "pass": true
+    },
+    {
+      "prediction": "V6b distinct copies at every step",
+      "theorem": "thm:history(iii)",
+      "experiment": "EXP03",
+      "summary_key": "V6b_distinct_copies_pass",
+      "method": "reference runtime + neg. control",
+      "pass": true
+    },
+    {
+      "prediction": "V7  recall is search (>=1 act/answer)",
+      "theorem": "thm:recsearch",
+      "experiment": "EXP03",
+      "summary_key": "V7_recall_is_search_pass",
+      "method": "reference runtime + neg. control",
+      "pass": true
+    },
+    {
+      "prediction": "V8a society carries own non-local identity",
+      "theorem": "cor:society-id",
+      "experiment": "EXP04",
+      "summary_key": "V8a_society_identity_pass",
+      "method": "exact witness",
+      "pass": true
+    },
+    {
+      "prediction": "V8b coord. cost C=lambda(1-R)>=0, =0 iff R=1",
+      "theorem": "thm:phaselock",
+      "experiment": "EXP04",
+      "summary_key": "V8b_coordination_cost_pass",
+      "method": "real Kuramoto integration",
+      "pass": true
+    },
+    {
+      "prediction": "V8c coordination without shared internals",
+      "theorem": "thm:coord",
+      "experiment": "EXP04",
+      "summary_key": "V8c_disjoint_coordination_pass",
+      "method": "disjoint-internal agents",
+      "pass": true
+    },
+    {
+      "prediction": "V8d crowd sharpening (prod q_i)",
+      "theorem": "thm:crowd",
+      "experiment": "EXP04",
+      "summary_key": "V8d_crowd_sharpening_pass",
+      "method": "Monte-Carlo vs formula",
+      "pass": true
+    },
+    {
+      "prediction": "V9  society water-filling self-similar",
+      "theorem": "thm:socwaterfill",
+      "experiment": "EXP04",
+      "summary_key": "V9_self_similarity_pass",
+      "method": "cross-method vs scipy SLSQP",
+      "pass": true
+    }
+  ]
+}
