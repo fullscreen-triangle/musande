@@ -1,0 +1,1248 @@
+% =====================================================================
+%  Agent Smith:
+%  A Specification Language for Instantiating Purpose-Directed Agents,
+%  and a Compiler That Instantiates Them Honouring Four Invariants
+%
+%  Self-contained. States its own objects; every construct of the
+%  language is given a meaning as a finite weighted graph, a bounded
+%  convex program, or a construction on one, and the compiler's
+%  guarantee is proved from those meanings. The agent's domain mechanics
+%  are NOT part of the language: they are supplied by the specifier
+%  through the declared drive and scenes. Agent Smith specifies and
+%  instantiates; it does not smith.
+% =====================================================================
+\documentclass[11pt,twocolumn,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{stmaryrd}
+\usepackage{thmtools}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true, linkcolor=blue!50!black,
+  citecolor=green!50!black, urlcolor=blue!60!black
+}
+
+% ---- theorem environments ----
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries, notefont=\mdseries, notebraces={(}{)},
+  bodyfont=\itshape, postheadspace=1em
+]{thmstyle}
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries, notefont=\mdseries, notebraces={(}{)},
+  bodyfont=\normalfont, postheadspace=1em
+]{defstyle}
+
+\declaretheorem[style=thmstyle, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmstyle, name=Proposition, sibling=theorem]{proposition}
+\declaretheorem[style=thmstyle, name=Lemma, sibling=theorem]{lemma}
+\declaretheorem[style=thmstyle, name=Corollary, sibling=theorem]{corollary}
+\declaretheorem[style=defstyle, name=Definition, sibling=theorem]{definition}
+\declaretheorem[style=defstyle, name=Rule, sibling=theorem]{trule}
+\declaretheorem[style=defstyle, name=Remark, sibling=theorem]{remark}
+\declaretheorem[style=defstyle, name=Example, sibling=theorem]{example}
+\declaretheorem[style=defstyle, name=Principle, sibling=theorem]{principle}
+
+\crefname{trule}{Rule}{Rules}
+\Crefname{trule}{Rule}{Rules}
+
+% ---- notation ----
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Agent}{\mathsf{A}}
+\newcommand{\Self}{\Gamma}
+\newcommand{\V}{V}
+\newcommand{\E}{E}
+\newcommand{\wt}{w}
+\newcommand{\floorc}{\beta}
+\newcommand{\cut}{\partial}
+\newcommand{\Char}{\chi}
+\newcommand{\drive}{\Phi}
+\newcommand{\Purp}{x^{\star}}
+\newcommand{\att}{\alpha}
+\newcommand{\Scene}{\mathsf{S}}
+\newcommand{\scenes}{\mathcal{S}}
+\newcommand{\Soc}{\Sigma}
+\newcommand{\Out}{\mathcal{O}}
+\newcommand{\spec}{\mathsf{s}}         % a specification (a script)
+\newcommand{\Specs}{\mathbb{S}}        % the language of specifications
+\newcommand{\compile}{\mathcal{C}}     % the compiler
+\newcommand{\coh}{\kappa}              % coherence
+\newcommand{\dist}{d}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\judge}{\vdash}
+\newcommand{\lowers}{\rightsquigarrow} % lowering relation
+
+% ---- listing style for Agent Smith scripts ----
+\definecolor{kw}{RGB}{30,64,120}
+\definecolor{cm}{RGB}{90,110,90}
+\definecolor{st}{RGB}{140,60,40}
+\lstdefinelanguage{AgentSmith}{
+  morekeywords={agent,drive,purpose,scene,scenes,society,self,parts,
+    separations,budget,floor,coherence,phase,outcome,gain,minimise,
+    maximise,spawn,snapshot,retire,configure,tie,couple,attends,
+    serves,as,when,over,in,with,keeps,reach},
+  sensitive=true,
+  morecomment=[l]{//},
+  morestring=[b]",
+}
+\lstset{
+  language=AgentSmith,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{kw}\bfseries,
+  commentstyle=\color{cm}\itshape,
+  stringstyle=\color{st},
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framesep=4pt,
+  rulecolor=\color{black!25},
+  xleftmargin=2pt,
+}
+
+\title{\textbf{Agent Smith:\\
+A Specification Language for Instantiating Purpose-Directed Agents,\\
+with a Compiler That Instantiates Them Honouring Four Invariants}}
+
+\author{Kundai Farai Sachikonye\\[2pt]
+\small AIMe Registry for Artificial Intelligence\\
+\small \texttt{kundai.sachikonye@bitspark.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+A game designer specifies a non-player character not by writing its every
+motion but by saying what it \emph{is} and what it is \emph{for}: an iron
+smith who forges, contracts, and sources ore; a baker who bakes because he
+must. We give a language that lets any user, application, or module specify
+an agent in exactly this way---by declaring what the agent is for, not how
+each act is performed---and a compiler that turns the specification into a
+running agent. The language is \textbf{Agent Smith}; every script written in
+it \emph{is} an Agent Smith, a complete specification of one agent. We fix
+the language's objects as those of the underlying theory of purpose-directed
+agents: a self-graph carrying a conserved identity, a purpose that is the
+attractor of a declared drive, a finite family of scenes the agent may act
+in, a coherence condition it must not break, and a bounded attention budget.
+We give Agent Smith a grammar, a type system, and a small-step lowering
+semantics into agent objects, and we prove the compiler's central guarantee:
+\emph{every well-typed Agent Smith compiles to an agent that honours, by
+construction, four runtime invariants---conserved identity, a never-resetting
+committed count, search-not-fetch world access, and construction/commitment
+phase exclusion---and no ill-typed script is instantiated}. We prove the
+language is \emph{mechanism-agnostic}: it specifies the agent's purpose and
+the scenes that serve it, and delegates every domain behaviour to a
+constructor-supplied hook, so that Agent Smith never contains the competence
+of any domain (how to forge, how to bake, how to solve) but only the means to
+instantiate an agent that pursues one. We prove a society of agents is
+specified by the same language one level up, so any configuration of
+agents---an ensemble instantiated and used as the specifier chooses---is
+itself an Agent Smith. Because the agent an Agent Smith instantiates is, by
+the underlying theory, indifferent between ``living a life'' and ``executing
+a task''---the two are one object under two readings of where its purpose
+rests---the language instantiates game characters and task-solving agents by
+the same constructs. The compiler is the instantiator; the specifier
+declares intent; the agent does the rest. Interpretive readings---of a script
+as a character, of a society as a population---are confined to remarks on
+which no theorem depends.
+\end{abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} specification language; agent instantiation;
+domain-specific language; typed compiler; lowering semantics; runtime
+invariant; purpose-directed agent; non-player character; mechanism
+agnosticism; society of agents.
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+\subsection{Specifying an agent the way one specifies an NPC}
+
+A designer who wants an iron smith in a game does not write the smith's
+every hammer-blow. They say what the smith \emph{is}---a smith, with a
+workshop, a standing in the town---and what the smith is \emph{for}: to
+forge, to take contracts, to keep itself supplied with ore. The rest---which
+of these the smith does at a given moment, how it forges a particular
+blade---follows from what it is for and from the competence of forging, which
+the designer does not re-derive. A convincing character is \emph{specified by
+its purpose}, and its conduct is the pursuit of that purpose through whatever
+activities serve it.
+
+This paper gives a language for specifying agents in exactly this way, and a
+compiler that instantiates them. The language is \textbf{Agent Smith}. A
+user, an application, or another module writes an Agent Smith---a script that
+declares an agent's purpose, the scenes in which it may act, and the few
+standing quantities that make it an agent at all---and the compiler turns
+that declaration into a running agent. The name is literal: every script
+\emph{is} an Agent Smith, and the compiler is the smith that forges the agent
+the script describes.
+
+\subsection{What the language is, and is not}
+
+Agent Smith is a \emph{specification and instantiation} language. Its scope
+is deliberately narrow and its boundary is the crux of the design:
+
+\begin{itemize}[leftmargin=*]
+\item Agent Smith \emph{specifies} an agent: its purpose (what it is for),
+its scenes (the activities that may serve that purpose), its identity
+material, its coherence condition, its attention budget, its floors.
+\item Agent Smith \emph{instantiates} an agent: the compiler reads a
+well-typed script and produces a running agent that honours the runtime
+invariants by construction.
+\item Agent Smith does \emph{not} specify what the agent \emph{does} in a
+domain. How a blade is forged, how bread is baked, how a task is solved is
+\emph{not} in the language. That competence is supplied by the specifier
+through a constructor hook (the declared drive and the per-scene behaviour),
+exactly as the competence of an instrument is the player's and not the
+score's. Agent Smith carries the intent; the mechanism is delegated.
+\end{itemize}
+
+The language thereby stays thin. It contains no domain grammar, no forging
+routine, no baking routine, no solver; it contains only the constructs needed
+to say \emph{what an agent is for} and to build one that pursues it.
+
+\subsection{The underlying theory, used as a black box}
+
+Agent Smith is a language \emph{over} a fixed theory of purpose-directed
+agents, which it does not re-prove. That theory supplies, for any agent
+satisfying a handful of axioms (finiteness, presence, costly individuation,
+an act floor with bounded attention, phase exclusion): a conserved,
+non-local, positive \emph{identity} invariant; a \emph{purpose} that is the
+attractor of a strongly convex \emph{drive}; a \emph{water-filling} division
+of attention across concurrent \emph{scenes} under a single price; a
+\emph{monotone} committed history under which an agent never re-occupies a
+past state and an authored copy is a distinct individual; \emph{search-not-%
+fetch} world access, so a reply is walked afresh over the agent's present
+graph rather than returned from a store; \emph{construction/commitment phase
+exclusion}; \emph{two-factor relevance} (a response is admissible only if it
+both advances purpose and preserves coherence); and, one level up, a
+\emph{society} that is again an agent-shaped object with its own identity and
+its own single shared purpose, coordinating in a common \emph{outcome space}
+without any shared internals. Agent Smith's job is to let a specifier
+\emph{name} the free parts of such an agent---its drive, its scenes, its
+material---and to \emph{compile} the naming into an instance for which all of
+the above holds. We treat the theory's results as given and cite them where
+each is consumed; a reader who grants them can check every claim about the
+language.
+
+\subsection{Mechanism agnosticism, stated once}
+
+The single most important property of Agent Smith is that it is
+\emph{mechanism-agnostic}. The specifier says the agent is \emph{for} forging
+(a drive whose attractor is ``blades exist, to specification'') and that
+forging, contracting, and sourcing-ore are \emph{scenes} it may act in; the
+specifier does \emph{not}, in Agent Smith, write how forging is performed.
+That is supplied as a hook. Consequently the same language, with different
+declared purposes and scenes, specifies a game smith and a task-solving agent
+with no change to the language: by the underlying theory the two are one
+object---an agent pursuing an attractor---differing only in whether the
+attractor's cell is \emph{standing} (never saturated, so the agent runs on: a
+character with a life) or \emph{attainable} (reached, so the agent halts: a
+task done). Agent Smith instantiates both from the same constructs.
+
+\subsection{Contributions}
+
+\begin{enumerate}[leftmargin=*]
+\item A grammar for Agent Smith (\Cref{sec:grammar}): the constructs by which
+a user, application, or module specifies an agent by its purpose and scenes.
+\item A denotation (\Cref{sec:denotation}): each construct is given a meaning
+as an object of the underlying agent theory---self-graph, drive, scene,
+coherence, budget, society.
+\item A type system (\Cref{sec:typing}) that admits exactly the
+specifications the compiler can instantiate into an agent honouring the
+invariants, and a proof that typing is decidable.
+\item A lowering semantics (\Cref{sec:lowering}) taking a well-typed script to
+an agent instance, and the \emph{Instantiation Theorem}
+(\Cref{sec:soundness}): every well-typed Agent Smith compiles to an agent that
+honours the four runtime invariants by construction, and no ill-typed script
+is instantiated.
+\item The \emph{tick-loop} (\Cref{sec:tickloop}): a small-step specification of
+what a compiled agent does---observe the solution-state (tiered, cheap-first),
+diagnose whether it is stalled, and commit through a runtime-owned sufficiency
+gate that reads the outcome, not the agent's reasoning---with a proof that the
+loop preserves the four invariants and that a pure observer (which commits
+nothing) is a valid, almost-free member.
+\item The mechanism-agnosticism theorem (\Cref{sec:agnostic}): the language
+carries no domain competence; behaviour is delegated to a constructor hook,
+and the same script shape instantiates a character or a task-agent.
+\item Society as an Agent Smith (\Cref{sec:society}): a configuration of
+agents is specified by the same language one level up, closed under
+composition.
+\end{enumerate}
+
+\subsection{Organisation}
+
+\Cref{sec:objects} fixes the agent objects Agent Smith targets, imported from
+the underlying theory. \Cref{sec:grammar} gives the grammar.
+\Cref{sec:denotation} gives the denotation. \Cref{sec:typing} gives the type
+system. \Cref{sec:lowering} gives the lowering semantics. \Cref{sec:tickloop}
+specifies the tick-loop---what a compiled agent does each tick (observe,
+diagnose, commit), with the pure observer as its floor case.
+\Cref{sec:soundness} proves the Instantiation Theorem. \Cref{sec:agnostic}
+proves mechanism agnosticism. \Cref{sec:lifecycle} covers management (spawn,
+snapshot, retire). \Cref{sec:society} lifts to societies.
+\Cref{sec:examples} gives worked Agent Smiths---a smith and a task-agent.
+\Cref{sec:scope} states scope.
+
+% =====================================================================
+\section{The agent objects Agent Smith targets}
+\label{sec:objects}
+% =====================================================================
+
+Agent Smith compiles specifications into \emph{agent objects}. We fix those
+objects here, importing them from the underlying theory of purpose-directed
+agents; each is used by the compiler as a black box with the stated
+guarantee. Nothing in this section is proved anew.
+
+\begin{definition}[Agent object]
+\label{def:agent-object}
+An \emph{agent object} is a tuple
+\[
+\Agent=\bigl(\Self,\ \drive,\ \scenes,\ \coh,\ \att,\ \floorc_a,\ m\bigr)
+\]
+where: $\Self=(\V,\E,\wt)$ is a finite connected weighted \emph{self-graph}
+with weight floor $\floorc>0$ (the internal distinctions and the costs of
+holding them apart); $\drive$ is a strongly convex \emph{drive potential} on
+a compact convex disposition space $\mathcal{B}\subseteq\R^n$, with unique
+minimiser the \emph{purpose} $\Purp=\arg\min\drive$; $\scenes$ is a finite
+family of \emph{scenes}, each a pair $(A_\Scene,\gamma_\Scene)$ of an outcome
+map $A_\Scene:\mathcal{B}\to\Out$ into a common outcome space $\Out$ and a
+gain profile $\gamma_\Scene$; $\coh$ is a \emph{coherence} predicate on
+candidate responses; $\att>0$ is the \emph{attention budget}; $\floorc_a>0$
+is the \emph{act floor}; and $m\in\N$ is the \emph{committed count}.
+\end{definition}
+
+\begin{definition}[The four runtime invariants]
+\label{def:invariants}
+An agent object, once running, is required to preserve four
+\emph{invariants}:
+\begin{enumerate}[label=\textbf{(I\arabic*)},leftmargin=3em]
+\item \emph{Conserved identity.} The character invariant
+$\Char(\Agent)=\min_{\mathcal{Q}:k\ge2}\sum_{i<j}\wt(\cut(U_i,U_j))$ is
+strictly positive, non-local, and unchanged under every relabelling of the
+parts.
+\item \emph{Never-resetting count.} $m$ is incremented on every committed act
+and never decremented.
+\item \emph{Search-not-fetch.} Every response is the terminus of a fresh
+residual-descending walk on the present $\Self$; no answer is returned from a
+store without a walk.
+\item \emph{Phase exclusion.} At each instant the agent is in exactly one of a
+construction phase (updating $\Self$, committing no act) or a commitment phase
+(committing an act, forming no distinction).
+\end{enumerate}
+\end{definition}
+
+\begin{principle}[The theory guarantees the invariants for any agent object]
+\label{prin:theory}
+For any agent object $\Agent$ (\Cref{def:agent-object}) whose self-graph has a
+positive floor, whose drive is strongly convex, whose scenes have the stated
+form, and whose acts are floored, the underlying theory guarantees:
+\textup{(I1)} identity is a conserved positive non-local region;
+\textup{(I2)} the committed count is strictly monotone and copies are
+distinct; \textup{(I3)} recalling is searching; \textup{(I4)} construction and
+commitment alternate; and, additionally, attention over the scenes divides by
+a single-price water-filling rule, a response is admissible iff it is
+two-factor relevant (purpose gain and coherence margin), and a society of
+agent objects is again an agent object with its own identity and single shared
+purpose, coordinating in $\Out$ without shared internals. We take these as
+given.
+\end{principle}
+
+\begin{remark}[Agent Smith's whole job]
+\label{rem:job}
+\Cref{prin:theory} says the invariants hold for \emph{any} well-formed agent
+object. Agent Smith's entire responsibility is therefore to guarantee that
+what it compiles \emph{is} a well-formed agent object: a positive-floor
+self-graph, a strongly convex drive, well-formed scenes, a floored act, a
+coherence predicate, a positive budget. The type system (\Cref{sec:typing}) is
+exactly the decidable check that a script denotes such an object; the
+Instantiation Theorem (\Cref{sec:soundness}) is that a well-typed script
+always does. The compiler does not re-prove the invariants; it earns them by
+producing an object the theory already covers.
+\end{remark}
+
+% =====================================================================
+\section{Grammar: how one specifies an agent}
+\label{sec:grammar}
+% =====================================================================
+
+An Agent Smith is a script. We give its abstract grammar and then its concrete
+syntax. The grammar has exactly the constructs needed to name the free parts
+of an agent object (\Cref{def:agent-object}) and no others; in particular it
+has no construct for a domain routine.
+
+\subsection{Abstract grammar}
+
+\begin{definition}[Agent Smith, abstractly]
+\label{def:grammar}
+An \emph{Agent Smith} $\spec$ is a term of the grammar
+\[
+\begin{array}{rcl}
+\spec &::=& \texttt{agent}\ \iota\ \{\ \delta\ \sigma\ \rho\ \}
+       \ \mid\ \texttt{society}\ \iota\ \{\ \overline{\spec}\ \theta\ \}\\[2pt]
+\delta &::=& \texttt{purpose}\ \pi\quad(\text{the drive / attractor})\\[2pt]
+\sigma &::=& \texttt{scenes}\ \{\ \overline{S}\ \}\\[2pt]
+S &::=& \texttt{scene}\ \iota\ \texttt{serves}\ \pi\ \texttt{with}\ h\\[2pt]
+\rho &::=& \texttt{self}\ \{\,\overline{p},\ \overline{e}\,\}\ \
+           \texttt{budget}\ \att\ \ \texttt{floor}\ \floorc\ \
+           \texttt{coherence}\ \coh\\[2pt]
+\pi &::=& \texttt{minimise}\ \phi\ \mid\ \texttt{reach}\ o\in\Out\\[2pt]
+\theta &::=& \overline{\texttt{tie}}\ \ \texttt{couple}\ K
+\end{array}
+\]
+where $\iota$ is an identifier; $\phi$ names a strongly convex potential and
+$o$ an outcome; $\overline{p},\overline{e}$ are declared parts and
+separations; $h$ is a \emph{behaviour hook} (the delegated mechanism);
+$\overline{\texttt{tie}}$ are inter-agent separations; $K$ is a coupling
+strength. Overlines denote finite lists.
+\end{definition}
+
+\begin{remark}[There is no rule for ``what the scene does''---only that it
+serves the purpose]
+\label{rem:no-mechanism-rule}
+The scene form is \texttt{scene}\ $\iota$\ \texttt{serves}\ $\pi$\
+\texttt{with}\ $h$. It names the scene, declares \emph{which purpose it
+serves}, and binds a hook $h$ that performs the domain work. The grammar has
+no production expanding $h$ into forging steps or baking steps: $h$ is opaque
+to Agent Smith, supplied by the specifier or a module. This is the
+grammatical form of mechanism agnosticism (\Cref{sec:agnostic}): the language
+can say a scene serves a purpose, never how it serves it.
+\end{remark}
+
+\subsection{Concrete syntax}
+
+The concrete syntax is a lightweight surface over \Cref{def:grammar}. A
+specification of a smith reads:
+
+\begin{lstlisting}
+// An Agent Smith: the iron smith.
+// Says what the smith IS FOR; not how it forges.
+agent smith {
+  purpose minimise forge_residual
+    // attractor: blades exist, to spec
+
+  scenes {
+    scene hammer   serves forge_residual with forge_hook
+    scene contract serves forge_residual with contract_hook
+    scene source   serves forge_residual with source_ore_hook
+  }
+
+  self {
+    parts { skill, stock, orders, reputation }
+    separations {
+      (skill, stock: 3), (stock, orders: 2),
+      (orders, reputation: 2), (reputation, skill: 2)
+    }
+  }
+  budget 1.0
+  floor  2.0
+  coherence keeps { reputation, skill }
+}
+\end{lstlisting}
+
+\noindent The three scenes---\texttt{hammer}, \texttt{contract},
+\texttt{source}---are the smith's ``life'': all serve the one purpose
+\texttt{forge\_residual}, and which the smith does at a moment is not scripted
+but decided by water-filling over their gains (\Cref{prin:theory}). The hooks
+\texttt{forge\_hook}, \texttt{contract\_hook}, \texttt{source\_ore\_hook}
+carry the domain competence and are not part of Agent Smith.
+
+\begin{remark}[The specifier writes intent, the compiler writes the agent]
+\label{rem:intent}
+Everything in the script above is \emph{intent}: what the smith is for, which
+activities serve it, what holds it together, how much attention it has.
+Nowhere does the script say ``at tick 5, hammer.'' The compiler
+(\Cref{sec:lowering}) turns the intent into an agent object whose conduct is
+the pursuit of \texttt{forge\_residual} through the declared scenes, and the
+theory (\Cref{prin:theory}) supplies the conduct.
+\end{remark}
+
+% =====================================================================
+\section{Denotation: what each construct means}
+\label{sec:denotation}
+% =====================================================================
+
+We give each construct a denotation as a piece of an agent object
+(\Cref{def:agent-object}). The denotation map $\llbracket\cdot\rrbracket$ is
+the specification of the compiler's front end: it says what object a script is
+asking for, before typing decides whether the request is admissible.
+
+\begin{definition}[Denotation]
+\label{def:denotation}
+The denotation $\llbracket\spec\rrbracket$ of an Agent Smith is defined by
+structural recursion:
+\begin{align*}
+\llbracket\texttt{self}\{\overline p,\overline e\}\rrbracket
+  &= \Self=(\V,\E,\wt),\ \V=\overline p,\ \E=\overline e,\\
+  &\qquad \wt(e)=\text{declared cost of }e;\\
+\llbracket\texttt{purpose minimise }\phi\rrbracket
+  &= \drive:=\phi,\ \Purp:=\arg\min\phi;\\
+\llbracket\texttt{purpose reach }o\rrbracket
+  &= \drive:=\tfrac12\,\dist(A(\cdot),o)^2,\ \Purp:=A^{-1}(o);\\
+\llbracket\texttt{scene }\iota\texttt{ serves }\pi\texttt{ with }h\rrbracket
+  &= \Scene=(A_\Scene,\gamma_\Scene),\ \mathrm{hook}(h);\\
+\llbracket\texttt{budget }\att\rrbracket &= \att;\quad
+\llbracket\texttt{floor }\floorc\rrbracket = \floorc;\quad
+\llbracket\texttt{coherence }\coh\rrbracket = \coh;\\
+\llbracket\texttt{agent }\iota\{\delta\sigma\rho\}\rrbracket
+  &= \Agent=(\Self,\drive,\scenes,\coh,\att,\floorc_a,0);\\
+\llbracket\texttt{society }\iota\{\overline\spec\,\theta\}\rrbracket
+  &= \Soc=\text{quotient of }\llbracket\overline\spec\rrbracket\text{ under }\theta.
+\end{align*}
+The committed count of a freshly denoted agent is $0$ (I2's base).
+\end{definition}
+
+\begin{remark}[Two ways to name a purpose]
+\label{rem:two-purposes}
+\Cref{def:denotation} gives two forms of \texttt{purpose}. \texttt{minimise
+}$\phi$ names the drive directly by a strongly convex potential---the general
+case. \texttt{reach }$o$ names an outcome $o\in\Out$ and synthesises the drive
+as squared distance to it---the common case, and the one that makes a
+\emph{task}-agent: its attractor is the point $o$, attainable, so it halts at
+quiescence. \texttt{minimise} with a floored potential whose minimum is a
+standing region makes a \emph{character}: never saturated, so it runs on. The
+same construct, two regimes (\Cref{thm:regimes}).
+\end{remark}
+
+% =====================================================================
+\section{Type system: which specifications are instantiable}
+\label{sec:typing}
+% =====================================================================
+
+Not every script denotes a \emph{well-formed} agent object. A drive that is
+not strongly convex has no unique purpose; a self-graph with a zero-weight
+separation has no floor; a scene serving no declared purpose is dead; a
+non-positive budget admits no attention. The type system admits exactly the
+scripts whose denotation is a well-formed agent object, so the compiler
+instantiates all and only those.
+
+\begin{definition}[Judgements]
+\label{def:judgements}
+The typing judgement $\judge\spec:\mathsf{Agent}$ reads ``$\spec$ is a
+well-formed Agent Smith and denotes a well-formed agent object.'' Auxiliary
+judgements type the parts: $\judge\rho:\mathsf{Self}$,
+$\judge\delta:\mathsf{Drive}$, $\judge S:\mathsf{Scene}(\pi)$ (``scene $S$
+serves purpose $\pi$'').
+\end{definition}
+
+\begin{trule}[Self well-formed]
+\label{rule:self}
+$\judge\texttt{self}\{\overline p,\overline e\}\ \texttt{floor}\ \floorc:
+\mathsf{Self}$ holds iff the graph $(\overline p,\overline e)$ is connected,
+simple, nonempty, and every declared cost is $\ge\floorc>0$. (Positive floor
+and connectedness: the hypotheses of the identity theorem.)
+\end{trule}
+
+\begin{trule}[Drive well-formed]
+\label{rule:drive}
+$\judge\texttt{purpose }\pi:\mathsf{Drive}$ holds iff $\pi$ denotes a strongly
+convex, continuously differentiable potential on a compact convex disposition
+space (for \texttt{minimise }$\phi$, that $\phi$ is so; for \texttt{reach
+}$o$, automatic, as squared distance is $1$-strongly convex). (Strong
+convexity: the hypothesis of unique purpose and attraction.)
+\end{trule}
+
+\begin{trule}[Scene serves a declared purpose]
+\label{rule:scene}
+$\judge\texttt{scene }\iota\texttt{ serves }\pi\texttt{ with }h:
+\mathsf{Scene}(\pi)$ holds iff $\pi$ is the agent's declared purpose, the gain
+profile $\gamma_\Scene$ is nondecreasing with $\gamma_\Scene(0)=0$, and the
+hook $h$ has the outcome-map type $\mathcal{B}\to\Out$. A scene serving no
+declared purpose does not type. (No dead scenes: every scene must reduce the
+one residual.)
+\end{trule}
+
+\begin{trule}[Agent well-formed]
+\label{rule:agent}
+\[
+\frac{\judge\rho:\mathsf{Self}\quad \judge\delta:\mathsf{Drive}\quad
+      \bigl(\judge S_i:\mathsf{Scene}(\pi)\bigr)_i\quad \att>0\quad
+      \floorc_a>0}
+     {\judge\texttt{agent }\iota\{\delta\,\texttt{scenes}\{\overline S\}\,
+      \rho\}:\mathsf{Agent}}
+\]
+All parts well-formed, all scenes serving the one declared purpose, budget and
+act floor positive.
+\end{trule}
+
+\begin{theorem}[Typing is decidable]
+\label{thm:decidable}
+Whether $\judge\spec:\mathsf{Agent}$ is decidable in time polynomial in the
+size of $\spec$, given oracles for (a) connectivity of a finite graph and (b)
+strong convexity of the named potential.
+\end{theorem}
+
+\begin{proof}
+\Cref{rule:self} checks connectivity (linear in $\abs\E$), simplicity,
+nonemptiness, and a floor comparison per edge---all polynomial.
+\Cref{rule:drive} defers to the strong-convexity oracle; for \texttt{reach},
+it is immediate. \Cref{rule:scene} checks a declared-purpose match (identifier
+equality), monotonicity and the zero of the profile (given the profile's
+form), and a hook type. \Cref{rule:agent} is a finite conjunction of the above
+plus two positivity checks. Each premise is polynomial and there are finitely
+many, so the judgement is decidable in polynomial time.
+\end{proof}
+
+\begin{remark}[The type system is exactly the well-formed-object check]
+\label{rem:typing-is-wf}
+\Cref{rule:self,rule:drive,rule:scene,rule:agent} are, one for one, the
+hypotheses \Cref{prin:theory} needs: positive floor and connectedness
+(identity), strong convexity (purpose), well-formed scenes (water-filling),
+positive act floor (monotone count and search-not-fetch). Typing is not an
+extra discipline layered on the theory; it \emph{is} the theory's hypotheses
+made into a decidable front-end check.
+\end{remark}
+
+% =====================================================================
+\section{Lowering: instantiation as compilation}
+\label{sec:lowering}
+% =====================================================================
+
+The compiler $\compile$ takes a well-typed Agent Smith to a running agent
+instance by a small-step lowering relation $\lowers$. Lowering is where
+``specification'' becomes ``instance.''
+
+\begin{definition}[Lowering]
+\label{def:lowering}
+The lowering relation $\spec\lowers\Agent$ is defined for
+$\judge\spec:\mathsf{Agent}$ by:
+\begin{enumerate}[label=\textup{L\arabic*.},leftmargin=2.6em]
+\item \emph{Realise the self-graph.} Choose a concrete labelling of
+$\llbracket\rho\rrbracket$; the identity invariant is label-independent (I1),
+so any labelling is admissible.
+\item \emph{Bind the drive.} Install $\drive=\llbracket\delta\rrbracket$ with
+its minimiser $\Purp$; by \Cref{rule:drive} it is strongly convex, so $\Purp$
+exists and attracts.
+\item \emph{Install the scenes.} For each typed scene, register
+$(A_\Scene,\gamma_\Scene)$ and bind its hook $h$; the compiler holds $h$ as an
+opaque callable (\Cref{sec:agnostic}).
+\item \emph{Set the standing quantities.} $\att,\floorc_a,\coh$ from $\rho$;
+the committed count $m:=0$.
+\item \emph{Seat the runtime.} Attach the water-filling scheduler over the
+scenes, the two-factor relevance gate, the phase alternator, and the
+search-walk responder---the fixed runtime of \Cref{prin:theory}.
+\end{enumerate}
+The result is an agent object $\Agent$ with $m=0$, ready to run.
+\end{definition}
+
+\begin{remark}[The compiler installs the runtime; it does not write conduct]
+\label{rem:installs}
+Step L5 attaches a \emph{fixed} runtime---the same scheduler, gate,
+alternator, and responder for every agent, supplied once by the theory. The
+compiler writes no conduct: the agent's behaviour is what that fixed runtime
+produces when driven by \emph{this} agent's drive and scenes. Two different
+Agent Smiths differ only in the objects installed at L1--L4; the machinery at
+L5 is identical. This is why the language can be thin and the agents various.
+\end{remark}
+
+% =====================================================================
+\section{The tick-loop: what a compiled agent does}
+\label{sec:tickloop}
+% =====================================================================
+
+Lowering (\Cref{sec:lowering}) seats a fixed runtime at L5. We now specify
+that runtime as a small-step relation---the \emph{tick-loop}---because it is
+the one piece of an agent's behaviour that is common to every Agent Smith and
+is worth pinning exactly. The loop realises the framework's governing stance:
+\emph{an agent acts on the state of the solution, not on its own internal
+reasoning}. Each tick, an agent reads the solution-state, diagnoses whether
+it is stuck, and either commits an act or stays silent; nowhere does it
+introspect a stored model of the whole task. The loop has three steps---%
+\emph{observe}, \emph{diagnose}, \emph{commit}---and a distinguished floor
+case, the pure observer, that commits nothing and costs almost nothing.
+
+\subsection{The solution-state and its tiered reading}
+
+\begin{definition}[Solution-state; residual gap]
+\label{def:solution-state}
+The \emph{solution-state} $\Omega$ is the shared, external record of the work
+done so far toward the intent---the parts individuated, the boundaries
+committed. It is \emph{not stored inside any agent}: no agent holds $\Omega$;
+each reads a slice of it on demand. For an agent $\Agent$ with purpose
+$\Purp$, the \emph{residual gap} $\Delta_\Agent(\Omega)\ge0$ is the semantic
+distance from the current solution-state to $\Agent$'s attractor, floored (by
+the underlying theory) at $\Delta_\Agent\ge\floorc>0$: the gap never closes to
+a point.
+\end{definition}
+
+\begin{definition}[Reading tiers]
+\label{def:tiers}
+A \emph{reading} of $\Omega$ is tiered by cost:
+\begin{itemize}[leftmargin=*]
+\item \emph{Tier 0 (probe).} A deterministic slice retriever
+$\mathrm{probe}(\Omega,q)$: given a query $q$ (what this agent needs), return
+a ranked context slice of the present $\Omega$, cheaply and with no stored
+answer---a re-derivation from $\Omega$ each call. (Concretely, an
+empty-dictionary index over the substrate that returns a ranked slice per
+query; it holds no domain answers, only the means to search for them.)
+\item \emph{Tier 1 (deep read).} A model-backed extraction invoked only when a
+Tier-0 slice does not suffice to move the residual---the escalation.
+\end{itemize}
+The agent always reads Tier 0 first and escalates to Tier 1 only on residue
+(\Cref{def:step-observe}).
+\end{definition}
+
+\begin{remark}[Tier 0 is search-not-fetch, already]
+\label{rem:tier0-search}
+The probe of \Cref{def:tiers} is exactly the search-not-fetch discipline (I3)
+made concrete: it returns a slice re-derived from the current $\Omega$, never
+a stored answer, so a repeated probe against a grown $\Omega$ returns a
+different slice. An agent that only ever reads Tier 0 therefore never fetches
+and never holds the task; it re-reads the state. This is why the framework's
+persistence is in the \emph{trajectory}---how the agent got here, its monotone
+count and its position in the work---not in a cached task
+(\Cref{rem:persistence}).
+\end{remark}
+
+\subsection{The three steps}
+
+\begin{definition}[Observe]
+\label{def:step-observe}
+\emph{Observe} reads the solution-state for this agent's purpose:
+\begin{enumerate}[label=\textup{O\arabic*.},leftmargin=2.6em]
+\item probe Tier 0: $\varsigma\gets\mathrm{probe}(\Omega,q_\Agent)$;
+\item measure the residual gap $\Delta_\Agent(\varsigma)$ from the slice;
+\item if the slice suffices to determine the next act (the gap is legible from
+Tier 0), stop; else escalate to Tier 1 and re-measure.
+\end{enumerate}
+Observe returns the current residual gap and a candidate next act, computed
+from the solution-state slice alone---never from a stored model of the whole
+task.
+\end{definition}
+
+\begin{definition}[Diagnose]
+\label{def:step-diagnose}
+\emph{Diagnose} reads the \emph{descent} of the residual gap across recent
+ticks and returns a typed limit:
+\begin{itemize}[leftmargin=*]
+\item \textsc{converging}: the gap fell on the last committed act
+($\Delta$ strictly decreased)---compute is the only obstacle; keep acting.
+\item \textsc{compute-limited}: the gap is falling slowly but steadily---feed
+more attention.
+\item \textsc{structure-limited}: the gap has not fallen over a window (a
+\emph{stall}) though acts were committed---more of the same act will not help;
+the agent emits the stall as a typed signal so the society may route a
+\emph{different} agent to the gap.
+\end{itemize}
+A stalled agent does not fall silent: it emits \textsc{structure-limited}, a
+diagnosis the conductor layer reads.
+\end{definition}
+
+\begin{definition}[Commit; the sufficiency gate]
+\label{def:step-commit}
+\emph{Commit} is a \emph{runtime-owned} gate---not part of the agent's domain
+work. It reads the \emph{outcome} of the candidate act (its effect on
+$\Omega$ in the common outcome space) and fires iff two conditions hold:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \emph{sufficiency}: the candidate act lowers the residual gap of the
+\emph{parent} intent---its outcome-gain clears the attention price $\price$
+(\emph{not} that the act reduces the agent's own gap to its floor: release at
+sufficiency, not at completion);
+\item \emph{coherence}: the act preserves the agent's coherence condition
+(two-factor relevance).
+\end{enumerate}
+If both hold, the agent commits: it deposits an act, increments the count
+$m$ (I2), and changes $\Omega$---which every other agent will read next tick.
+If either fails, the agent commits nothing this tick and remains an observer.
+\end{definition}
+
+\begin{remark}[The gate reads the outcome, not the reasoning]
+\label{rem:gate-outcome}
+\Cref{def:step-commit} is the formal seat of ``act on the state of the
+solution, not on internal reasoning.'' The commit decision is a function of
+the act's \emph{outcome} in the shared space---does it move the parent's
+residual, does it stay coherent---and never of how the agent's hook computed
+the act. The domain work is opaque (\Cref{sec:agnostic}); the decision to act
+is the runtime's, read off the outcome. This is why an agent needs no model of
+any other agent: it reads the shared solution-state, not anyone's internals
+(coordination in outcome space, \Cref{prin:theory}).
+\end{remark}
+
+\subsection{The loop, and its floor case}
+
+\begin{definition}[Tick-loop]
+\label{def:tick}
+The \emph{tick} of a compiled agent $\Agent$ against solution-state $\Omega$
+is
+\[
+\mathrm{tick}(\Agent,\Omega)\ =\ \mathrm{commit}\circ\mathrm{diagnose}\circ
+\mathrm{observe}\,,
+\]
+in the construction/commitment phase order of I4: observe and diagnose run in
+a construction phase (no act), commit runs in a commitment phase (at most one
+act). The agent's behaviour is the iteration of $\mathrm{tick}$ against the
+evolving $\Omega$.
+\end{definition}
+
+\begin{theorem}[The tick-loop preserves the four invariants]
+\label{thm:tick-invariants}
+Iterating $\mathrm{tick}$ (\Cref{def:tick}) preserves I1--I4. Identity is
+untouched by any step (observe and diagnose read $\Omega$; commit changes
+$\Omega$, not $\Agent$'s self-graph partition), so I1 holds; commit increments
+$m$ and no step decrements it, so I2 holds; observe reads only via the probe,
+which re-derives from the present $\Omega$ with no stored answer, so I3 holds;
+and observe/diagnose occupy a construction phase while commit occupies a
+commitment phase, disjoint by \Cref{def:tick}, so I4 holds.
+\end{theorem}
+
+\begin{proof}
+By \Cref{def:step-observe,def:step-diagnose}, observe and diagnose compute
+from a slice of $\Omega$ and the residual descent; they commit no act and do
+not alter $\Self=(\V,\E,\wt)$, so the character invariant $\Char(\Agent)$
+(\Cref{def:invariants}) is unchanged (I1) and the count is untouched. By
+\Cref{def:step-commit}, commit deposits at most one act, incrementing $m$ by
+one; no step lowers $m$ (I2). By \Cref{rem:tier0-search} the probe returns a
+re-derived slice, never a stored answer, and Tier 1 is a model extraction
+against the present state, so no response is fetched (I3). By \Cref{def:tick}
+observe/diagnose are in construction and commit is in commitment, and I4's
+phase exclusion makes these disjoint instants, so no tick both constructs and
+commits (I4). Hence all four are preserved by every tick, and by induction by
+the whole run.
+\end{proof}
+
+\begin{definition}[Pure observer; the floor case]
+\label{def:observer}
+An agent is a \emph{pure observer} at a tick if its commit gate does not fire:
+either the candidate act's outcome-gain does not clear the price (the
+solution-state does not yet call for it) or it would break coherence. A pure
+observer runs observe (Tier 0 only---it never escalates, having no act to
+justify the cost) and diagnose, commits nothing, and leaves $\Omega$ and its
+own count $m$ unchanged.
+\end{definition}
+
+\begin{theorem}[The pure observer is valid and almost free]
+\label{thm:observer}
+A pure observer is a well-formed member of the society: it honours I1--I4
+vacuously (it commits no act, so I2's count is unchanged and I4's commitment
+phase is empty), it holds no task (I3: it only ever probes Tier 0), and it
+costs only its Tier-0 probe per tick. It contributes nothing to the residual
+($\delta=0$) yet remains present: the instant the solution-state changes so
+that its candidate act clears the price, its commit gate fires and it acts. A
+society may contain arbitrarily many pure observers at negligible cost.
+\end{theorem}
+
+\begin{proof}
+A pure observer runs observe and diagnose (construction phase, no act) and a
+commit gate that does not fire (\Cref{def:observer}); so it deposits no act,
+leaving $m$ fixed (I2 vacuous) and the commitment phase empty (I4 vacuous),
+while I1 (identity) and I3 (Tier-0 probe, re-derived slices) hold as for any
+agent (\Cref{thm:tick-invariants}). Its per-tick cost is one Tier-0 probe, by
+\Cref{def:observer}. Because the commit gate is re-evaluated each tick against
+the current $\Omega$ (\Cref{def:step-commit}), a change in the solution-state
+that raises the observer's candidate outcome-gain above the price fires the
+gate on that tick: the observer acts exactly when the state calls for it, not
+before. Hence it is present, valid, and almost free.
+\end{proof}
+
+\begin{remark}[The three at the zoo, and the crowd of cheap readers]
+\label{rem:zoo}
+\Cref{thm:observer} is the penguin-watcher: an agent attending to its own
+scene, holding no model of the others, that commits the instant the shared
+outcome-state changes (the others flee) because at that tick its
+``get to safety'' act clears the price---coordination through the outcome, not
+through anyone's internals. The same construction explains why a society
+prefers \emph{many cheap readers} to one expensive one where a judgment is
+uncertain: independent observers reading the same outcome-state sharpen the
+collective judgment multiplicatively (\Cref{prin:theory}, crowd sharpening),
+and each costs only its Tier-0 probe. The loop makes the cheap-crowd the
+default and the deep read (Tier 1) the exception, paid only on escalation. We
+use only the loop's step relation; the readings are orientation.
+\end{remark}
+
+% =====================================================================
+\section{The Instantiation Theorem}
+\label{sec:soundness}
+% =====================================================================
+
+We prove the compiler's central guarantee: well-typed scripts instantiate
+invariant-honouring agents, and ill-typed scripts do not instantiate at all.
+
+\begin{theorem}[Instantiation soundness]
+\label{thm:instantiation}
+If $\judge\spec:\mathsf{Agent}$ then $\spec\lowers\Agent$ for a unique agent
+object $\Agent$ up to relabelling, and $\Agent$ honours the four runtime
+invariants \textup{(I1--I4)} of \Cref{def:invariants} by construction.
+\end{theorem}
+
+\begin{proof}
+By \Cref{rule:agent}, a well-typed $\spec$ has a well-formed self
+(\Cref{rule:self}: connected, positive floor), a well-formed drive
+(\Cref{rule:drive}: strongly convex), scenes each serving the declared purpose
+(\Cref{rule:scene}), and positive $\att,\floorc_a$. Its denotation
+$\llbracket\spec\rrbracket$ (\Cref{def:denotation}) is therefore a well-formed
+agent object (\Cref{def:agent-object}). Lowering (\Cref{def:lowering})
+realises it: L1--L4 produce exactly that object, and L5 attaches the fixed
+runtime. By \Cref{prin:theory}, every well-formed agent object honours I1
+(identity: positive floor $+$ connectedness give a conserved non-local
+positive invariant), I2 (act floor gives a strictly monotone count), I3
+(search-not-fetch: a floored act makes a zero-act fetch return nothing, so
+every answer is a walk), and I4 (phase exclusion is part of the fixed
+runtime). Uniqueness up to relabelling: L1's only freedom is the labelling,
+under which the object is determined and, by I1, identity-invariant. Hence
+$\Agent$ is unique up to relabelling and honours I1--I4.
+\end{proof}
+
+\begin{theorem}[No ill-typed instantiation]
+\label{thm:no-illtyped}
+If $\not\judge\spec:\mathsf{Agent}$ then $\compile$ emits no agent: the
+compiler rejects $\spec$ at typing (\Cref{thm:decidable}) before lowering. In
+particular no agent is ever instantiated with a zero-floor self, a non-convex
+drive, a dead scene, or a non-positive budget.
+\end{theorem}
+
+\begin{proof}
+$\compile$ runs the decidable type check (\Cref{thm:decidable}) before
+lowering (\Cref{def:lowering}) and lowers only on
+$\judge\spec:\mathsf{Agent}$. An ill-typed script fails some premise of
+\Cref{rule:self,rule:drive,rule:scene,rule:agent}---the four failure modes
+named---so it is rejected and never reaches $\lowers$. Hence no agent object
+violating the theory's hypotheses is ever produced.
+\end{proof}
+
+\begin{corollary}[The compiler is the sole instantiator]
+\label{cor:sole}
+Every agent in the system is the image under $\compile$ of a well-typed Agent
+Smith. There is no other route to an agent object, so every agent in the
+system honours I1--I4 (\Cref{thm:instantiation}) and none violates the
+hypotheses (\Cref{thm:no-illtyped}). Instantiation is centralised in the
+compiler.
+\end{corollary}
+
+\begin{proof}
+Agent objects arise only by lowering (\Cref{def:lowering}), which $\compile$
+gates on typing. Combine \Cref{thm:instantiation,thm:no-illtyped}.
+\end{proof}
+
+% =====================================================================
+\section{Mechanism agnosticism}
+\label{sec:agnostic}
+% =====================================================================
+
+We prove the language's defining property: it carries no domain competence.
+The behaviour of a scene is a constructor-supplied hook the compiler treats as
+opaque, so the same language instantiates a game character and a task-agent
+without change.
+
+\begin{definition}[Behaviour hook]
+\label{def:hook}
+A \emph{behaviour hook} $h$ bound to a scene is a callable of type
+$\mathcal{B}\times\text{Interaction}\to\mathcal{B}\times\Out$: given the
+agent's disposition and an interaction, it returns the next disposition and an
+outcome. Agent Smith holds $h$ as an opaque value: no production of
+\Cref{def:grammar} inspects or expands $h$, and no typing rule constrains $h$
+beyond its type (\Cref{rule:scene}).
+\end{definition}
+
+\begin{theorem}[The language contains no domain competence]
+\label{thm:agnostic}
+The denotation and typing of an Agent Smith are independent of the internal
+behaviour of any hook: for two scripts $\spec,\spec'$ identical except that
+each bound hook $h_i$ is replaced by a hook $h_i'$ of the same type, we have
+$\judge\spec:\mathsf{Agent}\iff\judge\spec':\mathsf{Agent}$, and
+$\llbracket\spec\rrbracket,\llbracket\spec'\rrbracket$ differ only in the
+installed callables, not in $\Self,\drive,\att,\floorc_a,\coh$. Hence Agent
+Smith specifies \emph{that} a scene serves the purpose, never \emph{how}.
+\end{theorem}
+
+\begin{proof}
+Typing (\Cref{rule:self,rule:drive,rule:scene,rule:agent}) constrains a hook
+only through its type $\mathcal{B}\to\Out$ (\Cref{rule:scene}); no rule reads
+$h$'s body. Replacing $h_i$ by same-typed $h_i'$ leaves every premise
+unchanged, so the judgements coincide. Denotation (\Cref{def:denotation})
+records the hook as $\mathrm{hook}(h)$, an opaque binding; the self-graph,
+drive, budget, floor, and coherence are computed from the other constructs and
+are untouched by the swap. Hence the objects differ only in installed
+callables.
+\end{proof}
+
+\begin{theorem}[One language, character or task-agent]
+\label{thm:regimes}
+Let $\spec_{\mathrm{char}}$ and $\spec_{\mathrm{task}}$ be Agent Smiths
+identical except in their \texttt{purpose}: $\spec_{\mathrm{char}}$ uses
+\texttt{minimise }$\phi$ with $\phi$'s minimum a standing region (never
+saturated), and $\spec_{\mathrm{task}}$ uses \texttt{reach }$o$ with $o$ an
+attainable outcome. Both type by the same rules and lower by the same
+relation; the instantiated agents differ only in whether the attractor's cell
+is standing or attained. Thus the same language, unchanged, instantiates a
+character that lives on and a task-agent that halts.
+\end{theorem}
+
+\begin{proof}
+Both \texttt{minimise }$\phi$ (with $\phi$ strongly convex) and \texttt{reach
+}$o$ satisfy \Cref{rule:drive} (\Cref{rem:two-purposes}), so both scripts type
+by \Cref{rule:agent} and lower by \Cref{def:lowering}. By \Cref{prin:theory}
+the runtime is identical; the only difference is the drive installed at L2,
+hence the location of $\Purp$. A standing-region minimum is never saturated
+(the floor keeps residual positive), so the agent runs on; an attainable $o$
+is reached at quiescence, so the agent halts. No construct other than
+\texttt{purpose} differs. Hence one language instantiates both regimes.
+\end{proof}
+
+\begin{remark}[Why this is the whole point]
+\label{rem:whole-point}
+\Cref{thm:agnostic,thm:regimes} are the reason Agent Smith is a single small
+language rather than a family of domain languages. Because it holds mechanism
+as an opaque hook and purpose as the only thing distinguishing a character
+from a task, a user specifies ``an iron smith'' and ``an agent that solves
+this task'' with the same constructs, and the compiler instantiates each as an
+agent pursuing its declared purpose through its declared scenes. The language
+never learns to forge or to solve; it learns only to build an agent that is
+\emph{for} forging or solving. The interpretation firewall of the underlying
+theory is thereby inherited by the language: Agent Smith speaks only of
+purpose, scenes, identity, budget---never of a domain.
+\end{remark}
+
+% =====================================================================
+\section{Management: spawn, snapshot, retire}
+\label{sec:lifecycle}
+% =====================================================================
+
+Agent Smith specifies \emph{and manages}. Beyond instantiation, the language
+provides the lifecycle operations, each with a meaning that preserves the
+invariants.
+
+\begin{definition}[Lifecycle operations]
+\label{def:lifecycle}
+For a compiled agent $\Agent$:
+\begin{itemize}[leftmargin=*]
+\item \texttt{spawn}\ $\spec$: run $\compile(\spec)$ and register the resulting
+$\Agent$ at count $0$.
+\item \texttt{snapshot}\ $\Agent$: emit a serialisable record
+$(\Self,\att,\floorc_a,\coh,\text{disposition},m,\text{phase})$---everything
+but the opaque hooks, which are re-bound on rehydration.
+\item \texttt{configure}\ $\Agent$: adjust budget $\att$ or coupling within the
+running agent \emph{in the construction phase only} (I4).
+\item \texttt{retire}\ $\Agent$: stop the agent; its snapshot persists, so a
+later \texttt{spawn} from that snapshot resumes the \emph{same} individual at
+its accumulated count (not a reset).
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Lifecycle preserves the invariants]
+\label{thm:lifecycle}
+Each operation of \Cref{def:lifecycle} preserves I1--I4. In particular
+\texttt{snapshot}/\texttt{spawn} round-trips the committed count, so a
+rehydrated agent resumes at its accumulated $m$ and is the same individual;
+and \texttt{configure} runs only in construction, so it never violates phase
+exclusion.
+\end{theorem}
+
+\begin{proof}
+\texttt{spawn} is $\compile$, covered by \Cref{thm:instantiation} (I1--I4 hold
+at birth). \texttt{snapshot} records $m$ and the label-independent self-graph;
+\texttt{spawn}-from-snapshot restores them, so $m$ is preserved (I2) and
+identity is the same invariant (I1). Because the count is carried, the
+rehydrated agent is not a fresh copy at $0$ but the same individual at $m$
+(monotone-count distinctness of the underlying theory). \texttt{configure}
+changes only $\att$ or coupling and only in the construction phase, so it
+commits no act (I4 preserved) and does not touch the self-graph's partition
+structure (I1 preserved) nor the count (I2). \texttt{retire} stops dispatch
+and persists the snapshot; no count is lowered (I2). Search-not-fetch (I3) is a
+property of the responder, attached at L5 and untouched by lifecycle. Hence all
+four are preserved.
+\end{proof}
+
+\begin{remark}[Persistence is what makes the smith the same smith tomorrow]
+\label{rem:persistence}
+\Cref{thm:lifecycle} is the formal content of ``the smith you met yesterday,
+mid-contract, is still that smith today.'' Because \texttt{snapshot}/%
+\texttt{spawn} carries the committed count, resuming an agent is resuming the
+\emph{same} individual with its accumulated history, not instantiating a
+look-alike at count zero. A re-run of an agent's past act is therefore a new
+act at a higher count---a genuine re-derivation against the grown graph, not a
+replayed cache---which is exactly what a persistent character, or a resumable
+task, requires.
+\end{remark}
+
+% =====================================================================
+\section{A society is an Agent Smith}
+\label{sec:society}
+% =====================================================================
+
+The language lifts to configurations of agents by the same constructs, one
+level up. A \texttt{society} is itself an Agent Smith, so any configuration the
+specifier wants is written in the same language.
+
+\begin{definition}[Society specification]
+\label{def:society-spec}
+A \texttt{society}\ $\iota\ \{\ \overline\spec\ \theta\ \}$ denotes the
+quotient object $\Soc$ whose vertices are the agents
+$\llbracket\overline\spec\rrbracket$ and whose edges are the declared ties
+$\theta$, with coupling $K$ for phase synchronisation. Its purpose, if
+declared, is a society drive on the product disposition space whose minimiser
+maps to the shared purpose in the common outcome space $\Out$.
+\end{definition}
+
+\begin{theorem}[Society well-formedness and closure]
+\label{thm:society}
+If each $\spec_i\in\overline\spec$ is well-typed and every declared tie has
+cost $\ge\floorc$ and the society is connected, then
+$\judge\texttt{society}\ \iota\{\overline\spec\,\theta\}:\mathsf{Agent}$: a
+well-formed society is itself a well-formed agent object, honouring I1--I4 at
+the society level, and coordinating in $\Out$ without shared internals. Hence
+the language is closed under composition: an Agent Smith may be an agent or a
+society of Agent Smiths.
+\end{theorem}
+
+\begin{proof}
+By \Cref{prin:theory} a connected quotient of agent objects with
+floor-$\ge\floorc$ ties is again an agent object (finite, connected, positive
+floor), so \Cref{rule:agent} applies to $\Soc$: it has a conserved non-local
+identity (I1 at agent level), a monotone society count (I2), search-not-fetch
+and phase exclusion inherited by each member and by the quotient's own
+scheduling (I3, I4). Coordination without shared internals is the
+outcome-space coordination of the theory: members attain a shared region in
+$\Out$ regardless of disjoint self-graphs. The society form is a production of
+\Cref{def:grammar}, so the language is closed under it.
+\end{proof}
+
+\begin{remark}[Any configuration, written once]
+\label{rem:configuration}
+\Cref{thm:society} is what lets a specifier instantiate agents ``in whatever
+configuration'': a lone smith, a smith and a miner tied by ore-supply, a whole
+town, an ensemble of task-agents cooperating on a problem---each is a
+\texttt{society} script, compiled by the same $\compile$, honouring the same
+invariants. Because coordination lives in outcome space, the specifier need
+give no agent a model of any other; declaring the ties and the shared outcome
+suffices. The society's single shared purpose (one drive on the quotient) is
+the formal sense in which the configuration acts as one.
+\end{remark}
+
+% =====================================================================
+\section{Worked Agent Smiths}
+\label{sec:examples}
+% =====================================================================
+
+We instantiate two agents from the same language: a character and a task-agent,
+differing only in \texttt{purpose}.
+
+\subsection{A character: the iron smith}
+
+The smith of \Cref{sec:grammar}, whose purpose \texttt{minimise
+forge\_residual} has a standing minimum: there is always more to forge, so the
+agent runs on. Its three scenes are its life; water-filling picks which it
+works at each moment; the necessity floor makes it ignore off-purpose requests
+(a scene that does not serve \texttt{forge\_residual} never types, and an
+off-purpose interaction gains below the attention price and is declined). It
+persists across sessions by \texttt{snapshot}/\texttt{spawn}.
+
+\subsection{A task-agent: rerun an experiment}
+
+\begin{lstlisting}
+// An Agent Smith: a task-solving agent.
+// Same constructs; purpose is an attainable outcome.
+agent rerun_exp {
+  purpose reach verdict_confirmed
+    // attractor: the experiment's verdict = CONFIRMED
+
+  scenes {
+    scene integrate serves verdict_confirmed with kuramoto_hook
+    scene tabulate  serves verdict_confirmed with aggregate_hook
+    scene report    serves verdict_confirmed with emit_hook
+  }
+  self {
+    parts { data, method, result, verdict }
+    separations {
+      (data, method: 2), (method, result: 2),
+      (result, verdict: 2), (verdict, data: 2)
+    }
+  }
+  budget 1.0
+  floor  2.0
+  coherence keeps { method, result }
+}
+\end{lstlisting}
+
+\noindent This types and lowers by the \emph{same} rules as the smith
+(\Cref{thm:regimes}). Its purpose \texttt{reach verdict\_confirmed} is
+attainable, so it halts at quiescence when the verdict is confirmed. A
+\texttt{spawn} from a prior snapshot resumes the same task-individual at its
+accumulated count, so ``redo the experiment'' re-derives against the grown
+graph rather than replaying a stored result. The specifier wrote intent; the
+compiler instantiated an agent that pursues it.
+
+\begin{remark}[The same smith forges both]
+\label{rem:same-smith}
+The smith and the task-agent are two Agent Smiths, compiled by one compiler,
+differing only in whether \texttt{purpose} names a standing region or an
+attainable outcome. Everything else---the four invariants, the water-filling
+over scenes, the persistence, the coordination if placed in a society---is
+identical. This is the language's economy: to specify a game character and a
+task-solver is to write the same kind of script, and to instantiate either is
+one compilation.
+\end{remark}
+
+% =====================================================================
+\section{Scope}
+\label{sec:scope}
+% =====================================================================
+
+Agent Smith is a specification-and-instantiation language and nothing more. It
+targets the agent objects of a fixed underlying theory, whose runtime
+guarantees (the four invariants, water-filling attention, two-factor
+relevance, outcome-space coordination) it consumes as a black box
+(\Cref{prin:theory}) and does not re-prove. Its constructs name the free parts
+of an agent---purpose, scenes, self, budget, floor, coherence, ties,
+coupling---and its type system admits exactly the scripts whose denotation is a
+well-formed agent object (\Cref{sec:typing}); its compiler instantiates all and
+only those (\Cref{sec:soundness}). The language holds no domain competence:
+scene behaviour is an opaque constructor hook (\Cref{sec:agnostic}), so the
+same language instantiates a game character and a task-agent without change
+(\Cref{thm:regimes}), and a configuration of agents is itself an Agent Smith
+(\Cref{sec:society}). What the language does \emph{not} do is specify how any
+scene performs its domain work, prescribe an agent's moment-to-moment conduct
+(that is the runtime's, driven by the declared purpose and scenes), or
+guarantee anything about a hook's internal correctness (that is the hook
+author's). One hypothesis is inherited from the underlying theory and not
+re-argued here: that an agent is a finite, positively-separated, floored,
+purpose-directed object; absent it the invariants are not guaranteed and the
+compiler's soundness does not hold. Interpretive readings---of a script as a
+character with a life, of a society as a population, of a task-agent as an
+instantiated task---are confined to remarks on which no theorem depends.
+
+\subsection{Conclusion}
+
+To specify a non-player character, one says what it is and what it is for and
+lets its conduct follow; Agent Smith is the language for saying exactly that,
+and its compiler is the instantiator that turns the saying into an agent.
+Every script is an Agent Smith: a complete specification of one agent's
+purpose, the scenes that serve it, and the material that makes it an agent at
+all. The compiler types the specification against the hypotheses the
+underlying theory requires, and lowers it into a running agent that honours,
+by construction, a conserved identity, a never-resetting count,
+search-not-fetch access, and phase exclusion---so that a smith is the same
+smith tomorrow, an off-purpose request is ignored because attention costs
+something, a copy is a new individual, and a re-run genuinely re-derives. The
+language holds no domain competence: it says a scene serves the purpose, never
+how, so the same constructs specify a smith who forges and an agent that
+solves, a lone character and a whole society. A user, an application, or a
+module specifies the agent the way a designer specifies an NPC; the compiler
+forges it. That is the whole of Agent Smith: intent in, agent out, invariants
+kept.
+
+% =====================================================================
+\bibliographystyle{plain}
+\bibliography{references}
+% =====================================================================
+
+\end{document}

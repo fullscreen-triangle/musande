@@ -1,3 +1,25 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{acebron2005}
+Juan~A. Acebr\'on, L.~L. Bonilla, C.~J. P\'erez~Vicente, F.~Ritort, and
+  R.~Spigler.
+\newblock The kuramoto model: A simple paradigm for synchronization phenomena.
+\newblock {\em Reviews of Modern Physics}, 77(1):137--185, 2005.
+
+\bibitem{kuramoto1984}
+Yoshiki Kuramoto.
+\newblock {\em Chemical Oscillations, Waves, and Turbulence}.
+\newblock Springer, 1984.
+
+\bibitem{pikovsky2001}
+Arkady Pikovsky, Michael Rosenblum, and J\"urgen Kurths.
+\newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
+\newblock Cambridge University Press, 2001.
+
+\bibitem{strogatz2000}
+Steven~H. Strogatz.
+\newblock From kuramoto to crawford: Exploring the onset of synchronization in
+  populations of coupled oscillators.
+\newblock {\em Physica D}, 143(1--4):1--20, 2000.
 
 \end{thebibliography}
