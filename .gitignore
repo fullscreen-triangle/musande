@@ -167,6 +167,9 @@ _ReSharper*/
 *.orig
 *.rej
 
+# Purpose (Tool B) local index cache
+.purpose/
+
 # Musande specific
 /research/data/
 /experimental/
