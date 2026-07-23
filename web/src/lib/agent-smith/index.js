@@ -36,6 +36,7 @@ export {
   think,
   setThinkTransport,
 } from "./providers";
+export { makeShowcase, initialGraph, applyStep, actContent } from "./showcase";
 
 // A ready-to-run example program: a town with a character (smith), two
 // decliners (scribe, crier — off-purpose to a forge interaction), and a
