@@ -14,7 +14,13 @@
       "Bash(python synchronised_coordination_validation.py)",
       "Bash(python operational_intelligence_validation.py)",
       "Bash(purpose index)",
-      "Bash(purpose ask:*)"
+      "Bash(purpose ask:*)",
+      "Bash(smith check:*)",
+      "Bash(smith run:*)",
+      "Bash(smith show:*)",
+      "Bash(cargo build:*)",
+      "Bash(cargo test:*)",
+      "Bash(cargo clippy:*)"
     ]
   },
   "env": {

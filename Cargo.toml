@@ -8,6 +8,7 @@ members = [
     "crates/musande-service",
     "crates/musande-applications",
     "crates/musande-cli",
+    "crates/agent-smith",
     "examples/s_entropy_demo",
     # Temporarily commented out until implementation
     # "bindings/python",

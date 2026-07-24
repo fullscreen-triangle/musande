@@ -1,0 +1,22 @@
+[package]
+name = "agent-smith"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Agent Smith — a bounded-agent DSL and tick-loop engine (split-attention synchronised agents)"
+
+[dependencies]
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[lib]
+name = "agent_smith"
+path = "src/lib.rs"
+
+[[bin]]
+name = "smith"
+path = "src/bin/smith.rs"
