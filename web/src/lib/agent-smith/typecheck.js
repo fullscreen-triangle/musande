@@ -27,6 +27,14 @@ export const CONVEX_POTENTIALS = new Set([
   "bake_residual",
   "residual",
   "distance_to_goal",
+  // economic-skin potentials (sandbox): each is a residual between a held
+  // position and a target position — the same ||x - x*||^2 / 2 shape.
+  "inventory_risk",
+  "spread_cost",
+  "queue_risk",
+  "mispricing",
+  "reconciliation_gap",
+  "joint_inventory",
 ]);
 
 function err(errors, message, line) {

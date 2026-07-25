@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-deep: #0a0a0f;
+  --bg-panel: #111118;
+  --bg-surface: #1a1a24;
+  --bg-hover: #222230;
+  --fg-primary: #e8e4dd;
+  --fg-secondary: #9a9690;
+  --fg-muted: #5a5854;
+  --accent-amber: #d4a849;
+  --accent-blue: #5b8dd9;
+  --accent-green: #5fa85f;
+  --accent-red: #c94a4a;
+  --accent-cyan: #4db8b8;
+  --border-subtle: #2a2a36;
+  --border-active: #3a3a4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-deep);
+  color: var(--fg-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}
+
+/* Monaco overrides */
+.monaco-editor {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+.monaco-editor .margin {
+  background: var(--bg-panel) !important;
+}
+
+/* D3 chart styling */
+.chart-tooltip {
+  position: absolute;
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-active);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--fg-primary);
+  pointer-events: none;
+  z-index: 100;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Resizer handle */
+.resizer {
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.resizer:hover, .resizer:active {
+  background: var(--accent-amber);
+}

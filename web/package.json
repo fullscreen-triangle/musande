@@ -18,7 +18,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-force-graph-3d": "^1.29.1",
-    "three": "^0.169.0"
+    "three": "^0.169.0",
+    "zustand": "^4.5.7"
   },
   "devDependencies": {
     "@types/node": "26.1.1",
