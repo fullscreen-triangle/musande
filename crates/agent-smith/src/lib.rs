@@ -25,7 +25,9 @@ pub mod error;
 pub mod examples;
 pub mod hook;
 pub mod identity;
+pub mod instantiate;
 pub mod parse;
+pub mod subtask;
 pub mod tick;
 pub mod town;
 pub mod typecheck;
@@ -61,5 +63,9 @@ pub use tick::{init_floor_norm, tick, Limit, Outcome, TickRecord};
 pub use town::{
     make_omega, make_town, run_town, step_town, Ctx, LogEntry, Omega, Society, StepResult, Town,
 };
+
+pub use subtask::{Chunk, Graph, Node, Raised, Subtask, Tau, Value};
+
+pub use instantiate::{instantiate, instantiate_all, instantiate_into, Spawn, Ticket};
 
 pub use examples::{EXAMPLE_TASK, EXAMPLE_TOWN};
