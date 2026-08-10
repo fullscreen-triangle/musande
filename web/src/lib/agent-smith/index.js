@@ -38,6 +38,52 @@ export {
 } from "./providers";
 export { makeShowcase, initialGraph, applyStep, actContent } from "./showcase";
 
+// ---------------------------------------------------------------------
+//  Instantiation: the other path in.
+//  The exports above are the path a HUMAN takes — write a `.smith` source,
+//  build it, drive it. These are the path a MODULE takes: decompose a problem
+//  mid-run and generate an agent per subtask, with no source and no pause.
+//
+//    import { subtask, chunk, Graph, instantiateInto } from "@/lib/agent-smith";
+//
+//    const graph = new Graph();
+//    const { ticket } = instantiateInto(
+//      subtask("normalise_spectrum", "normalise the spectrum",
+//              [chunk("turbulance", "normalise(x)", "kwasa-kwasa")]),
+//      graph, { by: "kwasa-kwasa" });
+//
+//  The agents produced are structurally identical to compiled ones, so they
+//  drop straight into makeTown / stepTown.
+// ---------------------------------------------------------------------
+export {
+  tau,
+  chunk,
+  value,
+  subtask,
+  withChunk,
+  withChunks,
+  isRealised,
+  Node,
+  Graph,
+} from "./subtask";
+export {
+  instantiate,
+  instantiateInto,
+  instantiateAll,
+  instruction,
+  chunks,
+} from "./instantiate";
+
+// The execution seam: what turns a firing scene into a chunk that actually
+// runs. Route on the DSL tag; every chunk on the node in that DSL executes.
+//
+//   const ctx = execCtx(graph, { turbulance: runTurbulance }, defaultCtx);
+//   const history = await runTown(makeTown({ agents: [ticket.agent] }), ctx);
+//
+// A chunk that throws becomes an ordinary "anomaly" value on the node — the
+// run continues, and the failure is part of the report.
+export { runChunks, makeRunHook, execCtx, resetExecution, ANOMALY } from "./execute";
+
 // A ready-to-run example program: a town with a character (smith), two
 // decliners (scribe, crier — off-purpose to a forge interaction), and a
 // pure observer (watcher). Shown in the tool by default.
