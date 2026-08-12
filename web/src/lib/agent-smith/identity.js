@@ -148,16 +148,31 @@ function pseudoRandom() {
   return ((_seed >>> 0) % 1e6) / 1e6;
 }
 
-/** Realised floor: least boundary cost of any single part (singleton cut). */
+/**
+ * Realised floor: the least boundary cost of any nonempty proper subset of
+ * the self-graph — the global minimum cut.
+ *
+ * This previously enumerated only SINGLETON cuts (the cheapest single part to
+ * isolate), which is the minimum weighted degree, not the minimum cut. The two
+ * coincide only when the optimal cut happens to separate exactly one part. On
+ * a path a-9-b-1-c-9-d the optimal cut is {a,b} | {c,d} at cost 1, but no
+ * singleton cut is cheaper than 9, so the old version reported 9.
+ *
+ * That is not a cosmetic difference. The floor is the smallest residual an
+ * agent can distinguish from zero, so it is the halting criterion: an
+ * overstated floor makes a task-agent go quiescent while real residual is
+ * still outstanding.
+ *
+ * The minimum cut is exactly what `characterInvariant` computes (it enumerates
+ * bipartitions and returns the minimum crossing weight), so the floor is that
+ * same quantity rather than a second, weaker enumeration. Minimising over
+ * partitions with r > 2 blocks cannot do better: merging blocks 2..r into one
+ * only removes crossing edges, so every r-block partition is at least as
+ * expensive as some bipartition.
+ */
 export function realisedFloor(parts, separations) {
-  const adj = adjacency(parts, separations);
-  let min = Infinity;
-  for (const p of parts) {
-    let w = 0;
-    for (const c of adj.get(p).values()) w += c;
-    if (w > 0 && w < min) min = w;
-  }
-  return min === Infinity ? 0 : min;
+  if (parts.length < 2) return 0;
+  return characterInvariant(parts, separations).chi;
 }
 
 // ---- water-filling ---------------------------------------------------

@@ -35,6 +35,19 @@ export const CONVEX_POTENTIALS = new Set([
   "mispricing",
   "reconciliation_gap",
   "joint_inventory",
+  // tutorial potentials (smith-ide). Each names a quantity held away from a
+  // target and driven toward it — the same ||x - x*||^2 / 2 shape as above.
+  // Registered rather than rewritten to "reach": every one of these agents is
+  // a CHARACTER with a standing purpose that runs on, which is precisely what
+  // the tutorial teaches. "reach" would make them halt and lose the lesson.
+  "heat_residual", // filament temperature vs. target temperature
+  "backlog", // items pending vs. items cleared
+  "queue_depth", // queue length vs. drained queue
+  "confusion", // distinctions held vs. distinctions resolved
+  "disorder", // catalogued fraction vs. fully catalogued
+  "task_residual", // work outstanding vs. work complete
+  "workshop_residual", // joint forge+trade position vs. target position
+  "operational_residual", // service state vs. smoothly-running service
 ]);
 
 function err(errors, message, line) {
